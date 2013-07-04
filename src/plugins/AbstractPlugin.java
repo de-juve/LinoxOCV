@@ -1,11 +1,13 @@
 package plugins;
 
+import gui.dialog.ParameterJPanel;
+import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
 
 
 public class AbstractPlugin implements PluginFilter {
     protected Mat image, result = null;
-
+    protected PluginRunner pluginListener;
     public boolean exit = false;
     protected int criteria;
     protected String errMessage = "";
@@ -29,6 +31,23 @@ public class AbstractPlugin implements PluginFilter {
 
     @Override
     public void run() {
+    }
+
+    @Override
+    public void cancel() {
+    }
+
+    @Override
+    public void finish() {
+    }
+
+    @Override
+    public void getParams(ParameterJPanel parameterJPanel) {
+    }
+
+    @Override
+    public void addRunListener(PluginRunner runner) {
+        pluginListener = runner;
     }
 
     public void initProcessor(Mat _image) {

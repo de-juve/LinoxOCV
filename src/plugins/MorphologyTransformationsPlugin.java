@@ -1,25 +1,33 @@
 package plugins;
 
 import gui.Linox;
-import gui.dialog.ChoiceDialog;
 import gui.dialog.ParameterComboBox;
+import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 
 import static org.opencv.core.Core.convertScaleAbs;
 import static org.opencv.imgproc.Imgproc.getStructuringElement;
 import static org.opencv.imgproc.Imgproc.morphologyEx;
 
-public class MorphologyTransformationsPlugin extends AbstractPlugin {
+public class MorphologyTransformationsPlugin extends AbstractPlugin{
     int morph_elem = 0;
     int morph_size = 0;
     int morph_operator = 0;
     final int max_kernel_size = 21;
     String morphologyOperation, kernelType;
+    //to select Morphology operation
+    ParameterComboBox morphologyOperations = new ParameterComboBox("Type of transformation:",
+            new String[]{"Opening", "Closing", "Gradient", "Top Hat", "Black Hat"});
+
+    //to select kernel type
+    ParameterComboBox kernelTypes = new ParameterComboBox("Type of kernel:",
+            new String[]{"Rect", "Cross", "Ellipse"});
+
+    //to choose kernel size
+    ParameterSlider kernelSize = new ParameterSlider("Size of kernel:\n 2n+1", 1, max_kernel_size, 1);
 
     public MorphologyTransformationsPlugin() {
         title = "Morphology Transformations";
@@ -40,47 +48,51 @@ public class MorphologyTransformationsPlugin extends AbstractPlugin {
     public void run() {
         Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 0, 100);
 
-        showDialog("Choose params");
+        showParamsPanel("Choose params");
         if (exit) {
             return;
         }
 
-        MorphologyOperations();
+        //DataCollector.INSTANCE.setLaplasiantImg(result.clone());
 
-        DataCollector.INSTANCE.setLaplasiantImg(result.clone());
 
-        Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 100, 100);
     }
 
-    protected void showDialog(String name) {
-        //to select Morphology operation
-        ParameterComboBox morphologyOperations = new ParameterComboBox("Type of transformation:",
-                new String[]{"Opening", "Closing", "Gradient", "Top Hat", "Black Hat"});
+    @Override
+    public void cancel() {
+        Linox.getInstance().removeParameterJPanel();
+        exit = true;
+        setErrMessage("canceled");
+        pluginListener.stopPlugin();
+    }
 
-        //to select kernel type
-        ParameterComboBox kernelTypes = new ParameterComboBox("Type of kernel:",
-                new String[]{"Rect", "Cross", "Ellipse"});
-
-        //to choose kernel size
-        ParameterSlider kernelSize = new ParameterSlider("Size of kernel:\n 2n+1", 1, max_kernel_size, 1);
-
-        ChoiceDialog cd = new ChoiceDialog();
-        cd.setTitle(name);
-        cd.addParameterComboBox(morphologyOperations);
-        cd.addParameterComboBox(kernelTypes);
-        cd.addParameterSlider(kernelSize);
-
-        cd.pack();
-        cd.setVisible(true);
-        if (cd.wasCanceled()) {
-            exit = true;
-            setErrMessage("canceled");
-        }
-        morphologyOperation = cd.getValueComboBox(morphologyOperations);
-        kernelType = cd.getValueComboBox(kernelTypes);
+    @Override
+    public void getParams(ParameterJPanel panel) {
+        morphologyOperation = panel.getValueComboBox(morphologyOperations);
+        kernelType = panel.getValueComboBox(kernelTypes);
         morph_operator = getCodeMorphOperation();
         morph_elem = getCodeKernelType();
-        morph_size = cd.getValueSlider(kernelSize);
+        morph_size = panel.getValueSlider(kernelSize);
+
+        MorphologyOperations();
+
+        Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 100, 100);
+        pluginListener.addImageTab();
+    }
+
+    @Override
+    public void finish() {
+        Linox.getInstance().removeParameterJPanel();
+        pluginListener.finishPlugin();
+    }
+
+    protected void showParamsPanel(String name) {
+        ParameterJPanel panel = new ParameterJPanel(name, this);
+        panel.addParameterComboBox(morphologyOperations);
+        panel.addParameterComboBox(kernelTypes);
+        panel.addParameterSlider(kernelSize);
+
+        Linox.getInstance().addParameterJPanel(panel);
     }
 
 
@@ -113,4 +125,6 @@ public class MorphologyTransformationsPlugin extends AbstractPlugin {
             default: return -1;
         }
     }
+
+
 }

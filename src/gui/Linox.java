@@ -3,6 +3,7 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
+import gui.dialog.ParameterJPanel;
 import gui.menu.LinoxImageStore;
 import gui.menu.LinoxMenuStore;
 import org.opencv.core.Core;
@@ -93,6 +94,16 @@ public class Linox extends JFrame {
 
     public StatusBar getStatusBar() {
         return (StatusBar) mainPanel.getComponent(2);
+    }
+
+    public void addParameterJPanel(ParameterJPanel panel) {
+        mainPanel.add(panel, BorderLayout.EAST, 3);
+    }
+
+    public void removeParameterJPanel() {
+        if(mainPanel.getComponents().length > 3) {
+            mainPanel.remove(3);
+        }
     }
 
 }

@@ -1,6 +1,8 @@
 package plugins;
 
 
+import gui.dialog.ParameterJPanel;
+import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
 
 public interface PluginFilter extends Runnable {
@@ -15,4 +17,12 @@ public interface PluginFilter extends Runnable {
     String getTitle();
 
     String getErrMessage();
+
+    void cancel();
+
+    void getParams(ParameterJPanel parameterJPanel);
+
+    void addRunListener(PluginRunner runner);
+
+    void finish();
 }

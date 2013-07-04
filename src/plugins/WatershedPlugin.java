@@ -23,12 +23,11 @@ public class WatershedPlugin extends AbstractPlugin {
     public void run() {
         Linox.getInstance().getStatusBar().setProgress("Watershed", 0, 100);
 
-        showDialog("Choose params");
+        //showParamsPanel("Choose params");
         if (exit) {
             return;
         }
 
-        MorphologyOperations();
 
         DataCollector.INSTANCE.setLaplasiantImg(result.clone());
 
