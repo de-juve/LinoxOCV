@@ -1,11 +1,12 @@
 package plugins;
 
+import entities.DataCollector;
 import gui.dialog.ParameterJPanel;
 import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
 
 
-public class AbstractPlugin implements PluginFilter {
+public class AbstractPlugin implements IPluginFilter {
     protected Mat image, result = null;
     protected PluginRunner pluginListener;
     public boolean exit = false;
@@ -14,6 +15,9 @@ public class AbstractPlugin implements PluginFilter {
     protected String title = "";
 
     public Mat getResult(boolean addToStack) {
+        if (addToStack) {
+            DataCollector.INSTANCE.addtoHistory(title, result);
+        }
         return result;
     }
 
@@ -50,13 +54,17 @@ public class AbstractPlugin implements PluginFilter {
         pluginListener = runner;
     }
 
-    public void initProcessor(Mat _image) {
+    public void initImage(Mat _image) {
         image = _image;
         result = new Mat(image.height(), image.width(), image.depth());
     }
 
     public boolean exit() {
         return exit;
+    }
+
+    protected int id(int x, int y) {
+        return x + y * image.width();
     }
 
     protected void setCriteria(int _criteria) {

@@ -1,17 +1,18 @@
 package gui.menu;
 
 import gui.Linox;
-import plugins.PluginFilter;
-import plugins.DataCollector;
+import plugins.IPluginFilter;
+import entities.DataCollector;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class PluginRunner implements Runnable {
+public class PluginRunner implements IPluginRunner {
     private volatile boolean shutdown = false;
-    private PluginFilter plugin;
+    private IPluginFilter plugin;
 
-    public void setPlugin(PluginFilter plugin) {
+    @Override
+    public void setPlugin(IPluginFilter plugin) {
         this.plugin = plugin;
     }
 
@@ -23,7 +24,7 @@ public class PluginRunner implements Runnable {
             Linox.getInstance().getImageStore().setCursorType(Cursor.WAIT_CURSOR);
             ((LinoxMenuStore) Linox.getInstance().getMenuStore()).setEnableEditToolsItems(false);
             // DataCollector.INSTANCE.clearHistory();
-            plugin.initProcessor(DataCollector.INSTANCE.getImageOriginal().clone());
+            plugin.initImage(DataCollector.INSTANCE.getImageOriginal().clone());
             plugin.addRunListener(this);
             plugin.run();
             while(!shutdown) {
@@ -38,11 +39,13 @@ public class PluginRunner implements Runnable {
         }
     }
 
+    @Override
     public void stopPlugin() {
         JOptionPane.showMessageDialog(Linox.getInstance(), "plugin " + plugin.getTitle() + " stopped. Because: " + plugin.getErrMessage());
         shutdown = true;
     }
 
+    @Override
     public void finishPlugin() {
       /*  DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
         DataCollector.INSTANCE.setMaxLuminance(255);
@@ -53,11 +56,13 @@ public class PluginRunner implements Runnable {
         shutdown = true;
     }
 
+    @Override
     public void addImageTab() {
         DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
         (Linox.getInstance().getImageStore()).addImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());
     }
 
+    @Override
     public void replaceImageTab() {
         DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
         (Linox.getInstance().getImageStore()).replaceImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());

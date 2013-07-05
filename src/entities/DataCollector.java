@@ -1,55 +1,25 @@
-package plugins;
+package entities;
 
 import org.opencv.core.Mat;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.TreeMap;
 
 public enum DataCollector {
     INSTANCE;
 
     private int width, height;
-    private LinkedList<Integer> line;
-    //private TreeMap<String, ImageProcessor> imageProcessorTreeMap;
+   // private LinkedList<Integer> line;
+    private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
-    //private ImageStack stack;
-    private Mat grayImg, gradientImg, laplasiantImg;
-    private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
-    private ArrayList<Integer> waterShedPoints;
-    private int maxLuminance = 255;
+    private Mat grayImg, gradientImg, laplasianImg;
+    private int[] lowerCompletion;
+    //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
+   // private ArrayList<Integer> waterShedPoints;
+   // private int maxLuminance = 255;
     private String imageResultTitle, imageOriginalTitle;
 
-
-   /* public void addtoHistory(ImagePlus imagePlus) {
-        if (imageProcessorTreeMap == null) {
-            imageProcessorTreeMap = new TreeMap<>();
-            stack = new ImageStack(imagePlus.getWidth(), imagePlus.getHeight());
-        }
-        imageProcessorTreeMap.put(imageProcessorTreeMap.size() + "_" + imagePlus.getTitle(), imagePlus.getProcessor().duplicate());
-    }
-
-    public ImageStack getHistoryStack() {
-        if (imageProcessorTreeMap == null) {
-            return new ImageStack();
-        }
-        stack.trim();
-        for (Map.Entry<String, ImageProcessor> entry : imageProcessorTreeMap.entrySet()) {
-            ImageProcessor impr = entry.getValue();
-            String title = entry.getKey();
-            stack.addSlice(title, impr);
-        }
-        return stack;
-    }
-
-    public void clearHistory() {
-        if (imageProcessorTreeMap != null) {
-            imageProcessorTreeMap = null;
-        }
-        if (stack != null) {
-            stack.trim();
-            stack = null;
-        }
-    }*/
 
     public void setImageOriginal(String _title, Mat _imageOriginal) {
         imageOriginal = _imageOriginal;
@@ -71,8 +41,12 @@ public enum DataCollector {
         gradientImg = img;
     }
 
-    public void setLaplasiantImg(Mat img) {
-        laplasiantImg = img;
+    public void setLaplasianImg(Mat img) {
+        laplasianImg = img;
+    }
+
+    public void setLowerCompletion(int[] array) {
+        lowerCompletion = array;
     }
 
 
@@ -95,8 +69,8 @@ public enum DataCollector {
         return gradientImg;
     }
 
-    public Mat getLaplasiantImg() {
-        return laplasiantImg;
+    public Mat getLaplasianImg() {
+        return laplasianImg;
     }
 
     public String getImageResultTitle() {
@@ -107,12 +81,41 @@ public enum DataCollector {
         return imageOriginalTitle;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+
+    public void addtoHistory(String title, Mat image) {
+        if (stack == null) {
+            stack = new TreeMap<>();
+        }
+        stack.put(title, image.clone());
+    }
+
+    public TreeMap<String, Mat> getHistoryStack() {
+        if (stack == null) {
+            return new TreeMap<>();
+        }
+        return stack;
+    }
+
+    public void clearHistory() {
+        if (stack != null) {
+            stack.clear();
+        }
+    }
 
 
 
 
 
-    public void newGrayscale(int length) {
+
+   /* public void newGrayscale(int length) {
         grayscale = new Integer[length];
         for (int i = 0; i < length; i++) {
             grayscale[i] = -1;
@@ -311,18 +314,12 @@ public enum DataCollector {
         return line;
     }
 
-    public int getWidth() {
-        return width;
-    }
 
-    public int getHeight() {
-        return height;
-    }
 
     public void removeWatershedPoint(Integer id) {
         wshPoints[id] = 0;
         waterShedPoints.remove(id);
-    }
+    }*/
 }
 
 

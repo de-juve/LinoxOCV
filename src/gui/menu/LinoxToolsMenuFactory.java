@@ -20,7 +20,7 @@ public class LinoxToolsMenuFactory {
             public void actionPerformed(ActionEvent e) {
                 Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 try {
-                   // ((LinoxMenuStore)Linox.getInstance().getMenuStore()).showHistory();
+                    ((LinoxMenuStore)Linox.getInstance().getMenuStore()).showHistory();
                 } finally {
                     Linox.getInstance().setCursor(Cursor.getDefaultCursor());
                 }
@@ -32,7 +32,7 @@ public class LinoxToolsMenuFactory {
             public void actionPerformed(ActionEvent e) {
                 Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 try {
-                    //((LinoxMenuStore)Linox.getInstance().getMenuStore()).clearHistory();
+                    ((LinoxMenuStore)Linox.getInstance().getMenuStore()).clearHistory();
                 } finally {
                     Linox.getInstance().setCursor(Cursor.getDefaultCursor());
                 }

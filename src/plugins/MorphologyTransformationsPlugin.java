@@ -1,5 +1,6 @@
 package plugins;
 
+import entities.DataCollector;
 import gui.Linox;
 import gui.dialog.ParameterComboBox;
 import gui.dialog.ParameterJPanel;
@@ -8,7 +9,6 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Size;
 
-import static org.opencv.core.Core.convertScaleAbs;
 import static org.opencv.imgproc.Imgproc.getStructuringElement;
 import static org.opencv.imgproc.Imgproc.morphologyEx;
 
@@ -35,17 +35,6 @@ public class MorphologyTransformationsPlugin extends AbstractPlugin {
     }
 
     @Override
-    public Mat getResult(boolean addToStack) {
-        if (result == null) {
-            if (addToStack) {
-                //DataCollection.INSTANCE.addtoHistory(result);
-            }
-        }
-
-        return result;
-    }
-
-    @Override
     public void run() {
         Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 0, 100);
 
@@ -53,10 +42,6 @@ public class MorphologyTransformationsPlugin extends AbstractPlugin {
         if (exit) {
             return;
         }
-
-        //DataCollector.INSTANCE.setLaplasiantImg(result.clone());
-
-
     }
 
     @Override

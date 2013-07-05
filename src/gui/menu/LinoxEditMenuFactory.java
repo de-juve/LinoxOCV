@@ -1,10 +1,7 @@
 package gui.menu;
 
 import gui.Linox;
-import plugins.GradientPlugin;
-import plugins.GrayscalePlugin;
-import plugins.LaplasianPlugin;
-import plugins.MorphologyTransformationsPlugin;
+import plugins.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,6 +52,24 @@ public class LinoxEditMenuFactory {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MorphologyTransformationsPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
+        final Action watershed = new AbstractAction("Watershed") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new WatershedPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
+        final Action shedCluster = new AbstractAction("Shed cluster") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new ShedClusterPlugin());
                 Thread myThready = new Thread(pluginRunner);
                 myThready.start();
             }
@@ -442,7 +457,7 @@ public class LinoxEditMenuFactory {
 
                             AreaOpening plugin = new AreaOpening();
                             plugin.setCriteria(Math.min(size, criteria));
-                            plugin.initProcessor(DataCollection.INSTANCE.getImageOriginal().getProcessor().duplicate());
+                            plugin.initImage(DataCollection.INSTANCE.getImageOriginal().getProcessor().duplicate());
                             plugin.run();
                             if(plugin.exit()) {
                                 return;
@@ -452,7 +467,7 @@ public class LinoxEditMenuFactory {
 
                             AreaClosing plugin2 = new AreaClosing();
                             plugin2.setCriteria(Math.min(size, criteria));
-                            plugin2.initProcessor(DataCollection.INSTANCE.getImageOriginal().getProcessor());
+                            plugin2.initImage(DataCollection.INSTANCE.getImageOriginal().getProcessor());
                             plugin2.run();
                             if(plugin2.exit()) {
                                 return;
@@ -492,7 +507,7 @@ public class LinoxEditMenuFactory {
                             plugin.setAreaSizeX(13);
                             plugin.setAreaSizeY(13);
                             plugin.setDeviation(10);
-                            plugin.initProcessor(DataCollection.INSTANCE.getImageOriginal().getProcessor().duplicate());
+                            plugin.initImage(DataCollection.INSTANCE.getImageOriginal().getProcessor().duplicate());
                             plugin.run();
                             if(plugin.exit()) {
                                 return;
@@ -600,6 +615,9 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(gradient));
         items.add(new JMenuItem(laplasian));
         items.add(new JMenuItem(morphologyTransformation));
+        items.add(new JMenuItem(watershed));
+        items.add(new JMenuItem(shedCluster));
+
 
         /* items.add(new JMenuItem(luminaceRedirector));
         items.add(new JMenuItem(luminaceDiscretizator));

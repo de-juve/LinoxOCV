@@ -5,8 +5,8 @@ import gui.dialog.ParameterJPanel;
 import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
 
-public interface PluginFilter extends Runnable {
-    void initProcessor(Mat ip);
+public interface IPluginFilter extends Runnable {
+    void initImage(Mat ip);
 
     Mat getResult(boolean addToStack);
 

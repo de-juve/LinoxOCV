@@ -1,7 +1,7 @@
 package gui.dialog;
 
 import net.miginfocom.swing.MigLayout;
-import plugins.PluginFilter;
+import plugins.IPluginFilter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class ParameterJPanel extends JPanel {
-    private ArrayList<PluginFilter> parameterListeners;
+    private ArrayList<IPluginFilter> parameterListeners;
 
     private JButton buttonOK, buttonCancel, buttonFinish;
     JScrollPane scrollPane;
@@ -18,7 +18,7 @@ public class ParameterJPanel extends JPanel {
     private ArrayList<ParameterSlider> parameterSliders;
     private ArrayList<ParameterComboBox> parameterComboBoxes;
 
-    public ParameterJPanel(String title, PluginFilter listener) {
+    public ParameterJPanel(String title, IPluginFilter listener) {
         this.setLayout(new MigLayout());
         this.setName(title);
 
@@ -81,19 +81,19 @@ public class ParameterJPanel extends JPanel {
     }
 
     private void onOK() {
-       for(PluginFilter listener : parameterListeners) {
+       for(IPluginFilter listener : parameterListeners) {
            listener.getParams(this);
        }
     }
 
     private void onCancel() {
-        for(PluginFilter listener : parameterListeners) {
+        for(IPluginFilter listener : parameterListeners) {
             listener.cancel();
         }
     }
 
     private void onFinish() {
-        for(PluginFilter listener : parameterListeners) {
+        for(IPluginFilter listener : parameterListeners) {
             listener.finish();
         }
     }

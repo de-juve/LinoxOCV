@@ -1,13 +1,15 @@
 package gui.menu;
 
 import gui.Linox;
-import plugins.DataCollector;
+import entities.DataCollector;
 import org.opencv.core.Mat;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class LinoxFileMenuFactory {
     private final ArrayList<JMenuItem> items = new ArrayList<>();
@@ -47,23 +49,24 @@ public class LinoxFileMenuFactory {
             }
         };
 
-       /* final Action saveStackHistory = new AbstractAction("Save Images Of Stack History") {
+        final Action saveStackHistory = new AbstractAction("Save Images Of Stack History") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 try {
-                    String dir_r =   System.getProperty("user.dir") + "/resource/stackHistory/";
-                    ImageStack stack =  DataCollection.INSTANCE.getHistoryStack();
+                    String dir =   System.getProperty("user.dir") + "/resource/stackHistory/";
+                    TreeMap<String, Mat> stack =  DataCollector.INSTANCE.getHistoryStack();
 
-                    for(int i = 1; i <=  stack.getSize(); i++) {
-                        IJ.save(new ImagePlus("1.jpg", stack.getProcessor(i)), dir_r + stack.getSliceLabel(i));
-
+                    for (Map.Entry<String, Mat> entry : stack.entrySet())
+                    {
+                        ((LinoxMenuStore)Linox.getInstance().getMenuStore()).saveImage(dir + entry.getKey(), entry.getValue());
                     }
+
                 } finally {
                     Linox.getInstance().setCursor(Cursor.getDefaultCursor());
                 }
             }
-        };*/
+        };
 
         final Action closeImage = new AbstractAction("Close Image") {
             @Override
@@ -91,7 +94,7 @@ public class LinoxFileMenuFactory {
 
         items.add(new JMenuItem(openImage));
         items.add(new JMenuItem(saveImage));
-       // items.add(new JMenuItem(saveStackHistory));
+        items.add(new JMenuItem(saveStackHistory));
         items.add(new JMenuItem(closeImage));
         items.add(new JMenuItem(exit));
         // items.add(new JMenuItem(test));

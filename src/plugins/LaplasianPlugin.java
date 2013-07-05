@@ -1,5 +1,6 @@
 package plugins;
 
+import entities.DataCollector;
 import gui.Linox;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -14,44 +15,31 @@ public class LaplasianPlugin extends AbstractPlugin {
     }
 
     @Override
-    public Mat getResult(boolean addToStack) {
-        if (result == null) {
-            if (addToStack) {
-                //DataCollection.INSTANCE.addtoHistory(result);
-            }
-        }
-
-        return result;
-    }
-
-    @Override
     public void run() {
         Linox.getInstance().getStatusBar().setProgress("laplasian", 0, 100);
 
-
-        Mat src_gray = new Mat(), lap = new Mat();
+        Mat result = new Mat();
+        Mat src_gray, lap = new Mat();
 
         int kernel_size = 3;
         int scale = 1;
         int delta = 0;
         int ddepth = CvType.CV_16S;
 
-
         Imgproc.GaussianBlur(image, image, new Size(3, 3), 0, 0, Imgproc.BORDER_DEFAULT);
 
-        if(image.channels() == 3 || image.channels() == 4) {
-            Imgproc.cvtColor(image, src_gray,  Imgproc.COLOR_RGB2GRAY );
-        } else {
-            src_gray = image;
-        }
+        src_gray =   GrayscalePlugin.run(image, false);
 
         Imgproc.Laplacian(src_gray, lap, ddepth, kernel_size, scale, delta, Imgproc.BORDER_DEFAULT);
         convertScaleAbs( lap, result );
 
-        DataCollector.INSTANCE.setLaplasiantImg(result.clone());
+        DataCollector.INSTANCE.setLaplasianImg(result.clone());
 
         Linox.getInstance().getStatusBar().setProgress("laplasian", 100, 100);
-        pluginListener.addImageTab();
-        pluginListener.finishPlugin();
+
+        if(pluginListener != null) {
+            pluginListener.addImageTab();
+            pluginListener.finishPlugin();
+        }
     }
 }

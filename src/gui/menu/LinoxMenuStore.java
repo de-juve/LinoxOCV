@@ -1,12 +1,15 @@
 package gui.menu;
 
 import gui.Linox;
-import plugins.DataCollector;
+import entities.DataCollector;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -50,7 +53,7 @@ public class LinoxMenuStore extends JMenuBar {
         this.add(toolsmenu);
     }
 
-    void setEnableEditToolsItems(boolean option) {
+    public void setEnableEditToolsItems(boolean option) {
         editmenu.setEnabled(option);
         for(int i = 0; i < editmenu.getItemCount(); i++) {
             editmenu.getItem(i).setEnabled(option);
@@ -58,7 +61,7 @@ public class LinoxMenuStore extends JMenuBar {
         toolsmenu.setEnabled(option);
     }
 
-    Mat openImage() {
+    public Mat openImage() {
         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir") + "/resource");
 
         FileFilter filter1 = new ExtensionFileFilter("JPG and JPEG", new String[]{"JPG", "JPEG"});
@@ -87,7 +90,12 @@ public class LinoxMenuStore extends JMenuBar {
         }
     }
 
-    boolean saveImage(Mat image) {
+    public boolean saveImage(String path, Mat image) {
+        Highgui.imwrite(path, image);
+        return true;
+    }
+
+    public boolean saveImage(Mat image) {
         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir") + "/resource");
         FileFilter filter1 = new ExtensionFileFilter("ALL", new String[]{"JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF"});
         fileChooser.setFileFilter(filter1);
@@ -102,23 +110,26 @@ public class LinoxMenuStore extends JMenuBar {
         return true;
     }
 
-    void closeImage() {
+    public void closeImage() {
         (Linox.getInstance().getImageStore()).removeSelectedImageTab();
         DataCollector.INSTANCE.setImageOriginal("empty", null);
     }
 
-    void exit() {
+    public void exit() {
         System.exit(0);
     }
-     /*
+
     void showHistory() {
-        if( DataCollection.INSTANCE.getHistoryStack() != null && DataCollection.INSTANCE.getHistoryStack().getSize() > 0) {
-            new ImagePlus("Results", DataCollection.INSTANCE.getHistoryStack()).show();
+        TreeMap<String, Mat> stack =  DataCollector.INSTANCE.getHistoryStack();
+
+        for (Map.Entry<String, Mat> entry : stack.entrySet())
+        {
+            Linox.getInstance().getImageStore().addImageTab(entry.getKey(), entry.getValue());
         }
     }
 
     void clearHistory() {
-        DataCollection.INSTANCE.clearHistory();
-    }*/
+        DataCollector.INSTANCE.clearHistory();
+    }
 
 }

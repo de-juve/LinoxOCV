@@ -1,5 +1,6 @@
 package plugins;
 
+import entities.DataCollector;
 import gui.Linox;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -14,21 +15,10 @@ public class GradientPlugin extends AbstractPlugin {
     }
 
     @Override
-    public Mat getResult(boolean addToStack) {
-        if (result == null) {
-            if (addToStack) {
-                //DataCollection.INSTANCE.addtoHistory(result);
-            }
-        }
-
-        return result;
-    }
-
-    @Override
     public void run() {
         Linox.getInstance().getStatusBar().setProgress("gradient", 0, 100);
 
-        Mat src_gray = new Mat();
+        Mat src_gray;
         Mat grad_x = new Mat(), grad_y = new Mat();
         Mat abs_grad_x = new Mat(), abs_grad_y = new Mat();
 
@@ -36,14 +26,9 @@ public class GradientPlugin extends AbstractPlugin {
         int delta = 0;
         int ddepth = CvType.CV_16S;
 
-
         Imgproc.GaussianBlur(image, image, new Size(3, 3), 0, 0, Imgproc.BORDER_DEFAULT);
 
-        if(image.channels() == 3 || image.channels() == 4) {
-            Imgproc.cvtColor(image, src_gray,  Imgproc.COLOR_RGB2GRAY );
-        } else {
-            src_gray = image;
-        }
+        src_gray = GrayscalePlugin.run(image, false);
 
         /// Gradient X
         //Scharr( src_gray, grad_x, ddepth, 1, 0, scale, delta, BORDER_DEFAULT );
@@ -61,7 +46,10 @@ public class GradientPlugin extends AbstractPlugin {
         DataCollector.INSTANCE.setGradientImg(result.clone());
 
         Linox.getInstance().getStatusBar().setProgress("gradient", 100, 100);
-        pluginListener.addImageTab();
-        pluginListener.finishPlugin();
+
+        if(pluginListener != null) {
+            pluginListener.addImageTab();
+            pluginListener.finishPlugin();
+        }
     }
 }

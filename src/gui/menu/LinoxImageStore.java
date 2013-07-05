@@ -2,7 +2,7 @@ package gui.menu;
 
 import gui.Linox;
 import org.opencv.core.Mat;
-import plugins.DataCollector;
+import entities.DataCollector;
 import sun.awt.image.ImageAccessException;
 
 import javax.swing.*;
