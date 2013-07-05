@@ -51,6 +51,7 @@ public class LaplasianPlugin extends AbstractPlugin {
         DataCollector.INSTANCE.setLaplasiantImg(result.clone());
 
         Linox.getInstance().getStatusBar().setProgress("laplasian", 100, 100);
+        pluginListener.addImageTab();
         pluginListener.finishPlugin();
     }
 }

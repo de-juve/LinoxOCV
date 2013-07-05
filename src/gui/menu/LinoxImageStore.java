@@ -28,6 +28,15 @@ public class LinoxImageStore extends JTabbedPane {
         titles.add(title);
     }
 
+    public void replaceImageTab(String title, Mat image) {
+        int id = this.getTabCount() -1;
+
+        this.getTitles().remove(this.getTitleAt(id).trim());
+        this.removeTabAt(id);
+
+        addImageTab(title, image);
+    }
+
     public void removeSelectedImageTab() {
         titles.remove(this.getTitleAt(this.getSelectedIndex()).trim());
         closeUI.removeSelectedTab();

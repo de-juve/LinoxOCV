@@ -37,6 +37,7 @@ public class GrayscalePlugin extends AbstractPlugin {
 
 
         Linox.getInstance().getStatusBar().setProgress("luminance", 100, 100);
+        pluginListener.addImageTab();
         pluginListener.finishPlugin();
     }
 

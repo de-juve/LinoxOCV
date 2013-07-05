@@ -7,13 +7,11 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="e48b9" class="gui.StatusBar">
-        <constraints border-constraint="South"/>
-        <properties/>
-      </component>
       <tabbedpane id="96011" class="gui.menu.LinoxImageStore">
         <constraints border-constraint="Center"/>
-        <properties/>
+        <properties>
+          <doubleBuffered value="false"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="c8f66" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -27,6 +25,10 @@
           </grid>
         </children>
       </tabbedpane>
+      <component id="e48b9" class="gui.StatusBar">
+        <constraints border-constraint="South"/>
+        <properties/>
+      </component>
       <component id="912dc" class="gui.menu.LinoxMenuStore">
         <constraints border-constraint="North"/>
         <properties/>

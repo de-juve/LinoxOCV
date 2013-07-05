@@ -61,6 +61,7 @@ public class GradientPlugin extends AbstractPlugin {
         DataCollector.INSTANCE.setGradientImg(result.clone());
 
         Linox.getInstance().getStatusBar().setProgress("gradient", 100, 100);
+        pluginListener.addImageTab();
         pluginListener.finishPlugin();
     }
 }

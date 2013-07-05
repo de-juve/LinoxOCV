@@ -15,13 +15,12 @@ public class ParameterJPanel extends JPanel {
     private JButton buttonOK, buttonCancel, buttonFinish;
     JScrollPane scrollPane;
     JPanel parameterPanel;
-    private String title;
     private ArrayList<ParameterSlider> parameterSliders;
     private ArrayList<ParameterComboBox> parameterComboBoxes;
 
-    public ParameterJPanel(String _title, PluginFilter listener) {
+    public ParameterJPanel(String title, PluginFilter listener) {
         this.setLayout(new MigLayout());
-        title = _title;
+        this.setName(title);
 
         parameterListeners = new ArrayList<>();
         parameterSliders = new ArrayList<>();
@@ -35,7 +34,7 @@ public class ParameterJPanel extends JPanel {
         scrollPane.getHorizontalScrollBar().setPreferredSize(new Dimension(0, 10));
 
         buttonOK = new JButton("OK");
-        buttonCancel = new JButton("CANCLE");
+        buttonCancel = new JButton("CANCEL");
         buttonFinish = new JButton("FINISH");
 
         buttonOK.addActionListener(new ActionListener() {
@@ -56,10 +55,11 @@ public class ParameterJPanel extends JPanel {
             }
         });
 
-        this.add(scrollPane, "wrap");
+        this.add(scrollPane, "span");
         this.add(buttonOK);
         this.add(buttonFinish);
         this.add(buttonCancel, "wrap");
+        this.setSize(new Dimension(20, 300));
     }
 
     public void addParameterSlider(ParameterSlider slider) {

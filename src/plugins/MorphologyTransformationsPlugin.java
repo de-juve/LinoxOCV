@@ -12,7 +12,8 @@ import static org.opencv.core.Core.convertScaleAbs;
 import static org.opencv.imgproc.Imgproc.getStructuringElement;
 import static org.opencv.imgproc.Imgproc.morphologyEx;
 
-public class MorphologyTransformationsPlugin extends AbstractPlugin{
+public class MorphologyTransformationsPlugin extends AbstractPlugin {
+    int tabs = 0;
     int morph_elem = 0;
     int morph_size = 0;
     int morph_operator = 0;
@@ -76,12 +77,17 @@ public class MorphologyTransformationsPlugin extends AbstractPlugin{
 
         MorphologyOperations();
 
-        Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 100, 100);
-        pluginListener.addImageTab();
+        if(tabs == 0) {
+            pluginListener.addImageTab();
+            tabs++;
+        } else {
+            pluginListener.replaceImageTab();
+        }
     }
 
     @Override
     public void finish() {
+        Linox.getInstance().getStatusBar().setProgress("Morphology Transformations", 100, 100);
         Linox.getInstance().removeParameterJPanel();
         pluginListener.finishPlugin();
     }

@@ -44,17 +44,23 @@ public class PluginRunner implements Runnable {
     }
 
     public void finishPlugin() {
-        DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
+      /*  DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
         DataCollector.INSTANCE.setMaxLuminance(255);
 
         (Linox.getInstance().getImageStore()).addImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());
         Linox.getInstance().setPreferredSize(new Dimension(Math.min(640, plugin.getResult(false).width() + 3), Math.min(480, plugin.getResult(false).height() + 3)));
+        */
         shutdown = true;
     }
 
     public void addImageTab() {
         DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
         (Linox.getInstance().getImageStore()).addImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());
+    }
+
+    public void replaceImageTab() {
+        DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
+        (Linox.getInstance().getImageStore()).replaceImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());
     }
 
 }
