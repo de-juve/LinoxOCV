@@ -24,7 +24,7 @@ public class GrayscalePlugin extends AbstractPlugin {
         }
     }
 
-    protected static Mat run(Mat image, boolean addToCollector) {
+    public static Mat run(Mat image, boolean addToCollector) {
         Mat result = new Mat();
         if(image.channels() == 3 || image.channels() == 4) {
             Imgproc.cvtColor(image, result,  Imgproc.COLOR_RGB2GRAY );
