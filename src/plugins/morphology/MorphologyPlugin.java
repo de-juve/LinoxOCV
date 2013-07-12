@@ -1,10 +1,6 @@
 package plugins.morphology;
 
-import entities.MassiveWorker;
-import entities.PixelsMentor;
-import entities.Shed;
-import entities.Point;
-import entities.ShedCollector;
+import entities.*;
 import gui.Linox;
 import gui.dialog.ParameterComboBox;
 import gui.dialog.ParameterJPanel;
@@ -13,7 +9,6 @@ import org.opencv.core.Mat;
 import plugins.AbstractPlugin;
 import plugins.GrayscalePlugin;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.TreeMap;
@@ -74,6 +69,8 @@ public class MorphologyPlugin extends AbstractPlugin {
 
     @Override
     public void finish() {
+        DataCollector.INSTANCE.setShedLabels(shedLabels);
+
         Linox.getInstance().getStatusBar().setProgress("Morphology", 100, 100);
         Linox.getInstance().removeParameterJPanel();
         pluginListener.finishPlugin();
@@ -144,11 +141,14 @@ public class MorphologyPlugin extends AbstractPlugin {
             }
         }
 
+        result = new Mat(image.rows(), image.cols(), image.type());
+
         for (int i = 0; i < status.length; i++) {
             int bright = -status[i] - 1;
             status[i] = bright;
+            double[] data = new double[] {status[i], status[i], status[i]};
+            result.put(i / image.width(), i % image.width(),data);
         }
-
     }
 
     private void init() {
@@ -232,7 +232,7 @@ public class MorphologyPlugin extends AbstractPlugin {
                 ++m;
             }
             if (m <= 255) {
-                if (area[h] < criteria) {
+                if (area[h] < morph_size) {
                     status[representative[h]] = representative[m];
                     area[m] += area[h];
                 } else {
@@ -248,7 +248,7 @@ public class MorphologyPlugin extends AbstractPlugin {
                 --m;
             }
             if (m >= 0) {
-                if (area[h] < criteria) {
+                if (area[h] < morph_size) {
                     status[representative[h]] = representative[m];
                     area[m] += area[h];
                 } else {

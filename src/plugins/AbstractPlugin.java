@@ -10,7 +10,7 @@ public class AbstractPlugin implements IPluginFilter {
     protected Mat image, result = null;
     protected PluginRunner pluginListener;
     public boolean exit = false;
-    protected int criteria;
+    //  protected int criteria;
     protected String errMessage = "";
     protected String title = "";
 
@@ -67,11 +67,8 @@ public class AbstractPlugin implements IPluginFilter {
         return x + y * image.width();
     }
 
-    protected void setCriteria(int _criteria) {
-        criteria = _criteria;
-    }
 
-  protected void create(Integer[] array) {
+    protected void create(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
             double[] data = new double[3];
             data[0] = array[i];

@@ -14,4 +14,8 @@ public class Shed {
     public void addPoint(Point point) {
         points.add(point);
     }
+
+    public int getLabel() {
+        return label;
+    }
 }

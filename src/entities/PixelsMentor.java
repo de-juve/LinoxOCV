@@ -9,9 +9,10 @@ public class PixelsMentor {
         ArrayList<Point> neighbors = new ArrayList<>();
         for(int j = Math.max(0, y-radius); j <= Math.min(image.height() - 1, y + radius); j++) {
             for(int i = Math.max(0, x-radius); i <= Math.min(image.width() - 1, x + radius); i++) {
-               if(i != x && j != y) {
-                    neighbors.add(new Point(i, j));
-               }
+                if(i == x && j == y) {
+                    continue;
+                }
+                neighbors.add(new Point(i, j));
             }
         }
         return neighbors;

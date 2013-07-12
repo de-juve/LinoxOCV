@@ -2,8 +2,6 @@ package entities;
 
 import org.opencv.core.Mat;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.TreeMap;
 
 public enum DataCollector {
@@ -14,7 +12,7 @@ public enum DataCollector {
     private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
     private Mat grayImg, gradientImg, laplasianImg;
-    private int[] lowerCompletion;
+    private int[] lowerCompletion, shedLabels;
     //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
    // private ArrayList<Integer> waterShedPoints;
    // private int maxLuminance = 255;
@@ -47,6 +45,10 @@ public enum DataCollector {
 
     public void setLowerCompletion(int[] array) {
         lowerCompletion = array;
+    }
+
+    public void setShedLabels(int[] array) {
+        shedLabels = array;
     }
 
 

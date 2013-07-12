@@ -1,13 +1,10 @@
 package gui.menu;
 
-import gui.Linox;
 import plugins.*;
+import plugins.morphology.MorphologyPlugin;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -52,6 +49,15 @@ public class LinoxEditMenuFactory {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MorphologyTransformationsPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
+        final Action morphology = new AbstractAction("Morphology") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new MorphologyPlugin());
                 Thread myThready = new Thread(pluginRunner);
                 myThready.start();
             }
@@ -615,6 +621,7 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(gradient));
         items.add(new JMenuItem(laplasian));
         items.add(new JMenuItem(morphologyTransformation));
+        items.add(new JMenuItem(morphology));
         items.add(new JMenuItem(watershed));
         items.add(new JMenuItem(shedCluster));
 
