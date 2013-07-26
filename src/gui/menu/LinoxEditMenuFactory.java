@@ -81,6 +81,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action shedPainter = new AbstractAction("Shed paint") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new ShedPainterPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
       /*
 
 
@@ -624,6 +633,7 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(morphology));
         items.add(new JMenuItem(watershed));
         items.add(new JMenuItem(shedCluster));
+        items.add(new JMenuItem(shedPainter));
 
 
         /* items.add(new JMenuItem(luminaceRedirector));
@@ -664,7 +674,7 @@ public class LinoxEditMenuFactory {
 
         items.add(new JMenuItem(color_deconvolution));
         */
-        for(JMenuItem item : items) {
+        for (JMenuItem item : items) {
             item.setEnabled(false);
         }
 
@@ -678,7 +688,7 @@ public class LinoxEditMenuFactory {
 
     }
 
-    private void loadImage (File file) {
+    private void loadImage(File file) {
 //        ij.ImagePlus img =   IJ.openImage(file.getPath());
 //        DataCollection.INSTANCE.setImageOriginal(new ImagePlus(file.getName(), img.getProcessor().convertToRGB()));
     }

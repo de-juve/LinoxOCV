@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class PixelsMentor {
     public static ArrayList<Point> getNeighborhoodOfPixel(int x, int y, Mat image, int radius) {
         ArrayList<Point> neighbors = new ArrayList<>();
-        for(int j = Math.max(0, y-radius); j <= Math.min(image.height() - 1, y + radius); j++) {
-            for(int i = Math.max(0, x-radius); i <= Math.min(image.width() - 1, x + radius); i++) {
-                if(i == x && j == y) {
+        for (int j = Math.max(0, y - radius); j <= Math.min(image.height() - 1, y + radius); j++) {
+            for (int i = Math.max(0, x - radius); i <= Math.min(image.width() - 1, x + radius); i++) {
+                if (i == x && j == y) {
                     continue;
                 }
                 neighbors.add(new Point(i, j));
@@ -20,11 +20,41 @@ public class PixelsMentor {
 
     public static ArrayList<Integer> getNeighborsOfPixel(int x, int y, Mat image, int radius) {
         ArrayList<Integer> neighbors = new ArrayList<>();
-        ArrayList<Point> n =  getNeighborhoodOfPixel(x, y, image, radius);
-        for(Point p : n) {
+        ArrayList<Point> n = getNeighborhoodOfPixel(x, y, image, radius);
+        for (Point p : n) {
             neighbors.add(p.x + p.y * image.width());
         }
         return neighbors;
+    }
+
+    public static ArrayList<Integer> defineNeighboursIdsWithLowerValue(int id, Mat image) {
+        int x = id % image.width();
+        int y = id / image.width();
+        ArrayList<Integer> resultArray = new ArrayList<>();
+        ArrayList<Integer> neighbouresIds = getNeighborsOfPixel(x, y, image, 1);
+        for (Integer nid : neighbouresIds) {
+            int nx = nid % image.width();
+            int ny = nid / image.width();
+            if (image.get(y, x)[0] > image.get(ny, nx)[0]) {
+                resultArray.add(nid);
+            }
+        }
+        return resultArray;
+    }
+
+    public static ArrayList defineNeighboursIdsWithSameValue(int id, Mat image) {
+        int x = id % image.width();
+        int y = id / image.width();
+        ArrayList<Integer> resultArray = new ArrayList<>();
+        ArrayList<Integer> neighbouresIds = getNeighborsOfPixel(x, y, image, 1);
+        for (Integer nid : neighbouresIds) {
+            int nx = nid % image.width();
+            int ny = nid / image.width();
+            if (image.get(y, x)[0] == image.get(ny, nx)[0]) {
+                resultArray.add(nid);
+            }
+        }
+        return resultArray;
     }
 
     public static ArrayList<Integer> defineNeighboursIdsWidthDiagonalCondition(int id, Mat image) {
@@ -35,7 +65,7 @@ public class PixelsMentor {
                 if (diagonalNeighboureCondition(id, nid, image) && id != nid) {
                     resultArray.add(nid);
                 }
-            }  else if ( id != nid) {
+            } else if (id != nid) {
                 resultArray.add(nid);
             }
         }

@@ -1,6 +1,7 @@
 package plugins.morphology;
 
 import entities.*;
+import entities.Point;
 import gui.Linox;
 import gui.dialog.ParameterComboBox;
 import gui.dialog.ParameterJPanel;
@@ -9,6 +10,7 @@ import org.opencv.core.Mat;
 import plugins.AbstractPlugin;
 import plugins.GrayscalePlugin;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.TreeMap;
@@ -44,6 +46,13 @@ public class MorphologyPlugin extends AbstractPlugin {
         }
     }
 
+    public void run(String operation, int size) {
+        morphologyOperation = operation;
+        morph_size = size;
+        MorphologyOperations();
+        DataCollector.INSTANCE.setShedLabels(shedLabels);
+    }
+
     @Override
     public void cancel() {
         Linox.getInstance().removeParameterJPanel();
@@ -59,7 +68,7 @@ public class MorphologyPlugin extends AbstractPlugin {
 
         MorphologyOperations();
 
-        if(tabs == 0) {
+        if (tabs == 0) {
             pluginListener.addImageTab();
             tabs++;
         } else {
@@ -89,7 +98,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         gray = GrayscalePlugin.run(image, false);
         MassiveWorker.INSTANCE.sort(gray);
 
-        if(morphologyOperation == "Closing") {
+        if (morphologyOperation == "Closing") {
             for (int h = MassiveWorker.INSTANCE.getMax(); h >= MassiveWorker.INSTANCE.getMin(); h--) {
                 preflood(h);
             }
@@ -106,7 +115,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         int shedLabel;
         //start from pixels with min property
         for (Integer p : ids) {
-            if(analyzed[p]) {
+            if (analyzed[p]) {
                 continue;
             }
             int root = status[p];
@@ -119,10 +128,10 @@ public class MorphologyPlugin extends AbstractPlugin {
 
             int val = status[root];
 
-            if(!analyzed[root]) {
+            if (!analyzed[root]) {
                 shedLabel = root;
                 shedLabels[root] = shedLabel;
-                ShedCollector.INSTANCE.addShed(new Shed(shedLabel));
+                ShedCollector.INSTANCE.addShed(new Shed(shedLabel, new Color(rand.nextFloat(), rand.nextFloat(), rand.nextFloat())));
                 ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(root % image.width(), root / image.width()));
             } else {
                 shedLabel = shedLabels[root];
@@ -142,17 +151,22 @@ public class MorphologyPlugin extends AbstractPlugin {
         }
 
         result = new Mat(image.rows(), image.cols(), image.type());
+        byte[] buff = new byte[(int) image.total() * image.channels()];
 
+        int j = 0;
         for (int i = 0; i < status.length; i++) {
             int bright = -status[i] - 1;
             status[i] = bright;
-            double[] data = new double[] {status[i], status[i], status[i]};
-            result.put(i / image.width(), i % image.width(),data);
+            for (int k = 0; k < image.channels(); k++) {
+                buff[j] = (byte) status[i];
+                j++;
+            }
         }
+        result.put(0, 0, buff);
     }
 
     private void init() {
-        status = new int[image.width()*image.height()];
+        status = new int[image.width() * image.height()];
         shedLabels = new int[status.length];
         area = new int[256];
         last = new int[256];
@@ -176,7 +190,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         }
         ArrayList<Integer> pixels = map.get(grayLevel);
         for (Integer pixelId : pixels) {
-            if ( status[pixelId] != NOT_ANALYZED) {
+            if (status[pixelId] != NOT_ANALYZED) {
                 continue;
             }
             status[pixelId] = last[grayLevel];
@@ -204,7 +218,7 @@ public class MorphologyPlugin extends AbstractPlugin {
                 if (status[nid] != NOT_ANALYZED) {
                     continue;
                 }
-                int m = (int)gray.get(nid / gray.width(), nid % gray.width())[0];//DataCollection.INSTANCE.getLuminance(nid);
+                int m = (int) gray.get(nid / gray.width(), nid % gray.width())[0];//DataCollection.INSTANCE.getLuminance(nid);
                 // set representative element if none
                 if (representative[m] == NONE) {
                     representative[m] = nid;
@@ -237,10 +251,10 @@ public class MorphologyPlugin extends AbstractPlugin {
                     area[m] += area[h];
                 } else {
                     //area[m] = criteria;
-                    status[representative[h]] =  -h - 1;
+                    status[representative[h]] = -h - 1;
                 }
             } else {
-                status[representative[h]] =  -h - 1;
+                status[representative[h]] = -h - 1;
             }
         } else {
             m = h - 1;

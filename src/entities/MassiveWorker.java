@@ -13,19 +13,42 @@ public enum MassiveWorker {
     private int min;
 
     public void sort(Mat image) {
-        Integer[] id = new Integer[image.width()*image.height()];
+        Integer[] id = new Integer[(int) image.total()];
         Integer[] array = new Integer[id.length];
-        int row,col;
+        int row, col;
         for (int i = 0; i < id.length; i++) {
             id[i] = i;
             row = i / image.width();
             col = i % image.width();
-            array[i] = (int)image.get(row, col)[0];
+            array[i] = (int) image.get(row, col)[0];
         }
         Arrays.sort(id, new MyComparator(array));
         findExtremums(array);
         generateMap(array);
 
+        ids.clear();
+        Collections.addAll(ids, id);
+    }
+
+    public void sort(Mat gray, int[] _lowercompletion) {
+        Integer[] id = new Integer[(int) gray.total()];
+        Integer[] luminance = new Integer[id.length];
+        int row, col;
+        for (int i = 0; i < id.length; i++) {
+            id[i] = i;
+            row = i / gray.width();
+            col = i % gray.width();
+            luminance[i] = (int) gray.get(row, col)[0];
+        }
+
+        Integer[] lowercompletion = new Integer[_lowercompletion.length];
+        int i = 0;
+        for (int value : _lowercompletion) {
+            lowercompletion[i++] = Integer.valueOf(value);
+        }
+
+        Arrays.sort(id, new MyDifficultComparator(luminance, lowercompletion));
+        findExtremums(luminance);
         ids.clear();
         Collections.addAll(ids, id);
     }

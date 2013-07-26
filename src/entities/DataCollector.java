@@ -8,14 +8,14 @@ public enum DataCollector {
     INSTANCE;
 
     private int width, height;
-   // private LinkedList<Integer> line;
+    // private LinkedList<Integer> line;
     private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
     private Mat grayImg, gradientImg, laplasianImg;
-    private int[] lowerCompletion, shedLabels;
+    private int[] lowerCompletion, shedLabels, watershedPoints;
     //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
-   // private ArrayList<Integer> waterShedPoints;
-   // private int maxLuminance = 255;
+    // private ArrayList<Integer> waterShedPoints;
+    // private int maxLuminance = 255;
     private String imageResultTitle, imageOriginalTitle;
 
 
@@ -51,8 +51,9 @@ public enum DataCollector {
         shedLabels = array;
     }
 
-
-
+    public void setWatershedPoints(int[] array) {
+        watershedPoints = array;
+    }
 
 
     public Mat getImageOriginal() {
@@ -73,6 +74,18 @@ public enum DataCollector {
 
     public Mat getLaplasianImg() {
         return laplasianImg;
+    }
+
+    public int[] getLowerCompletion() {
+        return lowerCompletion;
+    }
+
+    public int[] getShedLabels() {
+        return shedLabels;
+    }
+
+    public int[] getWatershedPoints() {
+        return watershedPoints;
     }
 
     public String getImageResultTitle() {
