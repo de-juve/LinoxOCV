@@ -42,4 +42,8 @@ public class Shed {
     public void setCanonical(Point canonical) {
         this.canonical = canonical;
     }
+
+    public int size() {
+        return points.size();
+    }
 }

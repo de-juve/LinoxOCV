@@ -36,5 +36,7 @@ public enum ShedCollector {
         }
     }
 
-
+    public TreeMap<Integer, Shed> getSheds() {
+        return sheds;
+    }
 }

@@ -49,7 +49,7 @@ public class MorphologyPlugin extends AbstractPlugin {
     public void run(String operation, int size) {
         morphologyOperation = operation;
         morph_size = size;
-        MorphologyOperations();
+        morphologyOperations();
         DataCollector.INSTANCE.setShedLabels(shedLabels);
     }
 
@@ -66,7 +66,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         morphologyOperation = panel.getValueComboBox(morphologyOperations);
         morph_size = panel.getValueSlider(kernelSize);
 
-        MorphologyOperations();
+        morphologyOperations();
 
         if (tabs == 0) {
             pluginListener.addImageTab();
@@ -93,7 +93,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         Linox.getInstance().addParameterJPanel(panel);
     }
 
-    private void MorphologyOperations() {
+    private void morphologyOperations() {
         init();
         gray = GrayscalePlugin.run(image, false);
         MassiveWorker.INSTANCE.sort(gray);
@@ -149,6 +149,8 @@ public class MorphologyPlugin extends AbstractPlugin {
                 p = tmp;
             }
         }
+
+        DataCollector.INSTANCE.setStatus(status);
 
         result = new Mat(image.rows(), image.cols(), image.type());
         byte[] buff = new byte[(int) image.total() * image.channels()];

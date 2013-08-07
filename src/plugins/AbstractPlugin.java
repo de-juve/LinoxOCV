@@ -67,6 +67,14 @@ public class AbstractPlugin implements IPluginFilter {
         return x + y * image.width();
     }
 
+    protected int x(int id) {
+        return id % image.width();
+    }
+
+    protected int y(int id) {
+        return id / image.width();
+    }
+
 
     protected void create(Integer[] array) {
         for (int i = 0; i < array.length; i++) {

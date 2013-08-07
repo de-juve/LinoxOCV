@@ -12,7 +12,8 @@ public enum DataCollector {
     private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
     private Mat grayImg, gradientImg, laplasianImg;
-    private int[] lowerCompletion, shedLabels, watershedPoints;
+    private int[] lowerCompletion, status, shedLabels, prevShedLabels, watershedPoints;
+
     //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
     // private ArrayList<Integer> waterShedPoints;
     // private int maxLuminance = 255;
@@ -47,8 +48,16 @@ public enum DataCollector {
         lowerCompletion = array;
     }
 
+    public void setStatus(int[] array) {
+        status = array;
+    }
+
     public void setShedLabels(int[] array) {
         shedLabels = array;
+    }
+
+    public void setPrevShedLabels(int[] array) {
+        prevShedLabels = array;
     }
 
     public void setWatershedPoints(int[] array) {
@@ -80,8 +89,16 @@ public enum DataCollector {
         return lowerCompletion;
     }
 
+    public int[] getStatus() {
+        return status;
+    }
+
     public int[] getShedLabels() {
         return shedLabels;
+    }
+
+    public int[] getPrevShedLabels() {
+        return prevShedLabels;
     }
 
     public int[] getWatershedPoints() {
@@ -124,6 +141,8 @@ public enum DataCollector {
             stack.clear();
         }
     }
+
+
 
 
 

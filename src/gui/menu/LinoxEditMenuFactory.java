@@ -1,6 +1,7 @@
 package gui.menu;
 
 import plugins.*;
+import plugins.morphology.MorphologyCompilationPlugin;
 import plugins.morphology.MorphologyPlugin;
 
 import javax.swing.*;
@@ -45,6 +46,24 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action homotopy = new AbstractAction("Homotopy") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new HomotopyPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
+        final Action median = new AbstractAction("Median") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new MedianPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
         final Action morphologyTransformation = new AbstractAction("Morphology Transformation") {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,6 +77,15 @@ public class LinoxEditMenuFactory {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MorphologyPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
+        final Action morphologyCompilation = new AbstractAction("Morphology compilation") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new MorphologyCompilationPlugin());
                 Thread myThready = new Thread(pluginRunner);
                 myThready.start();
             }
@@ -629,8 +657,11 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(grayscale));
         items.add(new JMenuItem(gradient));
         items.add(new JMenuItem(laplasian));
+        items.add(new JMenuItem(homotopy));
+        items.add(new JMenuItem(median));
         items.add(new JMenuItem(morphologyTransformation));
         items.add(new JMenuItem(morphology));
+        items.add(new JMenuItem(morphologyCompilation));
         items.add(new JMenuItem(watershed));
         items.add(new JMenuItem(shedCluster));
         items.add(new JMenuItem(shedPainter));
