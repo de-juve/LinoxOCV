@@ -38,7 +38,14 @@ public class LowerCompletePlugin extends AbstractPlugin {
             } else if (point.x > -1) {
                 level[id(point.x, point.y)] = distination;
                 int lum = (int) gray.get(point.y, point.x)[0];
-                for (int j = Math.max(0, point.y - 1); j <= Math.min(image.height() - 1, point.y + 1); j++) {
+                ArrayList<Integer> neighbors = PixelsMentor.defineNeighboursIdsWithSameValue(id(point.x, point.y), gray);
+                for (Integer nid : neighbors) {
+                    if (level[nid] == 0) {
+                        level[nid] = -1;
+                        queue.add(new Point(x(nid), y(nid)));
+                    }
+                }
+                /*for (int j = Math.max(0, point.y - 1); j <= Math.min(image.height() - 1, point.y + 1); j++) {
                     for (int i = Math.max(0, point.x - 1); i <= Math.min(image.width() - 1, point.x + 1); i++) {
                         int nlum = (int) gray.get(j, i)[0];
                         if (point.x != i && point.y != j && lum == nlum && level[i + j * image.width()] == 0) {
@@ -46,7 +53,7 @@ public class LowerCompletePlugin extends AbstractPlugin {
                             queue.add(new Point(i, j));
                         }
                     }
-                }
+                }*/
             }
         }
 

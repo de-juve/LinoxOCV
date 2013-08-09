@@ -46,7 +46,6 @@ public class ShedPainterPlugin extends AbstractPlugin {
 
         int j = 0;
         for (int i = 0; i < colors.length; i++) {
-
             buff[j] = (byte) colors[i].getBlue();
             j++;
             buff[j] = (byte) colors[i].getGreen();

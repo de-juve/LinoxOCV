@@ -28,28 +28,6 @@ public class MorphologyCompilationPlugin extends AbstractPlugin {
         title = "Morphological compilation";
     }
 
-    /*@Override
-    public ImagePlus getResult(boolean addToStack) {
-        if (result == null) {
-            create(imageProcessor, results);
-            result = new ImagePlus(typeCompilation + " " + criteria + " " + DataCollection.INSTANCE.getImageOriginal().getTitle(), imageProcessor);
-            if (addToStack) {
-
-                ImageProcessor ip = imageProcessor.duplicate();
-                Color[] colors = new Color[width * height];
-                for (int i = 0; i < DataCollection.INSTANCE.getShedLabels().length; i++) {
-                    colors[i] = ShedWorker.getInstance().getShedColor(DataCollection.INSTANCE.getShedLabel(i));
-                }
-                create(ip, colors);
-                DataCollection.INSTANCE.addtoHistory(new ImagePlus("area closing colors " + criteria + " " + DataCollection.INSTANCE.getImageOriginal().getTitle(), ip));
-                DataCollection.INSTANCE.addtoHistory(result);
-
-            }
-        }
-
-        return result;
-    }*/
-
     @Override
     public void run() {
         showParamsPanel("Choose params");

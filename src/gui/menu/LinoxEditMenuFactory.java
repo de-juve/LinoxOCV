@@ -118,6 +118,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action histogram = new AbstractAction("Histogram") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new HistogramPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
       /*
 
 
@@ -665,6 +674,7 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(watershed));
         items.add(new JMenuItem(shedCluster));
         items.add(new JMenuItem(shedPainter));
+        items.add(new JMenuItem(histogram));
 
 
         /* items.add(new JMenuItem(luminaceRedirector));

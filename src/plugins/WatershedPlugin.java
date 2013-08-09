@@ -3,6 +3,8 @@ package plugins;
 import entities.*;
 import gui.Linox;
 import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
 import plugins.morphology.MorphologyPlugin;
 
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import java.util.TreeMap;
 public class WatershedPlugin extends AbstractPlugin {
     Mat gray;
     int[] lowerCompletion, shedLabels;
-    TreeMap<Integer, ArrayList<Integer>> steepestNeighboures;
+    TreeMap<Integer, ArrayList<Integer>> steepestNeighbours;
     boolean[] maximum;
     final Point N = new Point(-1, -1);
 
@@ -37,6 +39,34 @@ public class WatershedPlugin extends AbstractPlugin {
         constructDAG();
         flood();
 
+
+       /* Imgproc.threshold(result, result, 127, 255, Imgproc.THRESH_BINARY);
+        Mat skel = new Mat(result.size(), result.type(), new Scalar(0));
+        Mat temp = new Mat(result.size(),result.type()), eroded = new Mat(result.size(),result.type());//CvType.CV_8UC1 );
+        Mat m = new Mat();*/
+        Mat element = Imgproc.getStructuringElement(Imgproc.MORPH_CROSS, new Size(3, 3));
+        // boolean done;
+
+        Imgproc.dilate(result, result, element);
+
+       /* do
+        {
+            Imgproc.erode(result, eroded, element);
+            Imgproc.dilate(eroded, temp, element);
+            Core.subtract(result, temp, temp);
+            Core.bitwise_or(skel, temp, skel);
+            eroded.copyTo(result);
+
+            Core.extractChannel(result, m, 0);
+            done = (Core.countNonZero(m) == 0);
+        } while (!done);
+
+        skel.copyTo(result);*/
+
+        mp.initImage(result);
+        mp.run("Closing", 1);
+        result = mp.result;
+
         Linox.getInstance().getStatusBar().setProgress("Watershed", 100, 100);
 
         if (pluginListener != null) {
@@ -47,7 +77,7 @@ public class WatershedPlugin extends AbstractPlugin {
 
     private void constructDAG() {
         maximum = new boolean[(int) image.total()];
-        steepestNeighboures = new TreeMap<>();
+        steepestNeighbours = new TreeMap<>();
         gray = DataCollector.INSTANCE.getGrayImg();
         lowerCompletion = DataCollector.INSTANCE.getLowerCompletion();
         MassiveWorker.INSTANCE.sort(gray, lowerCompletion);
@@ -59,20 +89,20 @@ public class WatershedPlugin extends AbstractPlugin {
         for (int i = ids.size() - 1; i > -1; i--) {
             int id = ids.get(i);
 
-            ArrayList<Integer> neighboures = PixelsMentor.defineNeighboursIdsWithLowerValue(id, gray);
-            if (neighboures.isEmpty()) {
-                ArrayList<Integer> eqneighboures = PixelsMentor.defineNeighboursIdsWithSameValue(id, gray);
-                neighboures.clear();
-                for (Integer eq : eqneighboures) {
+            ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithLowerValue(id, gray);
+            if (neighbours.isEmpty()) {
+                ArrayList<Integer> eqNeighbours = PixelsMentor.defineNeighboursIdsWithSameValue(id, gray);
+                neighbours.clear();
+                for (Integer eq : eqNeighbours) {
                     if (lowerCompletion[eq] < lowerCompletion[id]) {
-                        neighboures.add(eq);
+                        neighbours.add(eq);
                     }
                 }
             }
-            if (!neighboures.isEmpty()) {
+            if (!neighbours.isEmpty()) {
                 maximum[id] = true;
-                steepestNeighboures.remove(id);
-                steepestNeighboures.put(id, neighboures);
+                steepestNeighbours.remove(id);
+                steepestNeighbours.put(id, neighbours);
                 neighbouresNotMax(id);
             } else {
                 //define canonical element of min region if it need and if we can
@@ -81,25 +111,25 @@ public class WatershedPlugin extends AbstractPlugin {
                 Point canonical = shed.getCanonical();
 
                 if (canonical.equals(N)) {
-                    canonical.x = id % image.width();
-                    canonical.y = id / image.width();
+                    canonical.x = x(id);
+                    canonical.y = y(id);
                     shed.setCanonical(canonical);
                 }
                 ArrayList<Integer> ar = new ArrayList<>(1);
-                ar.add(0, canonical.x + canonical.y * image.width());
-                steepestNeighboures.remove(id);
-                steepestNeighboures.put(id, ar);
+                ar.add(0, id(canonical.x, canonical.y));
+                steepestNeighbours.remove(id);
+                steepestNeighbours.put(id, ar);
             }
         }
     }
 
     private void neighbouresNotMax(int id) {
-        int x = id % image.width();
-        int y = id / image.width();
+        int x = x(id);
+        int y = y(id);
         ArrayList<Integer> neighboures = PixelsMentor.getNeighborsOfPixel(x, y, image, 1);//defineNeighboursIds(id, width, height);
         for (Integer n : neighboures) {
-            int nx = n % image.width();
-            int ny = n / image.width();
+            int nx = x(n);
+            int ny = y(n);
             if (maximum[n] && (gray.get(ny, nx)[0] < gray.get(y, x)[0] ||
                     (gray.get(ny, nx)[0] == gray.get(y, x)[0] &&
                             lowerCompletion[n] < lowerCompletion[id]))) {
@@ -114,7 +144,7 @@ public class WatershedPlugin extends AbstractPlugin {
     private int resolve(int p) {
         int i = 0;
         int rep = -2;
-        ArrayList<Integer> stN = steepestNeighboures.get(p);
+        ArrayList<Integer> stN = steepestNeighbours.get(p);
         if (stN == null)
             return rep;
         int con = stN.size();

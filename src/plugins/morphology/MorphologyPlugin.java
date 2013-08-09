@@ -132,7 +132,7 @@ public class MorphologyPlugin extends AbstractPlugin {
                 shedLabel = root;
                 shedLabels[root] = shedLabel;
                 ShedCollector.INSTANCE.addShed(new Shed(shedLabel, new Color(rand.nextFloat(), rand.nextFloat(), rand.nextFloat())));
-                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(root % image.width(), root / image.width()));
+                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(x(root), y(root)));
             } else {
                 shedLabel = shedLabels[root];
             }
@@ -143,7 +143,7 @@ public class MorphologyPlugin extends AbstractPlugin {
                 status[p] = val;
 
                 shedLabels[p] = shedLabel;
-                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(p % image.width(), p / image.width()));
+                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(x(p), y(p)));
                 analyzed[p] = true;
 
                 p = tmp;
@@ -214,13 +214,13 @@ public class MorphologyPlugin extends AbstractPlugin {
             status[p] = representative[h];
 
             //get neighboures
-            //ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIds(p, width, height);
+            //ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIds(p, gray);
             ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIdsWidthDiagonalCondition(p, gray);
             for (Integer nid : neighs) {
                 if (status[nid] != NOT_ANALYZED) {
                     continue;
                 }
-                int m = (int) gray.get(nid / gray.width(), nid % gray.width())[0];//DataCollection.INSTANCE.getLuminance(nid);
+                int m = (int) gray.get(y(nid), x(nid))[0];
                 // set representative element if none
                 if (representative[m] == NONE) {
                     representative[m] = nid;
