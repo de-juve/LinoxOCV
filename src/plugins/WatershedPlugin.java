@@ -2,6 +2,8 @@ package plugins;
 
 import entities.*;
 import gui.Linox;
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
@@ -47,7 +49,8 @@ public class WatershedPlugin extends AbstractPlugin {
         Mat element = Imgproc.getStructuringElement(Imgproc.MORPH_CROSS, new Size(3, 3));
         // boolean done;
 
-        Imgproc.dilate(result, result, element);
+        // Imgproc.dilate(result, result, element);
+        // thinning(result);
 
        /* do
         {
@@ -196,5 +199,74 @@ public class WatershedPlugin extends AbstractPlugin {
         }
 
         result.put(0, 0, buff);
+    }
+
+    /**
+     * Function for thinning the given binary image
+     *
+     * @param im Binary image with range = 0-255
+     */
+    void thinning(Mat im) {
+        Core.normalize(im, im, 0, 1, Core.NORM_MINMAX);
+        //im /= 255;
+
+        Mat prev = Mat.zeros(im.size(), im.type());//CvType.CV_8UC1);
+        Mat diff = new Mat(im.size(), im.type());
+        Mat m = new Mat(im.size(), im.type());
+
+        do {
+            thinningIteration(im, 0);
+            thinningIteration(im, 1);
+            Core.absdiff(im, prev, diff);
+            im.copyTo(prev);
+            Core.extractChannel(diff, m, 0);
+        }
+        while (Core.countNonZero(m) > 0);
+
+        Core.normalize(im, im, 0, 255, Core.NORM_MINMAX);
+        //im *= 255;
+    }
+
+
+    /**
+     * Perform one thinning iteration.
+     * Normally you wouldn't call this function directly from your code.
+     *
+     * @param im   Binary image with range = 0-1
+     * @param iter 0=even, 1=odd
+     */
+    Mat thinningIteration(Mat im, int iter) {
+        Mat marker = Mat.zeros(im.size(), CvType.CV_8UC1);
+
+        for (int i = 1; i < im.rows() - 1; i++) {
+            for (int j = 1; j < im.cols() - 1; j++) {
+                int p2 = (byte) im.get(i - 1, j)[0];
+                int p3 = (byte) im.get(i - 1, j + 1)[0];
+                int p4 = (byte) im.get(i, j + 1)[0];
+                int p5 = (byte) im.get(i + 1, j + 1)[0];
+                int p6 = (byte) im.get(i + 1, j)[0];
+                int p7 = (byte) im.get(i + 1, j - 1)[0];
+                int p8 = (byte) im.get(i, j - 1)[0];
+                int p9 = (byte) im.get(i - 1, j - 1)[0];
+
+                int A = (p2 == 0 && p3 == 1) ? 1 : 0;
+                A += (p3 == 0 && p4 == 1) ? 1 : 0;
+                A += (p4 == 0 && p5 == 1) ? 1 : 0;
+                A += (p5 == 0 && p6 == 1) ? 1 : 0;
+                A += (p6 == 0 && p7 == 1) ? 1 : 0;
+                A += (p7 == 0 && p8 == 1) ? 1 : 0;
+                A += (p8 == 0 && p9 == 1) ? 1 : 0;
+                A += (p9 == 0 && p2 == 1) ? 1 : 0;
+
+                int B = p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9;
+                int m1 = iter == 0 ? (p2 * p4 * p6) : (p2 * p4 * p8);
+                int m2 = iter == 0 ? (p4 * p6 * p8) : (p2 * p6 * p8);
+
+                if (A == 1 && (B >= 2 && B <= 6) && m1 == 0 && m2 == 0)
+                    marker.put(i, j, 1);
+            }
+        }
+
+        return marker;
     }
 }

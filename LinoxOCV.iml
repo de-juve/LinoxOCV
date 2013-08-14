@@ -9,6 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="opencv-245" level="project" />
     <orderEntry type="library" name="miglayout" level="project" />
+    <orderEntry type="library" name="lma_v1" level="project" />
   </component>
 </module>
 
