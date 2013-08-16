@@ -21,7 +21,6 @@ public class MorphologyCompilationPlugin extends AbstractPlugin {
     int max_kernel_size = 10000, morph_size;
     ParameterComboBox morphologyOperations;
     ParameterSlider kernelSize;
-    int tabs = 0;
 
     public MorphologyCompilationPlugin() {
         factory = new ImageOperationFactory();

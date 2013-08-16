@@ -54,8 +54,8 @@ public class HistogramPlugin extends AbstractPlugin {
         double max_val = minMaxLocResult.maxVal;
 
         Core.meanStdDev( hist, mean, stdDev );
-        System.out.println( mean.get( 0, 0 )[0] );
-        System.out.println( stdDev.get( 0, 0 )[0] );
+        /*System.out.println( mean.get( 0, 0 )[0] );
+        System.out.println( stdDev.get( 0, 0 )[0] );*/
 
         for ( int i = 1; i < 256; i++ ) {
             float binVal = ( float ) hist.get( i, 0 )[0];

@@ -8,6 +8,7 @@ import org.opencv.core.Mat;
 
 
 public class AbstractPlugin implements IPluginFilter {
+    public int tabs = 0;
     protected Mat image, result = null;
     protected PluginRunner pluginListener;
     public boolean exit = false;

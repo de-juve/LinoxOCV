@@ -5,7 +5,6 @@ import gui.Linox;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
 import plugins.morphology.MorphologyPlugin;
 
 import java.util.ArrayList;
@@ -40,6 +39,8 @@ public class WatershedPlugin extends AbstractPlugin {
         constructDAG();
         flood();
 
+        /*DataCollector.INSTANCE.addtoHistory( "wsh", result );
+
         // Identify image pixels without objects
         Mat bg = new Mat( image.size(), image.type() );
         Imgproc.dilate( result, bg, new Mat(), new org.opencv.core.Point( -1, -1 ), 3 );
@@ -57,7 +58,7 @@ public class WatershedPlugin extends AbstractPlugin {
         channels.add( result );
         channels.add( result );
 
-        Core.merge( channels, result );
+        Core.merge( channels, result );*/
 
 
         mp.initImage( result );

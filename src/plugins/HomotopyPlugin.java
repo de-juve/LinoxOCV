@@ -10,7 +10,6 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 
 public class HomotopyPlugin extends AbstractPlugin {
-    int tabs = 0;
     private int areaSizeX, areaSizeY;
     private int deviation;
     private boolean shift;

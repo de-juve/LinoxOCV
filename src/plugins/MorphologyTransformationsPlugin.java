@@ -12,7 +12,6 @@ import static org.opencv.imgproc.Imgproc.getStructuringElement;
 import static org.opencv.imgproc.Imgproc.morphologyEx;
 
 public class MorphologyTransformationsPlugin extends AbstractPlugin {
-    int tabs = 0;
     int morph_elem = 0;
     int morph_size = 0;
     int morph_operator = 0;

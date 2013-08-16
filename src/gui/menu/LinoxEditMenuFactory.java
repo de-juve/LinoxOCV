@@ -145,6 +145,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action hough = new AbstractAction( "Hough transform" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new HoughTransformPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
       /*
 
 
@@ -695,6 +704,7 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( shedCluster ) );
         items.add( new JMenuItem( shedPainter ) );
         items.add( new JMenuItem( histogram ) );
+        items.add( new JMenuItem( hough ) );
 
 
         /* items.add(new JMenuItem(luminaceRedirector));

@@ -8,7 +8,7 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
 public class ResizePlugin extends AbstractPlugin {
-    int tabs = 0;
+
     ParameterSlider widthSlider, heightSlider;
 
     public ResizePlugin() {
@@ -26,8 +26,8 @@ public class ResizePlugin extends AbstractPlugin {
     }
 
     public static Mat resize( Mat image, Size size ) {
-        Mat result = new Mat();
-        Imgproc.resize( image, result, new Size( 500, 500 ), 0, 0, Imgproc.INTER_LANCZOS4 );
+        Mat result = new Mat( size, image.type() );
+        Imgproc.resize( image, result, size, 0, 0, Imgproc.INTER_LANCZOS4 );
         return result;
     }
 
@@ -38,7 +38,7 @@ public class ResizePlugin extends AbstractPlugin {
         int height = panel.getValueSlider( heightSlider );
         Size size = new Size( width, height );
 
-        resize( image, size );
+        result = resize( image, size );
 
         if ( tabs == 0 ) {
             pluginListener.addImageTab();

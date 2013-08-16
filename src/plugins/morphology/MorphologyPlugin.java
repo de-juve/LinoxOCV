@@ -16,7 +16,6 @@ import java.util.Random;
 import java.util.TreeMap;
 
 public class MorphologyPlugin extends AbstractPlugin {
-    int tabs = 0;
     String morphologyOperation;
     int max_kernel_size = 10000, morph_size;
     int[] area, last, representative, status;
