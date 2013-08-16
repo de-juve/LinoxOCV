@@ -7,8 +7,8 @@ package jaolho.data.lma;
  */
 public interface LMAMatrix {
     public static class InvertException extends RuntimeException {
-        public InvertException(String message) {
-            super(message);
+        public InvertException( String message ) {
+            super( message );
         }
     }
 
@@ -21,12 +21,12 @@ public interface LMAMatrix {
     /**
      * Set the value of a matrix element.
      */
-    public void setElement(int row, int col, double value);
+    public void setElement( int row, int col, double value );
 
     /**
      * Get the value of a matrix element.
      */
-    public double getElement(int row, int col);
+    public double getElement( int row, int col );
 
     /**
      * Multiplies this matrix with an array (result = this * vector).
@@ -35,5 +35,5 @@ public interface LMAMatrix {
      * @param vector The array to be multiplied with the matrix.
      * @param result The result of the multiplication will be put here.
      */
-    public void multiply(double[] vector, double[] result);
+    public void multiply( double[] vector, double[] result );
 }

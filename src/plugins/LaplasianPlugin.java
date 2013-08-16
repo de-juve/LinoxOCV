@@ -16,7 +16,7 @@ public class LaplasianPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress("laplasian", 0, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
         Mat result = new Mat();
         Mat src_gray, lap = new Mat();
@@ -26,18 +26,18 @@ public class LaplasianPlugin extends AbstractPlugin {
         int delta = 0;
         int ddepth = CvType.CV_16S;
 
-        Imgproc.GaussianBlur(image, image, new Size(3, 3), 0, 0, Imgproc.BORDER_DEFAULT);
+        Imgproc.GaussianBlur( image, image, new Size( 3, 3 ), 0, 0, Imgproc.BORDER_DEFAULT );
 
-        src_gray =   GrayscalePlugin.run(image, false);
+        src_gray = GrayscalePlugin.run( image, false );
 
-        Imgproc.Laplacian(src_gray, lap, ddepth, kernel_size, scale, delta, Imgproc.BORDER_DEFAULT);
+        Imgproc.Laplacian( src_gray, lap, ddepth, kernel_size, scale, delta, Imgproc.BORDER_DEFAULT );
         convertScaleAbs( lap, result );
 
-        DataCollector.INSTANCE.setLaplasianImg(result.clone());
+        DataCollector.INSTANCE.setLaplasianImg( result.clone() );
 
-        Linox.getInstance().getStatusBar().setProgress("laplasian", 100, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
 
-        if(pluginListener != null) {
+        if ( pluginListener != null ) {
             pluginListener.addImageTab();
             pluginListener.finishPlugin();
         }

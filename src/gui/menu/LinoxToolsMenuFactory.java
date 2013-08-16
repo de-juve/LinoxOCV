@@ -15,31 +15,31 @@ public class LinoxToolsMenuFactory {
     }
 
     public LinoxToolsMenuFactory() {
-        final Action show = new AbstractAction("Show history") {
+        final Action show = new AbstractAction( "Show history" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            public void actionPerformed( ActionEvent e ) {
+                Linox.getInstance().setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
                 try {
-                    ((LinoxMenuStore)Linox.getInstance().getMenuStore()).showHistory();
+                    ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).showHistory();
                 } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
+                    Linox.getInstance().setCursor( Cursor.getDefaultCursor() );
                 }
             }
         };
 
-        final Action clear = new AbstractAction("Clear history") {
+        final Action clear = new AbstractAction( "Clear history" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            public void actionPerformed( ActionEvent e ) {
+                Linox.getInstance().setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
                 try {
-                    ((LinoxMenuStore)Linox.getInstance().getMenuStore()).clearHistory();
+                    ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).clearHistory();
                 } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
+                    Linox.getInstance().setCursor( Cursor.getDefaultCursor() );
                 }
             }
         };
 
-        items.add(new JMenuItem(show));
-        items.add(new JMenuItem(clear));
+        items.add( new JMenuItem( show ) );
+        items.add( new JMenuItem( clear ) );
     }
 }

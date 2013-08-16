@@ -11,7 +11,7 @@ public class Snake<T extends SnakePoint> {
     private int step = 1;
     private boolean recount;
 
-    public Snake(int _baseSetPointsSize) {
+    public Snake( int _baseSetPointsSize ) {
         head = new LinkedList<>();
         baseSetPoints = new LinkedList<>();
         tail = new LinkedList<>();
@@ -25,17 +25,17 @@ public class Snake<T extends SnakePoint> {
         return step;
     }
 
-    public boolean addElementToHead(T element) {
-        if (head.size() + 1 > headSize) {
-            for (T e : head) {
+    public boolean addElementToHead( T element ) {
+        if ( head.size() + 1 > headSize ) {
+            for ( T e : head ) {
                 e.removeStack();
             }
-            addElementsToTail(head);
+            addElementsToTail( head );
             head.clear();
         }
 
-        head.add(element);
-        headId = (int) element.x;
+        head.add( element );
+        headId = ( int ) element.x;
         return true;
     }
 
@@ -45,42 +45,42 @@ public class Snake<T extends SnakePoint> {
 
     public T removeElementFromHead() {
         T element = head.removeLast();
-        headId = (int) element.x;
+        headId = ( int ) element.x;
         return element;
     }
 
-    public boolean addElementToBaseSetPoints(T element) {
-        if (baseSetPoints.size() + 1 > baseSetPointsSize) {
+    public boolean addElementToBaseSetPoints( T element ) {
+        if ( baseSetPoints.size() + 1 > baseSetPointsSize ) {
             return false;
         }
-        baseSetPoints.add(element);
+        baseSetPoints.add( element );
         return true;
     }
 
-    public void removeElementsFromBaseSetPoints(int count) {
-        for (int i = 0; i < Math.min(Math.abs(count), baseSetPointsSize - 1); i++) {
+    public void removeElementsFromBaseSetPoints( int count ) {
+        for ( int i = 0; i < Math.min( Math.abs( count ), baseSetPointsSize - 1 ); i++ ) {
             baseSetPoints.removeFirst();//Last();
         }
     }
 
-    private void addElementsToTail(LinkedList<T> elements) {
-        if (tail.size() + elements.size() > tailSize) {
-            addElementsToLine(tail);
+    private void addElementsToTail( LinkedList<T> elements ) {
+        if ( tail.size() + elements.size() > tailSize ) {
+            addElementsToLine( tail );
             tail.clear();
         }
-        tail.addAll(elements);
+        tail.addAll( elements );
     }
 
-    private void addElementsToLine(LinkedList<T> elements) {
-        line.addAll(elements);
+    private void addElementsToLine( LinkedList<T> elements ) {
+        line.addAll( elements );
     }
 
     public int getBaseSetPointsSize() {
         return baseSetPoints.size();
     }
 
-    public T getBaseSetPoint(int id) {
-        return baseSetPoints.get(id);
+    public T getBaseSetPoint( int id ) {
+        return baseSetPoints.get( id );
     }
 
     public LinkedList<T> getLine() {
@@ -92,7 +92,7 @@ public class Snake<T extends SnakePoint> {
     }
 
     public boolean isRecount() {
-        if (recount) {
+        if ( recount ) {
             recount = !recount;
             return !recount;
         }
@@ -100,12 +100,12 @@ public class Snake<T extends SnakePoint> {
     }
 
     public void merge() {
-        if (head.size() > 0) {
-            addElementsToTail(head);
+        if ( head.size() > 0 ) {
+            addElementsToTail( head );
             head.clear();
         }
-        if (tail.size() > 0) {
-            addElementsToLine(tail);
+        if ( tail.size() > 0 ) {
+            addElementsToLine( tail );
             tail.clear();
         }
     }
@@ -116,24 +116,24 @@ public class Snake<T extends SnakePoint> {
 
     public LinkedList<Integer> getTailValues() {
         LinkedList<Integer> values = new LinkedList<>();
-        for (Point p : tail) {
-            values.addFirst((int) p.y);
+        for ( Point p : tail ) {
+            values.addFirst( ( int ) p.y );
         }
         return values;
     }
 
-    public boolean headContains(int value) {
-        for (Point p : head) {
-            if (p.y == value) {
+    public boolean headContains( int value ) {
+        for ( Point p : head ) {
+            if ( p.y == value ) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean tailContains(int value) {
-        for (Point p : tail) {
-            if (p.y == value) {
+    public boolean tailContains( int value ) {
+        for ( Point p : tail ) {
+            if ( p.y == value ) {
                 return true;
             }
         }
@@ -142,8 +142,8 @@ public class Snake<T extends SnakePoint> {
 
     public LinkedList<Integer> getBaseSetPointsValues() {
         LinkedList<Integer> values = new LinkedList<>();
-        for (Point p : baseSetPoints) {
-            values.addFirst((int) p.y);
+        for ( Point p : baseSetPoints ) {
+            values.addFirst( ( int ) p.y );
         }
         return values;
     }

@@ -20,47 +20,47 @@ public enum DataCollector {
     private String imageResultTitle, imageOriginalTitle;
 
 
-    public void setImageOriginal(String _title, Mat _imageOriginal) {
+    public void setImageOriginal( String _title, Mat _imageOriginal ) {
         imageOriginal = _imageOriginal;
         imageOriginalTitle = _title;
         width = imageOriginal.width();
         height = imageOriginal.height();
     }
 
-    public void setImageResult(String _title, Mat _imageResult) {
+    public void setImageResult( String _title, Mat _imageResult ) {
         imageResultTitle = _title + imageOriginalTitle;
         imageResult = _imageResult;
     }
 
-    public void setGrayImg(Mat img) {
+    public void setGrayImg( Mat img ) {
         grayImg = img;
     }
 
-    public void setGradientImg(Mat img) {
+    public void setGradientImg( Mat img ) {
         gradientImg = img;
     }
 
-    public void setLaplasianImg(Mat img) {
+    public void setLaplasianImg( Mat img ) {
         laplasianImg = img;
     }
 
-    public void setLowerCompletion(int[] array) {
+    public void setLowerCompletion( int[] array ) {
         lowerCompletion = array;
     }
 
-    public void setStatus(int[] array) {
+    public void setStatus( int[] array ) {
         status = array;
     }
 
-    public void setShedLabels(int[] array) {
+    public void setShedLabels( int[] array ) {
         shedLabels = array;
     }
 
-    public void setPrevShedLabels(int[] array) {
+    public void setPrevShedLabels( int[] array ) {
         prevShedLabels = array;
     }
 
-    public void setWatershedPoints(int[] array) {
+    public void setWatershedPoints( int[] array ) {
         watershedPoints = array;
     }
 
@@ -122,22 +122,22 @@ public enum DataCollector {
     }
 
 
-    public void addtoHistory(String title, Mat image) {
-        if (stack == null) {
+    public void addtoHistory( String title, Mat image ) {
+        if ( stack == null ) {
             stack = new TreeMap<>();
         }
-        stack.put(title, image.clone());
+        stack.put( title, image.clone() );
     }
 
     public TreeMap<String, Mat> getHistoryStack() {
-        if (stack == null) {
+        if ( stack == null ) {
             return new TreeMap<>();
         }
         return stack;
     }
 
     public void clearHistory() {
-        if (stack != null) {
+        if ( stack != null ) {
             stack.clear();
         }
     }

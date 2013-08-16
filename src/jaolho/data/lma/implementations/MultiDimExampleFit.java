@@ -14,13 +14,13 @@ public class MultiDimExampleFit {
      */
     public static class MultiDimExampleFunction extends LMAMultiDimFunction {
         @Override
-        public double getY(double x[], double[] a) {
+        public double getY( double x[], double[] a ) {
             return a[0] * x[0] + a[1] * x[1] + a[2];
         }
 
         @Override
-        public double getPartialDerivate(double x[], double[] a, int parameterIndex) {
-            switch (parameterIndex) {
+        public double getPartialDerivate( double x[], double[] a, int parameterIndex ) {
+            switch ( parameterIndex ) {
                 case 0:
                     return x[0];
                 case 1:
@@ -28,28 +28,28 @@ public class MultiDimExampleFit {
                 case 2:
                     return 1;
             }
-            throw new RuntimeException("No such parameter index: " + parameterIndex);
+            throw new RuntimeException( "No such parameter index: " + parameterIndex );
         }
     }
 
     /**
      * Does the actual fitting by using the above MultiDimExampleFunction (a plane)
      */
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
         LMA lma = new LMA(
                 new MultiDimExampleFunction(),
-                new double[]{1, 1, 1},
+                new double[]{ 1, 1, 1 },
                 new double[][]{
                         // y x0 x1
-                        {0, 2, 6},
-                        {5, 10, 2},
-                        {7, 20, 4},
-                        {9, 30, 7},
-                        {12, 40, 6}
+                        { 0, 2, 6 },
+                        { 5, 10, 2 },
+                        { 7, 20, 4 },
+                        { 9, 30, 7 },
+                        { 12, 40, 6 }
                 }
         );
         lma.fit();
-        System.out.println("iterations: " + lma.iterationCount);
+        System.out.println( "iterations: " + lma.iterationCount );
         System.out.println(
                 "chi2: " + lma.chi2 + ",\n" +
                         "param0: " + lma.parameters[0] + ",\n" +

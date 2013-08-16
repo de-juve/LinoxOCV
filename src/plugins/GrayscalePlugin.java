@@ -13,29 +13,29 @@ public class GrayscalePlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress("luminance", 0, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
-        result = run(image, true);
+        result = run( image, true );
 
-        Linox.getInstance().getStatusBar().setProgress("luminance", 100, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
 
-        if (pluginListener != null) {
+        if ( pluginListener != null ) {
             pluginListener.addImageTab();
             pluginListener.finishPlugin();
         }
     }
 
-    public static Mat run(Mat image, boolean addToCollector) {
+    public static Mat run( Mat image, boolean addToCollector ) {
         Mat result = new Mat();
 
-        if ((image.channels() == 3 || image.channels() == 4) && image.type() != CvType.CV_8UC1) {
-            Imgproc.cvtColor(image, result, Imgproc.COLOR_BGR2GRAY);
+        if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
+            Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2GRAY );
         } else {
             result = image;
         }
 
-        if (addToCollector) {
-            DataCollector.INSTANCE.setGrayImg(result.clone());
+        if ( addToCollector ) {
+            DataCollector.INSTANCE.setGrayImg( result.clone() );
         }
         return result;
     }

@@ -1,13 +1,12 @@
 package gui.menu;
 
-import gui.Linox;
 import entities.DataCollector;
+import gui.Linox;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
-
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -25,106 +24,105 @@ public class LinoxMenuStore extends JMenuBar {
         editFactory = new LinoxEditMenuFactory();
         toolsFactory = new LinoxToolsMenuFactory();
 
-        filemenu = new JMenu("File");
-        filemenu.add(new JSeparator());
+        filemenu = new JMenu( "File" );
+        filemenu.add( new JSeparator() );
 
-        for(JMenuItem item : fileFactory.getItems()) {
-            filemenu.add(item);
+        for ( JMenuItem item : fileFactory.getItems() ) {
+            filemenu.add( item );
         }
 
-        editmenu = new JMenu("Edit");
+        editmenu = new JMenu( "Edit" );
 
-        for(JMenuItem item : editFactory.getItems()) {
-            editmenu.add(item);
+        for ( JMenuItem item : editFactory.getItems() ) {
+            editmenu.add( item );
         }
 
-        toolsmenu = new JMenu("Tools");
-        toolsmenu.add(new JSeparator());
+        toolsmenu = new JMenu( "Tools" );
+        toolsmenu.add( new JSeparator() );
 
-        for(JMenuItem item : toolsFactory.getItems()) {
-            toolsmenu.add(item);
+        for ( JMenuItem item : toolsFactory.getItems() ) {
+            toolsmenu.add( item );
         }
 
         //editmenu.setEnabled(false);
-        toolsmenu.setEnabled(false);
+        toolsmenu.setEnabled( false );
 
-        this.add(filemenu);
-        this.add(editmenu);
-        this.add(toolsmenu);
+        this.add( filemenu );
+        this.add( editmenu );
+        this.add( toolsmenu );
     }
 
-    public void setEnableEditToolsItems(boolean option) {
-        editmenu.setEnabled(option);
-        for(int i = 0; i < editmenu.getItemCount(); i++) {
-            editmenu.getItem(i).setEnabled(option);
+    public void setEnableEditToolsItems( boolean option ) {
+        editmenu.setEnabled( option );
+        for ( int i = 0; i < editmenu.getItemCount(); i++ ) {
+            editmenu.getItem( i ).setEnabled( option );
         }
-        toolsmenu.setEnabled(option);
+        toolsmenu.setEnabled( option );
     }
 
     public Mat openImage() {
-        JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir") + "/resource");
+        JFileChooser fileChooser = new JFileChooser( System.getProperty( "user.dir" ) + "/resource" );
 
-        FileFilter filter1 = new ExtensionFileFilter("JPG and JPEG", new String[]{"JPG", "JPEG"});
-        fileChooser.setFileFilter(filter1);
-        FileFilter filter2 = new ExtensionFileFilter("PNG and BMP", new String[]{"PNG", "BMP"});
-        fileChooser.setFileFilter(filter2);
-        FileFilter filter3 = new ExtensionFileFilter("ALL", new String[]{"JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF"});
-        fileChooser.setFileFilter(filter3);
+        FileFilter filter1 = new ExtensionFileFilter( "JPG and JPEG", new String[]{ "JPG", "JPEG" } );
+        fileChooser.setFileFilter( filter1 );
+        FileFilter filter2 = new ExtensionFileFilter( "PNG and BMP", new String[]{ "PNG", "BMP" } );
+        fileChooser.setFileFilter( filter2 );
+        FileFilter filter3 = new ExtensionFileFilter( "ALL", new String[]{ "JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF" } );
+        fileChooser.setFileFilter( filter3 );
         // Ask user for the location of the image file
-        if (fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION) {
+        if ( fileChooser.showOpenDialog( null ) != JFileChooser.APPROVE_OPTION ) {
             return null;
         }
         String path = fileChooser.getSelectedFile().getAbsolutePath();
-        Mat newImage = Highgui.imread(path, Highgui.CV_LOAD_IMAGE_COLOR);
+        Mat newImage = Highgui.imread( path, Highgui.CV_LOAD_IMAGE_COLOR );
 
         // opencv_core.IplImage newImage = cvLoadImage(path, CV_LOAD_IMAGE_GRAYSCALE);
 
-        if (newImage != null) {
-            (Linox.getInstance().getImageStore()).addImageTab(fileChooser.getSelectedFile().getName(), newImage);
-            DataCollector.INSTANCE.setImageOriginal(fileChooser.getSelectedFile().getName(), newImage);
-            setEnableEditToolsItems(true);
-            return  newImage;
+        if ( newImage != null ) {
+            ( Linox.getInstance().getImageStore() ).addImageTab( fileChooser.getSelectedFile().getName(), newImage );
+            DataCollector.INSTANCE.setImageOriginal( fileChooser.getSelectedFile().getName(), newImage );
+            setEnableEditToolsItems( true );
+            return newImage;
         } else {
-            showMessageDialog(Linox.getInstance(), "Cannot open image file: " + path, Linox.getInstance().getTitle(), ERROR_MESSAGE);
+            showMessageDialog( Linox.getInstance(), "Cannot open image file: " + path, Linox.getInstance().getTitle(), ERROR_MESSAGE );
             return null;
         }
     }
 
-    public boolean saveImage(String path, Mat image) {
-        Highgui.imwrite(path, image);
+    public boolean saveImage( String path, Mat image ) {
+        Highgui.imwrite( path, image );
         return true;
     }
 
-    public boolean saveImage(Mat image) {
-        JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir") + "/resource");
-        FileFilter filter1 = new ExtensionFileFilter("ALL", new String[]{"JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF"});
-        fileChooser.setFileFilter(filter1);
+    public boolean saveImage( Mat image ) {
+        JFileChooser fileChooser = new JFileChooser( System.getProperty( "user.dir" ) + "/resource" );
+        FileFilter filter1 = new ExtensionFileFilter( "ALL", new String[]{ "JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF" } );
+        fileChooser.setFileFilter( filter1 );
 
         // Ask user for the location of the image file
-        if (fileChooser.showSaveDialog(null) != JFileChooser.APPROVE_OPTION) {
+        if ( fileChooser.showSaveDialog( null ) != JFileChooser.APPROVE_OPTION ) {
             return false;
         }
         String path = fileChooser.getSelectedFile().getAbsolutePath();
-        Highgui.imwrite(path, image);
+        Highgui.imwrite( path, image );
 
         return true;
     }
 
     public void closeImage() {
-        (Linox.getInstance().getImageStore()).removeSelectedImageTab();
-        DataCollector.INSTANCE.setImageOriginal("empty", null);
+        ( Linox.getInstance().getImageStore() ).removeSelectedImageTab();
+        DataCollector.INSTANCE.setImageOriginal( "empty", null );
     }
 
     public void exit() {
-        System.exit(0);
+        System.exit( 0 );
     }
 
     void showHistory() {
-        TreeMap<String, Mat> stack =  DataCollector.INSTANCE.getHistoryStack();
+        TreeMap<String, Mat> stack = DataCollector.INSTANCE.getHistoryStack();
 
-        for (Map.Entry<String, Mat> entry : stack.entrySet())
-        {
-            Linox.getInstance().getImageStore().addImageTab(entry.getKey(), entry.getValue());
+        for ( Map.Entry<String, Mat> entry : stack.entrySet() ) {
+            Linox.getInstance().getImageStore().addImageTab( entry.getKey(), entry.getValue() );
         }
     }
 

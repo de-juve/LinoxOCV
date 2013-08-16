@@ -18,7 +18,7 @@ public abstract class LMAMultiDimFunction {
      * @param a The fitting parameters.
      * @return The <i>y</i>-value of the function.
      */
-    public abstract double getY(double x[], double[] a);
+    public abstract double getY( double x[], double[] a );
 
     /**
      * The method which gives the partial derivates used in the LMA fit.
@@ -30,7 +30,7 @@ public abstract class LMAMultiDimFunction {
      * @param parameterIndex The parameter index for which the partial derivate is calculated.
      * @return The partial derivate of the function with respect to parameter <code>parameterIndex</code> at <i>x</i>.
      */
-    public abstract double getPartialDerivate(double x[], double[] a, int parameterIndex);
+    public abstract double getPartialDerivate( double x[], double[] a, int parameterIndex );
 
     /**
      * A convenience method for the one dimensional case.
@@ -40,9 +40,9 @@ public abstract class LMAMultiDimFunction {
      * @param a The fitting parameters.
      * @return The <i>y</i>-value of the function.
      */
-    public final double getY(double x, double a[]) {
+    public final double getY( double x, double a[] ) {
         temp[0] = x;
-        return getY(temp, a);
+        return getY( temp, a );
     }
 
     /**
@@ -52,8 +52,8 @@ public abstract class LMAMultiDimFunction {
      *         parameter-values, double[function value index].
      * @see LMA#generateData()
      */
-    public double[] generateData(LMA lma) {
-        return generateData(lma.xDataPoints, lma.parameters);
+    public double[] generateData( LMA lma ) {
+        return generateData( lma.xDataPoints, lma.parameters );
     }
 
     /**
@@ -61,10 +61,10 @@ public abstract class LMAMultiDimFunction {
      * @param a The fit parameters, double[fit parameter index]
      * @return Calculated function values with the given x- and parameter-values, double[function value index].
      */
-    public double[] generateData(double[][] x, double[] a) {
+    public double[] generateData( double[][] x, double[] a ) {
         double[] result = new double[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = getY(x[i], a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = getY( x[i], a );
         }
         return result;
     }
@@ -76,10 +76,10 @@ public abstract class LMAMultiDimFunction {
      * @param a The fit parameters, double[fit parameter index]
      * @return Calculated function values with the given x and parameter-values, double[function value index].
      */
-    public double[] generateData(double[] x, double[] a) {
+    public double[] generateData( double[] x, double[] a ) {
         double[] result = new double[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = getY(x[i], a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = getY( x[i], a );
         }
         return result;
     }
@@ -89,10 +89,10 @@ public abstract class LMAMultiDimFunction {
      * @param a double[fit parameter index]
      * @return Calculated function values with the given x- and parameter-values.
      */
-    public float[] generateData(float[][] x, double[] a) {
+    public float[] generateData( float[][] x, double[] a ) {
         float[] result = new float[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = (float) getY(ArrayConverter.asDoubleArray(x[i]), a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = ( float ) getY( ArrayConverter.asDoubleArray( x[i] ), a );
         }
         return result;
     }
@@ -104,10 +104,10 @@ public abstract class LMAMultiDimFunction {
      * @param a The fit parameters, double[fit parameter index]
      * @return Calculated function values with the given x and parameter-values, float[function value index].
      */
-    public float[] generateData(float[] x, double[] a) {
+    public float[] generateData( float[] x, double[] a ) {
         float[] result = new float[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = (float) getY(x[i], a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = ( float ) getY( x[i], a );
         }
         return result;
     }
@@ -115,21 +115,21 @@ public abstract class LMAMultiDimFunction {
     /**
      * The default weights-array constructor. Override for your purposes.
      */
-    public double[] constructWeights(double[][] dataPoints) {
+    public double[] constructWeights( double[][] dataPoints ) {
         double[] result = new double[dataPoints.length];
-        Arrays.fill(result, 1);
+        Arrays.fill( result, 1 );
         return result;
     }
 
-    public float[] generateData(float[][] x, float[] a) {
-        return ArrayConverter.asFloatArray(generateData(ArrayConverter.asDoubleArray(x), ArrayConverter.asDoubleArray(a)));
+    public float[] generateData( float[][] x, float[] a ) {
+        return ArrayConverter.asFloatArray( generateData( ArrayConverter.asDoubleArray( x ), ArrayConverter.asDoubleArray( a ) ) );
     }
 
     /**
      * One dimensional convenience method.
      */
-    public float[] generateData(float[] x, float[] a) {
-        return ArrayConverter.asFloatArray(generateData(ArrayConverter.asDoubleArray(x), ArrayConverter.asDoubleArray(a)));
+    public float[] generateData( float[] x, float[] a ) {
+        return ArrayConverter.asFloatArray( generateData( ArrayConverter.asDoubleArray( x ), ArrayConverter.asDoubleArray( a ) ) );
     }
 
 

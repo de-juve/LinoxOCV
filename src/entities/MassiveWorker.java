@@ -12,45 +12,45 @@ public enum MassiveWorker {
     private int max;
     private int min;
 
-    public void sort(Mat image) {
-        Integer[] id = new Integer[(int) image.total()];
+    public void sort( Mat image ) {
+        Integer[] id = new Integer[( int ) image.total()];
         Integer[] array = new Integer[id.length];
         int row, col;
-        for (int i = 0; i < id.length; i++) {
+        for ( int i = 0; i < id.length; i++ ) {
             id[i] = i;
             row = i / image.width();
             col = i % image.width();
-            array[i] = (int) image.get(row, col)[0];
+            array[i] = ( int ) image.get( row, col )[0];
         }
-        Arrays.sort(id, new MyComparator(array));
-        findExtremums(array);
-        generateMap(array);
+        Arrays.sort( id, new MyComparator( array ) );
+        findExtremums( array );
+        generateMap( array );
 
         ids.clear();
-        Collections.addAll(ids, id);
+        Collections.addAll( ids, id );
     }
 
-    public void sort(Mat gray, int[] _lowercompletion) {
-        Integer[] id = new Integer[(int) gray.total()];
+    public void sort( Mat gray, int[] _lowercompletion ) {
+        Integer[] id = new Integer[( int ) gray.total()];
         Integer[] luminance = new Integer[id.length];
         int row, col;
-        for (int i = 0; i < id.length; i++) {
+        for ( int i = 0; i < id.length; i++ ) {
             id[i] = i;
             row = i / gray.width();
             col = i % gray.width();
-            luminance[i] = (int) gray.get(row, col)[0];
+            luminance[i] = ( int ) gray.get( row, col )[0];
         }
 
         Integer[] lowercompletion = new Integer[_lowercompletion.length];
         int i = 0;
-        for (int value : _lowercompletion) {
-            lowercompletion[i++] = Integer.valueOf(value);
+        for ( int value : _lowercompletion ) {
+            lowercompletion[i++] = Integer.valueOf( value );
         }
 
-        Arrays.sort(id, new MyDifficultComparator(luminance, lowercompletion));
-        findExtremums(luminance);
+        Arrays.sort( id, new MyDifficultComparator( luminance, lowercompletion ) );
+        findExtremums( luminance );
         ids.clear();
-        Collections.addAll(ids, id);
+        Collections.addAll( ids, id );
     }
 
     public int getMax() {
@@ -69,44 +69,44 @@ public enum MassiveWorker {
         return map;
     }
 
-    private void generateMap(Integer[] array) {
+    private void generateMap( Integer[] array ) {
         map.clear();
-        for (int i = 0; i < array.length; i++) {
-            if (map.containsKey(array[i])) {
-                ArrayList<Integer> ar = map.get(array[i]);
-                ar.add(i);
-                map.put(array[i], ar);
+        for ( int i = 0; i < array.length; i++ ) {
+            if ( map.containsKey( array[i] ) ) {
+                ArrayList<Integer> ar = map.get( array[i] );
+                ar.add( i );
+                map.put( array[i], ar );
             } else {
                 ArrayList<Integer> ar = new ArrayList<Integer>();
-                ar.add(i);
-                map.put(array[i], ar);
+                ar.add( i );
+                map.put( array[i], ar );
             }
         }
     }
 
-    public void findExtremums(Integer[] array) {
+    public void findExtremums( Integer[] array ) {
         ArrayList<Integer> ar = new ArrayList<>();
-        Collections.addAll(ar, array);
-        max = Collections.max(ar);
-        min = Collections.min(ar);
+        Collections.addAll( ar, array );
+        max = Collections.max( ar );
+        min = Collections.min( ar );
     }
 
     private class MyComparator implements Comparator<Integer> {
         Integer[] values;
 
-        private MyComparator(Integer[] array) {
+        private MyComparator( Integer[] array ) {
             values = array;
         }
 
-        public int compare(Integer i, Integer j) {
-            if (values[i] > values[j])
+        public int compare( Integer i, Integer j ) {
+            if ( values[i] > values[j] )
                 return -1;
-            else if (values[i].equals(values[j]))
+            else if ( values[i].equals( values[j] ) )
                 return 0;
-            else if (values[i] < values[j])
+            else if ( values[i] < values[j] )
                 return 1;
             else
-                return i.compareTo(j);
+                return i.compareTo( j );
         }
     }
 
@@ -114,22 +114,22 @@ public enum MassiveWorker {
         Integer[] luminance;
         Integer[] lowerCompletion;
 
-        private MyDifficultComparator(Integer[] array1, Integer[] array2) {
+        private MyDifficultComparator( Integer[] array1, Integer[] array2 ) {
             luminance = array1;
             lowerCompletion = array2;
         }
 
-        public int compare(Integer i, Integer j) {
-            if (luminance[i] > luminance[j]) {
+        public int compare( Integer i, Integer j ) {
+            if ( luminance[i] > luminance[j] ) {
                 return -1;
             }
-            if (luminance[i] < luminance[j]) {
+            if ( luminance[i] < luminance[j] ) {
                 return 1;
             }
-            if (lowerCompletion[i] > lowerCompletion[j]) {
+            if ( lowerCompletion[i] > lowerCompletion[j] ) {
                 return -1;
             }
-            if (lowerCompletion[i] < lowerCompletion[j]) {
+            if ( lowerCompletion[i] < lowerCompletion[j] ) {
                 return 1;
             }
             return 0;

@@ -1,6 +1,7 @@
 package plugins;
 
 import entities.DataCollector;
+import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
@@ -14,9 +15,9 @@ public class AbstractPlugin implements IPluginFilter {
     protected String errMessage = "";
     protected String title = "";
 
-    public Mat getResult(boolean addToStack) {
-        if (addToStack) {
-            DataCollector.INSTANCE.addtoHistory(title, result);
+    public Mat getResult( boolean addToStack ) {
+        if ( addToStack ) {
+            DataCollector.INSTANCE.addtoHistory( title, result );
         }
         return result;
     }
@@ -29,7 +30,7 @@ public class AbstractPlugin implements IPluginFilter {
         return errMessage;
     }
 
-    protected void setErrMessage(String message) {
+    protected void setErrMessage( String message ) {
         errMessage = message;
     }
 
@@ -39,52 +40,59 @@ public class AbstractPlugin implements IPluginFilter {
 
     @Override
     public void cancel() {
+        Linox.getInstance().removeParameterJPanel();
+        exit = true;
+        setErrMessage( "canceled" );
+        pluginListener.stopPlugin();
     }
 
     @Override
     public void finish() {
+        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
+        Linox.getInstance().removeParameterJPanel();
+        pluginListener.finishPlugin();
     }
 
     @Override
-    public void getParams(ParameterJPanel parameterJPanel) {
+    public void getParams( ParameterJPanel parameterJPanel ) {
     }
 
     @Override
-    public void addRunListener(PluginRunner runner) {
+    public void addRunListener( PluginRunner runner ) {
         pluginListener = runner;
     }
 
-    public void initImage(Mat _image) {
+    public void initImage( Mat _image ) {
         image = _image;
-        result = new Mat(image.height(), image.width(), image.depth());
+        result = new Mat( image.height(), image.width(), image.depth() );
     }
 
     public boolean exit() {
         return exit;
     }
 
-    protected int id(int x, int y) {
+    protected int id( int x, int y ) {
         return x + y * image.width();
     }
 
-    protected int x(int id) {
+    protected int x( int id ) {
         return id % image.width();
     }
 
-    protected int y(int id) {
+    protected int y( int id ) {
         return id / image.width();
     }
 
 
-    protected void create(Integer[] array) {
-        for (int i = 0; i < array.length; i++) {
+    protected void create( Integer[] array ) {
+        for ( int i = 0; i < array.length; i++ ) {
             double[] data = new double[3];
             data[0] = array[i];
             data[1] = array[i];
             data[2] = array[i];
             int row = i / image.width();
             int col = i % image.width();
-            result.put(row, col, data);
+            result.put( row, col, data );
         }
      /* DataCollector.INSTANCE.setImageResult(result);
       DataCollector.INSTANCE.setImageResultTitle(title);*/

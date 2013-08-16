@@ -7,7 +7,7 @@ public interface IPluginRunner extends Runnable {
 
     void replaceImageTab();
 
-    void setPlugin(IPluginFilter plugin);
+    void setPlugin( IPluginFilter plugin );
 
     void stopPlugin();
 

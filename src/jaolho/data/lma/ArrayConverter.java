@@ -8,28 +8,28 @@ public class ArrayConverter {
     }
 
 
-    public static double[][] asDoubleArray(float[][] a) {
+    public static double[][] asDoubleArray( float[][] a ) {
         double[][] result = new double[a.length][];
-        for (int i = 0; i < a.length; i++) {
+        for ( int i = 0; i < a.length; i++ ) {
             //a[i].class.getName()
             //if (a[i].getClass().getName())
             result[i] = new double[a[i].length];
-            for (int j = 0; j < a[i].length; j++) {
-                result[i][j] = (float) a[i][j];
+            for ( int j = 0; j < a[i].length; j++ ) {
+                result[i][j] = ( float ) a[i][j];
             }
         }
         return result;
     }
 
-    public static double[] asDoubleArray(float[] a) {
-        if (a == null) return null;
-        return asDoubleArray(new float[][]{a})[0];
+    public static double[] asDoubleArray( float[] a ) {
+        if ( a == null ) return null;
+        return asDoubleArray( new float[][]{ a } )[0];
     }
 
-    public static float[] asFloatArray(double[] a) {
+    public static float[] asFloatArray( double[] a ) {
         float[] result = new float[a.length];
-        for (int i = 0; i < a.length; i++) {
-            result[i] = (float) a[i];
+        for ( int i = 0; i < a.length; i++ ) {
+            result[i] = ( float ) a[i];
         }
         return result;
     }
@@ -42,13 +42,13 @@ public class ArrayConverter {
      * yDataPoints    = y0 y1 y2 ... yN<br>
      * xDataPoints[i] = xi0 xi1 xi2 ... xi[K-1]<br>
      */
-    public static SeparatedData separateMultiDimDataToXY(double[][] dataPoints) {
+    public static SeparatedData separateMultiDimDataToXY( double[][] dataPoints ) {
         SeparatedData result = new SeparatedData();
         result.yDataPoints = new double[dataPoints.length];
         result.xDataPoints = new double[dataPoints.length][dataPoints[0].length - 1];
-        for (int i = 0; i < dataPoints.length; i++) {
+        for ( int i = 0; i < dataPoints.length; i++ ) {
             result.yDataPoints[i] = dataPoints[i][0];
-            for (int j = 1; j < dataPoints[i].length; j++) {
+            for ( int j = 1; j < dataPoints[i].length; j++ ) {
                 result.xDataPoints[i][j - 1] = dataPoints[i][j];
             }
         }
@@ -63,11 +63,11 @@ public class ArrayConverter {
      * =><br>
      * result[j] = yj xj0 xj1 xj2 ... xj[K-1]<br>
      */
-    public static double[][] combineMultiDimDataPoints(double[] yDataPoints, double[][] xDataPoints) {
+    public static double[][] combineMultiDimDataPoints( double[] yDataPoints, double[][] xDataPoints ) {
         double[][] result = new double[yDataPoints.length][xDataPoints.length + 1];
-        for (int i = 0; i < result.length; i++) {
+        for ( int i = 0; i < result.length; i++ ) {
             result[i][0] = yDataPoints[i];
-            for (int j = 1; j < result[i].length; j++) {
+            for ( int j = 1; j < result[i].length; j++ ) {
                 result[i][j] = xDataPoints[i][j - 1];
             }
         }
@@ -82,20 +82,20 @@ public class ArrayConverter {
      * =><br>
      * result[j] = yj xj0 xj1 xj2 ... xj[K-1]<br>
      */
-    public static double[][] combineMultiDimDataPoints(float[] yDataPoints, float[][] xDataPoints) {
+    public static double[][] combineMultiDimDataPoints( float[] yDataPoints, float[][] xDataPoints ) {
         double[][] result = new double[yDataPoints.length][xDataPoints.length + 1];
-        for (int i = 0; i < result.length; i++) {
+        for ( int i = 0; i < result.length; i++ ) {
             result[i][0] = yDataPoints[i];
-            for (int j = 1; j < result[i].length; j++) {
+            for ( int j = 1; j < result[i].length; j++ ) {
                 result[i][j] = xDataPoints[i][j - 1];
             }
         }
         return result;
     }
 
-    public static double[][] transpose(double[] a) {
+    public static double[][] transpose( double[] a ) {
         double[][] result = new double[a.length][1];
-        for (int i = 0; i < a.length; i++) {
+        for ( int i = 0; i < a.length; i++ ) {
             result[i][0] = a[i];
         }
         return result;

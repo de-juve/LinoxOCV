@@ -4,10 +4,11 @@ import gui.Linox;
 import net.miginfocom.swing.MigLayout;
 import org.opencv.core.Mat;
 
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 
 public class ImageJPanel extends JPanel {
@@ -20,90 +21,90 @@ public class ImageJPanel extends JPanel {
     MouseAdapter mouseAdapter;
     private boolean mousePressed = false;
 
-    ImageJPanel(String _title, Mat _image) {
-        this.setLayout(new MigLayout());
+    ImageJPanel( String _title, Mat _image ) {
+        this.setLayout( new MigLayout() );
         title = _title;
         image = _image;
 
-        imageView.setIcon(new ImageIcon(matToBufferedImage(image)));
+        imageView.setIcon( new ImageIcon( matToBufferedImage( image ) ) );
 
-        mouseMotionAdapter =  new MouseMotionAdapter() {
+        mouseMotionAdapter = new MouseMotionAdapter() {
             @Override
-            public void mouseMoved(MouseEvent e) {
-                if(e.getX() < image.width() && e.getX() > -1 && e.getY() < image.height() && e.getY() > -1) {
+            public void mouseMoved( MouseEvent e ) {
+                if ( e.getX() < image.width() && e.getX() > -1 && e.getY() < image.height() && e.getY() > -1 ) {
                     double[] px;
-                    px = image.get(e.getY(), e.getX());
-                    double r,g,b;
+                    px = image.get( e.getY(), e.getX() );
+                    double r, g, b;
                     int lum;
-                    if(px.length == 1) {
+                    if ( px.length == 1 ) {
                         r = g = b = px[0];
-                        lum = (int)px[0];
+                        lum = ( int ) px[0];
                     } else {
                         r = px[0];//(pixel & 0xff0000) >> 16;
                         g = px[1];//(pixel & 0x00ff00) >> 8;
                         b = px[2];//(pixel & 0x0000ff);
-                        lum = (int) (0.299 * r + 0.587 * g + 0.114 * b);
+                        lum = ( int ) ( 0.299 * r + 0.587 * g + 0.114 * b );
                     }
                     int id = e.getX() + e.getY() * image.width();
-                    Linox.getInstance().getStatusBar().setStatus("(" + e.getX() + ", " + e.getY() + ") id = " + id + " RGB(" + r + ", " + g + ", " + b + ") lum(" + lum + ")");
+                    Linox.getInstance().getStatusBar().setStatus( "(" + e.getX() + ", " + e.getY() + ") id = " + id + " RGB(" + r + ", " + g + ", " + b + ") lum(" + lum + ")" );
                 }
             }
 
         };
-        imageView.addMouseMotionListener( mouseMotionAdapter);
+        imageView.addMouseMotionListener( mouseMotionAdapter );
 
-        imageScrollPane = new JScrollPane(imageView, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        imageScrollPane.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-        imageScrollPane.getHorizontalScrollBar().setPreferredSize(new Dimension(0, 10));
+        imageScrollPane = new JScrollPane( imageView, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED );
+        imageScrollPane.getVerticalScrollBar().setPreferredSize( new Dimension( 10, 0 ) );
+        imageScrollPane.getHorizontalScrollBar().setPreferredSize( new Dimension( 0, 10 ) );
 
-        this.add(imageScrollPane);
+        this.add( imageScrollPane );
     }
 
     ImageJPanel() {
-        this.setLayout(new MigLayout());
-        imageView.setText("No image");
+        this.setLayout( new MigLayout() );
+        imageView.setText( "No image" );
         title = "Empty";
         image = null;
-        final JScrollPane imageScrollPane = new JScrollPane(imageView);
+        final JScrollPane imageScrollPane = new JScrollPane( imageView );
         // imageScrollPane.setPreferredSize(new Dimension(90, 30));
-        add(imageScrollPane);
+        add( imageScrollPane );
     }
 
-    void setButton(Action action, boolean visible) {
-        if(button != null) {
-            this.remove(button);
+    void setButton( Action action, boolean visible ) {
+        if ( button != null ) {
+            this.remove( button );
         }
-        button = new JButton(action);
-        button.setVisible(visible);
-        this.add(button);
+        button = new JButton( action );
+        button.setVisible( visible );
+        this.add( button );
     }
 
     void removeButton() {
-        if(button != null) {
-            this.remove(button);
+        if ( button != null ) {
+            this.remove( button );
         }
     }
 
-    void setMouseListener(MouseAdapter adapter) {
-        if(mouseAdapter != null) {
-            imageView.removeMouseListener(mouseAdapter);
-            imageView.removeMouseMotionListener(mouseAdapter);
+    void setMouseListener( MouseAdapter adapter ) {
+        if ( mouseAdapter != null ) {
+            imageView.removeMouseListener( mouseAdapter );
+            imageView.removeMouseMotionListener( mouseAdapter );
         } else {
-            imageView.removeMouseMotionListener(mouseMotionAdapter);
+            imageView.removeMouseMotionListener( mouseMotionAdapter );
         }
 
         mouseAdapter = adapter;
-        imageView.addMouseListener(mouseAdapter);
-        imageView.addMouseMotionListener(mouseAdapter);
+        imageView.addMouseListener( mouseAdapter );
+        imageView.addMouseMotionListener( mouseAdapter );
 
     }
 
     void resetMouseMotionListener() {
-        imageView.removeMouseListener(mouseAdapter);
-        imageView.removeMouseMotionListener(mouseAdapter);
+        imageView.removeMouseListener( mouseAdapter );
+        imageView.removeMouseMotionListener( mouseAdapter );
         mouseAdapter = null;
 
-        imageView.addMouseMotionListener(mouseMotionAdapter);
+        imageView.addMouseMotionListener( mouseMotionAdapter );
     }
 
     public Mat getImage() {
@@ -114,7 +115,7 @@ public class ImageJPanel extends JPanel {
         return title;
     }
 
-    public void setMousePressed(boolean value) {
+    public void setMousePressed( boolean value ) {
         mousePressed = value;
     }
 
@@ -128,16 +129,16 @@ public class ImageJPanel extends JPanel {
      * @param matrix Mat of type CV_8UC3 or CV_8UC1
      * @return BufferedImage of type TYPE_3BYTE_BGR or TYPE_BYTE_GRAY
      */
-    public BufferedImage matToBufferedImage(Mat matrix) {
+    public BufferedImage matToBufferedImage( Mat matrix ) {
         int cols = matrix.cols();
         int rows = matrix.rows();
-        int elemSize = (int)matrix.elemSize();
+        int elemSize = ( int ) matrix.elemSize();
         byte[] data = new byte[cols * rows * elemSize];
         int type;
 
-        matrix.get(0, 0, data);
+        matrix.get( 0, 0, data );
 
-        switch (matrix.channels()) {
+        switch ( matrix.channels() ) {
             case 1:
                 type = BufferedImage.TYPE_BYTE_GRAY;
                 break;
@@ -147,10 +148,10 @@ public class ImageJPanel extends JPanel {
 
                 // bgr to rgb
                 byte b;
-                for(int i=0; i<data.length; i=i+3) {
+                for ( int i = 0; i < data.length; i = i + 3 ) {
                     b = data[i];
-                    data[i] = data[i+2];
-                    data[i+2] = b;
+                    data[i] = data[i + 2];
+                    data[i + 2] = b;
                 }
                 break;
 
@@ -158,8 +159,8 @@ public class ImageJPanel extends JPanel {
                 return null;
         }
 
-        BufferedImage image = new BufferedImage(cols, rows, type);
-        image.getRaster().setDataElements(0, 0, cols, rows, data);
+        BufferedImage image = new BufferedImage( cols, rows, type );
+        image.getRaster().setDataElements( 0, 0, cols, rows, data );
 
         return image;
     }

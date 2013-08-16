@@ -8,34 +8,34 @@ import java.util.TreeMap;
 public class ImageOperationSmart extends ImageOperation {
 
     @Override
-    protected void defineValues(int[] closing, int[] opening) {
+    protected void defineValues( int[] closing, int[] opening ) {
     }
 
     @Override
-    protected void defineValues(int[] closing, int[] opening, TreeMap<Integer, Shed> closingSheds, TreeMap<Integer, Shed> openingSheds) {
+    protected void defineValues( int[] closing, int[] opening, TreeMap<Integer, Shed> closingSheds, TreeMap<Integer, Shed> openingSheds ) {
 
-        for (int i = 0; i < closing.length; i++) {
+        for ( int i = 0; i < closing.length; i++ ) {
             int areaCls, areaOpn;
 
-            areaCls = countHomogenAreaSize(i, closingSheds, true);
-            areaOpn = countHomogenAreaSize(i, openingSheds, false);
-            if (areaOpn > 0 && areaCls >= areaOpn) {
-                values.add(i, closing[i]);
-            } else if (areaOpn > 0) {
-                values.add(i, opening[i]);
-            } else if (areaCls > 0) {
-                values.add(i, closing[i]);
+            areaCls = countHomogenAreaSize( i, closingSheds, true );
+            areaOpn = countHomogenAreaSize( i, openingSheds, false );
+            if ( areaOpn > 0 && areaCls >= areaOpn ) {
+                values.add( i, closing[i] );
+            } else if ( areaOpn > 0 ) {
+                values.add( i, opening[i] );
+            } else if ( areaCls > 0 ) {
+                values.add( i, closing[i] );
             } else {
-                values.add(i, Math.min(closing[i], opening[i]));
+                values.add( i, Math.min( closing[i], opening[i] ) );
             }
         }
     }
 
-    private int countHomogenAreaSize(Integer p, TreeMap<Integer, Shed> sheds, boolean prev) {
+    private int countHomogenAreaSize( Integer p, TreeMap<Integer, Shed> sheds, boolean prev ) {
         int count;
         Integer label;
 
-        if (prev) {
+        if ( prev ) {
             int[] labels = DataCollector.INSTANCE.getPrevShedLabels();
             label = labels[p];
         } else {
@@ -43,7 +43,7 @@ public class ImageOperationSmart extends ImageOperation {
             label = labels[p];
         }
 
-        count = sheds.get(label).size();
+        count = sheds.get( label ).size();
         return count;
     }
 }

@@ -30,28 +30,20 @@ public class MorphologyCompilationPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        showParamsPanel("Choose params");
-        if (exit) {
+        showParamsPanel( "Choose params" );
+        if ( exit ) {
             return;
         }
     }
 
     @Override
-    public void cancel() {
-        Linox.getInstance().removeParameterJPanel();
-        exit = true;
-        setErrMessage("canceled");
-        pluginListener.stopPlugin();
-    }
-
-    @Override
-    public void getParams(ParameterJPanel panel) {
-        morphologyCompilation = panel.getValueComboBox(morphologyOperations);
-        morph_size = panel.getValueSlider(kernelSize);
+    public void getParams( ParameterJPanel panel ) {
+        morphologyCompilation = panel.getValueComboBox( morphologyOperations );
+        morph_size = panel.getValueSlider( kernelSize );
 
         MorphologyCompilation();
 
-        if (tabs == 0) {
+        if ( tabs == 0 ) {
             pluginListener.addImageTab();
             tabs++;
         } else {
@@ -59,45 +51,36 @@ public class MorphologyCompilationPlugin extends AbstractPlugin {
         }
     }
 
-    @Override
-    public void finish() {
-        //DataCollector.INSTANCE.setShedLabels(shedLabels);
-
-        Linox.getInstance().getStatusBar().setProgress("Morphology", 100, 100);
-        Linox.getInstance().removeParameterJPanel();
-        pluginListener.finishPlugin();
-    }
-
     private void MorphologyCompilation() {
         MorphologyPlugin morph = new MorphologyPlugin();
-        morph.initImage(image);
-        morph.run("Closing", morph_size);
+        morph.initImage( image );
+        morph.run( "Closing", morph_size );
         resultOfClosing = DataCollector.INSTANCE.getStatus();
-        TreeMap<Integer, Shed> closingSheds = (TreeMap<Integer, Shed>) ShedCollector.INSTANCE.getSheds().clone();
-        DataCollector.INSTANCE.setPrevShedLabels(DataCollector.INSTANCE.getShedLabels());
+        TreeMap<Integer, Shed> closingSheds = ( TreeMap<Integer, Shed> ) ShedCollector.INSTANCE.getSheds().clone();
+        DataCollector.INSTANCE.setPrevShedLabels( DataCollector.INSTANCE.getShedLabels() );
 
-        morph.run("Opening", morph_size);
+        morph.run( "Opening", morph_size );
         resultOfOpening = DataCollector.INSTANCE.getStatus();
-        TreeMap<Integer, Shed> openingSheds = (TreeMap<Integer, Shed>) ShedCollector.INSTANCE.getSheds().clone();
+        TreeMap<Integer, Shed> openingSheds = ( TreeMap<Integer, Shed> ) ShedCollector.INSTANCE.getSheds().clone();
 
         results = new int[resultOfClosing.length];
 
-        ImageOperation imageOperation = factory.createImageOperation(morphologyCompilation);
-        imageOperation.setWidth(image.width());
-        imageOperation.setHeight(image.height());
-        imageOperation.createImage(resultOfClosing, resultOfOpening, closingSheds, openingSheds, results);
+        ImageOperation imageOperation = factory.createImageOperation( morphologyCompilation );
+        imageOperation.setWidth( image.width() );
+        imageOperation.setHeight( image.height() );
+        imageOperation.createImage( resultOfClosing, resultOfOpening, closingSheds, openingSheds, results );
 
-        result = new Mat(image.rows(), image.cols(), image.type());
-        byte[] buff = new byte[(int) image.total() * image.channels()];
+        result = new Mat( image.rows(), image.cols(), image.type() );
+        byte[] buff = new byte[( int ) image.total() * image.channels()];
 
         int j = 0;
-        for (int i = 0; i < results.length; i++) {
-            for (int k = 0; k < image.channels(); k++) {
-                buff[j] = (byte) results[i];
+        for ( int i = 0; i < results.length; i++ ) {
+            for ( int k = 0; k < image.channels(); k++ ) {
+                buff[j] = ( byte ) results[i];
                 j++;
             }
         }
-        result.put(0, 0, buff);
+        result.put( 0, 0, buff );
 
         /*create(imageProcessor, results);
         type = "equaling";
@@ -106,17 +89,17 @@ public class MorphologyCompilationPlugin extends AbstractPlugin {
     }
 
 
-    protected void showParamsPanel(String name) {
-        morphologyOperations = new ParameterComboBox("Type of compilation:",
-                factory.getOperationMap().keySet().toArray(new String[0]));
+    protected void showParamsPanel( String name ) {
+        morphologyOperations = new ParameterComboBox( "Type of compilation:",
+                factory.getOperationMap().keySet().toArray( new String[0] ) );
 
         //to choose kernel size
-        kernelSize = new ParameterSlider("Size of kernel:\n 2n+1", 1, max_kernel_size, 1);
+        kernelSize = new ParameterSlider( "Size of kernel:\n 2n+1", 1, max_kernel_size, 1 );
 
-        ParameterJPanel panel = new ParameterJPanel(name, this);
-        panel.addParameterComboBox(morphologyOperations);
-        panel.addParameterSlider(kernelSize);
+        ParameterJPanel panel = new ParameterJPanel( name, this );
+        panel.addParameterComboBox( morphologyOperations );
+        panel.addParameterSlider( kernelSize );
 
-        Linox.getInstance().addParameterJPanel(panel);
+        Linox.getInstance().addParameterJPanel( panel );
     }
 }

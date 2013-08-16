@@ -19,110 +19,128 @@ public class LinoxEditMenuFactory {
     public LinoxEditMenuFactory() {
         final PluginRunner pluginRunner = new PluginRunner();
 
-        final Action grayscale = new AbstractAction("Grayscale") {
+        final Action resize = new AbstractAction( "Resize" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new GrayscalePlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new ResizePlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action gradient = new AbstractAction("Gradient") {
+        final Action grayscale = new AbstractAction( "Grayscale" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new GradientPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new GrayscalePlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action laplasian = new AbstractAction("Laplasian") {
+        final Action gradient = new AbstractAction( "Gradient" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new LaplasianPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new GradientPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action homotopy = new AbstractAction("Homotopy") {
+        final Action laplasian = new AbstractAction( "Laplasian" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new HomotopyPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new LaplasianPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action median = new AbstractAction("Median") {
+        final Action homotopy = new AbstractAction( "Homotopy" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MedianPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new HomotopyPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action morphologyTransformation = new AbstractAction("Morphology Transformation") {
+        final Action median = new AbstractAction( "Median" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MorphologyTransformationsPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new MedianPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action morphology = new AbstractAction("Morphology") {
+        final Action morphologyTransformation = new AbstractAction( "Morphology Transformation" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MorphologyPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new MorphologyTransformationsPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action morphologyCompilation = new AbstractAction("Morphology compilation") {
+        final Action morphology = new AbstractAction( "Morphology" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MorphologyCompilationPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new MorphologyPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action watershed = new AbstractAction("Watershed") {
+        final Action morphologyCompilation = new AbstractAction( "Morphology compilation" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new WatershedPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new MorphologyCompilationPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action shedCluster = new AbstractAction("Shed cluster") {
+        final Action watershed = new AbstractAction( "Watershed" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new ShedClusterPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new WatershedPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action shedPainter = new AbstractAction("Shed paint") {
+        final Action watershedSegmenter = new AbstractAction( "Watershed segmenter" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new ShedPainterPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new WatershedSegmenterPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
-        final Action histogram = new AbstractAction("Histogram") {
+        final Action shedCluster = new AbstractAction( "Shed cluster" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new HistogramPlugin());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new ShedClusterPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
+        final Action shedPainter = new AbstractAction( "Shed paint" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new ShedPainterPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
+        final Action histogram = new AbstractAction( "Histogram" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new HistogramPlugin() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
@@ -663,18 +681,20 @@ public class LinoxEditMenuFactory {
             }
         };*/
 
-        items.add(new JMenuItem(grayscale));
-        items.add(new JMenuItem(gradient));
-        items.add(new JMenuItem(laplasian));
-        items.add(new JMenuItem(homotopy));
-        items.add(new JMenuItem(median));
-        items.add(new JMenuItem(morphologyTransformation));
-        items.add(new JMenuItem(morphology));
-        items.add(new JMenuItem(morphologyCompilation));
-        items.add(new JMenuItem(watershed));
-        items.add(new JMenuItem(shedCluster));
-        items.add(new JMenuItem(shedPainter));
-        items.add(new JMenuItem(histogram));
+        items.add( new JMenuItem( resize ) );
+        items.add( new JMenuItem( grayscale ) );
+        items.add( new JMenuItem( gradient ) );
+        items.add( new JMenuItem( laplasian ) );
+        items.add( new JMenuItem( homotopy ) );
+        items.add( new JMenuItem( median ) );
+        items.add( new JMenuItem( morphologyTransformation ) );
+        items.add( new JMenuItem( morphology ) );
+        items.add( new JMenuItem( morphologyCompilation ) );
+        items.add( new JMenuItem( watershed ) );
+        items.add( new JMenuItem( watershedSegmenter ) );
+        items.add( new JMenuItem( shedCluster ) );
+        items.add( new JMenuItem( shedPainter ) );
+        items.add( new JMenuItem( histogram ) );
 
 
         /* items.add(new JMenuItem(luminaceRedirector));
@@ -715,8 +735,8 @@ public class LinoxEditMenuFactory {
 
         items.add(new JMenuItem(color_deconvolution));
         */
-        for (JMenuItem item : items) {
-            item.setEnabled(false);
+        for ( JMenuItem item : items ) {
+            item.setEnabled( false );
         }
 
         /*JMenuItem item = new JMenuItem(test1);
@@ -729,7 +749,7 @@ public class LinoxEditMenuFactory {
 
     }
 
-    private void loadImage(File file) {
+    private void loadImage( File file ) {
 //        ij.ImagePlus img =   IJ.openImage(file.getPath());
 //        DataCollection.INSTANCE.setImageOriginal(new ImagePlus(file.getName(), img.getProcessor().convertToRGB()));
     }

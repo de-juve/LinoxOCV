@@ -10,21 +10,21 @@ public class Shed {
     private Point canonical;
     public ArrayList<Point> points;
 
-    public Shed(int _label, Color _color) {
+    public Shed( int _label, Color _color ) {
         label = _label;
         color = _color;
         points = new ArrayList<>();
-        canonical = new Point(-1, -1);
+        canonical = new Point( -1, -1 );
     }
 
-    public Shed(int _label) {
+    public Shed( int _label ) {
         label = _label;
-        color = new Color(new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat());
+        color = new Color( new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat() );
         points = new ArrayList<>();
     }
 
-    public void addPoint(Point point) {
-        points.add(point);
+    public void addPoint( Point point ) {
+        points.add( point );
     }
 
     public int getLabel() {
@@ -39,7 +39,7 @@ public class Shed {
         return canonical;
     }
 
-    public void setCanonical(Point canonical) {
+    public void setCanonical( Point canonical ) {
         this.canonical = canonical;
     }
 

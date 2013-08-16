@@ -11,8 +11,8 @@ public class Polynomial extends LMAFunction {
      * @return The partial derivate of the polynomial which is
      *         x to the power of the parameter index.
      */
-    public double getPartialDerivate(double x, double[] a, int parameterIndex) {
-        return pow(x, parameterIndex);
+    public double getPartialDerivate( double x, double[] a, int parameterIndex ) {
+        return pow( x, parameterIndex );
     }
 
     /**
@@ -20,10 +20,10 @@ public class Polynomial extends LMAFunction {
      *
      * @param a 0: a_0, 1: a_1, 2: a_2, ..., a_n
      */
-    public double getY(double x, double[] a) {
+    public double getY( double x, double[] a ) {
         double result = 0;
-        for (int i = 0; i < a.length; i++) {
-            result += pow(x, i) * a[i];
+        for ( int i = 0; i < a.length; i++ ) {
+            result += pow( x, i ) * a[i];
         }
         return result;
     }
@@ -31,16 +31,16 @@ public class Polynomial extends LMAFunction {
     /**
      * fast power
      */
-    private static double pow(double x, int exp) {
+    private static double pow( double x, int exp ) {
         double result = 1;
-        for (int i = 0; i < exp; i++) {
+        for ( int i = 0; i < exp; i++ ) {
             result *= x;
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(pow(2, 1));
+    public static void main( String[] args ) {
+        System.out.println( pow( 2, 1 ) );
     }
 
 }

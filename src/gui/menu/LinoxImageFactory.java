@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class LinoxImageFactory {
     private final ArrayList<ImageJPanel> items = new ArrayList<>();
 
-    public ImageJPanel addImage(String title, Mat image) {
-        final ImageJPanel panel = new ImageJPanel(title, image);
-        items.add(panel);
+    public ImageJPanel addImage( String title, Mat image ) {
+        final ImageJPanel panel = new ImageJPanel( title, image );
+        items.add( panel );
         return panel;
     }
 
@@ -18,7 +18,7 @@ public class LinoxImageFactory {
     }
 
     LinoxImageFactory() {
-        items.add(new ImageJPanel());
+        items.add( new ImageJPanel() );
     }
 }
 

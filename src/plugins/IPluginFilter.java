@@ -6,9 +6,9 @@ import gui.menu.PluginRunner;
 import org.opencv.core.Mat;
 
 public interface IPluginFilter extends Runnable {
-    void initImage(Mat ip);
+    void initImage( Mat ip );
 
-    Mat getResult(boolean addToStack);
+    Mat getResult( boolean addToStack );
 
     boolean exit();
 
@@ -20,9 +20,9 @@ public interface IPluginFilter extends Runnable {
 
     void cancel();
 
-    void getParams(ParameterJPanel parameterJPanel);
+    void getParams( ParameterJPanel parameterJPanel );
 
-    void addRunListener(PluginRunner runner);
+    void addRunListener( PluginRunner runner );
 
     void finish();
 }

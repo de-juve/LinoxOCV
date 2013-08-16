@@ -24,7 +24,7 @@ public enum Direction {
 
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id - width;
         }
     },
@@ -50,7 +50,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id + width;
         }
 
@@ -78,7 +78,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id - 1;
         }
     },
@@ -104,7 +104,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id + 1;
         }
     },
@@ -130,7 +130,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id - width + 1;
         }
     },
@@ -156,7 +156,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id - width - 1;
         }
     },
@@ -182,7 +182,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id + width + 1;
         }
     },
@@ -208,7 +208,7 @@ public enum Direction {
         }
 
         @Override
-        public Integer getNeighboureId(int id, int width) {
+        public Integer getNeighboureId( int id, int width ) {
             return id + width - 1;
         }
     };
@@ -221,34 +221,34 @@ public enum Direction {
 
     public abstract Direction collinear2();
 
-    public abstract Integer getNeighboureId(int id, int width);
+    public abstract Integer getNeighboureId( int id, int width );
 
-    public static Direction defineDirection(int current, int next, int width) {
+    public static Direction defineDirection( int current, int next, int width ) {
         Direction direction = EAST;
         int xC = current % width;
         int yC = current / width;
         int xN = next % width;
         int yN = next / width;
 
-        if (xC == xN) {
-            if (yC < yN) {
+        if ( xC == xN ) {
+            if ( yC < yN ) {
                 direction = SOUTH;
             } else {
                 direction = NORTH;
             }
-        } else if (xC > xN) {
-            if (yC == yN) {
+        } else if ( xC > xN ) {
+            if ( yC == yN ) {
                 direction = WEST;
-            } else if (yC < yN) {
+            } else if ( yC < yN ) {
                 direction = SOUTH_WEST;
             } else {
                 direction = NORTH_WEST;
             }
 
-        } else if (xC < xN) {
-            if (yC == yN) {
+        } else if ( xC < xN ) {
+            if ( yC == yN ) {
                 direction = EAST;
-            } else if (yC < yN) {
+            } else if ( yC < yN ) {
                 direction = SOUTH_EAST;
             } else {
                 direction = NORTH_EAST;

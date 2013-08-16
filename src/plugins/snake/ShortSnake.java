@@ -11,27 +11,27 @@ public class ShortSnake<T extends SnakePoint> {
     private double minStep = 1E-4;
     private double maxStep = 100;
 
-    public ShortSnake(int _baseSetPointsSize) {
+    public ShortSnake( int _baseSetPointsSize ) {
         head = new LinkedList<>();
         baseSetPoints = new LinkedList<>();
         headId = 0;
         baseSetPointsSize = headSize = _baseSetPointsSize;
     }
 
-    public boolean addElementToHead(T element) {
-        if (head.size() + 1 > headSize) {
+    public boolean addElementToHead( T element ) {
+        if ( head.size() + 1 > headSize ) {
             head.clear();
         }
-        head.add(element);
-        headId = (int) element.x;
+        head.add( element );
+        headId = ( int ) element.x;
         return true;
     }
 
-    public boolean addElementToBaseSetPoints(T element) {
-        if (baseSetPoints.size() + 1 > baseSetPointsSize) {
+    public boolean addElementToBaseSetPoints( T element ) {
+        if ( baseSetPoints.size() + 1 > baseSetPointsSize ) {
             return false;
         }
-        baseSetPoints.add(element);
+        baseSetPoints.add( element );
         return true;
     }
 
@@ -44,7 +44,7 @@ public class ShortSnake<T extends SnakePoint> {
     }
 
     public boolean increaseStep() {
-        if (step >= maxStep) {
+        if ( step >= maxStep ) {
             return false;
         }
         step += inc;
@@ -52,10 +52,10 @@ public class ShortSnake<T extends SnakePoint> {
     }
 
     public boolean reduceStep() {
-        if (step <= minStep) {
+        if ( step <= minStep ) {
             return false;
         }
-        while (step - inc <= 0) {
+        while ( step - inc <= 0 ) {
             inc /= 2;
         }
         step -= inc;

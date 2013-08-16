@@ -26,11 +26,11 @@ public class MorphologyPlugin extends AbstractPlugin {
     final static int NONE = -300;
     final static int NOT_ANALYZED = -400;
 
-    ParameterComboBox morphologyOperations = new ParameterComboBox("Type of transformation:",
-            new String[]{"Opening", "Closing"});
+    ParameterComboBox morphologyOperations = new ParameterComboBox( "Type of transformation:",
+            new String[]{ "Opening", "Closing" } );
 
     //to choose kernel size
-    ParameterSlider kernelSize = new ParameterSlider("Size of kernel:\n 2n+1", 1, max_kernel_size, 1);
+    ParameterSlider kernelSize = new ParameterSlider( "Size of kernel:\n 2n+1", 1, max_kernel_size, 1 );
 
     public MorphologyPlugin() {
         title = "Morphology";
@@ -38,37 +38,29 @@ public class MorphologyPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress("Morphology", 0, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
-        showParamsPanel("Choose params");
-        if (exit) {
+        showParamsPanel( "Choose params" );
+        if ( exit ) {
             return;
         }
     }
 
-    public void run(String operation, int size) {
+    public void run( String operation, int size ) {
         morphologyOperation = operation;
         morph_size = size;
         morphologyOperations();
-        DataCollector.INSTANCE.setShedLabels(shedLabels);
+        DataCollector.INSTANCE.setShedLabels( shedLabels );
     }
 
     @Override
-    public void cancel() {
-        Linox.getInstance().removeParameterJPanel();
-        exit = true;
-        setErrMessage("canceled");
-        pluginListener.stopPlugin();
-    }
-
-    @Override
-    public void getParams(ParameterJPanel panel) {
-        morphologyOperation = panel.getValueComboBox(morphologyOperations);
-        morph_size = panel.getValueSlider(kernelSize);
+    public void getParams( ParameterJPanel panel ) {
+        morphologyOperation = panel.getValueComboBox( morphologyOperations );
+        morph_size = panel.getValueSlider( kernelSize );
 
         morphologyOperations();
 
-        if (tabs == 0) {
+        if ( tabs == 0 ) {
             pluginListener.addImageTab();
             tabs++;
         } else {
@@ -76,35 +68,26 @@ public class MorphologyPlugin extends AbstractPlugin {
         }
     }
 
-    @Override
-    public void finish() {
-        DataCollector.INSTANCE.setShedLabels(shedLabels);
+    protected void showParamsPanel( String name ) {
+        ParameterJPanel panel = new ParameterJPanel( name, this );
+        panel.addParameterComboBox( morphologyOperations );
+        panel.addParameterSlider( kernelSize );
 
-        Linox.getInstance().getStatusBar().setProgress("Morphology", 100, 100);
-        Linox.getInstance().removeParameterJPanel();
-        pluginListener.finishPlugin();
-    }
-
-    protected void showParamsPanel(String name) {
-        ParameterJPanel panel = new ParameterJPanel(name, this);
-        panel.addParameterComboBox(morphologyOperations);
-        panel.addParameterSlider(kernelSize);
-
-        Linox.getInstance().addParameterJPanel(panel);
+        Linox.getInstance().addParameterJPanel( panel );
     }
 
     private void morphologyOperations() {
         init();
-        gray = GrayscalePlugin.run(image, false);
-        MassiveWorker.INSTANCE.sort(gray);
+        gray = GrayscalePlugin.run( image, false );
+        MassiveWorker.INSTANCE.sort( gray );
 
-        if (morphologyOperation == "Closing") {
-            for (int h = MassiveWorker.INSTANCE.getMax(); h >= MassiveWorker.INSTANCE.getMin(); h--) {
-                preflood(h);
+        if ( morphologyOperation == "Closing" ) {
+            for ( int h = MassiveWorker.INSTANCE.getMax(); h >= MassiveWorker.INSTANCE.getMin(); h-- ) {
+                preflood( h );
             }
         } else {
-            for (int h = MassiveWorker.INSTANCE.getMin(); h <= MassiveWorker.INSTANCE.getMax(); h++) {
-                preflood(h);
+            for ( int h = MassiveWorker.INSTANCE.getMin(); h <= MassiveWorker.INSTANCE.getMax(); h++ ) {
+                preflood( h );
             }
         }
 
@@ -114,57 +97,58 @@ public class MorphologyPlugin extends AbstractPlugin {
         boolean[] analyzed = new boolean[ids.size()];
         int shedLabel;
         //start from pixels with min property
-        for (Integer p : ids) {
-            if (analyzed[p]) {
+        for ( Integer p : ids ) {
+            if ( analyzed[p] ) {
                 continue;
             }
             int root = status[p];
-            if (root < 0) {
+            if ( root < 0 ) {
                 root = p;
             }
-            while (status[root] >= 0) {
+            while ( status[root] >= 0 ) {
                 root = status[root];
             }
 
             int val = status[root];
 
-            if (!analyzed[root]) {
+            if ( !analyzed[root] ) {
                 shedLabel = root;
                 shedLabels[root] = shedLabel;
-                ShedCollector.INSTANCE.addShed(new Shed(shedLabel, new Color(rand.nextFloat(), rand.nextFloat(), rand.nextFloat())));
-                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(x(root), y(root)));
+                ShedCollector.INSTANCE.addShed( new Shed( shedLabel, new Color( rand.nextFloat(), rand.nextFloat(), rand.nextFloat() ) ) );
+                ShedCollector.INSTANCE.addElementToShed( shedLabel, new Point( x( root ), y( root ) ) );
             } else {
                 shedLabel = shedLabels[root];
             }
             analyzed[root] = true;
 
-            while (p != root) {
+            while ( p != root ) {
                 int tmp = status[p];
                 status[p] = val;
 
                 shedLabels[p] = shedLabel;
-                ShedCollector.INSTANCE.addElementToShed(shedLabel, new Point(x(p), y(p)));
+                ShedCollector.INSTANCE.addElementToShed( shedLabel, new Point( x( p ), y( p ) ) );
                 analyzed[p] = true;
 
                 p = tmp;
             }
         }
 
-        DataCollector.INSTANCE.setStatus(status);
+        DataCollector.INSTANCE.setStatus( status );
+        DataCollector.INSTANCE.setShedLabels( shedLabels );
 
-        result = new Mat(image.rows(), image.cols(), image.type());
-        byte[] buff = new byte[(int) image.total() * image.channels()];
+        result = new Mat( image.rows(), image.cols(), image.type() );
+        byte[] buff = new byte[( int ) image.total() * image.channels()];
 
         int j = 0;
-        for (int i = 0; i < status.length; i++) {
+        for ( int i = 0; i < status.length; i++ ) {
             int bright = -status[i] - 1;
             status[i] = bright;
-            for (int k = 0; k < image.channels(); k++) {
-                buff[j] = (byte) status[i];
+            for ( int k = 0; k < image.channels(); k++ ) {
+                buff[j] = ( byte ) status[i];
                 j++;
             }
         }
-        result.put(0, 0, buff);
+        result.put( 0, 0, buff );
     }
 
     private void init() {
@@ -174,36 +158,36 @@ public class MorphologyPlugin extends AbstractPlugin {
         last = new int[256];
         representative = new int[256];
 
-        for (int i = 0; i < last.length; i++) {
+        for ( int i = 0; i < last.length; i++ ) {
             last[i] = NONE;
             area[i] = 0;
             representative[i] = NONE;
         }
 
-        for (int i = 0; i < status.length; i++) {
+        for ( int i = 0; i < status.length; i++ ) {
             status[i] = NOT_ANALYZED;
         }
     }
 
-    private void preflood(int grayLevel) {
+    private void preflood( int grayLevel ) {
         TreeMap<Integer, ArrayList<Integer>> map = MassiveWorker.INSTANCE.getMap();
-        if (!map.containsKey(grayLevel)) {
+        if ( !map.containsKey( grayLevel ) ) {
             return;
         }
-        ArrayList<Integer> pixels = map.get(grayLevel);
-        for (Integer pixelId : pixels) {
-            if (status[pixelId] != NOT_ANALYZED) {
+        ArrayList<Integer> pixels = map.get( grayLevel );
+        for ( Integer pixelId : pixels ) {
+            if ( status[pixelId] != NOT_ANALYZED ) {
                 continue;
             }
             status[pixelId] = last[grayLevel];
             last[grayLevel] = pixelId;
             representative[grayLevel] = pixelId;
-            flood(grayLevel);
+            flood( grayLevel );
         }
     }
 
-    protected int flood(int h) {
-        while (last[h] != NONE) {
+    protected int flood( int h ) {
+        while ( last[h] != NONE ) {
 
             //propagation at level h
             //get point from queue
@@ -215,26 +199,26 @@ public class MorphologyPlugin extends AbstractPlugin {
 
             //get neighboures
             //ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIds(p, gray);
-            ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIdsWidthDiagonalCondition(p, gray);
-            for (Integer nid : neighs) {
-                if (status[nid] != NOT_ANALYZED) {
+            ArrayList<Integer> neighs = PixelsMentor.defineNeighboursIdsWidthDiagonalCondition( p, gray );
+            for ( Integer nid : neighs ) {
+                if ( status[nid] != NOT_ANALYZED ) {
                     continue;
                 }
-                int m = (int) gray.get(y(nid), x(nid))[0];
+                int m = ( int ) gray.get( y( nid ), x( nid ) )[0];
                 // set representative element if none
-                if (representative[m] == NONE) {
+                if ( representative[m] == NONE ) {
                     representative[m] = nid;
                 }
                 //add to queue
                 status[nid] = last[m];
                 last[m] = nid;
-                if (morphologyOperation.equals("Closing")) {
-                    while (m < h) {
-                        m = flood(m);
+                if ( morphologyOperation.equals( "Closing" ) ) {
+                    while ( m < h ) {
+                        m = flood( m );
                     }
                 } else {
-                    while (m > h) {
-                        m = flood(m);
+                    while ( m > h ) {
+                        m = flood( m );
                     }
                 }
             }
@@ -242,13 +226,13 @@ public class MorphologyPlugin extends AbstractPlugin {
         }
         int m = h;
         //parent settings
-        if (morphologyOperation.equals("Closing")) {
+        if ( morphologyOperation.equals( "Closing" ) ) {
             m = h + 1;
-            while (m <= 255 && representative[m] == NONE) {
+            while ( m <= 255 && representative[m] == NONE ) {
                 ++m;
             }
-            if (m <= 255) {
-                if (area[h] < morph_size) {
+            if ( m <= 255 ) {
+                if ( area[h] < morph_size ) {
                     status[representative[h]] = representative[m];
                     area[m] += area[h];
                 } else {
@@ -260,11 +244,11 @@ public class MorphologyPlugin extends AbstractPlugin {
             }
         } else {
             m = h - 1;
-            while (m >= 0 && representative[m] == NONE) {
+            while ( m >= 0 && representative[m] == NONE ) {
                 --m;
             }
-            if (m >= 0) {
-                if (area[h] < morph_size) {
+            if ( m >= 0 ) {
+                if ( area[h] < morph_size ) {
                     status[representative[h]] = representative[m];
                     area[m] += area[h];
                 } else {

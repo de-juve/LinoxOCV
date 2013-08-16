@@ -14,7 +14,7 @@ public abstract class LMAFunction {
      * @param a The fitting parameters.
      * @return The <i>y</i>-value of the function.
      */
-    public abstract double getY(double x, double[] a);
+    public abstract double getY( double x, double[] a );
 
     /**
      * The method which gives the partial derivates used in the LMA fit.
@@ -26,15 +26,15 @@ public abstract class LMAFunction {
      * @param parameterIndex The parameter index for which the partial derivate is calculated.
      * @return The partial derivate of the function with respect to parameter <code>parameterIndex</code> at <i>x</i>.
      */
-    public abstract double getPartialDerivate(double x, double[] a, int parameterIndex);
+    public abstract double getPartialDerivate( double x, double[] a, int parameterIndex );
 
     /**
      * @return Calculated function values with the given x- and parameter-values.
      */
-    public double[] generateData(double[] x, double[] a) {
+    public double[] generateData( double[] x, double[] a ) {
         double[] result = new double[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = getY(x[i], a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = getY( x[i], a );
         }
         return result;
     }
@@ -42,10 +42,10 @@ public abstract class LMAFunction {
     /**
      * @return Calculated function values with the given x- and parameter-values.
      */
-    public float[] generateData(float[] x, double[] a) {
+    public float[] generateData( float[] x, double[] a ) {
         float[] result = new float[x.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = (float) getY(x[i], a);
+        for ( int i = 0; i < result.length; i++ ) {
+            result[i] = ( float ) getY( x[i], a );
         }
         return result;
     }
@@ -53,14 +53,14 @@ public abstract class LMAFunction {
     /**
      * The default weights-array constructor. Override for your purposes.
      */
-    public double[] constructWeights(double[][] dataPoints) {
+    public double[] constructWeights( double[][] dataPoints ) {
         double[] result = new double[dataPoints[0].length];
-        Arrays.fill(result, 1);
+        Arrays.fill( result, 1 );
         return result;
     }
 
-    public float[] generateData(float[] x, float[] a) {
-        return ArrayConverter.asFloatArray(generateData(ArrayConverter.asDoubleArray(x), ArrayConverter.asDoubleArray(a)));
+    public float[] generateData( float[] x, float[] a ) {
+        return ArrayConverter.asFloatArray( generateData( ArrayConverter.asDoubleArray( x ), ArrayConverter.asDoubleArray( a ) ) );
     }
 
 }

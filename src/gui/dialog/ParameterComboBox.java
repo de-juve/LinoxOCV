@@ -11,22 +11,22 @@ public class ParameterComboBox extends JPanel implements ActionListener {
     private JComboBox<String> comboBox;
     private String value;
 
-    public ParameterComboBox(String name, String[] values) {
-        this.setLayout(new MigLayout());
+    public ParameterComboBox( String name, String[] values ) {
+        this.setLayout( new MigLayout() );
 
-        label = new JLabel(name);
-        comboBox = new JComboBox<>(values);
-        comboBox.setSelectedIndex(0);
-        value = (String) comboBox.getSelectedItem();
-        comboBox.addActionListener(this);
+        label = new JLabel( name );
+        comboBox = new JComboBox<>( values );
+        comboBox.setSelectedIndex( 0 );
+        value = ( String ) comboBox.getSelectedItem();
+        comboBox.addActionListener( this );
 
-        this.add(label);
-        this.add(comboBox);
+        this.add( label );
+        this.add( comboBox );
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        value = (String)((JComboBox<String>) e.getSource()).getSelectedItem();
+    public void actionPerformed( ActionEvent e ) {
+        value = ( String ) ( ( JComboBox<String> ) e.getSource() ).getSelectedItem();
     }
 
     public String getValue() {

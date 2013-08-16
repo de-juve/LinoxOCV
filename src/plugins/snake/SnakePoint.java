@@ -15,8 +15,8 @@ public class SnakePoint extends Point {
         neighbours = new Stack<>();
     }
 
-    public void pushNeighbour(int neighbour) {
-        neighbours.push(neighbour);
+    public void pushNeighbour( int neighbour ) {
+        neighbours.push( neighbour );
     }
 
     public int popNeighbour() {
@@ -24,7 +24,7 @@ public class SnakePoint extends Point {
     }
 
     public void removeStack() {
-        if (neighbours != null) {
+        if ( neighbours != null ) {
             neighbours.clear();
             neighbours = null;
         }

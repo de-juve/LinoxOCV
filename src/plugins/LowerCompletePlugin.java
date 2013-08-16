@@ -22,27 +22,27 @@ public class LowerCompletePlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress("Lower complete", 0, 100);
+        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
-        gray = GrayscalePlugin.run(image, false);
+        gray = GrayscalePlugin.run( image, false );
 
         InitQueue();
 
         distination = 1;
-        queue.add(new Point(-1, -1));
-        while (!queue.isEmpty()) {
+        queue.add( new Point( -1, -1 ) );
+        while ( !queue.isEmpty() ) {
             Point point = queue.remove();
-            if (point.x == -1 && queue.size() > 0) {
-                queue.add(new Point(-1, -1));
+            if ( point.x == -1 && queue.size() > 0 ) {
+                queue.add( new Point( -1, -1 ) );
                 distination++;
-            } else if (point.x > -1) {
-                level[id(point.x, point.y)] = distination;
-                int lum = (int) gray.get(point.y, point.x)[0];
-                ArrayList<Integer> neighbors = PixelsMentor.defineNeighboursIdsWithSameValue(id(point.x, point.y), gray);
-                for (Integer nid : neighbors) {
-                    if (level[nid] == 0) {
+            } else if ( point.x > -1 ) {
+                level[id( point.x, point.y )] = distination;
+                int lum = ( int ) gray.get( point.y, point.x )[0];
+                ArrayList<Integer> neighbors = PixelsMentor.defineNeighboursIdsWithSameValue( id( point.x, point.y ), gray );
+                for ( Integer nid : neighbors ) {
+                    if ( level[nid] == 0 ) {
                         level[nid] = -1;
-                        queue.add(new Point(x(nid), y(nid)));
+                        queue.add( new Point( x( nid ), y( nid ) ) );
                     }
                 }
                 /*for (int j = Math.max(0, point.y - 1); j <= Math.min(image.height() - 1, point.y + 1); j++) {
@@ -57,29 +57,29 @@ public class LowerCompletePlugin extends AbstractPlugin {
             }
         }
 
-        DataCollector.INSTANCE.setLowerCompletion(level);
-        Linox.getInstance().getStatusBar().setProgress("Lower complete", 100, 100);
+        DataCollector.INSTANCE.setLowerCompletion( level );
+        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
 
-        if (pluginListener != null) {
+        if ( pluginListener != null ) {
             pluginListener.addImageTab();
             pluginListener.finishPlugin();
         }
     }
 
     private void InitQueue() {
-        level = new int[(int) image.total()];
-        for (int row = 0; row < image.height(); row++) {
-            for (int col = 0; col < image.width(); col++) {
-                int lum = (int) gray.get(row, col)[0];
-                level[id(col, row)] = 0;
+        level = new int[( int ) image.total()];
+        for ( int row = 0; row < image.height(); row++ ) {
+            for ( int col = 0; col < image.width(); col++ ) {
+                int lum = ( int ) gray.get( row, col )[0];
+                level[id( col, row )] = 0;
                 N:
                 {
-                    ArrayList<Point> neighbors = PixelsMentor.getNeighborhoodOfPixel(col, row, image, 1);
-                    for (Point n : neighbors) {
-                        int nlum = (int) gray.get(n.y, n.x)[0];
-                        if (lum > nlum) {
-                            level[id(col, row)] = -1;
-                            queue.add(new Point(col, row));
+                    ArrayList<Point> neighbors = PixelsMentor.getNeighborhoodOfPixel( col, row, image, 1 );
+                    for ( Point n : neighbors ) {
+                        int nlum = ( int ) gray.get( n.y, n.x )[0];
+                        if ( lum > nlum ) {
+                            level[id( col, row )] = -1;
+                            queue.add( new Point( col, row ) );
                             break N;
 
                         }

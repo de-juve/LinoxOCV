@@ -12,29 +12,29 @@ public class ParameterSlider extends JPanel implements ChangeListener {
     private JSlider slider;
     private int value;
 
-    public ParameterSlider(String name, int min, int max, int defValue) {
-        this.setLayout(new MigLayout());
+    public ParameterSlider( String name, int min, int max, int defValue ) {
+        this.setLayout( new MigLayout() );
 
-        slider = new JSlider(JSlider.HORIZONTAL, min, max, defValue);
+        slider = new JSlider( JSlider.HORIZONTAL, min, max, defValue );
         value = defValue;
-        labelValue = new JLabel(String.valueOf(value));
+        labelValue = new JLabel( String.valueOf( value ) );
 
-        label = new JLabel(name);
+        label = new JLabel( name );
 
-        slider.addChangeListener(this);
+        slider.addChangeListener( this );
 
-        this.add(label);
-        this.add(slider);
-        this.add(labelValue);
+        this.add( label );
+        this.add( slider );
+        this.add( labelValue );
     }
 
     @Override
-    public void stateChanged(ChangeEvent e) {
-        JSlider source = (JSlider)e.getSource();
-        if (!source.getValueIsAdjusting()) {
+    public void stateChanged( ChangeEvent e ) {
+        JSlider source = ( JSlider ) e.getSource();
+        if ( !source.getValueIsAdjusting() ) {
             value = source.getValue();
         }
-        labelValue.setText(String.valueOf(source.getValue()));
+        labelValue.setText( String.valueOf( source.getValue() ) );
     }
 
     public int getValue() {

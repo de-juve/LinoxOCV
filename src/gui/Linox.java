@@ -1,13 +1,12 @@
 package gui;
 
-import javax.swing.*;
-import java.awt.*;
-
 import gui.dialog.ParameterJPanel;
 import gui.menu.LinoxImageStore;
 import gui.menu.LinoxMenuStore;
 import org.opencv.core.Core;
 
+import javax.swing.*;
+import java.awt.*;
 
 
 public class Linox extends JFrame {
@@ -16,17 +15,17 @@ public class Linox extends JFrame {
     private JPanel mainPanel;
 
     private Linox() throws HeadlessException {
-        super("Linox");
+        super( "Linox" );
         $$$setupUI$$$();
         createUIComponents();
         linox = this;
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
     }
 
     public static Linox getInstance() {
-        if (linox == null) {
-            synchronized (Linox.class) {
-                if (linox == null) {
+        if ( linox == null ) {
+            synchronized ( Linox.class ) {
+                if ( linox == null ) {
                     linox = new Linox();
                 }
             }
@@ -34,28 +33,28 @@ public class Linox extends JFrame {
         return linox;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
+    public static void main( String[] args ) {
+        SwingUtilities.invokeLater( new Runnable() {
             public void run() {
                 final Linox frame = new Linox();
                 frame.pack();
                 // Mark for display in the center of the screen
-                frame.setLocationRelativeTo(null);
-                frame.setContentPane(Linox.getInstance().$$$getRootComponent$$$());
-                frame.setSize(640, 480);
+                frame.setLocationRelativeTo( null );
+                frame.setContentPane( Linox.getInstance().$$$getRootComponent$$$() );
+                frame.setSize( 640, 480 );
                 // Exit application when frame is closed.
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.setVisible(true);
+                frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
+                frame.setVisible( true );
             }
-        });
+        } );
     }
 
     private void createUIComponents() {
-       mainPanel.add(new LinoxMenuStore(), BorderLayout.NORTH, 0);
+        mainPanel.add( new LinoxMenuStore(), BorderLayout.NORTH, 0 );
 
-       mainPanel.add(new LinoxImageStore(), BorderLayout.CENTER, 1);
+        mainPanel.add( new LinoxImageStore(), BorderLayout.CENTER, 1 );
 
-       mainPanel.add(new StatusBar(), BorderLayout.SOUTH, 2);
+        mainPanel.add( new StatusBar(), BorderLayout.SOUTH, 2 );
     }
 
     /**
@@ -67,9 +66,9 @@ public class Linox extends JFrame {
      */
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
-        mainPanel.setLayout(new BorderLayout());
-        mainPanel.setMaximumSize(new Dimension(1024, 978));
-        mainPanel.setMinimumSize(new Dimension(200, 100));
+        mainPanel.setLayout( new BorderLayout() );
+        mainPanel.setMaximumSize( new Dimension( 1024, 978 ) );
+        mainPanel.setMinimumSize( new Dimension( 200, 100 ) );
         // mainPanel.setPreferredSize(new Dimension(200, 100));
     }
 
@@ -80,29 +79,29 @@ public class Linox extends JFrame {
         return mainPanel;
     }
 
-    public void showStatus(String s) {
-        getStatusBar().setStatus(s);
+    public void showStatus( String s ) {
+        getStatusBar().setStatus( s );
     }
 
     public JMenuBar getMenuStore() {
-        return (JMenuBar) mainPanel.getComponent(0);
+        return ( JMenuBar ) mainPanel.getComponent( 0 );
     }
 
-     public LinoxImageStore getImageStore() {
-         return (LinoxImageStore) mainPanel.getComponent(1);
-     }
+    public LinoxImageStore getImageStore() {
+        return ( LinoxImageStore ) mainPanel.getComponent( 1 );
+    }
 
     public StatusBar getStatusBar() {
-        return (StatusBar) mainPanel.getComponent(2);
+        return ( StatusBar ) mainPanel.getComponent( 2 );
     }
 
-    public void addParameterJPanel(ParameterJPanel panel) {
-        mainPanel.add(panel, BorderLayout.EAST, 3);
+    public void addParameterJPanel( ParameterJPanel panel ) {
+        mainPanel.add( panel, BorderLayout.EAST, 3 );
     }
 
     public void removeParameterJPanel() {
-        if(mainPanel.getComponents().length > 3) {
-            mainPanel.remove(3);
+        if ( mainPanel.getComponents().length > 3 ) {
+            mainPanel.remove( 3 );
         }
     }
 
