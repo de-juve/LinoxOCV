@@ -2,6 +2,7 @@ package entities;
 
 import org.opencv.core.Mat;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 public enum DataCollector {
@@ -13,6 +14,7 @@ public enum DataCollector {
     private Mat imageOriginal, imageResult;
     private Mat grayImg, gradientImg, laplasianImg;
     private int[] lowerCompletion, status, shedLabels, prevShedLabels, watershedPoints;
+    private ArrayList<Line> lines;
 
     //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
     // private ArrayList<Integer> waterShedPoints;
@@ -64,6 +66,10 @@ public enum DataCollector {
         watershedPoints = array;
     }
 
+    public void setLines( ArrayList<Line> _lines ) {
+        lines = _lines;
+    }
+
 
     public Mat getImageOriginal() {
         return imageOriginal;
@@ -103,6 +109,10 @@ public enum DataCollector {
 
     public int[] getWatershedPoints() {
         return watershedPoints;
+    }
+
+    public ArrayList<Line> getLines() {
+        return lines;
     }
 
     public String getImageResultTitle() {

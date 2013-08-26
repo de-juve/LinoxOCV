@@ -1,10 +1,8 @@
 package plugins.approximation;
 
+import entities.Line;
 import jaolho.data.lma.LMA;
 import jaolho.data.lma.LMAFunction;
-import org.opencv.core.Point;
-
-import java.util.LinkedList;
 
 public class Regression {
     LMAFunction lmaFunction;
@@ -14,18 +12,18 @@ public class Regression {
         lmaFunction = new PolynomFunction();
     }
 
-    public void calcFitParams( LinkedList<Point> line, String typeFunction, int polynomialDegree ) {
-        double[] xArr = new double[line.size()];
-        double[] yArr = new double[line.size()];
+    public void calcFitParams( Line line, String typeFunction, int polynomialDegree ) {
+        double[] xArr = new double[line.points.size()];
+        double[] yArr = new double[xArr.length];
         double[] params = new double[1];
 
 
-        for ( int i = 0; i < line.size(); i++ ) {
-            xArr[i] = line.get( i ).x;
-            yArr[i] = line.get( i ).y;
+        for ( int i = 0; i < line.points.size(); i++ ) {
+            xArr[i] = line.points.get( i ).x;
+            yArr[i] = line.points.get( i ).y;
         }
 
-        switch ( typeFunction ) {
+        switch ( typeFunction.toLowerCase() ) {
             case "polynomial": {
                 params = new double[polynomialDegree];
                 for ( int i = 0; i < polynomialDegree; i++ ) {

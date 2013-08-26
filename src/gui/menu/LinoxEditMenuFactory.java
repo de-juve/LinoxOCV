@@ -154,6 +154,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action ols = new AbstractAction( "Ordinary least squares" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new OLSPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
       /*
 
 
@@ -705,6 +714,7 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( shedPainter ) );
         items.add( new JMenuItem( histogram ) );
         items.add( new JMenuItem( hough ) );
+        items.add( new JMenuItem( ols ) );
 
 
         /* items.add(new JMenuItem(luminaceRedirector));
