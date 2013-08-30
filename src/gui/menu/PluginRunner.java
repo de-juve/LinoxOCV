@@ -58,13 +58,13 @@ public class PluginRunner implements IPluginRunner {
 
     @Override
     public void addImageTab() {
-        DataCollector.INSTANCE.setImageResult( plugin.getTitle() + " of ", plugin.getResult( true ) );
+        DataCollector.INSTANCE.setImageResult( plugin.getTitle(), plugin.getResult( true ) );
         ( Linox.getInstance().getImageStore() ).addImageTab( DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult() );
     }
 
     @Override
     public void replaceImageTab() {
-        DataCollector.INSTANCE.setImageResult( plugin.getTitle() + " of ", plugin.getResult( true ) );
+        DataCollector.INSTANCE.setImageResult( plugin.getTitle(), plugin.getResult( true ) );
         ( Linox.getInstance().getImageStore() ).replaceImageTab( DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult() );
     }
 

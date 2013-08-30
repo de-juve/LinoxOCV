@@ -47,11 +47,12 @@ public class PointMentor {
                         visited[point.x + point.y * img.width()] = true;
                         line.add( point );
                         ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithSameValue( point.x + point.y * img.width(), img );
-                        for ( int i = 0; i < neighbours.size(); i++ ) {
-                            Point n = getNextPoint( point, neighbours, img );
+                        int size = neighbours.size();
+                        for ( int i = 0; i < size; i++ ) {
+                            Point n = getNextPoint( point, neighbours, points, img );
+                            neighbours.remove( ( Integer ) ( n.x + n.y * img.width() ) );
                             queue.add( n );
                         }
-
                     }
                 }
                 res.add( line );
@@ -61,7 +62,7 @@ public class PointMentor {
         return res;
     }
 
-    private static Point getNextPoint( Point p, ArrayList<Integer> neighbours, Mat img ) {
+    private static Point getNextPoint( Point p, ArrayList<Integer> neighbours, ArrayList<Point> points, Mat img ) {
         Point neighbor = new Point( -1, -1 );
         int i = 0;
 
@@ -100,15 +101,14 @@ public class PointMentor {
                     break;
                 }
             }
-            if ( neighbor.x >= 0 && neighbours.contains( neighbor.x + neighbor.y * img.width() ) )
+            if ( neighbor.x >= 0 && neighbours.contains( neighbor.x + neighbor.y * img.width() ) && points.contains( neighbor ) )
                 break;
             i++;
         }
-
-       /* if(neighbor < 0 || !elements.contains(neighbor) || !isContourPoint(neighbor) || neighbor != (nx + ny * DataCollection.INSTANCE.getWidth()) || visited.contains(neighbor)) {
-            throw new IncorrectNeighborException();
+        if ( i == 8 ) {
+            return new Point( -1, -1 );
         }
-        visited.add(neighbor);  */
+
         return neighbor;
     }
 

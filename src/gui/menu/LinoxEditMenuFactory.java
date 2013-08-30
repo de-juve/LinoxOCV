@@ -3,6 +3,7 @@ package gui.menu;
 import plugins.*;
 import plugins.morphology.MorphologyCompilationPlugin;
 import plugins.morphology.MorphologyPlugin;
+import plugins.roadNetwork.Builder;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -163,214 +164,25 @@ public class LinoxEditMenuFactory {
             }
         };
 
-      /*
-
-
-
-        final Action lowerCompletion = new AbstractAction("Lower completion") {
+        final Action builder = new AbstractAction( "Road builder" ) {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new LowerCompletion());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action gradationCoversion = new AbstractAction("Gradation conversion") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new GradationConverter());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action histChanger = new AbstractAction("Histogram chaniging") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new HistogramChanger());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action imageOperator = new AbstractAction("Image operations") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new ImageOperator());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action opening = new AbstractAction("Morfology opening") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new AreaOpening());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action closing = new AbstractAction("Morfology closing") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new AreaClosing());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action equaling = new AbstractAction("Morfology equaling") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new AreaEqualing());
-                Thread myThready = new Thread(pluginRunner);
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new Builder() );
+                Thread myThready = new Thread( pluginRunner );
                 myThready.start();
             }
         };
 
 
-        final Action morfologyCompilation = new AbstractAction("Morfology compilation") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MorphologyCompilation());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action shedColoring = new AbstractAction("Sheds coloring") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new ShedColoring());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-
-
-
-        final Action smartShedding = new AbstractAction("Smart Shedding") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new SmartShedding());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action contourAnalizer = new AbstractAction("Contour Analizer") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new ContourAnalizer());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action watershed = new AbstractAction("Watershed") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new Watershed());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action edgeDetector = new AbstractAction("Edge Detector") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new DetectEdges());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action curveAnalizer = new AbstractAction("Curve Analyzer") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new CurveAnalyzer());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action gac = new AbstractAction("Build GAC") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new GACBuilder());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action gacAnalizer = new AbstractAction("GAC Analizer") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new GACAnalizer());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action roadBuilder = new AbstractAction("Build Road") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new RoadBuilder());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-
-        final Action homotopy = new AbstractAction("Homotopy") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new HomotopyFilter());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action luminaceRedirector = new AbstractAction("Luminance redirector") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new LuminanceRedirector());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action luminaceDiscretizator = new AbstractAction("Luminance discretization") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new LuminanceDiscretizator());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-        final Action medianFilter = new AbstractAction("Median filter") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new MedianFilter());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
-
-
+         /*
         final Action snakeMove = new AbstractAction("Movement of a  Snake") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MovementOfSnake());
                 Thread myThready = new Thread(pluginRunner);
                 myThready.start();
-            }*/
-           /* @Override
+            }
+            @Override
             public void actionPerformed(ActionEvent e) {
                 final ImageJPanel panel = Linox.getInstance().getImageStore().getSelectedTab();
                 final ImagePlus image = panel.image.duplicate();
@@ -419,8 +231,7 @@ public class LinoxEditMenuFactory {
 
             }
         };
-          */
-       /* final Action ols = new AbstractAction("Ordinary Least Squares") {
+           final Action ols = new AbstractAction("Ordinary Least Squares") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 final ImageJPanel panel = Linox.getInstance().getImageStore().getSelectedTab();
@@ -615,89 +426,7 @@ public class LinoxEditMenuFactory {
             }
         };
 
-        final Action scaler = new AbstractAction("Scaler") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                try {
-                    WindowManager.setTempCurrentImage(DataCollection.INSTANCE.getImageOriginal());
-                    Scaler scaler = new Scaler();
-                    scaler.run("scaler");
-                    if( IJ.getImage() != null && WindowManager.getCurrentWindow() != null)  {
-                        DataCollection.INSTANCE.setImageResult((ImagePlus) IJ.getImage().clone());
-
-                        ((LinoxImageStore) Linox.getInstance().getImageStore()).addImageTab(WindowManager.getCurrentWindow().getTitle(), DataCollection.INSTANCE.getImageResult());
-                        WindowManager.closeAllWindows();
-                    }
-
-                } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
-                }
-            }
-        };
-
-        final Action fft = new AbstractAction("Fourier Transform") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                try {
-                    WindowManager.setTempCurrentImage(DataCollection.INSTANCE.getImageOriginal());
-                    FFT f = new FFT();
-                    f.run("options");
-                    if( IJ.getImage() != null && WindowManager.getCurrentWindow() != null)  {
-                        DataCollection.INSTANCE.setImageResult((ImagePlus) IJ.getImage().clone());
-
-                        ((LinoxImageStore) Linox.getInstance().getImageStore()).addImageTab(WindowManager.getCurrentWindow().getTitle(), DataCollection.INSTANCE.getImageResult());
-                        WindowManager.closeAllWindows();
-                    }
-
-                } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
-                }
-            }
-        };
-
-        final Action histogram = new AbstractAction("Histogram") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                try {
-                    WindowManager.setTempCurrentImage(DataCollection.INSTANCE.getImageOriginal());
-                    Histogram histogram = new Histogram();
-                    histogram.run("");
-                    if( IJ.getImage() != null && WindowManager.getCurrentWindow() != null)  {
-                        DataCollection.INSTANCE.setImageResult((ImagePlus) IJ.getImage().clone());
-
-                        (Linox.getInstance().getImageStore()).addImageTab(WindowManager.getCurrentWindow().getTitle(), DataCollection.INSTANCE.getImageResult());
-                        WindowManager.closeAllWindows();
-                    }
-
-                } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
-                }
-            }
-        };
-
-        final Action color_deconvolution = new AbstractAction("Color deconvolution") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                try {
-                    WindowManager.setTempCurrentImage(DataCollection.INSTANCE.getImageOriginal());
-                    Colour_Deconvolution plugin = new Colour_Deconvolution();
-                    plugin.run("");
-                    if( IJ.getImage() != null && WindowManager.getCurrentWindow() != null)  {
-                        DataCollection.INSTANCE.setImageResult((ImagePlus) IJ.getImage().clone());
-
-                        ((LinoxImageStore) Linox.getInstance().getImageStore()).addImageTab(WindowManager.getCurrentWindow().getTitle(), DataCollection.INSTANCE.getImageResult());
-                        WindowManager.closeAllWindows();
-                    }
-
-                } finally {
-                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
-                }
-            }
-        };*/
+        */
 
         items.add( new JMenuItem( resize ) );
         items.add( new JMenuItem( grayscale ) );
@@ -715,46 +444,8 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( histogram ) );
         items.add( new JMenuItem( hough ) );
         items.add( new JMenuItem( ols ) );
+        items.add( new JMenuItem( builder ) );
 
-
-        /* items.add(new JMenuItem(luminaceRedirector));
-        items.add(new JMenuItem(luminaceDiscretizator));
-
-        items.add(new JMenuItem(lowerCompletion));
-        items.add(new JMenuItem(gradationCoversion));
-        items.add(new JMenuItem(histChanger));
-        items.add(new JMenuItem(imageOperator));
-
-        items.add(new JMenuItem(opening));
-        items.add(new JMenuItem(closing));
-        items.add(new JMenuItem(equaling));
-        items.add(new JMenuItem(morfologyCompilation));
-        items.add(new JMenuItem(shedColoring));
-        items.add(new JMenuItem(smartShedding));
-        items.add(new JMenuItem(contourAnalizer));
-
-        items.add(new JMenuItem(watershed));
-        items.add(new JMenuItem(edgeDetector));
-
-        items.add(new JMenuItem(gac));
-        items.add(new JMenuItem(gacAnalizer));
-        items.add(new JMenuItem(roadBuilder));
-
-        items.add(new JMenuItem(snakeMove));
-
-        items.add(new JMenuItem(curveAnalizer));
-        items.add(new JMenuItem(homotopy));
-
-        items.add(new JMenuItem(histogram));
-
-        items.add(new JMenuItem(ols));
-        items.add(new JMenuItem(thickening));
-        items.add(new JMenuItem(medianFilter));
-        items.add(new JMenuItem(scaler));
-        items.add(new JMenuItem(fft));
-
-        items.add(new JMenuItem(color_deconvolution));
-        */
         for ( JMenuItem item : items ) {
             item.setEnabled( false );
         }

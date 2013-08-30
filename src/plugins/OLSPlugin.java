@@ -51,12 +51,11 @@ public class OLSPlugin extends AbstractPlugin {
         Regression regressionY = new Regression();
 
         ArrayList<Line> lines = DataCollector.INSTANCE.getLines();
-        for ( int i = 0; i < lines.size(); i++ ) {
-            Line line = lines.get( i );
+        for ( Line line : lines ) {
             Line x = new Line();
             Line y = new Line();
-            for ( int j = 0; j < line.points.size(); j++ ) {
-                Point p = line.points.get( j );
+            for ( int i = 0; i < line.points.size(); i++ ) {
+                Point p = line.points.get( i );
                 x.add( new Point( i, p.x ) );
                 y.add( new Point( i, p.y ) );
             }

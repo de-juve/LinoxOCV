@@ -30,7 +30,7 @@ public enum DataCollector {
     }
 
     public void setImageResult( String _title, Mat _imageResult ) {
-        imageResultTitle = _title + imageOriginalTitle;
+        imageResultTitle = _title;// + imageOriginalTitle;
         imageResult = _imageResult;
     }
 

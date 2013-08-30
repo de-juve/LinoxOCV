@@ -3,6 +3,8 @@ package entities;
 public class Point {
     public int x;
     public int y;
+    public Direction direction;
+    public double weight;
 
     public Point( int _x, int _y ) {
         x = _x;

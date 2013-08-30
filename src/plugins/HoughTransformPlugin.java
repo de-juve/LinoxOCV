@@ -13,7 +13,6 @@ import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class HoughTransformPlugin extends AbstractPlugin {
     ParameterSlider thresSlider, minLengthSlider, maxGapSlider;
@@ -75,14 +74,23 @@ public class HoughTransformPlugin extends AbstractPlugin {
         ArrayList<entities.Point> points = PointMentor.extractPoints( img );
         ArrayList<entities.Point> exPoints = PointMentor.extractExtreamPoints( img, points );
         DataCollector.INSTANCE.setLines( PointMentor.linkPoints( img, points, exPoints ) );
-        Random rand = new Random();
+        for ( entities.Point p : points ) {
+            double[] color = new double[]{ 0, 255, 0 };
+            img.put( p.y, p.x, color );
+        }
+        DataCollector.INSTANCE.addtoHistory( "img2", img );
+        for ( entities.Point p : exPoints ) {
+            double[] color = new double[]{ 0, 255, 255 };
+            img.put( p.y, p.x, color );
+        }
+        DataCollector.INSTANCE.addtoHistory( "img3", img );
         for ( Line l : DataCollector.INSTANCE.getLines() ) {
             double[] color = new double[]{ 0, 0, 255 };
             for ( entities.Point p : l.points ) {
                 img.put( p.y, p.x, color );
             }
         }
-        DataCollector.INSTANCE.addtoHistory( "img2", img );
+        DataCollector.INSTANCE.addtoHistory( "img4", img );
 
         return result;
     }
