@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/DataCollector.java" afterPath="$PROJECT_DIR$/src/entities/DataCollector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Direction.java" afterPath="$PROJECT_DIR$/src/entities/Direction.java" />
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="+Builder">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/0_closing.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/0_water.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/lma_v1.3/jama.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" afterPath="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/OLSPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/OLSPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/PluginRunner.java" afterPath="$PROJECT_DIR$/src/gui/menu/PluginRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Point.java" afterPath="$PROJECT_DIR$/src/entities/Point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PointMentor.java" afterPath="$PROJECT_DIR$/src/entities/PointMentor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../LinoxOpenCV/.idea/workspace.xml" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1372840612403" ignored="false" />
-    <file path="/Dummy.txt" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377858076277" ignored="false" />
+    <file path="/Dummy.txt" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1378098437934" ignored="false" />
     <file path="/LinoxMenuStore.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1373007961966" ignored="false" />
     <file path="/fragment.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1373265503384" ignored="false" />
     <file path="/ExtensionFileFilter.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1372840767369" ignored="false" />
@@ -42,7 +39,7 @@
     <file path="/LowerCompletePlugin.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1376026641990" ignored="false" />
     <file path="/PixelsMentor.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1376632164800" ignored="false" />
     <file path="/Shed.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1375760332381" ignored="false" />
-    <file path="/Point.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377598688516" ignored="false" />
+    <file path="/Point.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1378094810679" ignored="false" />
     <file path="/ShedCollector.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1375761263066" ignored="false" />
     <file path="/ShedClusterPlugin.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1376634549497" ignored="false" />
     <file path="/IPluginFilter.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1373020245702" ignored="false" />
@@ -77,7 +74,7 @@
     <file path="/Line.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377495624069" ignored="false" />
     <file path="/OLSPlugin.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377586592507" ignored="false" />
     <file path="$PROJECT_DIR$/../Linox/src/plugins/nonlinearRegression/OLS.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377497067221" ignored="false" />
-    <file path="/Builder.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377860875405" ignored="false" />
+    <file path="/Builder.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1378098208626" ignored="false" />
     <file path="/Direction.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1377596062563" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +100,42 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java" line="29" class="plugins.GrayscalePlugin" package="plugins">
         <option name="ENABLED" value="true" />
@@ -151,42 +184,6 @@
       </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -199,7 +196,7 @@
       <file leaf-file-name="HoughTransformPlugin.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="31" selection-start="434" selection-end="461" vertical-scroll-proportion="0.0">
+            <state line="67" column="48" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -217,7 +214,7 @@
       <file leaf-file-name="PointMentor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/PointMentor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="2328" selection-end="2328" vertical-scroll-proportion="0.0">
+            <state line="56" column="0" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -226,7 +223,7 @@
       <file leaf-file-name="Direction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Direction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="346" column="36" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0">
+            <state line="346" column="36" selection-start="7339" selection-end="7339" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -235,10 +232,28 @@
       <file leaf-file-name="Builder.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="30" selection-start="2030" selection-end="2030" vertical-scroll-proportion="1.2160715">
+            <state line="57" column="39" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.1744186">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterJPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/dialog/ParameterJPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="0" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Imgproc.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/opencv-245/opencv-245.jar!/org/opencv/imgproc/Imgproc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="403" column="23" selection-start="15671" selection-end="15671" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -247,15 +262,6 @@
         <entry file="file://$PROJECT_DIR$/src/entities/MassiveWorker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="86" column="16" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="25" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -273,7 +279,7 @@
       <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="18" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
+            <state line="25" column="37" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -309,14 +315,14 @@
         <option value="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" />
         <option value="$PROJECT_DIR$/src/entities/Line.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/Regression.java" />
-        <option value="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" />
         <option value="$PROJECT_DIR$/src/entities/PointMentor.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/PluginRunner.java" />
         <option value="$PROJECT_DIR$/src/entities/DataCollector.java" />
         <option value="$PROJECT_DIR$/src/plugins/OLSPlugin.java" />
         <option value="$PROJECT_DIR$/src/entities/Direction.java" />
-        <option value="$PROJECT_DIR$/src/entities/Point.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
+        <option value="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" />
+        <option value="$PROJECT_DIR$/src/entities/Point.java" />
         <option value="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
       </list>
     </option>
@@ -412,13 +418,17 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="LinoxOCV" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -631,23 +641,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -667,9 +663,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -720,6 +716,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -746,19 +755,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -892,20 +888,24 @@
       <created>1377499927503</created>
       <updated>1377499927503</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="+Builder">
+      <created>1377862620492</created>
+      <updated>1377862620492</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1286" height="1001" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1871961" sideWeight="0.6725146" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2900585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34269005" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -918,8 +918,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28119937" sideWeight="0.7099415" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28119937" sideWeight="0.67368424" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -970,7 +970,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="OLS, Line, PointMentor" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Builder" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -997,6 +997,7 @@
     <MESSAGE value="reformat code, watershed, +resize" />
     <MESSAGE value="tabs-&gt;AbstractPlugin&#10;+HoughTransform" />
     <MESSAGE value="OLS, Line, PointMentor" />
+    <MESSAGE value="+Builder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1006,20 +1007,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.11627907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/MorphologyTransformationsPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="92" selection-start="617" selection-end="796" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jaolho/data/lma/LMA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="454" column="0" selection-start="21878" selection-end="21878" vertical-scroll-proportion="0.33333334" />
@@ -1069,14 +1056,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/PointMentor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="2328" selection-end="2328" vertical-scroll-proportion="0.0">
+        <state line="56" column="0" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="346" column="36" selection-start="7299" selection-end="7299" vertical-scroll-proportion="0.0">
+        <state line="346" column="36" selection-start="7339" selection-end="7339" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1088,20 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="434" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="167" column="61" selection-start="6182" selection-end="6182" vertical-scroll-proportion="0.0">
@@ -1109,9 +1082,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/opencv-245/opencv-245.jar!/org/opencv/imgproc/Imgproc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="403" column="23" selection-start="15671" selection-end="15671" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/dialog/ParameterJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="0" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="37" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="48" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="30" selection-start="2030" selection-end="2030" vertical-scroll-proportion="1.2160715">
+        <state line="57" column="39" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.1744186">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

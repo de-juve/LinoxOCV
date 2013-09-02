@@ -1,7 +1,6 @@
 package plugins;
 
 import entities.DataCollector;
-import entities.Line;
 import entities.PointMentor;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
@@ -69,28 +68,10 @@ public class HoughTransformPlugin extends AbstractPlugin {
             Core.line( result, start, end, new Scalar( 0, 75, 255 ), 1 );
             Core.line( img, start, end, new Scalar( 255, 255, 255 ), 1 );
         }
-        DataCollector.INSTANCE.addtoHistory( "img", img );
 
         ArrayList<entities.Point> points = PointMentor.extractPoints( img );
         ArrayList<entities.Point> exPoints = PointMentor.extractExtreamPoints( img, points );
         DataCollector.INSTANCE.setLines( PointMentor.linkPoints( img, points, exPoints ) );
-        for ( entities.Point p : points ) {
-            double[] color = new double[]{ 0, 255, 0 };
-            img.put( p.y, p.x, color );
-        }
-        DataCollector.INSTANCE.addtoHistory( "img2", img );
-        for ( entities.Point p : exPoints ) {
-            double[] color = new double[]{ 0, 255, 255 };
-            img.put( p.y, p.x, color );
-        }
-        DataCollector.INSTANCE.addtoHistory( "img3", img );
-        for ( Line l : DataCollector.INSTANCE.getLines() ) {
-            double[] color = new double[]{ 0, 0, 255 };
-            for ( entities.Point p : l.points ) {
-                img.put( p.y, p.x, color );
-            }
-        }
-        DataCollector.INSTANCE.addtoHistory( "img4", img );
 
         return result;
     }
@@ -112,8 +93,8 @@ public class HoughTransformPlugin extends AbstractPlugin {
 
     protected void showParamsPanel( String name ) {
         thresSlider = new ParameterSlider( "Thres :", 1, 100, 50 );
-        minLengthSlider = new ParameterSlider( "Min line length :", 1, 100, 50 );
-        maxGapSlider = new ParameterSlider( "Max gap line :", 1, 100, 10 );
+        minLengthSlider = new ParameterSlider( "Min line length :", 1, 100, 20 );
+        maxGapSlider = new ParameterSlider( "Max gap line :", 1, 100, 4 );
 
         ParameterJPanel panel = new ParameterJPanel( name, this );
         panel.addParameterSlider( thresSlider );
