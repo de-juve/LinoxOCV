@@ -346,6 +346,10 @@ public enum Direction {
 
     public abstract double weight();
 
+    public static Direction defineDirection( Point current, Point next, int width ) {
+        return defineDirection( current.x + current.y * width, next.x + next.y * width, width );
+    }
+
     public static Direction defineDirection( int current, int next, int width ) {
         Direction direction = EAST;
         int xC = current % width;

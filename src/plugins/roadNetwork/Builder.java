@@ -51,61 +51,101 @@ public class Builder extends AbstractPlugin {
 
         Direction[] directions = new Direction[]{ Direction.NORTH, Direction.WEST, Direction.NORTH_WEST, Direction.SOUTH_WEST };
         ArrayList<Line> correctLines = new ArrayList<>();
-        for ( Line line : lines ) {
-            //Line line = lines.get( 0 );
-            Line correctLine = new Line();
-            Iterator<Point> iterator = line.points.iterator();
 
+        Loop:
+        for ( Line line : lines ) {
+            Line correctLine = new Line();
+
+            Iterator<Point> iterator = line.points.iterator();
             while ( iterator.hasNext() ) {
                 Point p = iterator.next();
-                HashMap<Direction, Double> map = new HashMap<>();
 
-                //Определяем направление дороги в каждой точке
+                HashMap<Direction, Double> directionsMap = new HashMap<>();
+
+                //Определяем лучшее направление до края дороги
                 for ( Direction d : directions ) {
                     double w1 = letRay( p, d, detected_edges );
                     double w2 = letRay( p, d.opposite(), detected_edges );
-                    map.put( d, Math.abs( w1 - w2 ) );
+                    if ( w1 >= maxRoadWidth || w2 >= maxRoadWidth ) {
+                        directionsMap.put( d, maxRoadWidth * 2d );
+                    } else {
+                        directionsMap.put( d, Math.abs( w1 - w2 ) );
+                    }
                 }
 
                 Direction bestDirection = Direction.NORTH;
                 for ( Direction d : directions ) {
-                    double w = map.get( d );
-                    if ( w < map.get( bestDirection ) ) {
+                    double w = directionsMap.get( d );
+                    if ( w < directionsMap.get( bestDirection ) ) {
                         bestDirection = d;
                     }
                 }
                 p.direction = bestDirection;
 
                 //Центрируем точку
-                if ( map.get( bestDirection ) > 1 ) {
+                if ( directionsMap.get( bestDirection ) > 1 ) {
                     double w1 = letRay( p, bestDirection, detected_edges );
                     double w2 = letRay( p, bestDirection.opposite(), detected_edges );
+                    if ( w1 >= maxRoadWidth || w2 >= maxRoadWidth ) {
+                        continue Loop;
+                    }
                     if ( w1 < w2 ) {
                         while ( w1 < w2 ) {
                             p = bestDirection.opposite().getNeighboure( p );
+                            p.direction = bestDirection;
                             w1++;
                             w2--;
                         }
                     } else if ( w1 > w2 ) {
                         while ( w1 > w2 ) {
                             p = bestDirection.getNeighboure( p );
+                            p.direction = bestDirection;
                             w1--;
                             w2++;
                         }
                     }
                 }
                 correctLine.add( p );
-
-                double[] color = new double[]{ 0, 255, 255 };
+                double[] color = new double[]{ 0, 0, 255 };
                 canny.put( p.y, p.x, color );
             }
+
+            //Вычислить общее направлени прямой
+            iterator = correctLine.points.iterator();
+            Point current = iterator.next();
+            while ( iterator.hasNext() ) {
+                Point next = iterator.next();
+                Direction dir = Direction.defineDirection( current, next, image.width() );
+                current.direction = dir;
+                next.direction = dir;
+                current = next;
+            }
+
+
+            //Продолжить линию
+            boolean can = true;
+            while ( can ) {
+                Point next = current.direction.getNeighboure( current );
+                if ( isInBox( next ) ) {
+                    if ( Math.abs( image.get( next.y, next.x )[0] - image.get( current.y, current.x )[0] ) < lowThreshold / 5 ) {
+                        next.direction = current.direction;
+                        correctLine.add( next );
+                        double[] color = new double[]{ 255, 0, 0 };
+                        canny.put( next.y, next.x, color );
+                        current = next;
+                    } else {
+                        can = false;
+                    }
+                }
+
+            }
+
             DataCollector.INSTANCE.addtoHistory( "img", canny );
             correctLines.add( correctLine );
-
         }
-
-        return image;
+        return canny;
     }
+
 
     private double letRay( Point p, Direction direction, Mat canny ) {
         double weight = 0;

@@ -1,6 +1,7 @@
 package plugins;
 
 import entities.DataCollector;
+import entities.Point;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.menu.PluginRunner;
@@ -82,6 +83,10 @@ public class AbstractPlugin implements IPluginFilter {
 
     protected int y( int id ) {
         return id / image.width();
+    }
+
+    protected boolean isInBox( Point point ) {
+        return point.x >= 0 && point.x < image.width() && point.y >= 0 && point.y < image.height();
     }
 
 
