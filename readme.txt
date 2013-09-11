@@ -1,0 +1,1 @@
+java -Djava.library.path=/Users/dm/Documents/IdeaProjects/LinoxOCV/lib/opencv/ -jar LinoxOCV.jar
