@@ -1,6 +1,8 @@
 package gui.menu;
 
 import gui.Linox;
+import gui.dialog.ParameterButton;
+import gui.dialog.ParameterSlider;
 import net.miginfocom.swing.MigLayout;
 import org.opencv.core.Mat;
 
@@ -13,12 +15,14 @@ import java.awt.image.BufferedImage;
 
 public class ImageJPanel extends JPanel {
     JScrollPane imageScrollPane;
-    JLabel imageView = new JLabel();
-    Mat image;
+    public JLabel imageView = new JLabel();
+    public Mat image;
     String title;
     JButton button;
     MouseMotionAdapter mouseMotionAdapter;
     MouseAdapter mouseAdapter;
+    public ParameterButton pButton;
+    public ParameterSlider pSlider;
     private boolean mousePressed = false;
 
     ImageJPanel( String _title, Mat _image ) {
@@ -70,7 +74,12 @@ public class ImageJPanel extends JPanel {
         add( imageScrollPane );
     }
 
-    void setButton( Action action, boolean visible ) {
+    public void setImage( Mat _image ) {
+        image = _image;
+        imageView.setIcon( new ImageIcon( matToBufferedImage( image ) ) );
+    }
+
+    public void setButton( Action action, boolean visible ) {
         if ( button != null ) {
             this.remove( button );
         }
@@ -79,13 +88,13 @@ public class ImageJPanel extends JPanel {
         this.add( button );
     }
 
-    void removeButton() {
+    public void removeButton() {
         if ( button != null ) {
             this.remove( button );
         }
     }
 
-    void setMouseListener( MouseAdapter adapter ) {
+    public void setMouseListener( MouseAdapter adapter ) {
         if ( mouseAdapter != null ) {
             imageView.removeMouseListener( mouseAdapter );
             imageView.removeMouseMotionListener( mouseAdapter );
@@ -99,7 +108,7 @@ public class ImageJPanel extends JPanel {
 
     }
 
-    void resetMouseMotionListener() {
+    public void resetMouseMotionListener() {
         imageView.removeMouseListener( mouseAdapter );
         imageView.removeMouseMotionListener( mouseAdapter );
         mouseAdapter = null;

@@ -131,7 +131,6 @@ public enum DataCollector {
         return height;
     }
 
-
     public void addtoHistory( String title, Mat image ) {
         if ( stack == null ) {
             stack = new TreeMap<>();
@@ -151,7 +150,6 @@ public enum DataCollector {
             stack.clear();
         }
     }
-
 
 
 

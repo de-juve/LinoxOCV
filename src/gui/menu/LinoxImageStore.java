@@ -24,17 +24,14 @@ public class LinoxImageStore extends JTabbedPane {
     }
 
     public void addImageTab( String title, Mat image ) {
-        this.addTab( title + "   ", imageFactory.addImage( title, image ) );
+        this.insertTab( title + "   ", null, imageFactory.addImage( title, image ), null, this.getTabCount() );
+        this.setSelectedIndex( this.getTabCount() - 1 );
         titles.add( title );
     }
 
     public void replaceImageTab( String title, Mat image ) {
         int id = this.getTabCount() - 1;
-
-        this.getTitles().remove( this.getTitleAt( id ).trim() );
-        this.removeTabAt( id );
-
-        addImageTab( title, image );
+        this.setComponentAt( id, imageFactory.replaceImage( title, image ) );
     }
 
     public void removeSelectedImageTab() {

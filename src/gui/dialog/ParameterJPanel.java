@@ -17,6 +17,7 @@ public class ParameterJPanel extends JPanel {
     JPanel parameterPanel;
     private ArrayList<ParameterSlider> parameterSliders;
     private ArrayList<ParameterComboBox> parameterComboBoxes;
+    private ArrayList<ParameterButton> parameterButtons;
 
     public ParameterJPanel( String title, IPluginFilter listener ) {
         this.setLayout( new MigLayout() );
@@ -25,6 +26,7 @@ public class ParameterJPanel extends JPanel {
         parameterListeners = new ArrayList<>();
         parameterSliders = new ArrayList<>();
         parameterComboBoxes = new ArrayList<>();
+        parameterButtons = new ArrayList<>();
 
         parameterListeners.add( listener );
 
@@ -78,6 +80,15 @@ public class ParameterJPanel extends JPanel {
 
     public String getValueComboBox( ParameterComboBox comboBox ) {
         return parameterComboBoxes.get( parameterComboBoxes.lastIndexOf( comboBox ) ).getValue();
+    }
+
+    public void addParameterButton( ParameterButton button ) {
+        parameterButtons.add( button );
+        this.parameterPanel.add( button, "wrap" );
+    }
+
+    public ArrayList<org.opencv.core.Point> getValueButton( ParameterButton button ) {
+        return parameterButtons.get( parameterButtons.lastIndexOf( button ) ).getValue();
     }
 
     private void onOK() {

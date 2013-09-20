@@ -173,6 +173,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action matting = new AbstractAction( "Image matting" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new ImageMattingPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
 
          /*
         final Action snakeMove = new AbstractAction("Movement of a  Snake") {
@@ -445,6 +454,7 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( hough ) );
         items.add( new JMenuItem( ols ) );
         items.add( new JMenuItem( builder ) );
+        items.add( new JMenuItem( matting ) );
 
         for ( JMenuItem item : items ) {
             item.setEnabled( false );

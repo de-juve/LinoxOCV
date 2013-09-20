@@ -13,6 +13,16 @@ public class LinoxImageFactory {
         return panel;
     }
 
+    public ImageJPanel replaceImage( String title, Mat image ) {
+        for ( ImageJPanel p : items ) {
+            if ( p.title == title ) {
+                p.setImage( image );
+                return p;
+            }
+        }
+        return addImage( title, image );
+    }
+
     public ArrayList<ImageJPanel> getItems() {
         return items;
     }

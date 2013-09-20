@@ -2,6 +2,7 @@ package gui.menu;
 
 import entities.DataCollector;
 import gui.Linox;
+import org.opencv.core.Mat;
 import plugins.IPluginFilter;
 
 import javax.swing.*;
@@ -47,12 +48,6 @@ public class PluginRunner implements IPluginRunner {
 
     @Override
     public void finishPlugin() {
-      /*  DataCollector.INSTANCE.setImageResult(plugin.getTitle() + " of ", plugin.getResult(true));
-        DataCollector.INSTANCE.setMaxLuminance(255);
-
-        (Linox.getInstance().getImageStore()).addImageTab(DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult());
-        Linox.getInstance().setPreferredSize(new Dimension(Math.min(640, plugin.getResult(false).width() + 3), Math.min(480, plugin.getResult(false).height() + 3)));
-        */
         shutdown = true;
     }
 
@@ -63,9 +58,20 @@ public class PluginRunner implements IPluginRunner {
     }
 
     @Override
+    public void addImageTab( String title, Mat image ) {
+        ( Linox.getInstance().getImageStore() ).addImageTab( title, image );
+    }
+
+    @Override
     public void replaceImageTab() {
         DataCollector.INSTANCE.setImageResult( plugin.getTitle(), plugin.getResult( true ) );
         ( Linox.getInstance().getImageStore() ).replaceImageTab( DataCollector.INSTANCE.getImageResultTitle(), DataCollector.INSTANCE.getImageResult() );
     }
+
+    @Override
+    public void replaceImageTab( String title, Mat image ) {
+        ( Linox.getInstance().getImageStore() ).replaceImageTab( title, image );
+    }
+
 
 }
