@@ -7,6 +7,7 @@ import org.opencv.highgui.Highgui;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+import java.io.File;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -18,11 +19,13 @@ public class LinoxMenuStore extends JMenuBar {
     private LinoxFileMenuFactory fileFactory;
     private LinoxEditMenuFactory editFactory;
     private LinoxToolsMenuFactory toolsFactory;
+    private String path = "";
 
     public LinoxMenuStore() {
         fileFactory = new LinoxFileMenuFactory();
         editFactory = new LinoxEditMenuFactory();
         toolsFactory = new LinoxToolsMenuFactory();
+        path = System.getProperty( "user.dir" ) + "/resource";
 
         filemenu = new JMenu( "File" );
         filemenu.add( new JSeparator() );
@@ -61,7 +64,7 @@ public class LinoxMenuStore extends JMenuBar {
     }
 
     public Mat openImage() {
-        JFileChooser fileChooser = new JFileChooser( System.getProperty( "user.dir" ) + "/resource" );
+        JFileChooser fileChooser = new JFileChooser( path );
 
         FileFilter filter1 = new ExtensionFileFilter( "JPG and JPEG", new String[]{ "JPG", "JPEG" } );
         fileChooser.setFileFilter( filter1 );
@@ -82,6 +85,7 @@ public class LinoxMenuStore extends JMenuBar {
             ( Linox.getInstance().getImageStore() ).addImageTab( fileChooser.getSelectedFile().getName(), newImage );
             DataCollector.INSTANCE.setImageOriginal( fileChooser.getSelectedFile().getName(), newImage );
             setEnableEditToolsItems( true );
+            this.path = path;
             return newImage;
         } else {
             showMessageDialog( Linox.getInstance(), "Cannot open image file: " + path, Linox.getInstance().getTitle(), ERROR_MESSAGE );
@@ -94,16 +98,19 @@ public class LinoxMenuStore extends JMenuBar {
         return true;
     }
 
-    public boolean saveImage( Mat image ) {
-        JFileChooser fileChooser = new JFileChooser( System.getProperty( "user.dir" ) + "/resource" );
+    public boolean saveImage( Mat image, String title ) {
+        JFileChooser fileChooser = new JFileChooser( path );
         FileFilter filter1 = new ExtensionFileFilter( "ALL", new String[]{ "JPG", "JPEG", "PNG", "BMP", "TIFF", "GIF" } );
         fileChooser.setFileFilter( filter1 );
-
+        if ( title.indexOf( "." ) == -1 ) {
+            title += ".png";
+        }
+        fileChooser.setSelectedFile( new File( title ) );
         // Ask user for the location of the image file
         if ( fileChooser.showSaveDialog( null ) != JFileChooser.APPROVE_OPTION ) {
             return false;
         }
-        String path = fileChooser.getSelectedFile().getAbsolutePath();
+        path = fileChooser.getSelectedFile().getAbsolutePath();
         Highgui.imwrite( path, image );
 
         return true;

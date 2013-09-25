@@ -40,8 +40,9 @@ public class LinoxFileMenuFactory {
             public void actionPerformed( ActionEvent e ) {
                 Linox.getInstance().setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
                 try {
+
                     if ( DataCollector.INSTANCE.getImageOriginal() != null ) {
-                        ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).saveImage( DataCollector.INSTANCE.getImageOriginal() );
+                        ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).saveImage( Linox.getInstance().getImageStore().getSelectedTab().image, Linox.getInstance().getImageStore().getSelectedTab().title );
                     }
                 } finally {
                     Linox.getInstance().setCursor( Cursor.getDefaultCursor() );

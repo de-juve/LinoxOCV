@@ -515,6 +515,959 @@ Y=0.3*R+0.59*G+0.11*B
  полученному на шаге 1(2).
 \end_layout
 
+\begin_layout Section
+Примеры 
+\end_layout
+
+\begin_layout Standard
+Рассмотрим работу в программе 
+\begin_inset Quotes fld
+\end_inset
+
+LinoxOCV
+\begin_inset Quotes frd
+\end_inset
+
+ на примере нескольких изображений.
+ Поскольку изображения могут сильно различаться по контрастности, характеру
+ выделяемых объектов и другим характеристикам, мы попытаемся дать некие
+ критерии подбора параметров в различных алгоритмах.
+\end_layout
+
+\begin_layout Standard
+Пусть задано изображение, содержащие дорожную сеть [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Исходное-изображение"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Исходное-изображение"
+
+\end_inset
+
+Исходное изображение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для начала применим к изображению морфологический алгоритм области замыкания
+ с различными значениями параметра [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Замыкание-изображения"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_500.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_1000.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_2500.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_5000.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Замыкание-изображения"
+
+\end_inset
+
+Замыкание изображения с различным значением параметра
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Замети, что главные особенности изображения (дорожная сеть) сохраняется,
+ даже при увеличении параметра до 5000.
+ При это изображение становится более гладким.
+\end_layout
+
+\begin_layout Standard
+Посмотрим как изменится изображение, если применить к нему алгоритм гомотопии
+ для удаления всплесков [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Гомотопия изображения"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_500_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_1000_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_2500_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_cl_5000_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Гомотопия изображения"
+
+\end_inset
+
+Гомотопия изображения
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как и ожидалось, области стали более однородные, всплески были удалены.
+ Сравним результат алгоритма водораздела к изображениям на рис.
+ 2 [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Водораздел"
+
+\end_inset
+
+] и на рис.
+ 3 [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Водораздел-1"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_500.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_1000.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_2500.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_5000.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Водораздел"
+
+\end_inset
+
+Результаты применения алгоритма водораздела к изображениям на рис.2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_500_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_1000_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_2500_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_5000_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Водораздел-1"
+
+\end_inset
+
+Результаты применения алгоритма водораздела к изображениям на рис.3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметим, что гомотопия изображения не дала улучшения при выделении линий
+ водораздела.
+ Так же заметим, что параметр 500 оказался слишком маленьким - выделились
+ линии, не представляющие интереса, в тоже время параметр 5000 оказался
+ слишком большим - отбросились линии, представляющие для нас интерес.
+ Поэтом сосредаточимся далее на двух получившихся изображениях с параметрами
+ 1000 и 2500.
+\end_layout
+
+\begin_layout Standard
+Применим алгоритм преобразования Хафа к оставшимся изображениям.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_500_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_w_1000_h.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Хаф"
+
+\end_inset
+
+Результаты применения преобразования Хафа
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
