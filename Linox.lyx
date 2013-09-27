@@ -608,13 +608,13 @@ reference "fig:Замыкание-изображения"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -655,7 +655,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -696,7 +696,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -737,7 +737,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1185,7 +1185,7 @@ name "fig:Водораздел"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1366,6 +1366,7 @@ name "fig:Водораздел-1"
 
 \begin_layout Standard
 Применим алгоритм преобразования Хафа к оставшимся изображениям.
+ Подберем параметры так, что бы выделились только интересующие нас прямые.
 \end_layout
 
 \begin_layout Standard
@@ -1383,7 +1384,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename article/Toronto_1_w_500_h.png
+	filename article/Toronto_1_h_1000_46_73_20.png
 	lyxscale 25
 	width 50line%
 	height 25pheight%
@@ -1398,7 +1399,8 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-1000
+1000 со значением порога 46, минимальной длиной линии 73 и максимальным
+ разрывом между точками в 20
 \end_layout
 
 \end_inset
@@ -1420,7 +1422,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename article/Toronto_1_w_1000_h.png
+	filename article/Toronto_1_road_1000.png
 	lyxscale 25
 	width 50line%
 	height 25pheight%
@@ -1435,7 +1437,84 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-2500
+1000 со значением порога 46, минимальной длиной линии 73 и максимальным
+ разрывом между точками в 20
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_h_2500_45_70_20.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500 со значением порога 45, минимальной длиной линии 70 и максимальным
+ разрывом между точками в 20
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename article/Toronto_1_road_2500.png
+	lyxscale 25
+	width 50line%
+	height 25pheight%
+	keepAspectRatio
+	BoundingBox 400bp 300bp 819bp 623bp
+	clip
+	groupId замыкание
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2500 со значением порога 45, минимальной длиной линии 70 и максимальным
+ разрывом между точками в 20
 \end_layout
 
 \end_inset
@@ -1466,6 +1545,11 @@ name "fig:Хаф"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Выделенные линии могут использоваться в других алгоритмах, вместо начальных
+ точек, требующих ввод пользователя.
 \end_layout
 
 \begin_layout EndFrame

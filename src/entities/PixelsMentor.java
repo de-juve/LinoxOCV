@@ -93,6 +93,10 @@ public class PixelsMentor {
         return resultArray;
     }
 
+    public static boolean isDiagonalNeighbours( Point p, Point n ) {
+        return p.x != n.x && p.y != n.y;
+    }
+
     private static boolean isDiagonalNeighbours( int p, int n, int width ) {
         int xp = p % width;
         int yp = p / width;

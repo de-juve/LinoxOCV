@@ -177,7 +177,14 @@ public class Builder extends AbstractPlugin {
             DataCollector.INSTANCE.addtoHistory( "img", canny );
             correctLines.add( correctLine );
         }
-        return canny;
+        result = image.clone();
+        for ( Line line : correctLines ) {
+            for ( Point point : line.points ) {
+                double[] color = new double[]{ 0, 0, 255 };
+                result.put( point.y, point.x, color );
+            }
+        }
+        return result;
     }
 
 
