@@ -4,6 +4,7 @@ import plugins.*;
 import plugins.morphology.MorphologyCompilationPlugin;
 import plugins.morphology.MorphologyPlugin;
 import plugins.roadNetwork.Builder;
+import plugins.roadNetwork.GraphBuilder;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -164,7 +165,16 @@ public class LinoxEditMenuFactory {
             }
         };
 
-        final Action builder = new AbstractAction( "Road builder" ) {
+        final Action graphBuilder = new AbstractAction( "Graph builder" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new GraphBuilder() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
+        final Action roadBuilder = new AbstractAction( "Road builder" ) {
             @Override
             public void actionPerformed( ActionEvent e ) {
                 pluginRunner.setPlugin( new Builder() );
@@ -453,7 +463,8 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( histogram ) );
         items.add( new JMenuItem( hough ) );
         items.add( new JMenuItem( ols ) );
-        items.add( new JMenuItem( builder ) );
+        items.add( new JMenuItem( graphBuilder ) );
+        items.add( new JMenuItem( roadBuilder ) );
         items.add( new JMenuItem( matting ) );
 
         for ( JMenuItem item : items ) {

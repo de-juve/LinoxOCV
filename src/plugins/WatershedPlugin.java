@@ -39,6 +39,11 @@ public class WatershedPlugin extends AbstractPlugin {
         constructDAG();
         flood();
 
+        DataCollector.INSTANCE.addtoHistory( "wsh", result );
+        DataCollector.INSTANCE.setWatershedImg( result );
+
+        //Imgproc.dilate( result, result, new Mat(), new org.opencv.core.Point( -1, -1 ), 1 );
+
         /*DataCollector.INSTANCE.addtoHistory( "wsh", result );
 
         // Identify image pixels without objects
@@ -169,6 +174,7 @@ public class WatershedPlugin extends AbstractPlugin {
     private void flood() {
         result = new Mat( image.rows(), image.cols(), image.type() );
         int[] watershed = new int[( int ) image.total()];
+        ArrayList<Point> watershedPoints = new ArrayList<>();
         ArrayList<Integer> ids = MassiveWorker.INSTANCE.getIds();
         //start from pixels with min property
         for ( int i = ids.size() - 1; i >= 0; i-- ) {
@@ -177,11 +183,12 @@ public class WatershedPlugin extends AbstractPlugin {
 
             if ( rep == -1 ) {
                 watershed[p] = 255;
+                watershedPoints.add( new Point( x( p ), y( p ) ) );
             } else {
                 watershed[p] = 0;
             }
         }
-        DataCollector.INSTANCE.setWatershedPoints( watershed );
+        DataCollector.INSTANCE.setWatershedPoints( watershedPoints );
 
         byte[] buff = new byte[( int ) image.total() * image.channels()];
 

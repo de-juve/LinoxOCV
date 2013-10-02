@@ -1,5 +1,6 @@
 package plugins;
 
+import entities.Vertex;
 import gui.Linox;
 import gui.dialog.ParameterButton;
 import gui.dialog.ParameterJPanel;
@@ -7,7 +8,6 @@ import gui.dialog.ParameterSlider;
 import gui.menu.ImageJPanel;
 import org.opencv.core.*;
 import plugins.dijkstra.Dijkstra;
-import plugins.dijkstra.Vertex;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -31,7 +31,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
     @Override
     public void run() {
         Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
-        calculate();
+        // calculate();
         showParamsPanel( "Choose params" );
         if ( exit ) {
             return;
@@ -48,7 +48,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
             for ( int col_i = 0; col_i < gray.cols(); col_i++ ) {
                 int gi = ( int ) gray.get( row_i, col_i )[0];
                 entities.Point p = new entities.Point( col_i, row_i );
-                Mat m = new Mat( image.size(), image.type() );
+                Mat m = new Mat( image.size(), gray.type() );
                 for ( int row_j = 0; row_j < gray.rows(); row_j++ ) {
                     for ( int col_j = 0; col_j < gray.cols(); col_j++ ) {
                         int gj = ( int ) gray.get( row_j, col_j )[0];
@@ -103,6 +103,16 @@ public class ImageMattingPlugin extends AbstractPlugin {
         PriorityQueue<Point> fQueue = new PriorityQueue<>( fpoints );
         while ( !fQueue.isEmpty() ) {
             Point point = fQueue.poll();
+            Dijkstra.computePaths( vertexList.get( point ), vertexList );
+
+            Vertex closesVertex = new Vertex( new entities.Point( -1, -1 ) );
+            closesVertex.minDistance = Double.POSITIVE_INFINITY;
+            for ( Point fp : fpoints ) {
+                Vertex v = vertexList.get( fp );
+                if ( v.minDistance < closesVertex.minDistance ) {
+                    closesVertex = v;
+                }
+            }
 
         }
 
@@ -116,8 +126,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
         panel.resetMouseMotionListener();
         fpoints = jpanel.getValueButton( foregroundButton );
         bpoints = jpanel.getValueButton( backgroundButton );
-        System.out.println( fpoints.size() );
-        System.out.println( bpoints.size() );
+
         if ( fpoints.size() == 0 || bpoints.size() == 0 ) {
             errMessage = "Empty points!";
             pluginListener.stopPlugin();

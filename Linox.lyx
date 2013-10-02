@@ -520,7 +520,7 @@ Y=0.3*R+0.59*G+0.11*B
 \end_layout
 
 \begin_layout Standard
-Рассмотрим работу в программе 
+Рассмотрим возможности обработки изображений в программе 
 \begin_inset Quotes fld
 \end_inset
 
@@ -528,10 +528,12 @@ LinoxOCV
 \begin_inset Quotes frd
 \end_inset
 
- на примере нескольких изображений.
+ на примере.
  Поскольку изображения могут сильно различаться по контрастности, характеру
- выделяемых объектов и другим характеристикам, мы попытаемся дать некие
- критерии подбора параметров в различных алгоритмах.
+ выделяемых объектов и другим характеристикам, подбор параметров решается
+ в каждом случае индивидуально.
+ Однако, есть общие рекомендации, следуя которым можно получить удовлетворяющий
+ нас результат.
 \end_layout
 
 \begin_layout Standard
@@ -543,6 +545,7 @@ reference "fig:Исходное-изображение"
 \end_inset
 
 ].
+ 
 \end_layout
 
 \begin_layout Standard
@@ -592,15 +595,20 @@ name "fig:Исходное-изображение"
 \end_layout
 
 \begin_layout Standard
-Для начала применим к изображению морфологический алгоритм области замыкания
- с различными значениями параметра [
+Данное изображение довольно трудное, по своему характеру, для выделения
+ дорожной сети, не только для машины, но и для человека.
+ Оно содержит огромное число объектов, дороги перекрываются деревьями.
+ Что бы несколько упростить сегментацию изображения, применим к нему морфологиче
+ский алгоритм области замыкания.
+ На рис.
+ [
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Замыкание-изображения"
 
 \end_inset
 
-].
+] показаны результаты алгоритма с различными значениями параметра.
 \end_layout
 
 \begin_layout Standard
@@ -608,13 +616,13 @@ reference "fig:Замыкание-изображения"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -655,7 +663,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -696,7 +704,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -737,7 +745,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1228,7 +1236,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1265,7 +1273,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1302,7 +1310,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1380,7 +1388,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1418,7 +1426,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1456,7 +1464,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1494,7 +1502,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1548,8 +1556,9 @@ name "fig:Хаф"
 \end_layout
 
 \begin_layout Standard
-Выделенные линии могут использоваться в других алгоритмах, вместо начальных
- точек, требующих ввод пользователя.
+Выделенные линии могут использоваться в других алгоритмах, в качестве начальных
+ точек.
+ 
 \end_layout
 
 \begin_layout EndFrame

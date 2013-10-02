@@ -12,9 +12,10 @@ public enum DataCollector {
     // private LinkedList<Integer> line;
     private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
-    private Mat grayImg, gradientImg, laplasianImg;
-    private int[] lowerCompletion, status, shedLabels, prevShedLabels, watershedPoints;
+    private Mat grayImg, gradientImg, laplasianImg, watershedImg;
+    private int[] lowerCompletion, status, shedLabels, prevShedLabels;
     private ArrayList<Line> lines;
+    private ArrayList<Point> watershedPoints;
 
     //private Integer[] grayscale, gradients, laplasians, lowerCompletions, status, shedLabels, prevShedLabels, wshPoints, nodeLabels;
     // private ArrayList<Integer> waterShedPoints;
@@ -46,6 +47,10 @@ public enum DataCollector {
         laplasianImg = img;
     }
 
+    public void setWatershedImg( Mat img ) {
+        watershedImg = img;
+    }
+
     public void setLowerCompletion( int[] array ) {
         lowerCompletion = array;
     }
@@ -62,8 +67,8 @@ public enum DataCollector {
         prevShedLabels = array;
     }
 
-    public void setWatershedPoints( int[] array ) {
-        watershedPoints = array;
+    public void setWatershedPoints( ArrayList<Point> points ) {
+        watershedPoints = points;
     }
 
     public void setLines( ArrayList<Line> _lines ) {
@@ -91,6 +96,10 @@ public enum DataCollector {
         return laplasianImg;
     }
 
+    public Mat getWatershedImg() {
+        return watershedImg;
+    }
+
     public int[] getLowerCompletion() {
         return lowerCompletion;
     }
@@ -107,7 +116,7 @@ public enum DataCollector {
         return prevShedLabels;
     }
 
-    public int[] getWatershedPoints() {
+    public ArrayList<Point> getWatershedPoints() {
         return watershedPoints;
     }
 

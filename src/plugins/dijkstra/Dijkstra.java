@@ -1,7 +1,9 @@
 package plugins.dijkstra;
 
+import entities.Edge;
 import entities.PixelsMentor;
 import entities.Point;
+import entities.Vertex;
 import org.opencv.core.Mat;
 
 import java.util.*;
@@ -39,7 +41,7 @@ public class Dijkstra {
         return vertexes;
     }
 
-    public static void computePaths( Vertex source ) {
+    public static void computePaths( Vertex source, HashMap<entities.Point, Vertex> vertexList ) {
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<>();
         vertexQueue.add( source );
@@ -56,6 +58,7 @@ public class Dijkstra {
                     vertexQueue.remove( v );
                     v.minDistance = distanceThroughU;
                     v.previous = u;
+                    vertexList.get( v.point ).minDistance = v.minDistance;
                     vertexQueue.add( v );
                 }
             }
