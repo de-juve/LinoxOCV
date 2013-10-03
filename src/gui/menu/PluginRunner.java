@@ -22,9 +22,10 @@ public class PluginRunner implements IPluginRunner {
         try {
             shutdown = false;
             Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.WAIT_CURSOR ) );
-            Linox.getInstance().getImageStore().setCursorType( Cursor.WAIT_CURSOR );
             ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).setEnableEditToolsItems( false );
             // DataCollector.INSTANCE.clearHistory();
+            ImageJPanel jPanel = Linox.getInstance().getImageStore().getSelectedTab();
+            DataCollector.INSTANCE.setImageOriginal( jPanel.getTitle(), jPanel.getImage() );
             plugin.initImage( DataCollector.INSTANCE.getImageOriginal().clone() );
             plugin.addRunListener( this );
             plugin.run();
@@ -36,7 +37,6 @@ public class PluginRunner implements IPluginRunner {
         } finally {
             ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).setEnableEditToolsItems( true );
             Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.DEFAULT_CURSOR ) );
-            Linox.getInstance().getImageStore().setCursorType( Cursor.DEFAULT_CURSOR );
         }
     }
 

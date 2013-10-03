@@ -97,6 +97,10 @@ public class PixelsMentor {
         return p.x != n.x && p.y != n.y;
     }
 
+    public static boolean isNeighbours( Point p, Point n ) {
+        return Math.abs( p.x - n.x ) < 2 && Math.abs( p.y - n.y ) < 2;
+    }
+
     private static boolean isDiagonalNeighbours( int p, int n, int width ) {
         int xp = p % width;
         int yp = p / width;

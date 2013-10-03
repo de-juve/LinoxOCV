@@ -87,7 +87,7 @@ public class ParameterJPanel extends JPanel {
         this.parameterPanel.add( button, "wrap" );
     }
 
-    public ArrayList<org.opencv.core.Point> getValueButton( ParameterButton button ) {
+    public ArrayList<entities.Point> getValueButton( ParameterButton button ) {
         return parameterButtons.get( parameterButtons.lastIndexOf( button ) ).getValue();
     }
 

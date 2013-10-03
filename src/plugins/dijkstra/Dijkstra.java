@@ -1,15 +1,13 @@
 package plugins.dijkstra;
 
-import entities.Edge;
 import entities.PixelsMentor;
 import entities.Point;
-import entities.Vertex;
 import org.opencv.core.Mat;
 
 import java.util.*;
 
 public class Dijkstra {
-    public static HashMap<Point, Vertex> createVertexes( Mat image, HashMap<Point, Mat> W ) {
+    public static HashMap<Point, Vertex> createVertexes( Mat image ) {
         HashMap<Point, Vertex> vertexes = new HashMap<>();
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<>();
         vertexQueue.add( new Vertex( new Point( 0, 0 ) ) );
@@ -23,18 +21,14 @@ public class Dijkstra {
             List<Edge> edges = new ArrayList<>();
             for ( Point n : neighbors ) {
                 Vertex nv = new Vertex( n );
-                double weight;
-                if ( PixelsMentor.isDiagonalNeighbours( vertex.point, n ) ) {
-                    weight = Math.sqrt( 2 );
-                } else {
-                    weight = 1;
-                }
+                double weight = Math.sqrt( Math.pow( vertex.point.x - n.x, 2 ) + Math.pow( vertex.point.y - n.y, 2 ) );
                 edges.add( new Edge( nv, weight ) );//W.get( vertex.point ).get( nv.point.y, nv.point.x )[0]) );
                 if ( !nv.label ) {
                     vertexQueue.add( nv );
                 }
             }
-            vertex.adjacencies = ( Edge[] ) edges.toArray();
+            vertex.adjacencies = new Edge[edges.size()];
+            edges.toArray( vertex.adjacencies );
             vertex.label = true;
             vertexes.put( vertex.point, vertex );
         }
