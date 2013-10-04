@@ -32,6 +32,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
     HashMap<Point, Mat> W, L;
     ArrayList<Connection> connections;
     ArrayList<Point> edgePoints;
+    boolean[] fpoints_b;
     double b = 1 / Math.pow( 255, 2 );
 
     public ImageMattingPlugin() {
@@ -51,64 +52,102 @@ public class ImageMattingPlugin extends AbstractPlugin {
     public Mat matting() {
         //calculate();
         Mat gray = GrayscalePlugin.run( image, false );
+        fpoints_b = new boolean[( int ) image.total()];
         extractEdgePoints();
 
         //img = image.clone();
-        for ( Point fp : fpoints ) {
-            System.out.println( "------" );
-            System.out.println( fp );
-            ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
-            ArrayList<Point> sample = new ArrayList<>();
+        Queue<Point> fQueue = new LinkedList<>( edgePoints );
+        ArrayList<Point> sample, neighs;
+        while ( !fQueue.isEmpty() ) {
+            Point fp = fQueue.poll();
+            neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
             for ( Point np : neighs ) {
-                //  img.put( np.y, np.x, 0,0,255 );
-                if ( !fpoints.contains( np ) ) {
-                    Point cp = closesPoint( np );
-                    Queue<Point> queue = new LinkedList<>();
-                    queue.add( cp );
-
-                    while ( !queue.isEmpty() ) {
-                        cp = queue.poll();
-                        if ( !sample.contains( cp ) ) {
-                            sample.add( cp );
-                            if ( sample.size() >= 20 ) {
-                                break;
-                            }
-                        }
-
-                        for ( Connection con : cp.connections ) {
-                            if ( !sample.contains( con.p2 ) && !queue.contains( con.p2 ) ) {
-                                queue.add( con.p2 );
-                            }
-                        }
-                    }
-
-
-                    double w = 0;
-                    for ( Point sp : sample ) {
-                        sp.weight = weight( np, sp, gray ) / distance( np, sp );
-                        w += sp.weight;
-                        //  img.put( sp.y, sp.x, 255,0,0 );
-                        //System.out.println(sp);
-                    }
-                    np.weight = w;
-                    System.out.println( "POINT " + np );
-                    // DataCollector.INSTANCE.addtoHistory( "sample points", img );
-
+                if ( fpoints_b[id( np.x, np.y )] ) {
+                    continue;
                 }
+                // System.out.println( "=======");
+                // System.out.println( "POINT " + np );
+                sample = generateSample( np );
+                double w = 0;
+                boolean add = true;
+                for ( Point sp : sample ) {
+                    sp.weight = weight( np, sp, gray );// / distance( np, sp );
+                    //  System.out.println("sp.w " + sp.weight);
+
+                    w += sp.weight;
+                    //  img.put( sp.y, sp.x, 255,0,0 );
+                    //System.out.println(sp);
+                }
+                np.weight = w;
+                //  System.out.println("W " + w);
+                if ( w * 5 > 93 ) {
+                    //System.out.println( "POINT " + np );
+                    fpoints.add( np );
+                    fpoints_b[id( np.x, np.y )] = true;
+                    addEdgePoint( np );
+                    fQueue.add( np );
+                }
+              /*  if(fpoints.size() > 10000) {
+                    break;
+                }*/
             }
+           /* if(fpoints.size() > 10000) {
+                break;
+            }*/
 
         }
+        result = image.clone();
+        for ( Point fp : fpoints ) {
+            result.put( fp.y, fp.x, 0, 0, 255 );
+        }
 
+        return result;
+    }
 
-        return image;
+    private void addEdgePoint( Point p ) {
+        if ( isEdgePoint( p ) ) {
+            ArrayList<Point> epoints = new ArrayList<>( edgePoints );
+            ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 3 );
+            for ( Point np : neighs ) {
+                if ( edgePoints.contains( np ) && !isEdgePoint( np ) ) {
+                    edgePoints.remove( np );
+                }
+            }
+         /*   for(Point ep : epoints) {
+                if ( !isEdgePoint(ep) ) {
+                     edgePoints.remove( ep );
+                }
+            }*/
+            edgePoints.add( p );
+        }
+    }
+
+    private ArrayList<Point> generateSample( Point p ) {
+        ArrayList<Point> sample = new ArrayList<>();
+        Point cp = closesPoint( p );
+        Queue<Point> queue = new LinkedList<>();
+        queue.add( cp );
+        while ( !queue.isEmpty() && sample.size() < 20 ) {
+            cp = queue.poll();
+            if ( !sample.contains( cp ) ) {
+                sample.add( cp );
+            }
+
+            for ( Connection con : cp.connections ) {
+                if ( !sample.contains( con.p2 ) && !queue.contains( con.p2 ) ) {
+                    queue.add( con.p2 );
+                }
+            }
+        }
+        return sample;
     }
 
     private void extractEdgePoints() {
         edgePoints = new ArrayList<>();
         Mat img = image.clone();
         for ( Point fp : fpoints ) {
-            ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
-            if ( !fpoints.containsAll( neighs ) ) {
+            fpoints_b[id( fp.x, fp.y )] = true;
+            if ( isEdgePoint( fp ) ) {
                 edgePoints.add( fp );
                 img.put( fp.y, fp.x, 0, 255, 0 );
             }
@@ -123,6 +162,17 @@ public class ImageMattingPlugin extends AbstractPlugin {
         }
     }
 
+    private boolean isEdgePoint( Point p ) {
+        ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 1 );
+        for ( Point n : neighs ) {
+            if ( !fpoints_b[id( n.x, n.y )] ) {
+                return true;
+            }
+        }
+        return false;
+        //  return  !fpoints.containsAll( neighs );
+    }
+
     private double distance( Point p, Point n ) {
         return Math.sqrt( Math.pow( p.x - n.x, 2 ) + Math.pow( p.y - n.y, 2 ) );
     }
@@ -135,7 +185,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
         Point cp = p;
         double d = Double.POSITIVE_INFINITY;
         for ( Point ep : edgePoints ) {
-            if ( distance( p, ep ) < d ) {
+            if ( distance( p, ep ) < d & ep.connections.size() > 0 ) {
                 d = distance( p, ep );
                 cp = ep;
             }
@@ -222,9 +272,9 @@ public class ImageMattingPlugin extends AbstractPlugin {
         ImageJPanel panel = Linox.getInstance().getImageStore().getSelectedTab();
         panel.resetMouseMotionListener();
         fpoints = jpanel.getValueButton( foregroundButton );
-        bpoints = jpanel.getValueButton( backgroundButton );
+//        bpoints = jpanel.getValueButton( backgroundButton );
 
-        if ( fpoints.size() == 0 && bpoints.size() == 0 ) {
+        if ( fpoints.size() == 0 ) { //&& bpoints.size() == 0 ) {
             errMessage = "Empty points!";
             pluginListener.stopPlugin();
             return;
@@ -242,18 +292,21 @@ public class ImageMattingPlugin extends AbstractPlugin {
 
     protected void showParamsPanel( String name ) {
         ImageJPanel srcPanel = Linox.getInstance().getImageStore().getSelectedTab();
-        final Mat _image = srcPanel.image.clone();
-        pluginListener.addImageTab( title, _image );
+        pluginListener.addImageTab( title, srcPanel.image.clone() );
         tabs++;
-        final ImageJPanel panel = Linox.getInstance().getImageStore().getSelectedTab();
 
         final Scalar fcolor = new Scalar( 0, 0, 255, 0 );
         final Scalar bcolor = new Scalar( 255, 0, 0, 0 );
 
-        widthSlider = new ParameterSlider( "Width of brash:", 1, 50, 10 );
+        widthSlider = new ParameterSlider( "Width of brash:", 1, 50, 5 );
         foregroundButton = new ParameterButton( new AbstractAction( "Paint foreground" ) {
+            Mat _image;
+            ImageJPanel panel;
+
             @Override
             public void actionPerformed( ActionEvent e ) {
+                panel = Linox.getInstance().getImageStore().getSelectedTab();
+                _image = panel.image.clone();
                 panel.pButton = foregroundButton;
                 panel.pSlider = widthSlider;
                 Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.DEFAULT_CURSOR ) );
@@ -282,8 +335,13 @@ public class ImageMattingPlugin extends AbstractPlugin {
             }
         } );
         backgroundButton = new ParameterButton( new AbstractAction( "Paint background" ) {
+            Mat _image;
+            ImageJPanel panel;
+
             @Override
             public void actionPerformed( ActionEvent e ) {
+                panel = Linox.getInstance().getImageStore().getSelectedTab();
+                _image = panel.image.clone();
                 panel.pButton = backgroundButton;
                 panel.pSlider = widthSlider;
                 Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.DEFAULT_CURSOR ) );
@@ -315,7 +373,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
         ParameterJPanel jpanel = new ParameterJPanel( name, this );
         jpanel.addParameterSlider( widthSlider );
         jpanel.addParameterButton( foregroundButton );
-        jpanel.addParameterButton( backgroundButton );
+        // jpanel.addParameterButton( backgroundButton );
 
         Linox.getInstance().addParameterJPanel( jpanel );
     }
