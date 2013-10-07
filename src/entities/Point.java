@@ -9,12 +9,15 @@ public class Point extends org.opencv.core.Point {
     public ArrayList<Connection> connections;
     public int width;
     public double weight;
+    public double fDegree, bDegree;
 
     public Point( int _x, int _y ) {
         x = _x;
         y = _y;
         width = -1;
         weight = -1;
+        fDegree = -1;
+        bDegree = -1;
         connections = new ArrayList<>();
     }
 
