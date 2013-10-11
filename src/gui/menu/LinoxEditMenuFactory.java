@@ -182,6 +182,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action test = new AbstractAction( "Test" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new TestPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
 
          /*
         final Action snakeMove = new AbstractAction("Movement of a  Snake") {
@@ -355,7 +364,6 @@ public class LinoxEditMenuFactory {
                             if(!list[i].isFile() || list[i].getName().contains("r_o") || list[i].getName().contains("r_c") || list[i].getName().contains(".DS_Store"))
                                 continue;
 
-                            System.out.println(list[i].getAbsolutePath());
                             String name = list[i].getName().substring(0, list[i].getName().indexOf('.'));
                             String extension = list[i].getName().substring(list[i].getName().indexOf('.'));
                             loadImage(list[i]);
@@ -455,6 +463,7 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( ols ) );
         items.add( new JMenuItem( roadBuilder ) );
         items.add( new JMenuItem( matting ) );
+        items.add( new JMenuItem( test ) );
 
         for ( JMenuItem item : items ) {
             item.setEnabled( false );

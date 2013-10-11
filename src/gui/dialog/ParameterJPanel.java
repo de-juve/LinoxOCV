@@ -1,5 +1,6 @@
 package gui.dialog;
 
+import gui.Linox;
 import net.miginfocom.swing.MigLayout;
 import plugins.IPluginFilter;
 
@@ -92,9 +93,18 @@ public class ParameterJPanel extends JPanel {
     }
 
     private void onOK() {
-        for ( IPluginFilter listener : parameterListeners ) {
-            listener.getParams( this );
-        }
+        final ParameterJPanel jpanel = this;
+        Thread t = new Thread( new Runnable() {
+            public void run() {
+                Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.WAIT_CURSOR ) );
+                for ( IPluginFilter listener : parameterListeners ) {
+                    listener.getParams( jpanel );
+                }
+                Linox.getInstance().getImageStore().setCursor( new Cursor( Cursor.DEFAULT_CURSOR ) );
+            }
+        } );
+        t.start();
+
     }
 
     private void onCancel() {

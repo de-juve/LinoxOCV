@@ -1,6 +1,7 @@
 package plugins;
 
 import gui.Linox;
+import gui.dialog.ParameterComboBox;
 import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
 import org.opencv.core.Mat;
@@ -8,8 +9,8 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
 public class ResizePlugin extends AbstractPlugin {
-
-    ParameterSlider widthSlider, heightSlider;
+    ParameterComboBox ratioComboBox;
+    ParameterSlider ratioSlider;
 
     public ResizePlugin() {
         title = "Resize";
@@ -25,20 +26,25 @@ public class ResizePlugin extends AbstractPlugin {
         }
     }
 
-    public static Mat resize( Mat image, Size size ) {
-        Mat result = new Mat( size, image.type() );
-        Imgproc.resize( image, result, size, 0, 0, Imgproc.INTER_LANCZOS4 );
+    public static Mat resize( Mat image, String type, int ratio ) {
+        Size newSize;
+        if ( type == "Increase" ) {
+            newSize = new Size( image.width() * ratio, image.height() * ratio );
+        } else {
+            newSize = new Size( image.width() / ratio, image.height() / ratio );
+        }
+        Mat result = new Mat( newSize, image.type() );
+        Imgproc.resize( image, result, newSize, 0, 0, Imgproc.INTER_LANCZOS4 );
         return result;
     }
 
 
     @Override
     public void getParams( ParameterJPanel panel ) {
-        int width = panel.getValueSlider( widthSlider );
-        int height = panel.getValueSlider( heightSlider );
-        Size size = new Size( width, height );
+        String type = panel.getValueComboBox( ratioComboBox );
+        int ratio = panel.getValueSlider( ratioSlider );
 
-        result = resize( image, size );
+        result = resize( image, type, ratio );
 
         if ( tabs == 0 ) {
             pluginListener.addImageTab();
@@ -49,12 +55,13 @@ public class ResizePlugin extends AbstractPlugin {
     }
 
     protected void showParamsPanel( String name ) {
-        widthSlider = new ParameterSlider( "Width:", 1, image.width() * 10, image.width() );
-        heightSlider = new ParameterSlider( "Height:", 1, image.height() * 10, image.height() );
+        ratioComboBox = new ParameterComboBox( "Type of ration", new String[]{ "Increase", "Decrease" } );
+        ratioSlider = new ParameterSlider( "Ratio:", 1, 10, 1 );
+
 
         ParameterJPanel panel = new ParameterJPanel( name, this );
-        panel.addParameterSlider( widthSlider );
-        panel.addParameterSlider( heightSlider );
+        panel.addParameterComboBox( ratioComboBox );
+        panel.addParameterSlider( ratioSlider );
 
         Linox.getInstance().addParameterJPanel( panel );
     }
