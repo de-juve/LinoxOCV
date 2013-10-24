@@ -7,25 +7,21 @@ import entities.Point;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
+import gui.menu.IPluginRunner;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
-import org.opencv.core.Scalar;
-import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 import plugins.AbstractPlugin;
+import plugins.CannyPlugin;
+import plugins.IPluginFilter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Random;
 
-public class Builder extends AbstractPlugin {
-    ParameterSlider thresSlider, ratioSlider, maxRoadWidthSlider;
-    private int lowThreshold;
+public class Builder extends AbstractPlugin implements IPluginRunner {
+    ParameterSlider maxRoadWidthSlider;
     private int max_lowThreshold = 100;
-    private int ratio;
-    private int kernel_size = 3;
     private int maxRoadWidth;
     ArrayList<Direction> diagonalDirections;
+    CannyPlugin cannyPlugin;
 
 
     public Builder() {
@@ -41,40 +37,26 @@ public class Builder extends AbstractPlugin {
     public void run() {
         Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
-        showParamsPanel( "Choose params" );
-        if ( exit ) {
-            return;
-        }
+        cannyPlugin = new CannyPlugin();
+        cannyPlugin.addRunListener( this );
+        cannyPlugin.initImage( image );
+        cannyPlugin.run();
     }
 
+    /**
+     * @param lines watershed lines, or Hough lines from watershed
+     * @return
+     */
     public Mat build( ArrayList<Line> lines ) {
+        //do Canny detector to original )closing) image
         Mat canny = Mat.zeros( image.size(), image.type() );
-        Mat detected_edges = new Mat( image.size(), image.type() );
-        Mat src_gray = new Mat( image.size(), image.type() );
-        Imgproc.cvtColor( image, src_gray, Imgproc.COLOR_BGR2GRAY );
-        Imgproc.blur( src_gray, detected_edges, new Size( 3, 3 ) );
-        Imgproc.Canny( detected_edges, detected_edges, lowThreshold, lowThreshold * ratio, kernel_size, false );
+        Mat detected_edges = cannyPlugin.getResult( false );
         image.copyTo( canny, detected_edges );
-        DataCollector.INSTANCE.addtoHistory( "edges", detected_edges );
         DataCollector.INSTANCE.addtoHistory( "canny", canny );
-
-        ArrayList<MatOfPoint> contours = new ArrayList<>();
-        Mat hierarchy = new Mat();
-        Imgproc.findContours( detected_edges, contours, hierarchy, 1, 3 );
 
         Direction[] directions = new Direction[]{ Direction.NORTH, Direction.WEST, Direction.NORTH_WEST, Direction.SOUTH_WEST };
         ArrayList<Line> correctLines = new ArrayList<>();
 
-        Mat contour = Mat.zeros( image.size(), image.type() );
-        Random rand = new Random();
-        for ( int i = 0; i < contours.size(); i++ ) {
-            System.out.println( Imgproc.contourArea( contours.get( i ) ) );
-            if ( Imgproc.contourArea( contours.get( i ) ) > 50 ) {
-                Scalar color = new Scalar( rand.nextInt( 255 ), rand.nextInt( 255 ), rand.nextInt( 255 ) );
-                Imgproc.drawContours( contour, contours, i, color, 1 );
-            }
-        }
-        DataCollector.INSTANCE.addtoHistory( "contour", contour );
 
         Loop:
         for ( Line line : lines ) {
@@ -237,8 +219,6 @@ public class Builder extends AbstractPlugin {
             errMessage = "Empty lines!";
             return;
         }
-        lowThreshold = panel.getValueSlider( thresSlider );
-        ratio = panel.getValueSlider( ratioSlider );
         maxRoadWidth = panel.getValueSlider( maxRoadWidthSlider );
         result = build( lines );
 
@@ -251,15 +231,49 @@ public class Builder extends AbstractPlugin {
     }
 
     protected void showParamsPanel( String name ) {
-        thresSlider = new ParameterSlider( "Min Threshold:", 1, max_lowThreshold, 50 );
-        ratioSlider = new ParameterSlider( "Upper:lower ratio:", 2, 4, 3 );
         maxRoadWidthSlider = new ParameterSlider( "Max road width: ", 1, 100, 30 );
 
         ParameterJPanel panel = new ParameterJPanel( name, this );
-        panel.addParameterSlider( thresSlider );
-        panel.addParameterSlider( ratioSlider );
         panel.addParameterSlider( maxRoadWidthSlider );
 
         Linox.getInstance().addParameterJPanel( panel );
+    }
+
+    @Override
+    public void addImageTab() {
+        pluginListener.addImageTab( cannyPlugin.getTitle(), cannyPlugin.getResult( false ) );
+    }
+
+    @Override
+    public void addImageTab( String title, Mat image ) {
+        pluginListener.addImageTab( title, image );
+    }
+
+    @Override
+    public void replaceImageTab() {
+        pluginListener.replaceImageTab( cannyPlugin.getTitle(), cannyPlugin.getResult( false ) );
+    }
+
+    @Override
+    public void replaceImageTab( String title, Mat image ) {
+        pluginListener.replaceImageTab( title, image );
+    }
+
+    @Override
+    public void setPlugin( IPluginFilter plugin ) {
+        pluginListener.setPlugin( plugin );
+    }
+
+    @Override
+    public void stopPlugin() {
+        pluginListener.stopPlugin();
+    }
+
+    @Override
+    public void finishPlugin() {
+        showParamsPanel( "Choose params" );
+        if ( exit ) {
+            return;
+        }
     }
 }

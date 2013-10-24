@@ -164,6 +164,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action canny = new AbstractAction( "Canny" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new CannyPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
         final Action roadBuilder = new AbstractAction( "Road builder" ) {
             @Override
             public void actionPerformed( ActionEvent e ) {
@@ -461,6 +470,7 @@ public class LinoxEditMenuFactory {
         items.add( new JMenuItem( histogram ) );
         items.add( new JMenuItem( hough ) );
         items.add( new JMenuItem( ols ) );
+        items.add( new JMenuItem( canny ) );
         items.add( new JMenuItem( roadBuilder ) );
         items.add( new JMenuItem( matting ) );
         items.add( new JMenuItem( test ) );

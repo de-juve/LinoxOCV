@@ -2,7 +2,7 @@ package plugins;
 
 
 import gui.dialog.ParameterJPanel;
-import gui.menu.PluginRunner;
+import gui.menu.IPluginRunner;
 import org.opencv.core.Mat;
 
 public interface IPluginFilter extends Runnable {
@@ -22,7 +22,7 @@ public interface IPluginFilter extends Runnable {
 
     void getParams( ParameterJPanel parameterJPanel );
 
-    void addRunListener( PluginRunner runner );
+    void addRunListener( IPluginRunner runner );
 
     void finish();
 }

@@ -4,14 +4,14 @@ import entities.DataCollector;
 import entities.Point;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
-import gui.menu.PluginRunner;
+import gui.menu.IPluginRunner;
 import org.opencv.core.Mat;
 
 
 public class AbstractPlugin implements IPluginFilter {
     public int tabs = 0;
     protected Mat image, result = null;
-    protected PluginRunner pluginListener;
+    protected IPluginRunner pluginListener;
     public boolean exit = false;
     //  protected int criteria;
     protected String errMessage = "";
@@ -60,7 +60,7 @@ public class AbstractPlugin implements IPluginFilter {
     }
 
     @Override
-    public void addRunListener( PluginRunner runner ) {
+    public void addRunListener( IPluginRunner runner ) {
         pluginListener = runner;
     }
 
