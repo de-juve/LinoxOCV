@@ -1,9 +1,6 @@
 package plugins.roadNetwork;
 
-import entities.DataCollector;
-import entities.Direction;
-import entities.Line;
-import entities.Point;
+import entities.*;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
@@ -12,6 +9,7 @@ import org.opencv.core.Mat;
 import plugins.AbstractPlugin;
 import plugins.CannyPlugin;
 import plugins.IPluginFilter;
+import plugins.approximation.Interpolacion;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -36,12 +34,22 @@ public class Builder extends AbstractPlugin implements IPluginRunner {
     @Override
     public void run() {
         Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
+        ArrayList<Point> wpotins = DataCollector.INSTANCE.getWatershedPoints();
+        if ( wpotins == null || wpotins.size() <= 0 ) {
+            setErrMessage( "emprt watershed points" );
+            exit = true;
+            if ( pluginListener != null ) {
+                pluginListener.addImageTab();
+                pluginListener.stopPlugin();
+            }
+        }
 
         cannyPlugin = new CannyPlugin();
         cannyPlugin.addRunListener( this );
         cannyPlugin.initImage( image );
         cannyPlugin.run();
     }
+
 
     /**
      * @param lines watershed lines, or Hough lines from watershed
@@ -53,6 +61,25 @@ public class Builder extends AbstractPlugin implements IPluginRunner {
         Mat detected_edges = cannyPlugin.getResult( false );
         image.copyTo( canny, detected_edges );
         DataCollector.INSTANCE.addtoHistory( "canny", canny );
+
+
+        ArrayList<entities.Point> exPoints = PointMentor.extractExtreamPoints(
+                DataCollector.INSTANCE.getWatershedImg(),
+                DataCollector.INSTANCE.getWatershedPoints()
+        );
+
+        ArrayList<Line> wlines = PointMentor.linkPoints(
+                DataCollector.INSTANCE.getWatershedImg(),
+                DataCollector.INSTANCE.getWatershedPoints(),
+                exPoints );
+        //interpolacion
+        Interpolacion interpolacion = new Interpolacion();
+        for ( Line line : lines ) {
+            interpolacion.extractPointsFormLine( line );
+            interpolacion.run();
+            break;
+        }
+
 
         Direction[] directions = new Direction[]{ Direction.NORTH, Direction.WEST, Direction.NORTH_WEST, Direction.SOUTH_WEST };
         ArrayList<Line> correctLines = new ArrayList<>();

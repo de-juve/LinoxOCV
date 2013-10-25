@@ -67,6 +67,21 @@ public class PixelsMentor {
         return resultArray;
     }
 
+    public static ArrayList<Integer> defineNeighboursIdsWithDifferentValue( int id, Mat image ) {
+        int x = id % image.width();
+        int y = id / image.width();
+        ArrayList<Integer> resultArray = new ArrayList<>();
+        ArrayList<Integer> neighboursIds = defineNeighboursOfPixel( x, y, image, 1 );
+        for ( Integer nid : neighboursIds ) {
+            int nx = nid % image.width();
+            int ny = nid / image.width();
+            if ( image.get( y, x )[0] != image.get( ny, nx )[0] ) {
+                resultArray.add( nid );
+            }
+        }
+        return resultArray;
+    }
+
     public static ArrayList<Integer> defineNeighboursIds( int id, Mat image ) {
         ArrayList<Integer> resultArray = new ArrayList<>();
         ArrayList<Integer> neighboursIds = defineNeighboursOfPixel( id % image.width(), id / image.width(), image, 1 );

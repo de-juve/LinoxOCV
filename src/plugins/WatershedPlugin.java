@@ -37,6 +37,8 @@ public class WatershedPlugin extends AbstractPlugin {
         constructDAG();
         flood();
 
+        removeOnePixelHoles();
+
         DataCollector.INSTANCE.addtoHistory( "wsh", result );
         DataCollector.INSTANCE.setWatershedImg( result );
 
@@ -52,6 +54,37 @@ public class WatershedPlugin extends AbstractPlugin {
             pluginListener.addImageTab();
             pluginListener.finishPlugin();
         }
+    }
+
+    private void removeOnePixelHoles() {
+        ArrayList<Point> wpoints = DataCollector.INSTANCE.getWatershedPoints();
+        boolean[] wpoints_b = new boolean[( int ) image.total()];
+        int[] watershed = new int[( int ) image.total()];
+        for ( Point p : wpoints ) {
+            wpoints_b[id( p.x, p.y )] = true;
+            watershed[id( p.x, p.y )] = 255;
+        }
+        for ( int y = 1; y < image.rows() - 1; y++ ) {
+            for ( int x = 1; x < image.cols() - 1; x++ ) {
+                if ( !wpoints_b[id( x, y )] &&
+                        ( wpoints_b[id( x - 1, y )] && wpoints_b[id( x + 1, y )] &&
+                                !wpoints_b[id( x, y - 1 )] && !wpoints_b[id( x, y + 1 )] ) ||
+                        ( wpoints_b[id( x - 1, y - 1 )] && wpoints_b[id( x + 1, y + 1 )] &&
+                                !wpoints_b[id( x - 1, y + 1 )] && !wpoints_b[id( x + 1, y - 1 )] ) ||
+                        ( wpoints_b[id( x - 1, y + 1 )] && wpoints_b[id( x + 1, y - 1 )] &&
+                                !wpoints_b[id( x - 1, y - 1 )] && !wpoints_b[id( x + 1, y + 1 )] ) ||
+                        ( wpoints_b[id( x, y - 1 )] && wpoints_b[id( x, y + 1 )] &&
+                                !wpoints_b[id( x - 1, y )] && !wpoints_b[id( x + 1, y )] )
+                        ) {
+
+                    wpoints_b[id( x, y )] = true;
+                    watershed[id( x, y )] = 255;
+                }
+            }
+        }
+
+        DataCollector.INSTANCE.setWatershedPoints( wpoints );
+        result = setPointsToImage( watershed );
     }
 
     private void constructDAG() {
@@ -166,16 +199,6 @@ public class WatershedPlugin extends AbstractPlugin {
         }
         DataCollector.INSTANCE.setWatershedPoints( watershedPoints );
 
-        byte[] buff = new byte[( int ) image.total() * image.channels()];
-
-        int j = 0;
-        for ( int i = 0; i < watershed.length; i++ ) {
-            for ( int k = 0; k < image.channels(); k++ ) {
-                buff[j] = ( byte ) watershed[i];
-                j++;
-            }
-        }
-
-        result.put( 0, 0, buff );
+        result = setPointsToImage( watershed );
     }
 }

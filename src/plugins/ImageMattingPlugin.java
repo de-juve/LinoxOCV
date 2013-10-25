@@ -28,11 +28,11 @@ import java.util.Queue;
 public class ImageMattingPlugin extends AbstractPlugin {
     ParameterSlider widthSlider;
     ParameterButton foregroundButton, backgroundButton;
-
+    LineCreator fLineCreator, bLineCreator;
     HashMap<Point, Mat> W, L;
     ArrayList<Connection> connections;
-    ArrayList<Point> fpoints1, fpoints, bpoints, fEdgePoints, bEdgePoints;
-    boolean[] fpoints_b, bpoints_b, fepoints_b, bepoints_b;
+    ArrayList<Point> fpoints1, fpoints, bpoints;
+
     double b = 1 / Math.pow( 255, 2 );
     Mat gray;
 
@@ -55,7 +55,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
         gray = GrayscalePlugin.run( image, false );
 
 
-        bEdgePoints = new ArrayList<>();
+        //bEdgePoints = new ArrayList<>();
 
         //1 этап выделение с порогом и формирование фона около интересующего объекта
         stage1();
@@ -91,23 +91,21 @@ public class ImageMattingPlugin extends AbstractPlugin {
     }
 
     private void stage1() {
-        fpoints_b = new boolean[( int ) image.total()];
-        fepoints_b = new boolean[( int ) image.total()];
-        fEdgePoints = new ArrayList<>();
-        extractEdgePoints( fEdgePoints, fpoints, fpoints_b, fepoints_b );
+        fLineCreator = new LineCreator( image, fpoints );
+        fLineCreator.extractEdgePoints();
 
-        Queue<Point> fQueue = new LinkedList<>( fEdgePoints );
+        Queue<Point> fQueue = new LinkedList<>( fLineCreator.edgePoints );
         ArrayList<Point> sample, neighs;
         sample = new ArrayList<>();
         while ( !fQueue.isEmpty() ) {
             Point fp = fQueue.poll();
             neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
             for ( Point np : neighs ) {
-                if ( fpoints_b[id( np.x, np.y )] ) {
+                if ( fLineCreator.isOneOfThePoints( np ) ) {
                     continue;
                 }
                 if ( sample.isEmpty() ) {
-                    sample = generateSample( np, fpoints_b );
+                    sample = generateSample( np, fLineCreator );
                 }
                 double w = 0;
                 for ( Point sp : sample ) {
@@ -116,9 +114,7 @@ public class ImageMattingPlugin extends AbstractPlugin {
                 }
                 np.fDegree = w;
                 if ( np.fDegree * 100 / sample.size() > 95 ) {
-                    fpoints.add( np );
-                    fpoints_b[id( np.x, np.y )] = true;
-                    addEdgePoint( np, fEdgePoints, fpoints_b, fepoints_b );
+                    fLineCreator.addEdgePoint( np );
                     fQueue.add( np );
                 } else {
                     bpoints.add( np );
@@ -128,23 +124,21 @@ public class ImageMattingPlugin extends AbstractPlugin {
     }
 
     private void stage2() {
-        bpoints_b = new boolean[( int ) image.total()];
-        bepoints_b = new boolean[( int ) image.total()];
-        bEdgePoints = new ArrayList<>();
-        extractEdgePoints( bEdgePoints, bpoints, bpoints_b, bepoints_b );
+        bLineCreator = new LineCreator( image, bpoints );
+        bLineCreator.extractEdgePoints();
 
-        Queue<Point> fQueue = new LinkedList<>( bEdgePoints );
+        Queue<Point> fQueue = new LinkedList<>( bLineCreator.edgePoints );
         ArrayList<Point> sample, neighs;
         sample = new ArrayList<>();
         while ( !fQueue.isEmpty() ) {
             Point fp = fQueue.poll();
             neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
             for ( Point np : neighs ) {
-                if ( bpoints_b[id( np.x, np.y )] || fpoints_b[id( np.x, np.y )] ) {
+                if ( bLineCreator.isOneOfThePoints( np ) || fLineCreator.isOneOfThePoints( np ) ) {
                     continue;
                 }
                 if ( sample.isEmpty() ) {
-                    sample = generateSample( np, bpoints_b );
+                    sample = generateSample( np, bLineCreator );
                 }
                 double w = 0;
                 for ( Point sp : sample ) {
@@ -153,15 +147,12 @@ public class ImageMattingPlugin extends AbstractPlugin {
                 }
                 np.bDegree = w;
                 if ( np.bDegree * 100 / sample.size() > 95 ) {
-                    if ( fpoints_b[id( np.x, np.y )] && np.bDegree > np.fDegree ) {
-                        fpoints.remove( np );
-                        fpoints_b[id( np.x, np.y )] = false;
-                    } else if ( fpoints_b[id( np.x, np.y )] && np.fDegree > np.bDegree ) {
+                    if ( fLineCreator.isOneOfThePoints( np ) && np.bDegree > np.fDegree ) {
+                        fLineCreator.removePoint( np );
+                    } else if ( fLineCreator.isOneOfThePoints( np ) && np.fDegree > np.bDegree ) {
                         continue;
                     }
-                    bpoints.add( np );
-                    bpoints_b[id( np.x, np.y )] = true;
-                    addEdgePoint( np, bEdgePoints, bpoints_b, bepoints_b );
+                    bLineCreator.addEdgePoint( np );
                     fQueue.add( np );
                 }
             }
@@ -169,35 +160,30 @@ public class ImageMattingPlugin extends AbstractPlugin {
     }
 
     private void stage3() {
-        fpoints_b = new boolean[( int ) image.total()];
-        bpoints_b = new boolean[( int ) image.total()];
-        fepoints_b = new boolean[( int ) image.total()];
-        bepoints_b = new boolean[( int ) image.total()];
-        fEdgePoints = new ArrayList<>();
-        bEdgePoints = new ArrayList<>();
         fpoints = fpoints1;
+        fLineCreator = new LineCreator( image, fpoints );
+        bLineCreator = new LineCreator( image, bpoints );
+        fLineCreator.extractEdgePoints();
+        bLineCreator.extractEdgePoints();
 
-        extractEdgePoints( fEdgePoints, fpoints, fpoints_b, fepoints_b );
-        extractEdgePoints( bEdgePoints, bpoints, bpoints_b, bepoints_b );
-
-        Queue<Point> fQueue = new LinkedList<>( fEdgePoints );
+        Queue<Point> fQueue = new LinkedList<>( fLineCreator.edgePoints );
         ArrayList<Point> fSample, bSample, neighs;
         Point cfp, bfp;
-        cfp = bfp = fEdgePoints.get( 0 );
+        cfp = bfp = fLineCreator.edgePoints.get( 0 );
         fSample = new ArrayList<>();
         bSample = new ArrayList<>();
         while ( !fQueue.isEmpty() ) {
             Point fp = fQueue.poll();
             neighs = PixelsMentor.getNeighborhoodOfPixel( fp.x, fp.y, image, 1 );
             for ( Point np : neighs ) {
-                if ( fpoints_b[id( np.x, np.y )] ) {
+                if ( fLineCreator.isOneOfThePoints( np ) ) {
                     continue;
                 }
                 if ( fSample.isEmpty() ) {
-                    fSample = generateSample( np, fpoints_b );
-                    bSample = generateSample( np, bpoints_b );
-                    cfp = closesPoint( np, fpoints_b );
-                    bfp = closesPoint( np, bpoints_b );
+                    fSample = generateSample( np, fLineCreator );
+                    bSample = generateSample( np, bLineCreator );
+                    cfp = fLineCreator.getClosesPoint( np );
+                    bfp = bLineCreator.getClosesPoint( np );
                 }
                 double w = 0;
                 for ( Point sp : fSample ) {
@@ -212,35 +198,23 @@ public class ImageMattingPlugin extends AbstractPlugin {
                 }
                 np.bDegree = w;
                 if ( np.fDegree > np.bDegree || ( np.fDegree * 100 / fSample.size() > 95 && distance( np, cfp ) < distance( np, bfp ) ) ) {
-                    fpoints.add( np );
-                    fpoints_b[id( np.x, np.y )] = true;
-                    addEdgePoint( np, fEdgePoints, fpoints_b, fepoints_b );
+                    fLineCreator.addEdgePoint( np );
                     fQueue.add( np );
                 } else {
-                    bpoints.add( np );
-                    bpoints_b[id( np.x, np.y )] = true;
-                    addEdgePoint( np, bEdgePoints, bpoints_b, bepoints_b );
+                    bLineCreator.addEdgePoint( np );
                 }
             }
         }
 
     }
 
-    private void addEdgePoint( Point p, ArrayList<Point> points, boolean[] points_b, boolean[] epoints_b ) {
-        if ( isEdgePoint2( p, epoints_b ) ) {
-            ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 1 );
-            for ( Point np : neighs ) {
-                if ( points_b[id( np.x, np.y )] && !isEdgePoint2( np, epoints_b ) ) {
-                    points.remove( np );
-                }
-            }
-            points.add( p );
-        }
+    private double distance( Point p, Point n ) {
+        return Math.sqrt( Math.pow( p.x - n.x, 2 ) + Math.pow( p.y - n.y, 2 ) );
     }
 
-    private ArrayList<Point> generateSample( Point p, boolean[] points_b ) {
+    private ArrayList<Point> generateSample( Point p, LineCreator lineCreators ) {
         ArrayList<Point> sample = new ArrayList<>();
-        Point cp = closesPoint( p, points_b );
+        Point cp = lineCreators.getClosesPoint( p );
         Queue<Point> queue = new LinkedList<>();
         queue.add( cp );
         while ( !queue.isEmpty() && sample.size() < 20 ) {
@@ -258,62 +232,10 @@ public class ImageMattingPlugin extends AbstractPlugin {
         return sample;
     }
 
-    private void extractEdgePoints( ArrayList<Point> edgePoints, ArrayList<Point> points, boolean[] points_b, boolean[] epoints_b ) {
-        Mat img = image.clone();
-        for ( Point fp : points ) {
-            points_b[id( fp.x, fp.y )] = true;
-        }
-        for ( Point fp : points ) {
-            if ( isEdgePoint( fp, points_b ) ) {
-                edgePoints.add( fp );
-                epoints_b[id( fp.x, fp.y )] = true;
-                img.put( fp.y, fp.x, 0, 255, 0 );
-            }
-        }
-        DataCollector.INSTANCE.addtoHistory( "edge points", img );
-        for ( Point p : edgePoints ) {
-            for ( Point n : edgePoints ) {
-                if ( PixelsMentor.isNeighbours( p, n ) && !p.equals( n ) ) {
-                    p.addConnection( new Connection( p, n, distance( p, n ) ) );
-                }
-            }
-        }
-    }
-
-    private boolean isEdgePoint( Point p, boolean[] points_b ) {
-        ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 1 );
-        for ( Point n : neighs ) {
-            if ( !points_b[id( n.x, n.y )] ) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isEdgePoint2( Point p, boolean[] epoints_b ) {
-        return epoints_b[id( p.x, p.y )];
-    }
-
-    private double distance( Point p, Point n ) {
-        return Math.sqrt( Math.pow( p.x - n.x, 2 ) + Math.pow( p.y - n.y, 2 ) );
-    }
-
     private double weight( Point p, Point n, Mat img ) {
         return Math.exp( -b * Math.pow( img.get( p.y, p.x )[0] - img.get( n.y, n.x )[0], 2 ) );
     }
 
-    private Point closesPoint( Point p, boolean[] epoints_b ) {
-        Point cp = p;
-        double d = Double.POSITIVE_INFINITY;
-        ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 2 );
-        for ( Point ep : neighs ) {
-            if ( isEdgePoint2( ep, epoints_b ) && distance( p, ep ) < d && ep.connections.size() > 0 ) {
-                d = distance( p, ep );
-                cp = ep;
-            }
-        }
-        return cp;
-    }
 
     private void calculate() {
         Mat gray = GrayscalePlugin.run( image, false );

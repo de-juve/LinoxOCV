@@ -22,7 +22,8 @@ public class PointMentor {
     public static ArrayList<Point> extractExtreamPoints( Mat img, ArrayList<Point> points ) {
         ArrayList<Point> extremePoints = new ArrayList<>();
         for ( Point p : points ) {
-            ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithSameValue( p.x + p.y * img.width(), img );
+            ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithSameValue(
+                    p.x + p.y * img.width(), img );
             if ( neighbours.size() > 1 ) {
                 continue;
             } else {
@@ -46,7 +47,8 @@ public class PointMentor {
                     if ( !visited[point.x + point.y * img.width()] ) {
                         visited[point.x + point.y * img.width()] = true;
                         line.add( point );
-                        ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithSameValue( point.x + point.y * img.width(), img );
+                        ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithSameValue(
+                                point.x + point.y * img.width(), img );
                         int size = neighbours.size();
                         for ( int i = 0; i < size; i++ ) {
                             Point n = getNextPoint( point, neighbours, points, img );
@@ -62,7 +64,10 @@ public class PointMentor {
         return res;
     }
 
-    private static Point getNextPoint( Point p, ArrayList<Integer> neighbours, ArrayList<Point> points, Mat img ) {
+    private static Point getNextPoint( Point p,
+                                       ArrayList<Integer> neighbours,
+                                       ArrayList<Point> points,
+                                       Mat img ) {
         Point neighbor = new Point( -1, -1 );
         int i = 0;
 
@@ -101,7 +106,9 @@ public class PointMentor {
                     break;
                 }
             }
-            if ( neighbor.x >= 0 && neighbours.contains( neighbor.x + neighbor.y * img.width() ) && points.contains( neighbor ) )
+            if ( neighbor.x >= 0 &&
+                    neighbours.contains( neighbor.x + neighbor.y * img.width() ) &&
+                    points.contains( neighbor ) )
                 break;
             i++;
         }

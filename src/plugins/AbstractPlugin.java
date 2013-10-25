@@ -89,6 +89,22 @@ public class AbstractPlugin implements IPluginFilter {
         return point.x >= 0 && point.x < image.width() && point.y >= 0 && point.y < image.height();
     }
 
+    protected Mat setPointsToImage( int[] points ) {
+        Mat result = new Mat( image.rows(), image.cols(), image.type() );
+        byte[] buff = new byte[( int ) image.total() * image.channels()];
+
+        int j = 0;
+        for ( int i = 0; i < points.length; i++ ) {
+            for ( int k = 0; k < image.channels(); k++ ) {
+                buff[j] = ( byte ) points[i];
+                j++;
+            }
+        }
+
+        result.put( 0, 0, buff );
+        return result;
+    }
+
 
     protected void create( Integer[] array ) {
         for ( int i = 0; i < array.length; i++ ) {
