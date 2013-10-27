@@ -11,7 +11,7 @@
     <orderEntry type="library" name="opencv-246" level="project" />
     <orderEntry type="library" name="matlabcontrol-4.1.0" level="project" />
     <orderEntry type="library" name="commons-math3-3.2" level="project" />
-    <orderEntry type="library" name="jmathplot" level="application" />
+    <orderEntry type="library" name="jmathplot" level="project" />
   </component>
 </module>
 

@@ -8,13 +8,6 @@ import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-/**
- * Created with IntelliJ IDEA.
- * User: it
- * Date: 24.10.13
- * Time: 17:18
- * To change this template use File | Settings | File Templates.
- */
 public class CannyPlugin extends AbstractPlugin {
     ParameterSlider thresSlider, ratioSlider;
     private int lowThreshold;
@@ -28,39 +21,39 @@ public class CannyPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
+        Linox.getInstance().getStatusBar().setProgress(title, 0, 100);
 
-        showParamsPanel( "Choose params" );
-        if ( exit ) {
+        showParamsPanel("Choose params");
+        if (exit) {
             return;
         }
     }
 
-    public Mat canny( Mat image, int lowThreshold, int ratio, int kernel_size ) {
-        Mat detected_edges = new Mat( image.size(), image.type() );
-        Mat src_gray = new Mat( image.size(), image.type() );
+    public Mat canny(Mat image, int lowThreshold, int ratio, int kernel_size) {
+        Mat detected_edges = new Mat(image.size(), image.type());
+        Mat src_gray = new Mat(image.size(), image.type());
 
-        if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
-            Imgproc.cvtColor( image, src_gray, Imgproc.COLOR_BGR2GRAY );
+        if ((image.channels() == 3 || image.channels() == 4) && image.type() != CvType.CV_8UC1) {
+            Imgproc.cvtColor(image, src_gray, Imgproc.COLOR_BGR2GRAY);
         } else {
             src_gray = image.clone();
         }
 
-        Imgproc.blur( src_gray, detected_edges, new Size( 3, 3 ) );
+        Imgproc.blur(src_gray, detected_edges, new Size(3, 3));
 
-        Imgproc.Canny( detected_edges, detected_edges, lowThreshold, lowThreshold * ratio, kernel_size, false );
+        Imgproc.Canny(detected_edges, detected_edges, lowThreshold, lowThreshold * ratio, kernel_size, false);
 
         return detected_edges;
     }
 
     @Override
-    public void getParams( ParameterJPanel panel ) {
-        lowThreshold = panel.getValueSlider( thresSlider );
-        ratio = panel.getValueSlider( ratioSlider );
+    public void getParams(ParameterJPanel panel) {
+        lowThreshold = panel.getValueSlider(thresSlider);
+        ratio = panel.getValueSlider(ratioSlider);
 
-        result = canny( image, lowThreshold, ratio, kernel_size );
+        result = canny(image, lowThreshold, ratio, kernel_size);
 
-        if ( tabs == 0 ) {
+        if (tabs == 0) {
             pluginListener.addImageTab();
             tabs++;
         } else {
@@ -68,14 +61,14 @@ public class CannyPlugin extends AbstractPlugin {
         }
     }
 
-    protected void showParamsPanel( String name ) {
-        thresSlider = new ParameterSlider( "Min Threshold:", 1, max_lowThreshold, 50 );
-        ratioSlider = new ParameterSlider( "Upper:lower ratio:", 2, 4, 3 );
+    protected void showParamsPanel(String name) {
+        thresSlider = new ParameterSlider("Min Threshold:", 1, max_lowThreshold, 50);
+        ratioSlider = new ParameterSlider("Upper:lower ratio:", 2, 4, 3);
 
-        ParameterJPanel panel = new ParameterJPanel( name, this );
-        panel.addParameterSlider( thresSlider );
-        panel.addParameterSlider( ratioSlider );
+        ParameterJPanel panel = new ParameterJPanel(name, this);
+        panel.addParameterSlider(thresSlider);
+        panel.addParameterSlider(ratioSlider);
 
-        Linox.getInstance().addParameterJPanel( panel );
+        Linox.getInstance().addParameterJPanel(panel);
     }
 }

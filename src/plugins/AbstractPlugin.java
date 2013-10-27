@@ -17,9 +17,9 @@ public class AbstractPlugin implements IPluginFilter {
     protected String errMessage = "";
     protected String title = "";
 
-    public Mat getResult( boolean addToStack ) {
-        if ( addToStack ) {
-            DataCollector.INSTANCE.addtoHistory( title, result );
+    public Mat getResult(boolean addToStack) {
+        if (addToStack) {
+            DataCollector.INSTANCE.addtoHistory(title, result);
         }
         return result;
     }
@@ -32,7 +32,7 @@ public class AbstractPlugin implements IPluginFilter {
         return errMessage;
     }
 
-    protected void setErrMessage( String message ) {
+    protected void setErrMessage(String message) {
         errMessage = message;
     }
 
@@ -44,77 +44,81 @@ public class AbstractPlugin implements IPluginFilter {
     public void cancel() {
         Linox.getInstance().removeParameterJPanel();
         exit = true;
-        setErrMessage( "canceled" );
+        setErrMessage("canceled");
         pluginListener.stopPlugin();
     }
 
     @Override
     public void finish() {
-        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
+        Linox.getInstance().getStatusBar().setProgress(title, 100, 100);
         Linox.getInstance().removeParameterJPanel();
         pluginListener.finishPlugin();
     }
 
     @Override
-    public void getParams( ParameterJPanel parameterJPanel ) {
+    public void getParams(ParameterJPanel parameterJPanel) {
     }
 
     @Override
-    public void addRunListener( IPluginRunner runner ) {
+    public void addRunListener(IPluginRunner runner) {
         pluginListener = runner;
     }
 
-    public void initImage( Mat _image ) {
+    public void initImage(Mat _image) {
         image = _image;
-        result = new Mat( image.height(), image.width(), image.depth() );
+        result = new Mat(image.height(), image.width(), image.depth());
     }
 
     public boolean exit() {
         return exit;
     }
 
-    protected int id( int x, int y ) {
+    protected int id(Point point) {
+        return id(point.x, point.y);
+    }
+
+    protected int id(int x, int y) {
         return x + y * image.width();
     }
 
-    protected int x( int id ) {
+    protected int x(int id) {
         return id % image.width();
     }
 
-    protected int y( int id ) {
+    protected int y(int id) {
         return id / image.width();
     }
 
-    protected boolean isInBox( Point point ) {
+    protected boolean isInBox(Point point) {
         return point.x >= 0 && point.x < image.width() && point.y >= 0 && point.y < image.height();
     }
 
-    protected Mat setPointsToImage( int[] points ) {
-        Mat result = new Mat( image.rows(), image.cols(), image.type() );
-        byte[] buff = new byte[( int ) image.total() * image.channels()];
+    protected Mat setPointsToImage(int[] points) {
+        Mat result = new Mat(image.rows(), image.cols(), image.type());
+        byte[] buff = new byte[(int) image.total() * image.channels()];
 
         int j = 0;
-        for ( int i = 0; i < points.length; i++ ) {
-            for ( int k = 0; k < image.channels(); k++ ) {
-                buff[j] = ( byte ) points[i];
+        for (int i = 0; i < points.length; i++) {
+            for (int k = 0; k < image.channels(); k++) {
+                buff[j] = (byte) points[i];
                 j++;
             }
         }
 
-        result.put( 0, 0, buff );
+        result.put(0, 0, buff);
         return result;
     }
 
 
-    protected void create( Integer[] array ) {
-        for ( int i = 0; i < array.length; i++ ) {
+    protected void create(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
             double[] data = new double[3];
             data[0] = array[i];
             data[1] = array[i];
             data[2] = array[i];
             int row = i / image.width();
             int col = i % image.width();
-            result.put( row, col, data );
+            result.put(row, col, data);
         }
      /* DataCollector.INSTANCE.setImageResult(result);
       DataCollector.INSTANCE.setImageResultTitle(title);*/
