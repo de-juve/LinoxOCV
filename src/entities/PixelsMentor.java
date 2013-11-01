@@ -18,6 +18,16 @@ public class PixelsMentor {
         return neighbors;
     }
 
+    public static ArrayList<Point> getAllNeighborhoodOfPixel( int x, int y, Mat image, int radius ) {
+        ArrayList<Point> neighbors = new ArrayList<>();
+        for ( int j = Math.max( 0, y - radius ); j <= Math.min( image.height() - 1, y + radius ); j++ ) {
+            for ( int i = Math.max( 0, x - radius ); i <= Math.min( image.width() - 1, x + radius ); i++ ) {
+                neighbors.add( new Point( i, j ) );
+            }
+        }
+        return neighbors;
+    }
+
     public static ArrayList<Point> getNeighborhoodOfPixelWidthDiagonalCondition( int x, int y, Mat image, int radius ) {
         ArrayList<Point> neighbors = new ArrayList<>();
         ArrayList<Integer> n = PixelsMentor.defineNeighboursIdsWidthDiagonalCondition( x + y * image.width(), image );
@@ -31,6 +41,15 @@ public class PixelsMentor {
     public static ArrayList<Integer> defineNeighboursOfPixel( int x, int y, Mat image, int radius ) {
         ArrayList<Integer> neighbors = new ArrayList<>();
         ArrayList<Point> n = getNeighborhoodOfPixel( x, y, image, radius );
+        for ( Point p : n ) {
+            neighbors.add( p.x + p.y * image.width() );
+        }
+        return neighbors;
+    }
+
+    public static ArrayList<Integer> defineAllNeighboursOfPixel( int x, int y, Mat image, int radius ) {
+        ArrayList<Integer> neighbors = new ArrayList<>();
+        ArrayList<Point> n = getAllNeighborhoodOfPixel( x, y, image, radius );
         for ( Point p : n ) {
             neighbors.add( p.x + p.y * image.width() );
         }
