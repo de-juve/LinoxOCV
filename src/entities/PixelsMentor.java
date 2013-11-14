@@ -128,11 +128,15 @@ public class PixelsMentor {
     }
 
     public static boolean isDiagonalNeighbours( Point p, Point n ) {
-        return p.x != n.x && p.y != n.y;
+        return isNeighbours( p, n ) && p.x != n.x && p.y != n.y;
     }
 
     public static boolean isNeighbours( Point p, Point n ) {
         return Math.abs( p.x - n.x ) < 2 && Math.abs( p.y - n.y ) < 2;
+    }
+
+    public static boolean is4Neighbours( Point p, Point n ) {
+        return ( p.x == n.x && Math.abs( p.y - n.y ) < 2 ) || ( Math.abs( p.x - n.x ) < 2 && p.y == n.y );
     }
 
     private static boolean isDiagonalNeighbours( int p, int n, int width ) {

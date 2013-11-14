@@ -51,12 +51,12 @@ public class WatershedPlugin extends AbstractPlugin {
         result = mp.result;
 
 
-        removeSeparateLines();
+        /*removeSeparateLines();
         removeOnePixelHoles();
         removeSeparatePoints();
         mp.initImage( result );
         mp.run( "Closing", 100 );
-        result = mp.result;
+        result = mp.result;*/
 
 
         //WatershedPartition wp  = new WatershedPartition();

@@ -13,7 +13,7 @@ import java.util.Queue;
 public class LineCreator {
     private Mat image;
     public ArrayList<Point> points, edgePoints;
-    public boolean[] points_b, epoints_b;
+    public boolean[] points_b, epoints_b, crossroad_b, extreme_b;
     public ArrayList<Line> lines;
     int lastId;
 
@@ -22,6 +22,8 @@ public class LineCreator {
         points = _points;
         points_b = new boolean[( int ) image.total()];
         epoints_b = new boolean[( int ) image.total()];
+        crossroad_b = new boolean[( int ) image.total()];
+        extreme_b = new boolean[( int ) image.total()];
         edgePoints = new ArrayList<>();
         lastId = 0;
 
@@ -43,9 +45,28 @@ public class LineCreator {
         //   DataCollector.INSTANCE.addtoHistory( "edge points", img );
         for ( Point p : edgePoints ) {
             for ( Point n : edgePoints ) {
-                if ( PixelsMentor.isNeighbours( p, n ) && !p.equals( n ) ) {
+                if ( !p.equals( n ) && PixelsMentor.is4Neighbours( p, n ) ) {
                     p.addConnection( new Connection( p, n, distance( p, n ) ) );
                 }
+            }
+        }
+        for ( Point p : edgePoints ) {
+            for ( Point n : edgePoints ) {
+                if ( !p.equals( n ) && PixelsMentor.isDiagonalNeighbours( p, n ) && !points_b[id( p.x, n.y )] && !points_b[id( n.x, p.y )] ) {
+                    p.addConnection( new Connection( p, n, distance( p, n ) ) );
+                }
+            }
+        }
+        for ( Point p : edgePoints ) {
+            if ( p.isCrossroad ) {
+                crossroad_b[id( p )] = true;
+                for ( Connection connection : p.connections ) {
+                    connection.p2.isExtreme = true;
+                    extreme_b[id( p )] = true;
+                }
+            }
+            if ( p.isExtreme ) {
+                extreme_b[id( p )] = true;
             }
         }
     }
@@ -67,7 +88,7 @@ public class LineCreator {
                 used[id( point )] = true;
                 line.add( point );
                 for ( Connection connection : point.connections ) {
-                    if ( !used[id( connection.p2 )] && !inQueue[id( connection.p2 )] ) {
+                    if ( !used[id( connection.p2 )] && !inQueue[id( connection.p2 )] && !connection.p2.isCrossroad ) {
                         inQueue[id( connection.p2 )] = true;
                         queue.add( connection.p2 );
                     }
@@ -80,8 +101,13 @@ public class LineCreator {
     }
 
     private Point getUnusedPoint( boolean[] used ) {
-        for ( int i = lastId; i < ( int ) image.total(); i++ ) {
-            if ( isEdgePoint2( i ) && !used[i] ) {
+        for ( Point p : edgePoints ) {
+            if ( p.isExtreme && !p.isCrossroad && !used[id( p )] ) {
+                return p;
+            }
+        }
+       /* for ( int i = lastId; i < ( int ) image.total(); i++ ) {
+            if ( extreme_b[i] && !used[i]  && !crossroad_b[i]) {
                 lastId = i + 1;
                 for ( Point p : edgePoints ) {
                     if ( id( p ) == i ) {
@@ -89,7 +115,7 @@ public class LineCreator {
                     }
                 }
             }
-        }
+        }*/
         /*for (Point p : edgePoints) {
             if (!used[id(p)]) {
                 return p;

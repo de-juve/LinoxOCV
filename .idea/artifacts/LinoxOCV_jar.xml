@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LinoxOCV:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LinoxOCV_jar</output-path>
+    <root id="archive" name="LinoxOCV.jar">
+      <element id="module-output" name="LinoxOCV" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/opencv/opencv-246.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jmathplot.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/matlab/matlabcontrol-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lma_v1.3/jama.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-core-4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-swing-4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-ideutil-4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-core-4.2-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-core-4.2-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-swing-4.2-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout/miglayout-ideutil-4.2-sources.jar" path-in-jar="/" />
+      <element id="library" level="project" name="commons-math3-3.2" />
+      <element id="library" level="project" name="jmathplot" />
+      <element id="library" level="project" name="lma_v1" />
+      <element id="library" level="project" name="matlabcontrol-4.1.0" />
+      <element id="library" level="project" name="miglayout" />
+      <element id="library" level="project" name="opencv-246" />
+    </root>
+  </artifact>
+</component>

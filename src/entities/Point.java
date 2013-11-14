@@ -10,6 +10,8 @@ public class Point extends org.opencv.core.Point {
     public int width;
     public double weight;
     public double fDegree, bDegree;
+    public boolean isCrossroad;
+    public boolean isExtreme;
 
     public Point( int _x, int _y ) {
         x = _x;
@@ -18,6 +20,8 @@ public class Point extends org.opencv.core.Point {
         weight = -1;
         fDegree = -1;
         bDegree = -1;
+        isCrossroad = false;
+        isExtreme = true;
         connections = new ArrayList<>();
     }
 
@@ -27,6 +31,12 @@ public class Point extends org.opencv.core.Point {
             _conn.p1 = this;
         }
         connections.add( _conn );
+        if ( connections.size() > 2 ) {
+            isCrossroad = true;
+        }
+        if ( connections.size() > 1 ) {
+            isExtreme = false;
+        }
     }
 
     @Override
@@ -43,6 +53,13 @@ public class Point extends org.opencv.core.Point {
 
     @Override
     public String toString() {
-        return "( " + x + "; " + y + ") DIRECTION: " + direction + " WEIGHT: " + weight;
+        String message = "( " + x + "; " + y + ")";
+        if ( direction != null ) {
+            message += " DIRECTION: " + direction;
+        }
+        if ( weight >= 0 ) {
+            message += " WEIGHT: " + weight;
+        }
+        return message;
     }
 }

@@ -29,7 +29,7 @@ public class GrayscalePlugin extends AbstractPlugin {
         Mat result = new Mat();
 
         if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
-            Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2GRAY );
+            Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2GRAY );        //COLOR_BGR2Lab
         } else {
             result = image;
         }

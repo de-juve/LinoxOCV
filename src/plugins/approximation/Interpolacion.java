@@ -22,7 +22,7 @@ public class Interpolacion {
 
     public void run() {
         UnivariateFunction polinom = interpolator.interpolate( xArr, yArr );
-        int n = ( int ) Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) / 0.1 );
+        int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) / 0.1 );
         double[] xc = new double[n];
         double[] yc = new double[n];
         double xi = StatUtils.min( xArr );
@@ -44,18 +44,18 @@ public class Interpolacion {
     }
 
     public void extractPointsFormLine( Line line ) {
-        xList = yList = new ArrayList<>();
+        xArr = new double[line.points.size()];
+        yArr = new double[line.points.size()];
         interpolator = new SplineInterpolator();
         plot = new Plot2DPanel();
+        int i = 0;
         for ( Point point : line.points ) {
-            xList.add( Double.valueOf( point.x ) );
-            yList.add( Double.valueOf( point.y ) );
+            xArr[i] = point.x;
+            yArr[i] = point.y;
+            i++;
+
         }
-        xArr = yArr = new double[xList.size()];
-        for ( int i = 0; i < xList.size(); i++ ) {
-            xArr[i] = xList.get( i );
-            yArr[i] = yList.get( i );
-        }
+
         System.out.println( Arrays.toString( xArr ) );
         Arrays.sort( xArr );
         System.out.println();
