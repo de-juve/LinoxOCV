@@ -36,19 +36,28 @@ public class TestPlugin extends AbstractPlugin {
         //interpolacion
         Interpolacion interpolacion = new Interpolacion();
 
+        Mat img = Mat.zeros( image.size(), image.type() );
         for ( Line line : lines ) {
-            if ( line.points.size() < 2 )
+            if ( line.points.size() <= 2 )
                 continue;
-
-            System.out.println( line.points.toString() );
             double[] mcolor = new double[]{ b, g, r };
             r = rand.nextInt( 220 );
             g = rand.nextInt( 220 );
             b = rand.nextInt( 220 );
 
             for ( Point point : line.points ) {
-                result.put( point.y, point.x, mcolor );
+                img.put( point.y, point.x, mcolor );
             }
+            DataCollector.INSTANCE.addtoHistory( "before interpolate", img );
+        }
+
+        for ( Line line : lines ) {
+            if ( line.points.size() <= 2 )
+                continue;
+
+            //System.out.println( line.points.toString() );
+
+
             Line x = new Line();
             Line y = new Line();
             int i = 0;
@@ -58,15 +67,38 @@ public class TestPlugin extends AbstractPlugin {
                 i++;
             }
             interpolacion.extractPointsFormLine( x );
-            interpolacion.run();
-            break;
+            Line lx = interpolacion.interpolate();
+
+            interpolacion.extractPointsFormLine( y );
+            Line ly = interpolacion.interpolate();
+
+            double[] mcolor = new double[]{ b, g, r };
+            r = rand.nextInt( 220 );
+            g = rand.nextInt( 220 );
+            b = rand.nextInt( 220 );
+
+            for ( Point p : line.points ) {
+                int id = line.points.indexOf( p );
+                p.x = lx.points.get( id ).y;
+                p.y = ly.points.get( id ).y;
+
+                result.put( p.y, p.x, mcolor );
+            }
+
+            //interpolacion.run();
+            //break;
+
+
         }
 
         for ( Point p : epoints ) {
             if ( p.isCrossroad ) {
+                img.put( p.y, p.x, new double[]{ 255, 255, 255 } );
                 result.put( p.y, p.x, new double[]{ 255, 255, 255 } );
             }
         }
+        DataCollector.INSTANCE.addtoHistory( "before interpolate", img );
+        DataCollector.INSTANCE.addtoHistory( "after interpolate", result );
 
 
         Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );

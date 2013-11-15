@@ -39,6 +39,24 @@ public class Point extends org.opencv.core.Point {
         }
     }
 
+    /**
+     * 2 - острый угол
+     * 1/2 - угол 90
+     * 1/4 - тупой угол
+     * 0 - прямая
+     *
+     * @param prev
+     * @param follow
+     * @return
+     */
+    public double countCurvature( Point prev, Point follow ) {
+        int dx = follow.x - prev.x;
+        int dy = follow.y - prev.y;
+        int d2x = follow.x - 2 * x + prev.x;
+        int d2y = follow.y - 2 * y + prev.y;
+        return Math.abs( dx * d2y - dy * d2x ) / Math.sqrt( Math.pow( dx * dx + dy * dy, 3 ) );
+    }
+
     @Override
     public boolean equals( Object obj ) {
         if ( obj instanceof Point || obj instanceof org.opencv.core.Point ) {

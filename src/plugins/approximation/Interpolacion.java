@@ -11,11 +11,8 @@ import org.math.plot.plotObjects.BaseLabel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Interpolacion {
-    ArrayList<Double> xList, yList;
     double[] xArr, yArr;
     UnivariateInterpolator interpolator;
     Plot2DPanel plot;
@@ -43,6 +40,22 @@ public class Interpolacion {
         frame.setVisible( true );
     }
 
+    public Line interpolate() {
+        Line line = new Line();
+
+        UnivariateFunction polinom = interpolator.interpolate( xArr, yArr );
+        int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) );
+        double[] xc = new double[n + 1];
+        double[] yc = new double[n + 1];
+        double xi = StatUtils.min( xArr );
+        for ( int i = 0; i < xc.length; i++ ) {
+            xc[i] = xi + i;
+            yc[i] = polinom.value( xc[i] );
+            line.add( new Point( ( int ) xc[i], ( int ) yc[i] ) );
+        }
+        return line;
+    }
+
     public void extractPointsFormLine( Line line ) {
         xArr = new double[line.points.size()];
         yArr = new double[line.points.size()];
@@ -55,10 +68,9 @@ public class Interpolacion {
             i++;
 
         }
-
-        System.out.println( Arrays.toString( xArr ) );
+       /* System.out.println( Arrays.toString( xArr ) );
         Arrays.sort( xArr );
         System.out.println();
-        System.out.println( Arrays.toString( xArr ) );
+        System.out.println( Arrays.toString( xArr ) );*/
     }
 }
