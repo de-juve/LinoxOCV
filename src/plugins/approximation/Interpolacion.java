@@ -68,9 +68,5 @@ public class Interpolacion {
             i++;
 
         }
-       /* System.out.println( Arrays.toString( xArr ) );
-        Arrays.sort( xArr );
-        System.out.println();
-        System.out.println( Arrays.toString( xArr ) );*/
     }
 }
