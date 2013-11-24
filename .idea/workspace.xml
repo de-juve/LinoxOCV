@@ -6,22 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="commons-math, ball">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jmathplot.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" afterPath="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/CannyPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/CannyPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/LineCreator.java" afterPath="$PROJECT_DIR$/src/plugins/LineCreator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LinoxOCV.iml" afterPath="$PROJECT_DIR$/LinoxOCV.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" />
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/TestPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../LinoxOpenCV/.idea/workspace.xml" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1372840612403" ignored="false" />
-    <file path="/Dummy.txt" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1382882815598" ignored="false" />
+    <file path="/Dummy.txt" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1385299133663" ignored="false" />
     <file path="/LinoxMenuStore.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1380094907741" ignored="false" />
     <file path="/fragment.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1380801902511" ignored="false" />
     <file path="/ExtensionFileFilter.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1372840767369" ignored="false" />
@@ -97,6 +91,10 @@
     <file path="/PartOfRoad.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1380781055563" ignored="false" />
     <file path="/Connection.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1380792274427" ignored="false" />
     <file path="/LineCreator.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1382887390523" ignored="false" />
+    <file path="/TestPlugin.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1385302693663" ignored="false" />
+    <file path="/LevenbergMarquardtPlugin.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1385299819862" ignored="false" />
+    <file path="/AbstractApproximation.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1385300462951" ignored="false" />
+    <file path="/Optimizer.java" changelist="7833f1e5-127b-462e-a32a-c66f6dcf19d1" time="1385303161038" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +119,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -204,7 +203,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -214,73 +212,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImageMattingPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/ImageMattingPlugin.java">
+      <file leaf-file-name="TestPlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="33" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.0">
+            <state line="81" column="43" selection-start="2663" selection-end="2663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interpolacion.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+      <file leaf-file-name="Optimizer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="54" selection-start="2162" selection-end="2208" vertical-scroll-proportion="0.0">
+            <state line="26" column="27" selection-start="880" selection-end="880" vertical-scroll-proportion="0.7372401">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Regression.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Regression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="21" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MorphologyPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
+      <file leaf-file-name="OLSPlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="35" selection-start="1332" selection-end="1332" vertical-scroll-proportion="10.84">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WatershedPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="17" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Builder.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="27" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.53370786">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HoughTransformPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="67" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="35" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineCreator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="93" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
+            <state line="49" column="8" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -310,11 +274,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/plugins/dijkstra/Edge.java" />
-        <option value="$PROJECT_DIR$/src/plugins/dijkstra/Dijkstra.java" />
-        <option value="$PROJECT_DIR$/src/entities/PixelsMentor.java" />
-        <option value="$PROJECT_DIR$/src/gui/dialog/ParameterJPanel.java" />
-        <option value="$PROJECT_DIR$/src/entities/Connection.java" />
         <option value="$PROJECT_DIR$/src/entities/Point.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/PluginRunner.java" />
         <option value="$PROJECT_DIR$/src/gui/dialog/ParameterButton.java" />
@@ -326,6 +285,11 @@
         <option value="$PROJECT_DIR$/src/plugins/LineCreator.java" />
         <option value="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
+        <option value="$PROJECT_DIR$/src/plugins/approximation/LevenbergMarquardtPlugin.java" />
+        <option value="$PROJECT_DIR$/src/plugins/approximation/QuadraticProblem.java" />
+        <option value="$PROJECT_DIR$/src/plugins/approximation/AbstractApproximation.java" />
+        <option value="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
+        <option value="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
       </list>
     </option>
   </component>
@@ -333,10 +297,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="281" />
+    <option name="x" value="163" />
     <option name="y" value="22" />
-    <option name="width" value="1286" />
-    <option name="height" value="970" />
+    <option name="width" value="1502" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -421,6 +385,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -503,6 +468,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dijkstra" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="approximation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -632,13 +619,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-math3-3.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-math3-3.2-sources.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-math3-3.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-math3-3.2-sources.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="math3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
@@ -652,12 +686,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -709,6 +743,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -735,19 +782,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -921,31 +955,35 @@
       <created>1380715641394</created>
       <updated>1380715641394</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="create line">
+      <created>1382890679762</created>
+      <updated>1382890679762</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="281" y="22" width="1286" height="970" extended-state="0" />
+    <frame x="163" y="22" width="1502" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1871961" sideWeight="0.6725146" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31058824" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30972221" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34152046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33058822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23145162" sideWeight="0.7035294" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29647058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32623628" sideWeight="0.7736111" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22638889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -999,7 +1037,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="commons-math, ball" />
+    <option name="LAST_COMMIT_MESSAGE" value="create line" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1036,6 +1074,7 @@
     <MESSAGE value="edit save image" />
     <MESSAGE value="Dijkstra" />
     <MESSAGE value="commons-math, ball" />
+    <MESSAGE value="create line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1045,115 +1084,117 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedSegmenterPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="67" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/ShedCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="16" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="35" selection-start="1332" selection-end="1332" vertical-scroll-proportion="10.84">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/CannyPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.08226691">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="2" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.22303474">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/PointMentor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="38" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/util/Queue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="6" selection-start="7458" selection-end="7458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="108" selection-end="108" vertical-scroll-proportion="0.17475729">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="8" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="93" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/ImageMattingPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="33" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="17" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="67" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
+        <state line="86" column="59" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="35" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
+        <state line="76" column="35" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+    <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="54" selection-start="2162" selection-end="2208" vertical-scroll-proportion="0.0">
+        <state line="82" column="35" selection-start="2804" selection-end="2804" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="27" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.53370786">
+        <state line="80" column="99" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.6179775">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="17" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.026929982">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="35" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.026929982" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="13" selection-start="5695" selection-end="5695" vertical-scroll-proportion="-11.681472">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="20" selection-start="1587" selection-end="2118" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/ParametricUnivariateFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="66" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.4494382">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/LineApproximation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="-0.96954316">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/fitting/CurveFitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="20" selection-start="5543" selection-end="5543" vertical-scroll-proportion="0.32402912">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="8" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Regression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="21" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/OLSSimpleRegression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="10" selection-start="1501" selection-end="1604" vertical-scroll-proportion="0.1641791">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="43" selection-start="2663" selection-end="2663" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="27" selection-start="880" selection-end="880" vertical-scroll-proportion="0.7372401">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,8 +1205,8 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="artifact" />
               <type id="library" />
+              <type id="artifact" />
             </show-content>
           </artifact-editor>
           <last-edited>LinoxOCV:jar</last-edited>
@@ -1173,6 +1214,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
