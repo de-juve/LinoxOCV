@@ -29,6 +29,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action compress = new AbstractAction( "Compress" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                pluginRunner.setPlugin( new CompressPlugin() );
+                Thread myThready = new Thread( pluginRunner );
+                myThready.start();
+            }
+        };
+
         final Action grayscale = new AbstractAction( "Grayscale" ) {
             @Override
             public void actionPerformed( ActionEvent e ) {
@@ -455,6 +464,7 @@ public class LinoxEditMenuFactory {
         */
 
         items.add( new JMenuItem( resize ) );
+        items.add( new JMenuItem( compress ) );
         items.add( new JMenuItem( grayscale ) );
         items.add( new JMenuItem( gradient ) );
         items.add( new JMenuItem( laplasian ) );
