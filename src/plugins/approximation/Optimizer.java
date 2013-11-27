@@ -17,38 +17,38 @@ public class Optimizer {
     public Line optimize() {
         Line line = new Line();
 
-        for (int i = 0; i < xArr.length; i++) {
-            fitter.addObservedPoint(xArr[i], yArr[i]);
+        for ( int i = 0; i < xArr.length; i++ ) {
+            fitter.addObservedPoint( xArr[i], yArr[i] );
         }
 
-        ParabolaFunction sif = new ParabolaFunction(); // Class provided below
         double[] initialguess = new double[3];
         initialguess[0] = 1.0d;
         initialguess[1] = 2.5d;
         initialguess[2] = 1.0d;
-        double[] bestCoefficients = fitter.fit(sif, initialguess);
 
+        ParabolaFunction sif = new ParabolaFunction();
+        double[] bestCoefficients = fitter.fit( sif, initialguess );
 
-        int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)));
+        int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) );
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
-        double xi = StatUtils.min(xArr);
-        for (int i = 0; i < xc.length; i++) {
+        double xi = StatUtils.min( xArr );
+        for ( int i = 0; i < xc.length; i++ ) {
             xc[i] = xi + i;
-            yc[i] = sif.value(xc[i], bestCoefficients);
-            line.add(new Point((int) xc[i], (int) yc[i]));
+            yc[i] = sif.value( xc[i], bestCoefficients );
+            line.add( new Point( ( int ) xc[i], ( int ) yc[i] ) );
         }
         return line;
     }
 
-    public void extractPointsFormLine(Line line) {
+    public void extractPointsFormLine( Line line ) {
         xArr = new double[line.points.size()];
         yArr = new double[line.points.size()];
         optimizer = new LevenbergMarquardtOptimizer();
-        fitter = new CurveFitter(optimizer);
+        fitter = new CurveFitter( optimizer );
         plot = new Plot2DPanel();
         int i = 0;
-        for (Point point : line.points) {
+        for ( Point point : line.points ) {
             xArr[i] = point.x;
             yArr[i] = point.y;
             i++;
@@ -88,15 +88,16 @@ public class Optimizer {
     }*/
 
     private static class SimpleInverseFunction implements ParametricUnivariateFunction {
-
-        public double value(double x, double[] parameters) {
-            return parameters[0] / x + (parameters.length < 2 ? 0 : parameters[1]);
+        @Override
+        public double value( double x, double[] parameters ) {
+            return parameters[0] / x + ( parameters.length < 2 ? 0 : parameters[1] );
         }
 
-        public double[] gradient(double x, double[] doubles) {
+        @Override
+        public double[] gradient( double x, double[] doubles ) {
             double[] gradientVector = new double[doubles.length];
             gradientVector[0] = 1 / x;
-            if (doubles.length >= 2) {
+            if ( doubles.length >= 2 ) {
                 gradientVector[1] = 1;
             }
             return gradientVector;
@@ -105,17 +106,27 @@ public class Optimizer {
 
     private static class ParabolaFunction implements ParametricUnivariateFunction {
         @Override
-        public double value(double x, double[] parameters) {
-            return parameters[0] * x * x + parameters[1] * x + parameters[2];
+        public double value( double x, double[] parameters ) {
+            return parameters[0] * x * x + parameters[1] * x + ( parameters.length < 3 ? 0 : parameters[2] );
         }
 
         @Override
-        public double[] gradient(double x, double[] doubles) {
+        public double[] gradient( double x, double[] doubles ) {
             double[] gradientVector = new double[doubles.length];
             gradientVector[0] = x * x;
             gradientVector[1] = x;
-            gradientVector[2] = 1;
+            if ( doubles.length >= 3 ) {
+                gradientVector[2] = 1;
+            }
             return gradientVector;
+        }
+
+        public double firstDerivative( double x, double[] parameters ) {
+            return 2 * parameters[0] * x + parameters[1];
+        }
+
+        public double secondDerivative( double x, double[] parameters ) {
+            return 2 * parameters[0];
         }
     }
 

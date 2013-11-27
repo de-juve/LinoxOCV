@@ -2,9 +2,8 @@ package plugins.approximation;
 
 import entities.Line;
 import entities.Point;
-import org.apache.commons.math3.analysis.UnivariateFunction;
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
-import org.apache.commons.math3.analysis.interpolation.UnivariateInterpolator;
+import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
 import org.apache.commons.math3.stat.StatUtils;
 import org.math.plot.Plot2DPanel;
 import org.math.plot.plotObjects.BaseLabel;
@@ -14,11 +13,11 @@ import java.awt.*;
 
 public class Interpolacion {
     double[] xArr, yArr;
-    UnivariateInterpolator interpolator;
+    SplineInterpolator interpolator;
     Plot2DPanel plot;
 
     public void run() {
-        UnivariateFunction polinom = interpolator.interpolate( xArr, yArr );
+        PolynomialSplineFunction polinom = interpolator.interpolate( xArr, yArr );
         int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) / 0.1 );
         double[] xc = new double[n];
         double[] yc = new double[n];
@@ -43,15 +42,18 @@ public class Interpolacion {
     public Line interpolate() {
         Line line = new Line();
 
-        UnivariateFunction polinom = interpolator.interpolate( xArr, yArr );
+        PolynomialSplineFunction polynomial = interpolator.interpolate( xArr, yArr );
+        PolynomialSplineFunction firstDerivative = polynomial.polynomialSplineDerivative();
+        PolynomialSplineFunction secondDerivative = firstDerivative.polynomialSplineDerivative();
         int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) );
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
         double xi = StatUtils.min( xArr );
         for ( int i = 0; i < xc.length; i++ ) {
             xc[i] = xi + i;
-            yc[i] = polinom.value( xc[i] );
-            line.add( new Point( ( int ) xc[i], ( int ) yc[i] ) );
+            yc[i] = polynomial.value( xc[i] );
+            double k = Math.abs( secondDerivative.value( xc[i] ) ) / Math.sqrt( Math.pow( 1 + Math.pow( firstDerivative.value( xc[i] ), 2 ), 3 ) );
+            line.add( new Point( ( int ) xc[i], ( int ) yc[i], k ) );
         }
         return line;
     }
