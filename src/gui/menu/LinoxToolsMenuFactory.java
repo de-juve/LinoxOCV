@@ -1,6 +1,7 @@
 package gui.menu;
 
 import gui.Linox;
+import test.Tester;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,7 +40,20 @@ public class LinoxToolsMenuFactory {
             }
         };
 
+        final Action tester = new AbstractAction( "Tester" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                Linox.getInstance().setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
+                try {
+                    Tester t = new Tester();
+                } finally {
+                    Linox.getInstance().setCursor( Cursor.getDefaultCursor() );
+                }
+            }
+        };
+
         items.add( new JMenuItem( show ) );
         items.add( new JMenuItem( clear ) );
+        items.add( new JMenuItem( tester ) );
     }
 }
