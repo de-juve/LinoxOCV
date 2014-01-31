@@ -93,6 +93,16 @@ public class Tester {
                 errorPoints.add( tPoint );
             }
         }
+
+
+        for ( Point p : goodPoints ) {
+            testImage.put( p.y, p.x, 0, 0, 255 );
+        }
+        for ( Point p : errorPoints ) {
+            testImage.put( p.y, p.x, 255, 0, 255 );
+        }
+        ( Linox.getInstance().getImageStore() ).replaceTestImageTab( files[0].getName(), testImage, perfectImage );
+
         String message = "Good points: " + goodPoints.size() + "\nBad points: " + errorPoints.size() +
                 "\nAll test points: " + testPoints.size() + "\nAll perfect points: " + perfectPoints.size();
         JOptionPane.showMessageDialog( Linox.getInstance(), message );

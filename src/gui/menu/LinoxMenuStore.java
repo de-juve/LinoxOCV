@@ -48,7 +48,7 @@ public class LinoxMenuStore extends JMenuBar {
         }
 
         //editmenu.setEnabled(false);
-        toolsmenu.setEnabled( false );
+        toolsmenu.setEnabled( true );
 
         this.add( filemenu );
         this.add( editmenu );

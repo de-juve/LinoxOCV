@@ -1,6 +1,7 @@
 package gui.menu;
 
 import gui.Linox;
+import test.AutoWatershed;
 import test.Tester;
 
 import javax.swing.*;
@@ -52,8 +53,21 @@ public class LinoxToolsMenuFactory {
             }
         };
 
+        final Action aWater = new AbstractAction( "Auto watershed" ) {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                Linox.getInstance().setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
+                try {
+                    AutoWatershed aW = new AutoWatershed();
+                } finally {
+                    Linox.getInstance().setCursor( Cursor.getDefaultCursor() );
+                }
+            }
+        };
+
         items.add( new JMenuItem( show ) );
         items.add( new JMenuItem( clear ) );
         items.add( new JMenuItem( tester ) );
+        items.add( new JMenuItem( aWater ) );
     }
 }

@@ -27,6 +27,8 @@ public class TestPlugin extends AbstractPlugin {
         result = Mat.zeros(image.size(), image.type());
         Random rand = new Random();
         Linox.getInstance().getStatusBar().setProgress(title, 0, 100);
+
+
         HashMap<Integer, Point> wpoints = DataCollector.INSTANCE.getWatershedPoints();
         LineCreator lineCreator = new LineCreator(DataCollector.INSTANCE.getWatershedImg(), new ArrayList<>(wpoints.values()));
         lineCreator.extractEdgePoints();
