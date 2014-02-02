@@ -7,67 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="add auto watershed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/druzh_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb2_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb3_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/ekb_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk2_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk3_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/msk_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_3500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_4000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_4500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_5000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_5500.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource/test_0/revda_7000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/AutoWatershed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/Mask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/T1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/AutoWatershed.java" afterPath="$PROJECT_DIR$/src/test/AutoWatershed.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/TestPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Tester.java" afterPath="$PROJECT_DIR$/src/test/Tester.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
@@ -142,47 +85,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
+      <file leaf-file-name="Mask.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2520">
-              <folding />
+            <state line="82" column="51" selection-start="2843" selection-end="2843" vertical-scroll-proportion="0.26879698" vertical-offset="1087" max-vertical-offset="1875">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoWatershed.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/AutoWatershed.java">
+      <file leaf-file-name="T1.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/T1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="54" selection-start="154" selection-end="154" vertical-scroll-proportion="0.11829135" vertical-offset="0" max-vertical-offset="913">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WatershedPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="48" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="5868">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MorphologyPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="44" selection-start="810" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="4968">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tester.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3024">
-              <folding />
+            <state line="33" column="26" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1020">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,34 +110,7 @@
       <file leaf-file-name="LinoxToolsMenuFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="45" selection-start="2569" selection-end="2569" vertical-scroll-proportion="0.0" vertical-offset="1278" max-vertical-offset="1422">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinoxMenuStore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="39" selection-start="3447" selection-end="3479" vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="2628">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PluginRunner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="48" selection-start="345" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1494">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OLSPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="8" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1692">
+            <state line="84" column="36" selection-start="3071" selection-end="3071" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
@@ -268,8 +161,10 @@
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java" />
         <option value="$PROJECT_DIR$/src/test/Tester.java" />
         <option value="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
-        <option value="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" />
         <option value="$PROJECT_DIR$/src/test/AutoWatershed.java" />
+        <option value="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" />
+        <option value="$PROJECT_DIR$/src/test/T1.java" />
+        <option value="$PROJECT_DIR$/src/entities/Mask.java" />
       </list>
     </option>
   </component>
@@ -277,9 +172,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="width" value="1926" />
-    <option name="height" value="1057" />
+    <option name="x" value="61" />
+    <option name="y" value="59" />
+    <option name="width" value="1502" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -364,6 +260,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -485,6 +382,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="imageOperations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dijkstra" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -579,81 +498,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dialog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commons-math3-3.2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,7 +547,7 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="gui.Linox" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib/opencv/" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib/opencv/ -Xmx2048m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -723,26 +573,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -751,26 +581,32 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+    <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
       <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -822,25 +658,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Linox" />
     </list>
@@ -883,6 +700,8 @@
       <changelist id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="" />
       <created>1372839614148</created>
       <updated>1372839614148</updated>
+      <workItem from="1391226248394" duration="504000" />
+      <workItem from="1391227384472" duration="13405000" />
     </task>
     <task id="LOCAL-00001" summary="Inig">
       <created>1372939127124</created>
@@ -999,31 +818,34 @@
     <option name="localTasksCounter" value="29" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13909000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1926" height="1057" extended-state="6" />
-    <editor active="false" />
+    <frame x="61" y="59" width="1502" height="840" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1871961" sideWeight="0.6725146" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34152046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22438392" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32555124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2484375" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22453223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24833556" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27367055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1031,14 +853,14 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3087318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744282" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -1086,36 +908,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/OLSSimpleRegression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="10" selection-start="1501" selection-end="1604" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1512">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="8" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="63" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="2502">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="6" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="1116" max-vertical-offset="1836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="32" selection-start="1560" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1440">
@@ -1218,11 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/jdk1.7.0_17/src.zip!/javax/swing/JLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="11" selection-start="7447" selection-end="7447" vertical-scroll-proportion="1.4949784" vertical-offset="2414" max-vertical-offset="28386" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/TestImageJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="44" selection-start="4467" selection-end="4467" vertical-scroll-proportion="-0.33994335" vertical-offset="1734" max-vertical-offset="3564">
@@ -1321,18 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/jdk1.7.0_17/src.zip!/javax/swing/JMenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="305" column="16" selection-start="8795" selection-end="8795" vertical-scroll-proportion="0.33296824" vertical-offset="4448" max-vertical-offset="16344" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/ShedPainterPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="46" selection-start="1243" selection-end="1632" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1098">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="11" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
@@ -1340,37 +1115,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="34" selection-start="2313" selection-end="2625" vertical-scroll-proportion="0.0" vertical-offset="1261" max-vertical-offset="2574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="48" selection-start="345" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="44" selection-start="810" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="4734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="48" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="5724">
           <folding />
         </state>
       </provider>
@@ -1405,31 +1152,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="39" selection-start="3447" selection-end="3479" vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="2412">
+        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.054844607" vertical-offset="0" max-vertical-offset="547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="-0.27422303" vertical-offset="450" max-vertical-offset="1950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="0" selection-start="3856" selection-end="3856" vertical-scroll-proportion="-0.35648996" vertical-offset="1920" max-vertical-offset="3945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="97" selection-start="832" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedSegmenterPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.04204753" vertical-offset="83" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/ShedPainterPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="56" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.9323583" vertical-offset="285" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="31" selection-end="31" vertical-scroll-proportion="-9.213894" vertical-offset="5070" max-vertical-offset="5895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="68" selection-start="2301" selection-end="2407" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="4770">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2844">
+        <state line="14" column="16" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2370">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="25" selection-start="3217" selection-end="3365" vertical-scroll-proportion="-0.4473684" vertical-offset="1440" max-vertical-offset="2010">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="66" selection-start="2299" selection-end="2299" vertical-scroll-proportion="0.42105263" vertical-offset="1035" max-vertical-offset="2145">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="45" selection-start="2569" selection-end="2569" vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1260">
+        <state line="84" column="36" selection-start="3071" selection-end="3071" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1245">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/AutoWatershed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="54" selection-start="154" selection-end="154" vertical-scroll-proportion="0.11829135" vertical-offset="0" max-vertical-offset="913">
-          <folding />
+        <state line="39" column="44" selection-start="280" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="735">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/T1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="26" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1020">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="51" selection-start="2843" selection-end="2843" vertical-scroll-proportion="0.26879698" vertical-offset="1087" max-vertical-offset="1875">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

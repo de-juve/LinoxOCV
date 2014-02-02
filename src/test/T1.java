@@ -1,5 +1,7 @@
 package test;
 
+import entities.Mask;
+import entities.Point;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 import plugins.WatershedPlugin;
@@ -8,10 +10,10 @@ import plugins.morphology.MorphologyPlugin;
 import java.io.File;
 
 /**
- * Created by it on 28.01.14.
+ * Created by dm on 02.02.14.
  */
-public class AutoWatershed {
-    public AutoWatershed() {
+public class T1 {
+    public T1() {
         String dir = System.getProperty("user.dir") + "/resource/test_0";
         File[] files = new File(dir).listFiles();
         Mat image;
@@ -26,6 +28,22 @@ public class AutoWatershed {
             int areaSize = 1000;
 
             image = Highgui.imread(file.getAbsolutePath(), Highgui.CV_LOAD_IMAGE_COLOR);
+
+            int mask_w = 6;
+            int road_w = 2;
+            Mask mask = new Mask(mask_w, road_w);
+            for (int y = 0; y < image.rows(); y += mask_w / 2) {
+                for (int x = 0; x < image.cols(); x += mask_w / 2) {
+                    mask.fill(new Point(x, y), image);
+                    for (Mask.MaskType type : Mask.MaskType.values()) {
+                        mask.analyze(type);
+                    }
+                    break;
+                }
+                break;
+            }
+
+
             MorphologyPlugin mPlugin = new MorphologyPlugin();
             mPlugin.initImage(image.clone());
             mPlugin.run("Closing", areaSize);
@@ -37,7 +55,7 @@ public class AutoWatershed {
 
             Highgui.imwrite(dir + "/" + name + "_" + areaSize + ".png", wImage);
 
+            break;
         }
-
     }
 }

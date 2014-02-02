@@ -2,6 +2,7 @@ package gui.menu;
 
 import gui.Linox;
 import test.AutoWatershed;
+import test.T1;
 import test.Tester;
 
 import javax.swing.*;
@@ -65,9 +66,22 @@ public class LinoxToolsMenuFactory {
             }
         };
 
+        final Action t1 = new AbstractAction("Test msk") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Linox.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                try {
+                    T1 test = new T1();
+                } finally {
+                    Linox.getInstance().setCursor(Cursor.getDefaultCursor());
+                }
+            }
+        };
+
         items.add( new JMenuItem( show ) );
         items.add( new JMenuItem( clear ) );
         items.add( new JMenuItem( tester ) );
         items.add( new JMenuItem( aWater ) );
+        items.add(new JMenuItem(t1));
     }
 }
