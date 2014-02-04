@@ -72,9 +72,13 @@ public class Point extends org.opencv.core.Point {
     }*/
     @Override
     public boolean equals( Object obj ) {
-        if ( obj instanceof Point || obj instanceof org.opencv.core.Point ) {
-            if ( ( this.x == ( ( Point ) obj ).x && this.y == ( ( Point ) obj ).y ) ||
-                    ( this.x == ( int ) ( ( org.opencv.core.Point ) obj ).x && this.y == ( int ) ( ( org.opencv.core.Point ) obj ).y ) ) {
+
+        if ( obj instanceof Point ) {
+            if ( this.x == ( ( Point ) obj ).x && this.y == ( ( Point ) obj ).y ) {
+                return true;
+            }
+        } else if ( obj instanceof org.opencv.core.Point ) {
+            if ( this.x == ( int ) ( ( org.opencv.core.Point ) obj ).x && this.y == ( int ) ( ( org.opencv.core.Point ) obj ).y ) {
                 return true;
             }
         }

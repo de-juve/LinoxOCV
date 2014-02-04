@@ -76,11 +76,17 @@ public class Mask {
                 for (int x = Math.max(0, y - half); x < Math.min(mask.cols(), y + big_half); x++) {
                     fg.add(new Point(x, y));
                 }
-                for (int x = Math.min(mask.cols() - 1, y + half + 1); x < mask.cols(); x++) {
-                    bg1.add(new Point(x, y));
+                for ( int x = Math.min( mask.cols() - 1, y + big_half ); x < mask.cols(); x++ ) {
+                    Point p = new Point( x, y );
+                    if ( !fg.contains( p ) ) {
+                        bg1.add( p );
+                    }
                 }
                 for (int x = 0; x < Math.max(0, y - half); x++) {
-                    bg2.add(new Point(x, y));
+                    Point p = new Point( x, y );
+                    if ( !fg.contains( p ) ) {
+                        bg2.add( p );
+                    }
                 }
             }
         } else {
@@ -90,16 +96,25 @@ public class Mask {
                 for (int x = Math.max(0, mask.rows() - y - half - 1); x < Math.min(mask.cols(), mask.rows() - y + big_half - 1); x++) {
                     fg.add(new Point(x, y));
                 }
-                for (int x = 0; x < Math.max(0, mask.rows() - y - half - 1); x++) {
-                    bg1.add(new Point(x, y));
+                for ( int x = 0; x < Math.max( 1, mask.rows() - y - half - 1 ); x++ ) {
+                    // System.out.println("y= "+y+" x= "+x+" x<: "+ (mask.rows() - y - half - 1));
+                    Point p = new Point( x, y );
+                    if ( !fg.contains( p ) ) {
+                        bg1.add( p );
+                    } else {
+                        // System.out.println("contain "+p);
+                    }
                 }
-                for (int x = Math.min(mask.cols(), mask.rows() - y + half); x < mask.cols(); x++) {
-                    bg2.add(new Point(x, y));
-
+                for ( int x = Math.min( mask.cols() - 1, mask.rows() - y + big_half - 1 ); x < mask.cols(); x++ ) {
+                    Point p = new Point( x, y );
+                    if ( !fg.contains( p ) ) {
+                        bg2.add( p );
+                    }
                 }
             }
         }
         System.out.println();
+        System.out.println( "cols: " + mask.cols() + " rows: " + mask.rows() );
         System.out.println("TYPE:" + type + " Mask:\n" + mask.dump());
         System.out.println("BG1: " + bg1.toString());
         System.out.println("FG:" + fg.toString());

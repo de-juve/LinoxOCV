@@ -4,8 +4,6 @@ import entities.Mask;
 import entities.Point;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
-import plugins.WatershedPlugin;
-import plugins.morphology.MorphologyPlugin;
 
 import java.io.File;
 
@@ -29,8 +27,8 @@ public class T1 {
 
             image = Highgui.imread(file.getAbsolutePath(), Highgui.CV_LOAD_IMAGE_COLOR);
 
-            int mask_w = 6;
-            int road_w = 2;
+            int mask_w = 9;
+            int road_w = 3;
             Mask mask = new Mask(mask_w, road_w);
             for (int y = 0; y < image.rows(); y += mask_w / 2) {
                 for (int x = 0; x < image.cols(); x += mask_w / 2) {
@@ -42,20 +40,21 @@ public class T1 {
                 }
                 break;
             }
-
-
-            MorphologyPlugin mPlugin = new MorphologyPlugin();
-            mPlugin.initImage(image.clone());
-            mPlugin.run("Closing", areaSize);
-            Mat mImage = mPlugin.getResult(false);
-            WatershedPlugin wPlugin = new WatershedPlugin();
-            wPlugin.initImage(mImage);
-            wPlugin.run();
-            Mat wImage = wPlugin.getResult(false);
-
-            Highgui.imwrite(dir + "/" + name + "_" + areaSize + ".png", wImage);
-
             break;
+
+
+//            MorphologyPlugin mPlugin = new MorphologyPlugin();
+//            mPlugin.initImage(image.clone());
+//            mPlugin.run("Closing", areaSize);
+//            Mat mImage = mPlugin.getResult(false);
+//            WatershedPlugin wPlugin = new WatershedPlugin();
+//            wPlugin.initImage(mImage);
+//            wPlugin.run();
+//            Mat wImage = wPlugin.getResult(false);
+//
+//            Highgui.imwrite(dir + "/" + name + "_" + areaSize + ".png", wImage);
+//
+//            break;
         }
     }
 }
