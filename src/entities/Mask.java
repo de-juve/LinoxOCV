@@ -1,6 +1,5 @@
 package entities;
 
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 
 import java.util.ArrayList;
@@ -11,33 +10,35 @@ import java.util.ArrayList;
 public class Mask {
     private Mat mask;
     private int roadWidth;
+    private Part bg1, bg2, fg;
 
-    public Mask(int rows, int _roadWidth) {
+    public Mask( int rows, int _roadWidth, int type ) {
         // while( rows % 3 != 0) rows++;
 
-        mask = new Mat(rows, rows, CvType.CV_8UC1);
+        mask = new Mat( rows, rows, type );
         roadWidth = _roadWidth;
     }
 
     public void fill(Point start, Mat image) {
         byte[] buff = new byte[(int) mask.total() * mask.channels()];
 
-        int idx = 0;
-        for (int y = start.y; y < mask.rows(); y++) {
-            for (int x = start.x; x < mask.cols(); x++) {
+
+        for ( int y = start.y, j = 0; y < image.rows() && j < mask.rows(); y++, j++ ) {
+            for ( int x = start.x, i = 0; x < image.cols() && i < mask.cols(); x++, i++ ) {
                 for (int k = 0; k < mask.channels(); k++) {
-                    buff[idx] = (byte) image.get(y, x)[k];
+                    buff[i + j * mask.cols()] = ( byte ) image.get( y, x )[k];
                 }
             }
         }
-        mask.put(0, 0, buff);
+        mask.put( 0, 0, buff );
+        System.out.println();
+        System.out.println( start );
     }
 
-    public void analyze(MaskType type) {
-        ArrayList<Point> bg1, bg2, fg;
-        fg = new ArrayList<>();
-        bg1 = new ArrayList<>();
-        bg2 = new ArrayList<>();
+    public void partition( MaskType type ) {
+        fg = new Part();
+        bg1 = new Part();
+        bg2 = new Part();
 
         if (type.equals(MaskType.LToR)) {
             int bg1_y_end = (mask.rows() - roadWidth) / 2 - 1;
@@ -97,12 +98,9 @@ public class Mask {
                     fg.add(new Point(x, y));
                 }
                 for ( int x = 0; x < Math.max( 1, mask.rows() - y - half - 1 ); x++ ) {
-                    // System.out.println("y= "+y+" x= "+x+" x<: "+ (mask.rows() - y - half - 1));
                     Point p = new Point( x, y );
                     if ( !fg.contains( p ) ) {
                         bg1.add( p );
-                    } else {
-                        // System.out.println("contain "+p);
                     }
                 }
                 for ( int x = Math.min( mask.cols() - 1, mask.rows() - y + big_half - 1 ); x < mask.cols(); x++ ) {
@@ -113,17 +111,51 @@ public class Mask {
                 }
             }
         }
-        System.out.println();
-        System.out.println( "cols: " + mask.cols() + " rows: " + mask.rows() );
-        System.out.println("TYPE:" + type + " Mask:\n" + mask.dump());
-        System.out.println("BG1: " + bg1.toString());
-        System.out.println("FG:" + fg.toString());
-        System.out.println("BG2: " + bg2.toString());
 
+
+        System.out.println( "TYPE:" + type );       //+ " Mask:\n" + mask.dump()
+        analyze();
+    }
+
+    public void analyze() {
+        fg.countAvrL();
+        bg1.countAvrL();
+        bg2.countAvrL();
+        System.out.println( "BG1: " + bg1.avrL );
+        System.out.println( "FG:" + fg.avrL );
+        System.out.println( "BG2: " + bg2.avrL );
+        System.out.println();
     }
 
     public enum MaskType {
         LToR, UToD, LUToRD, LDToRU;
+    }
+
+    public class Part {
+        ArrayList<Point> points;
+        double avrL;
+        double contrast;
+
+        public Part() {
+            points = new ArrayList<>();
+            avrL = 0;
+            contrast = 0;
+        }
+
+        public void add( Point p ) {
+            points.add( p );
+        }
+
+        public boolean contains( Point p ) {
+            return points.contains( p );
+        }
+
+        public void countAvrL() {
+            for ( Point p : points ) {
+                avrL += mask.get( p.y, p.x )[0];
+            }
+            avrL /= points.size();
+        }
     }
 }
 

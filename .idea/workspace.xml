@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="add auto watershed">
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="correct generate mask and compare Point">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Mask.java" afterPath="$PROJECT_DIR$/src/entities/Mask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Point.java" afterPath="$PROJECT_DIR$/src/entities/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/T1.java" afterPath="$PROJECT_DIR$/src/test/T1.java" />
@@ -75,6 +75,23 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/T1.java" line="57" class="test.T1" package="test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -84,30 +101,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Mask.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Mask.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="25" selection-start="3925" selection-end="3925" vertical-scroll-proportion="0.0" vertical-offset="1416" max-vertical-offset="2448">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoWatershed.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/AutoWatershed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="37" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="792">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="41" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="1908">
+            <state line="34" column="32" selection-start="955" selection-end="955" vertical-scroll-proportion="0.64285713" vertical-offset="144" max-vertical-offset="2988">
               <folding />
             </state>
           </provider>
@@ -116,16 +113,52 @@
       <file leaf-file-name="T1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/T1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="18" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="1098">
+            <state line="61" column="21" selection-start="2201" selection-end="2201" vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1422">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Tester.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="124" selection-start="2112" selection-end="2212" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2844">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1638">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutoWatershed.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/AutoWatershed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="37" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="882">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrayscalePlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="15" selection-start="757" selection-end="999" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="792">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/test">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="68" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.8361153" vertical-offset="2095" max-vertical-offset="2772">
+            <state line="147" column="68" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0" vertical-offset="1850" max-vertical-offset="2772">
               <folding />
             </state>
           </provider>
@@ -186,10 +219,10 @@
         <option value="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
         <option value="$PROJECT_DIR$/src/test/AutoWatershed.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" />
-        <option value="$PROJECT_DIR$/src/entities/Point.java" />
-        <option value="$PROJECT_DIR$/src/entities/Mask.java" />
-        <option value="$PROJECT_DIR$/src/test/T1.java" />
         <option value="$PROJECT_DIR$/src/test/test" />
+        <option value="$PROJECT_DIR$/src/entities/Point.java" />
+        <option value="$PROJECT_DIR$/src/test/T1.java" />
+        <option value="$PROJECT_DIR$/src/entities/Mask.java" />
       </list>
     </option>
   </component>
@@ -284,8 +317,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -485,6 +518,28 @@
               <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Linox" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -628,6 +683,19 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
@@ -645,19 +713,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -872,7 +927,11 @@
       <created>1388036144338</created>
       <updated>1388036144338</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="correct generate mask and compare Point">
+      <created>1391489439137</created>
+      <updated>1391489439137</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -880,14 +939,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1871961" sideWeight="0.6725146" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34152046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34095633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22438392" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -900,7 +959,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24791667" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27338877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27338877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
@@ -928,7 +987,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="start shed processing" />
     <MESSAGE value="morphology + shed" />
     <MESSAGE value="correct morphology" />
     <MESSAGE value="correct morphology, watershed" />
@@ -953,7 +1011,8 @@
     <MESSAGE value="compress plugin" />
     <MESSAGE value="curvature" />
     <MESSAGE value="add tester" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tester" />
+    <MESSAGE value="correct generate mask and compare Point" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct generate mask and compare Point" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -965,50 +1024,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/opencv/opencv-246.jar!/org/opencv/core/Mat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="414" column="11" selection-start="13142" selection-end="13142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Regression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/interpolation/SplineInterpolator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="35" selection-start="3456" selection-end="3480" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="465" selection-end="465" vertical-scroll-proportion="-2.936694" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/ParametricUnivariateFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/differentiation/UnivariateDifferentiableFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="17" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="29" selection-start="3038" selection-end="3056" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/analysis/polynomials/PolynomialSplineFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="69" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="63" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="2502">
@@ -1021,13 +1036,6 @@
     <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="32" selection-start="1560" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="470" selection-end="474" vertical-scroll-proportion="-0.42663658" vertical-offset="648" max-vertical-offset="1566">
           <folding />
         </state>
       </provider>
@@ -1197,9 +1205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.054844607" vertical-offset="0" max-vertical-offset="547">
-          <folding />
-        </state>
+        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.054844607" vertical-offset="0" max-vertical-offset="547" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
@@ -1212,13 +1218,6 @@
     <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="128" column="0" selection-start="3856" selection-end="3856" vertical-scroll-proportion="-0.35648996" vertical-offset="1920" max-vertical-offset="3945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="97" selection-start="832" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
@@ -1239,21 +1238,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="31" selection-end="31" vertical-scroll-proportion="-9.213894" vertical-offset="5070" max-vertical-offset="5895">
-          <folding />
-        </state>
+        <state line="2" column="12" selection-start="31" selection-end="31" vertical-scroll-proportion="-9.213894" vertical-offset="5070" max-vertical-offset="5895" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="68" selection-start="2301" selection-end="2407" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="4770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2370">
           <folding />
         </state>
       </provider>
@@ -1272,9 +1262,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/test/test">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="36" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1674">
+        <state line="147" column="68" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0" vertical-offset="1850" max-vertical-offset="2772">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/opencv/opencv-246.jar!/org/opencv/core/Mat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="467" column="11" selection-start="14949" selection-end="14949" vertical-scroll-proportion="0.0" vertical-offset="7393" max-vertical-offset="51246">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="19" selection-start="470" selection-end="474" vertical-scroll-proportion="0.28877005" vertical-offset="0" max-vertical-offset="1602">
+          <folding>
+            <element signature="e#866#1444#0" expanded="true" />
+            <element signature="e#1433#1434#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/ShedCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="58" selection-end="58" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Shed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="105" selection-end="105" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/PointMentor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/MassiveWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="81" selection-end="81" vertical-scroll-proportion="-0.7315508" vertical-offset="756" max-vertical-offset="2412">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="141" selection-end="141" vertical-scroll-proportion="-0.6160428" vertical-offset="648" max-vertical-offset="5904">
           <folding />
         </state>
       </provider>
@@ -1288,30 +1337,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="41" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="1908">
+        <state line="27" column="0" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1638">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="25" selection-start="3925" selection-end="3925" vertical-scroll-proportion="0.0" vertical-offset="1416" max-vertical-offset="2448">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="84" column="36" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1674">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="124" selection-start="2112" selection-end="2212" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2844">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="15" selection-start="757" selection-end="999" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="792">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/T1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="18" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="1098">
+        <state line="61" column="21" selection-start="2201" selection-end="2201" vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1422">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/test">
+    <entry file="file://$PROJECT_DIR$/resource/test_0/druzh.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="68" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.8361153" vertical-offset="2095" max-vertical-offset="2772">
+        <state line="34" column="32" selection-start="955" selection-end="955" vertical-scroll-proportion="0.64285713" vertical-offset="144" max-vertical-offset="2988">
           <folding />
         </state>
       </provider>

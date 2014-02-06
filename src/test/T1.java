@@ -2,10 +2,15 @@ package test;
 
 import entities.Mask;
 import entities.Point;
+import gui.Linox;
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by dm on 02.02.14.
@@ -23,20 +28,38 @@ public class T1 {
             }
 
             String name = file.getName().substring(0, file.getName().indexOf("."));
+            System.out.println( name );
             int areaSize = 1000;
 
             image = Highgui.imread(file.getAbsolutePath(), Highgui.CV_LOAD_IMAGE_COLOR);
+//            GrayscalePlugin gray = new GrayscalePlugin();
+//            gray.initImage( image );
+//            gray.run();
+//            image = gray.getResult( false );
+            if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
+                Imgproc.cvtColor( image, image, Imgproc.COLOR_BGR2Lab );
+            }
+            ArrayList<Mat> channels = new ArrayList<Mat>();
+            Core.split( image, channels );
+            image = channels.get( 0 );
+            ( Linox.getInstance().getImageStore() ).addImageTab( files[0].getName(), image );
 
             int mask_w = 9;
             int road_w = 3;
-            Mask mask = new Mask(mask_w, road_w);
+            Mask mask = new Mask( mask_w, road_w, image.type() );
             for (int y = 0; y < image.rows(); y += mask_w / 2) {
+                if ( y + mask_w > image.rows() ) {
+                    break;
+                }
                 for (int x = 0; x < image.cols(); x += mask_w / 2) {
+                    if ( x + mask_w > image.cols() ) {
+                        break;
+                    }
                     mask.fill(new Point(x, y), image);
                     for (Mask.MaskType type : Mask.MaskType.values()) {
-                        mask.analyze(type);
+                        mask.partition( type );
                     }
-                    break;
+                    // mask.analyze();
                 }
                 break;
             }
