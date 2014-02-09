@@ -11,11 +11,12 @@ public class Mask {
     private Mat mask;
     private int roadWidth;
     private Part bg1, bg2, fg;
+    private static final int TH = 20;
 
-    public Mask( int rows, int _roadWidth, int type ) {
+    public Mask(int cols, int rows, int _roadWidth, int type) {
         // while( rows % 3 != 0) rows++;
 
-        mask = new Mat( rows, rows, type );
+        mask = new Mat(rows, cols, type);
         roadWidth = _roadWidth;
     }
 
@@ -31,14 +32,20 @@ public class Mask {
             }
         }
         mask.put( 0, 0, buff );
-        System.out.println();
-        System.out.println( start );
     }
 
-    public void partition( MaskType type ) {
+    public boolean partition(MaskType type) {
         fg = new Part();
         bg1 = new Part();
         bg2 = new Part();
+
+        if (mask.cols() != mask.rows()) {
+            if (type.equals(MaskType.LUToRD)) {
+                type = MaskType.LToR;
+            } else if (type.equals(MaskType.LDToRU.LDToRU)) {
+                type = MaskType.UToD;
+            }
+        }
 
         if (type.equals(MaskType.LToR)) {
             int bg1_y_end = (mask.rows() - roadWidth) / 2 - 1;
@@ -111,21 +118,21 @@ public class Mask {
                 }
             }
         }
-
-
-        System.out.println( "TYPE:" + type );       //+ " Mask:\n" + mask.dump()
-        analyze();
+        return analyze();
     }
 
-    public void analyze() {
+    private boolean analyze() {
         fg.countAvrL();
         bg1.countAvrL();
         bg2.countAvrL();
-        System.out.println( "BG1: " + bg1.avrL );
-        System.out.println( "FG:" + fg.avrL );
-        System.out.println( "BG2: " + bg2.avrL );
-        System.out.println();
+        if (fg.avrL - bg1.avrL > TH && fg.avrL - bg2.avrL > TH) {
+            // System.out.println("yes "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
+            return true;
+        }
+        // System.out.println("no "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
+        return false;
     }
+
 
     public enum MaskType {
         LToR, UToD, LUToRD, LDToRU;
@@ -142,15 +149,15 @@ public class Mask {
             contrast = 0;
         }
 
-        public void add( Point p ) {
+        private void add(Point p) {
             points.add( p );
         }
 
-        public boolean contains( Point p ) {
+        private boolean contains(Point p) {
             return points.contains( p );
         }
 
-        public void countAvrL() {
+        private void countAvrL() {
             for ( Point p : points ) {
                 avrL += mask.get( p.y, p.x )[0];
             }
