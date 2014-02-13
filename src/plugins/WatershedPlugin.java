@@ -29,7 +29,7 @@ public class WatershedPlugin extends AbstractPlugin {
 
         MorphologyPlugin mp = new MorphologyPlugin();
         mp.initImage( DataCollector.INSTANCE.getGrayImg() );
-        mp.run( "Closing", 100 );
+        mp.run( "Closing", 1 );
         result = mp.result;
 
         LowerCompletePlugin lcp = new LowerCompletePlugin();
@@ -47,7 +47,7 @@ public class WatershedPlugin extends AbstractPlugin {
         //Imgproc.dilate( result, result, new Mat(), new org.opencv.core.Point( -1, -1 ), 1 );
 
         mp.initImage( result );
-        mp.run( "Closing", 100 );
+        mp.run( "Closing", 1 );
         result = mp.result;
 
 

@@ -11,13 +11,15 @@ public class Mask {
     private Mat mask;
     private int roadWidth;
     private Part bg1, bg2, fg;
-    private static final int TH = 20;
+    private int threshold = 10;
 
-    public Mask(int cols, int rows, int _roadWidth, int type) {
+
+    public Mask( int cols, int rows, int _roadWidth, int type, int _threshold ) {
         // while( rows % 3 != 0) rows++;
 
         mask = new Mat(rows, cols, type);
         roadWidth = _roadWidth;
+        threshold = _threshold;
     }
 
     public void fill(Point start, Mat image) {
@@ -34,10 +36,26 @@ public class Mask {
         mask.put( 0, 0, buff );
     }
 
-    public boolean partition(MaskType type) {
+    public boolean analyze( MaskType type ) {
         fg = new Part();
         bg1 = new Part();
         bg2 = new Part();
+
+        partition( type );
+
+        fg.countAvrL();
+        bg1.countAvrL();
+        bg2.countAvrL();
+        if ( fg.avrL - bg1.avrL > threshold && fg.avrL - bg2.avrL > threshold ) {
+            // System.out.println("yes "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
+            return true;
+        }
+        // System.out.println("no "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
+        return false;
+    }
+
+    private void partition( MaskType type ) {
+
 
         if (mask.cols() != mask.rows()) {
             if (type.equals(MaskType.LUToRD)) {
@@ -118,19 +136,10 @@ public class Mask {
                 }
             }
         }
-        return analyze();
     }
 
-    private boolean analyze() {
-        fg.countAvrL();
-        bg1.countAvrL();
-        bg2.countAvrL();
-        if (fg.avrL - bg1.avrL > TH && fg.avrL - bg2.avrL > TH) {
-            // System.out.println("yes "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
-            return true;
-        }
-        // System.out.println("no "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
-        return false;
+    public Mat getMask() {
+        return mask;
     }
 
 
