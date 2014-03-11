@@ -46,7 +46,8 @@ public class Mask {
         fg.countAvrL();
         bg1.countAvrL();
         bg2.countAvrL();
-        if ( fg.avrL - bg1.avrL > threshold && fg.avrL - bg2.avrL > threshold ) {
+        if (Math.abs(fg.avrL - bg1.avrL) > threshold && Math.abs(fg.avrL - bg2.avrL) > threshold
+                && Math.signum(fg.avrL - bg1.avrL) == Math.signum(fg.avrL - bg2.avrL)) {
             // System.out.println("yes "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
             return true;
         }
