@@ -99,27 +99,42 @@ public class LocalAnalysis extends AbstractPlugin {
                     break;
                 }
                 mask.fill(new Point(x, y), grey);
-                for ( Mask.MaskType type : Mask.MaskType.values() ) {
-                    if ( mask.analyze( type ) ) {
-                        drawRect( mask_w, mask_h, mresult, y, x );
+                if (mask.analyzeNew()) {
+                    drawRect(mask_w, mask_h, mresult, y, x);
 
-                        morphology.initImage( mask.getMask() );
-                        morphology.run( "Closing", area_size );
-                        Mat mImage = morphology.getResult( false );
+                    morphology.initImage(mask.getMask());
+                    morphology.run("Closing", area_size);
+                    Mat mImage = morphology.getResult(false);
 
-                        watershed.initImage( mImage );
-                        watershed.run();
-                        Mat wImage = watershed.getResult( false );
+                    watershed.initImage(mImage);
+                    watershed.run();
+                    Mat wImage = watershed.getResult(false);
+                    addWPoints(x, y, DataCollector.INSTANCE.getWatershedPoints(), grey.cols());
+                } else {
+                    for (Mask.MaskType type : Mask.MaskType.values()) {
+                        if (mask.analyze(type)) {
+                            drawRect(mask_w, mask_h, mresult, y, x);
+
+                            morphology.initImage(mask.getMask());
+                            morphology.run("Closing", area_size);
+                            Mat mImage = morphology.getResult(false);
+
+                            watershed.initImage(mImage);
+                            watershed.run();
+                            Mat wImage = watershed.getResult(false);
 
 //                            (Linox.getInstance().getImageStore()).addImageTab( type.name(), mask.getMask() );
 //                            (Linox.getInstance().getImageStore()).addImageTab( type.name()+"m", mImage );
 //                            (Linox.getInstance().getImageStore()).addImageTab( type.name()+"w", wImage );
-                        // System.out.println(DataCollector.INSTANCE.getWatershedPoints());
-                        addWPoints(x, y, DataCollector.INSTANCE.getWatershedPoints(), grey.cols());
-                        // wpoints.putAll( DataCollector.INSTANCE.getWatershedPoints() );
-                        //  break L;
+                            // System.out.println(DataCollector.INSTANCE.getWatershedPoints());
+                            addWPoints(x, y, DataCollector.INSTANCE.getWatershedPoints(), grey.cols());
+                            // wpoints.putAll( DataCollector.INSTANCE.getWatershedPoints() );
+                            //  break L;
+                        }
                     }
+
                 }
+
             }
         }
         drawWatershed(wresult);

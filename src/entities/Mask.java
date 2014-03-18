@@ -12,6 +12,7 @@ public class Mask {
     private int roadWidth;
     private Part bg1, bg2, fg;
     private int threshold = 10;
+    private int[] x_0, x_1, y_0, y_1;
 
 
     public Mask( int cols, int rows, int _roadWidth, int type, int _threshold ) {
@@ -54,6 +55,82 @@ public class Mask {
         // System.out.println("no "+ (fg.avrL - bg1.avrL) + " " + (fg.avrL - bg2.avrL));
         return false;
     }
+
+    public boolean analyzeNew() {
+        x_0 = new int[roadWidth];
+        x_1 = new int[roadWidth];
+        y_0 = new int[roadWidth];
+        y_1 = new int[roadWidth];
+
+        for (int x = 0; x < mask.cols(); x++) {
+            for (int i = 0; i < roadWidth; i++) {
+                x_0[i] = x + i;
+                x_1[i] = mask.cols() - 1 - x_0[i];
+                y_0[i] = 0;
+                y_1[i] = mask.rows() - 1;
+            }
+
+            if (checkRoad()) return true;
+        }
+
+        for (int y = 0; y < mask.rows(); y++) {
+            for (int i = 0; i < roadWidth; i++) {
+                x_0[i] = 0;
+                x_1[i] = mask.cols() - 1;
+                y_0[i] = y + i;
+                y_1[i] = mask.rows() - 1 - y_0[i];
+            }
+
+            if (checkRoad()) return true;
+        }
+        return false;
+
+    }
+
+    private boolean checkRoad() {
+        fg = new Part();
+        bg1 = new Part();
+        bg2 = new Part();
+        for (int yy = 0; yy < mask.rows(); yy++) {
+            for (int xx = 0; xx < mask.cols(); xx++) {
+                int part = definePart(xx, yy);
+                if (part < 0) {
+                    bg1.add(new Point(xx, yy));
+                } else if (part == 0) {
+                    fg.add(new Point(xx, yy));
+                } else {
+                    bg2.add(new Point(xx, yy));
+                }
+            }
+        }
+        fg.countAvrL();
+        bg1.countAvrL();
+        bg2.countAvrL();
+
+        if (Math.abs(fg.avrL - bg1.avrL) > threshold && Math.abs(fg.avrL - bg2.avrL) > threshold
+                && Math.signum(fg.avrL - bg1.avrL) == Math.signum(fg.avrL - bg2.avrL)) {
+            return true;
+        }
+        return false;
+    }
+
+    private int definePart(int xx, int yy) {
+        int result = 1;
+        for (int i = 0; i < x_0.length; i++) {
+            if (x_1[i] - x_0[i] == 0 || y_1[i] - y_0[i] == 0) {
+                continue;
+            }
+            int y = (int) (((double) xx - x_0[i]) / (x_1[i] - x_0[i]) * (y_1[i] - y_0[i]) + y_0[i]);
+            if (y == yy) {
+                return 0;
+            }
+            if (y < yy) {
+                result = -1;
+            }
+        }
+        return result;
+    }
+
 
     private void partition( MaskType type ) {
 
