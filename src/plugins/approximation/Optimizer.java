@@ -21,12 +21,14 @@ public class Optimizer {
             fitter.addObservedPoint( xArr[i], yArr[i] );
         }
 
-        double[] initialguess = new double[3];
+        double[] initialguess = new double[4];
         initialguess[0] = 1.0d;
         initialguess[1] = 2.5d;
         initialguess[2] = 1.0d;
+        initialguess[3] = 1.0d;
 
-        ParabolaFunction sif = new ParabolaFunction();
+        //ParabolaFunction sif = new ParabolaFunction();
+        Poly3Function sif = new Poly3Function();
         double[] bestCoefficients = fitter.fit( sif, initialguess );
 
         int n = ( int ) ( Math.abs( StatUtils.max( xArr ) - StatUtils.min( xArr ) ) );
@@ -128,6 +130,33 @@ public class Optimizer {
         public double secondDerivative( double x, double[] parameters ) {
             return 2 * parameters[0];
         }
+    }
+
+    private static class Poly3Function implements ParametricUnivariateFunction {
+        @Override
+        public double value(double x, double[] parameters) {
+            return parameters[0] * x * x * x + parameters[1] * x * x + parameters[2] * x + (parameters.length < 4 ? 0 : parameters[3]);
+        }
+
+        @Override
+        public double[] gradient(double x, double[] doubles) {
+            double[] gradientVector = new double[doubles.length];
+            gradientVector[0] = x * x * x;
+            gradientVector[1] = x * x;
+            gradientVector[2] = x;
+            if (doubles.length >= 4) {
+                gradientVector[3] = 1;
+            }
+            return gradientVector;
+        }
+
+       /* public double firstDerivative( double x, double[] parameters ) {
+            return 3 * parameters[0] * x * x + 2 * parameters[1] * x + parameters[2];
+        }
+
+        public double secondDerivative( double x, double[] parameters ) {
+            return 6 * parameters[0] * x + 2 * parameters[1];
+        }*/
     }
 
 }
