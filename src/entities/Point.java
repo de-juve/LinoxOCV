@@ -6,6 +6,7 @@ public class Point extends org.opencv.core.Point {
     public int x;
     public int y;
     public double curvature;
+    public double[] curv = new double[2];
     public Direction direction;
     public ArrayList<Connection> connections;
     public int width;
@@ -13,9 +14,10 @@ public class Point extends org.opencv.core.Point {
     public double fDegree, bDegree;
     public boolean isCrossroad;
     public boolean isExtreme;
+    public int lineLabel;
 
 
-    public Point( int _x, int _y ) {
+    public Point(int _x, int _y) {
         x = _x;
         y = _y;
         width = -1;
@@ -27,7 +29,7 @@ public class Point extends org.opencv.core.Point {
         connections = new ArrayList<>();
     }
 
-    public Point( int _x, int _y, double _curv ) {
+    public Point(int _x, int _y, double _curv) {
         x = _x;
         y = _y;
         curvature = _curv;
@@ -40,30 +42,43 @@ public class Point extends org.opencv.core.Point {
         connections = new ArrayList<>();
     }
 
+    public Point(Point p) {
+        x = p.x;
+        y = p.y;
+        curvature = p.curvature;
+        width = p.width;
+        weight = p.weight;
+        fDegree = p.fDegree;
+        bDegree = p.bDegree;
+        isCrossroad = p.isCrossroad;
+        isExtreme = p.isExtreme;
+        connections = new ArrayList<>();
+    }
 
-    public void addConnection( Connection _conn ) {
-        if ( _conn.p2.equals( this ) ) {
+
+    public void addConnection(Connection _conn) {
+        if (_conn.p2.equals(this)) {
             _conn.p2 = _conn.p1;
             _conn.p1 = this;
         }
-        connections.add( _conn );
-        if ( connections.size() > 2 ) {
+        connections.add(_conn);
+        if (connections.size() > 2) {
             isCrossroad = true;
         }
-        if ( connections.size() > 1 ) {
+        if (connections.size() > 1) {
             isExtreme = false;
         }
     }
 
     @Override
-    public boolean equals( Object obj ) {
+    public boolean equals(Object obj) {
 
-        if ( obj instanceof Point ) {
-            if ( this.x == ( ( Point ) obj ).x && this.y == ( ( Point ) obj ).y ) {
+        if (obj instanceof Point) {
+            if (this.x == ((Point) obj).x && this.y == ((Point) obj).y) {
                 return true;
             }
-        } else if ( obj instanceof org.opencv.core.Point ) {
-            if ( this.x == ( int ) ( ( org.opencv.core.Point ) obj ).x && this.y == ( int ) ( ( org.opencv.core.Point ) obj ).y ) {
+        } else if (obj instanceof org.opencv.core.Point) {
+            if (this.x == (int) ((org.opencv.core.Point) obj).x && this.y == (int) ((org.opencv.core.Point) obj).y) {
                 return true;
             }
         }
@@ -74,10 +89,10 @@ public class Point extends org.opencv.core.Point {
     @Override
     public String toString() {
         String message = "( " + x + "; " + y + ")";
-        if ( direction != null ) {
+        if (direction != null) {
             message += " DIRECTION: " + direction;
         }
-        if ( weight >= 0 ) {
+        if (weight >= 0) {
             message += " WEIGHT: " + weight;
         }
         return message;

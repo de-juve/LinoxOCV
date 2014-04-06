@@ -6,11 +6,575 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="new analysis">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="global analysis, interpolate, regression">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/BrownianMotion.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/BrownianMotion.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/CurveCalibration.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/CurveCalibration.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/DaycountFractions.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/DaycountFractions.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/LIBORMarketModel.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/LIBORMarketModel.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes Asian Option.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes Asian Option.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes Bermudan Option.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes Bermudan Option.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes European Option.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes European Option.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes User Definied Product.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/MonteCarloBlackScholes User Definied Product.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/MonteCarloBlackScholes.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/MonteCarloBlackScholes.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/MonteCarloBlackScholesDeltaHedge.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/MonteCarloBlackScholesDeltaHedge.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/SwapLegSchedule.ods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/SwapLegSchedule.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/classes/UserDefiniedAssetDerivative.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/resources/background.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/lib/colt-1.2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/lib/commons-math3-3.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/lib/commons-math3-3.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/finmath-lib-1.2.11-javadoc.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/finmath-lib-1.2.11-sources.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/lib/finmath-lib-1.2.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/resources/inherit.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/resources/tab.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/resources/titlebar.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/resources/titlebar_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/ARMAGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/class-use/ARMAGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/AbstractAnalyticProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/AbstractAnalyticProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/AbstractAssetMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/AbstractAssetMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/AbstractCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/AbstractCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/AbstractForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/AbstractForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/AbstractLIBORCovarianceModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/AbstractLIBORCovarianceModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/AbstractLIBORCovarianceModelParametric.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/AbstractLIBORCovarianceModelParametric.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/AbstractLIBORMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/AbstractLIBORMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/AbstractModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/class-use/AbstractModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/AbstractModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/class-use/AbstractModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/AbstractMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/AbstractMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/AbstractProcess.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/class-use/AbstractProcess.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/AbstractProcessInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/class-use/AbstractProcessInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/AbstractProductComponent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/class-use/AbstractProductComponent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/AbstractRandomVariableFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/AbstractRandomVariableFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/AbstractRootFinder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/AbstractRootFinder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/AbstractSwaptionMarketData.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/class-use/AbstractSwaptionMarketData.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/AnalyticFormulas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/class-use/AnalyticFormulas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/AnalyticModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/class-use/AnalyticModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/AnalyticModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/class-use/AnalyticModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/AnalyticProductInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/AnalyticProductInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/AsianOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/AsianOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/AssetModelMonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/class-use/AssetModelMonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/BermudanOption.ExerciseMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/BermudanOption.ExerciseMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/BermudanOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/BermudanOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/BermudanSwaption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/BermudanSwaption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/BisectionSearch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/BisectionSearch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/BlackScholesDeltaHedgedPortfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/BlackScholesDeltaHedgedPortfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/BlackScholesHedgedPortfolio.HedgeStrategy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/BlackScholesHedgedPortfolio.HedgeStrategy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/BlackScholesHedgedPortfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/BlackScholesHedgedPortfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/BlendedLocalVolatilityModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/BlendedLocalVolatilityModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/Bond.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/Bond.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/BrownianBridge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/BrownianBridge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/BrownianMotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/BrownianMotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/BrownianMotionInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/BrownianMotionInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendarAny.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendarAny.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendarExcludingTARGETHolidays.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendarExcludingTARGETHolidays.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendarExcludingWeekends.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendarExcludingWeekends.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendarInterface.DateRollConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendarInterface.DateRollConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/BusinessdayCalendarInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/class-use/BusinessdayCalendarInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/CMSOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/CMSOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/CalculationException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/class-use/CalculationException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/CalibratedCurves.CalibrationSpec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/class-use/CalibratedCurves.CalibrationSpec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/CalibratedCurves.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/class-use/CalibratedCurves.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/Caplet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/Caplet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/Compile.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/Compile.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/CorrelatedBrownianMotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/CorrelatedBrownianMotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/Curve.ExtrapolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/Curve.ExtrapolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/Curve.InterpolationEntity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/Curve.InterpolationEntity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/Curve.InterpolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/Curve.InterpolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/Curve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/Curve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/CurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/CurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/DISCLAIMER.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConventionFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConventionFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConventionInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConventionInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_30E_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_30E_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_30E_360_ISDA.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_30E_360_ISDA.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_30U_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_30U_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT_360.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT_365.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT_365.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT_ACT_AFB.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT_ACT_AFB.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT_ACT_ISDA.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT_ACT_ISDA.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/DayCountConvention_ACT_ACT_YEARFRAC.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/class-use/DayCountConvention_ACT_ACT_YEARFRAC.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/DigitalCaplet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/DigitalCaplet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/DiscountCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/DiscountCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/DiscountCurveFromForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/DiscountCurveFromForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/DiscountCurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/DiscountCurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/DisplacedLognormal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/class-use/DisplacedLognormal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/DisplacedLognormalARMAGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/class-use/DisplacedLognormalARMAGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/DisplacedLognormalGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/class-use/DisplacedLognormalGARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/EuropeanOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/class-use/EuropeanOption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/FactorDriftInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/class-use/FactorDriftInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/FlexiCap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/FlexiCap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/Forward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/Forward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/ForwardCurve.InterpolationEntityForward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/ForwardCurve.InterpolationEntityForward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/ForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/ForwardCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/ForwardCurveFromDiscountCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/ForwardCurveFromDiscountCurve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/ForwardCurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/class-use/ForwardCurveInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/GARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/class-use/GARCH.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/GoldenSectionSearch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/class-use/GoldenSectionSearch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/HistoricalSimulationModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/class-use/HistoricalSimulationModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/JNumberField.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/class-use/JNumberField.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCorrelationModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCorrelationModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCorrelationModelExponentialDecay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCorrelationModelExponentialDecay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCorrelationModelThreeParameterExponentialDecay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCorrelationModelThreeParameterExponentialDecay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCovarianceModelExponentialForm5Param.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCovarianceModelExponentialForm5Param.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCovarianceModelExponentialForm7Param.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCovarianceModelExponentialForm7Param.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORCovarianceModelFromVolatilityAndCorrelation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORCovarianceModelFromVolatilityAndCorrelation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModel.CalibrationItem.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModel.CalibrationItem.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModel.Driftapproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModel.Driftapproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModel.Measure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModel.Measure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModel.StateSpace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModel.StateSpace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModelStandard.CalibrationItem.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModelStandard.CalibrationItem.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModelStandard.Driftapproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModelStandard.Driftapproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModelStandard.Measure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModelStandard.Measure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORMarketModelStandard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORMarketModelStandard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORModelMonteCarloSimulation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORModelMonteCarloSimulation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/LIBORModelMonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/class-use/LIBORModelMonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORVolatilityModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORVolatilityModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORVolatilityModelFourParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORVolatilityModelFourParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORVolatilityModelFromGivenMatrix.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORVolatilityModelFromGivenMatrix.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORVolatilityModelMaturityDependentFourParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORVolatilityModelMaturityDependentFourParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/LIBORVolatilityModelTwoParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/class-use/LIBORVolatilityModelTwoParameterExponentialForm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/LevenbergMarquardt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/class-use/LevenbergMarquardt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/LinearAlgebra.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/class-use/LinearAlgebra.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/LogNormalProcess.Scheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/class-use/LogNormalProcess.Scheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/LogNormalProcess.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/class-use/LogNormalProcess.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/ModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/class-use/ModelInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/MoneyMarketAccount.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/MoneyMarketAccount.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/MonteCarloBlackScholesModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/class-use/MonteCarloBlackScholesModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/MonteCarloBlackScholesModel2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/class-use/MonteCarloBlackScholesModel2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/MonteCarloConditionalExpectation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/class-use/MonteCarloConditionalExpectation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/MonteCarloConditionalExpectationRegression.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/class-use/MonteCarloConditionalExpectationRegression.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/MonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/MonteCarloSimulationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/NewtonsMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/NewtonsMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/NormalDistribution.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/class-use/NormalDistribution.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/Option.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/class-use/Option.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/ParameterAggregation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/class-use/ParameterAggregation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/ParameterObjectInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/class-use/ParameterObjectInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/Period.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/Period.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/Portfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/Portfolio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/PortfolioMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/class-use/PortfolioMonteCarloProduct.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/ProcessEulerScheme.Scheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/class-use/ProcessEulerScheme.Scheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/ProcessEulerScheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/class-use/ProcessEulerScheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/ProductInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/class-use/ProductInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/RandomVariable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/RandomVariable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/RandomVariableAccumulatorInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/class-use/RandomVariableAccumulatorInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/RandomVariableFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/class-use/RandomVariableFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/RandomVariableInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/class-use/RandomVariableInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/RandomVariableMutableClone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/class-use/RandomVariableMutableClone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/RationalFunctionInterpolation.ExtrapolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/class-use/RationalFunctionInterpolation.ExtrapolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/RationalFunctionInterpolation.InterpolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/class-use/RationalFunctionInterpolation.InterpolationMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/RationalFunctionInterpolation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/class-use/RationalFunctionInterpolation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Brownian Motion/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Curve Calibration/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Day Count Fractions/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/LIBOR Market Model/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Black Scholes Model Delta Hedge Portfolio/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Valuation with Black Scholes Model - European - Asian - Bermudan/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Swap Leg Schedule/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/RegularSchedule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/RegularSchedule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/RiddersMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/RiddersMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/RootFinder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/RootFinder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/RootFinderWithDerivative.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/RootFinderWithDerivative.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/Schedule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/Schedule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/ScheduleGenerator.DaycountConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/ScheduleGenerator.DaycountConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/ScheduleGenerator.Frequency.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/ScheduleGenerator.Frequency.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/ScheduleGenerator.ShortPeriodConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/ScheduleGenerator.ShortPeriodConvention.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/ScheduleGenerator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/ScheduleGenerator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/ScheduleInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/ScheduleInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/SecantMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/SecantMethod.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/Solver.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/class-use/Solver.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/SolverException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/class-use/SolverException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/Swap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/Swap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/Swap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/Swap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/SwapAnnuity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/SwapAnnuity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/SwapLeg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/class-use/SwapLeg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/SwaprateCovarianceAnalyticApproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/SwaprateCovarianceAnalyticApproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/Swaption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/Swaption.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/SwaptionAnalyticApproximation.ValueUnit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/SwaptionAnalyticApproximation.ValueUnit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/SwaptionAnalyticApproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/SwaptionAnalyticApproximation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/SwaptionMarketData.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/class-use/SwaptionMarketData.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/SwaptionSimple.ValueUnit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/SwaptionSimple.ValueUnit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/SwaptionSimple.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/class-use/SwaptionSimple.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/Tenor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/Tenor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/TenorInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/TenorInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/TestRootFinders.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/class-use/TestRootFinders.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/TimeDiscretization.ShortPeriodLocation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/TimeDiscretization.ShortPeriodLocation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/TimeDiscretization.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/TimeDiscretization.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/TimeDiscretizationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/class-use/TimeDiscretizationInterface.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/spreadsheets/Monte Carlo Simulation of Black Scholes Model for Custom Product/classes/UserDefiniedAssetDerivative.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/allclasses-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/allclasses-noframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/constant-values.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/deprecated-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/help-doc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/index-all.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/overview-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/overview-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/overview-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/package-list" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/exception/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/functions/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/interpolation/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/calibration/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/model/curves/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/marketdata/products/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/modelling/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/assetderivativevaluation/products/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/conditionalexpectation/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/modelplugins/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/interestrate/products/components/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/model/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/process/component/factordrift/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/products/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/montecarlo/templatemethoddesign/assetderivativevaluation/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/optimizer/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/rootfinder/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/stochastic/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/swing/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/businessdaycalendar/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/time/daycount/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/net/finmath/timeseries/models/parametric/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/serialized-form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" afterPath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" afterPath="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Line.java" afterPath="$PROJECT_DIR$/src/entities/Line.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LinoxOCV.iml" afterPath="$PROJECT_DIR$/LinoxOCV.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/LinoxOCV_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/LinoxOCV_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Mask.java" afterPath="$PROJECT_DIR$/src/entities/Mask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" afterPath="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Point.java" afterPath="$PROJECT_DIR$/src/entities/Point.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
@@ -39,7 +603,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -75,10 +639,10 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -86,66 +650,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LocalAnalysis.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="50" selection-start="2423" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2685">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GlobalAnalysis.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="52" selection-start="5797" selection-end="5797" vertical-scroll-proportion="-5.730769" vertical-offset="2296" max-vertical-offset="4020">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="34" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="1950">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3345" max-vertical-offset="4725">
+              <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataCollector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
+      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="35" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0" vertical-offset="940" max-vertical-offset="4920">
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1590">
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LineCreator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
+      <file leaf-file-name="Interpolacion.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="11" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2865">
+            <state vertical-scroll-proportion="0.2984293" vertical-offset="267" max-vertical-offset="1065">
+              <caret line="42" column="61" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
+      <file leaf-file-name="RegressionPointsAnalysis.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="15" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="2145">
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1020">
+              <caret line="36" column="13" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Optimizer.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
+      <file leaf-file-name="Mask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="44" selection-start="741" selection-end="741" vertical-scroll-proportion="0.25405404" vertical-offset="114" max-vertical-offset="2430">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2100" max-vertical-offset="7065">
+              <caret line="140" column="66" selection-start-line="137" selection-start-column="2" selection-end-line="140" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -184,7 +733,6 @@
         <option value="$PROJECT_DIR$/src/plugins/approximation/QuadraticProblem.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/AbstractApproximation.java" />
         <option value="$PROJECT_DIR$/src/plugins/CompressPlugin.java" />
-        <option value="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxImageFactory.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/TestImageJPanel.java" />
@@ -194,15 +742,18 @@
         <option value="$PROJECT_DIR$/src/test/AutoWatershed.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java" />
         <option value="$PROJECT_DIR$/src/test/test" />
-        <option value="$PROJECT_DIR$/src/entities/Point.java" />
         <option value="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" />
         <option value="$PROJECT_DIR$/src/test/T1.java" />
         <option value="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/LocalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
-        <option value="$PROJECT_DIR$/src/entities/Mask.java" />
-        <option value="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
+        <option value="$PROJECT_DIR$/src/entities/Mask.java" />
+        <option value="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" />
+        <option value="$PROJECT_DIR$/src/entities/Line.java" />
+        <option value="$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/entities/Point.java" />
+        <option value="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
       </list>
     </option>
   </component>
@@ -210,9 +761,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="178" />
-    <option name="y" value="87" />
-    <option name="width" value="1551" />
+    <option name="x" value="32" />
+    <option name="y" value="52" />
+    <option name="width" value="1214" />
     <option name="height" value="895" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -283,7 +834,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -295,7 +846,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,90 +854,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -400,7 +869,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jmathplot.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/finmath-lib-1.2.11/finmath-lib-1.2.11.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -454,7 +923,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
@@ -605,7 +1074,15 @@
       <workItem from="1395244789493" duration="8000" />
       <workItem from="1395244826336" duration="7650000" />
       <workItem from="1395280852829" duration="5470000" />
-      <workItem from="1395668353188" duration="8529000" />
+      <workItem from="1395668353188" duration="8600000" />
+      <workItem from="1395848791758" duration="740000" />
+      <workItem from="1396167877775" duration="1313000" />
+      <workItem from="1396277960600" duration="4480000" />
+      <workItem from="1396366211867" duration="2587000" />
+      <workItem from="1396454587481" duration="562000" />
+      <workItem from="1396684949448" duration="8741000" />
+      <workItem from="1396785468980" duration="6387000" />
+      <workItem from="1396800915572" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Inig">
       <created>1372939127124</created>
@@ -731,22 +1208,23 @@
       <created>1395161601626</created>
       <updated>1395161601626</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="global analysis, interpolate, regression">
+      <created>1395680541358</created>
+      <updated>1395680541358</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58806000" />
+    <option name="totallyTimeSpent" value="83690000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="178" y="87" width="1551" height="895" extended-state="0" />
-    <editor active="false" />
+    <frame x="32" y="52" width="1214" height="895" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1871961" sideWeight="0.6725146" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3075965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3399751" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -754,21 +1232,24 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3237858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14976805" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2739726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25255972" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2739726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3075965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32004982" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -779,6 +1260,9 @@
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -787,7 +1271,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="correct morphology, watershed" />
     <MESSAGE value="correct morphology compilation, add median, homotopy, histogramCounter" />
     <MESSAGE value="+histogram" />
     <MESSAGE value="snake, regression, approximation" />
@@ -812,131 +1295,139 @@
     <MESSAGE value="correct generate mask and compare Point" />
     <MESSAGE value="local analysis" />
     <MESSAGE value="new analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="new analysis" />
+    <MESSAGE value="global analysis, interpolate, regression" />
+    <option name="LAST_COMMIT_MESSAGE" value="global analysis, interpolate, regression" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java</url>
+          <line>223</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/plugins/HistogramPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="140" selection-end="140" vertical-scroll-proportion="-1.1529902" vertical-offset="901" max-vertical-offset="1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyCompilationPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="439" selection-end="439" vertical-scroll-proportion="-0.75243396" vertical-offset="613" max-vertical-offset="1764" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/GradientPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="36" selection-start="1722" selection-end="1722" vertical-scroll-proportion="1.1104735" vertical-offset="0" max-vertical-offset="972" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/HomotopyPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="238" selection-end="238" vertical-scroll-proportion="-4.5263157" vertical-offset="3168" max-vertical-offset="3852" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/ImageMattingPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="60" selection-start="12905" selection-end="12905" vertical-scroll-proportion="5.3778753" vertical-offset="1066" max-vertical-offset="7398" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LaplasianPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="-0.655615" vertical-offset="685" max-vertical-offset="1620" />
+        <state vertical-scroll-proportion="-0.655615" vertical-offset="685" max-vertical-offset="1620">
+          <caret line="12" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/MedianPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="202" selection-end="202" vertical-scroll-proportion="-0.078074865" vertical-offset="145" max-vertical-offset="1080" />
+        <state vertical-scroll-proportion="-0.078074865" vertical-offset="145" max-vertical-offset="1080">
+          <caret line="10" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/ShedClusterPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="68" selection-start="2117" selection-end="2161" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1872" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1872">
+          <caret line="60" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/CannyPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="-0.8077475" vertical-offset="635" max-vertical-offset="1332" />
+        <state vertical-scroll-proportion="-0.8077475" vertical-offset="635" max-vertical-offset="1332">
+          <caret line="10" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/CompressPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="21" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.34075105" vertical-offset="457" max-vertical-offset="1440" />
+        <state vertical-scroll-proportion="0.34075105" vertical-offset="457" max-vertical-offset="1440">
+          <caret line="39" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="3954" selection-end="3954" vertical-scroll-proportion="0.33286119" vertical-offset="1691" max-vertical-offset="4122" />
+        <state vertical-scroll-proportion="0.33286119" vertical-offset="1691" max-vertical-offset="4122">
+          <caret line="121" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.054844607" vertical-offset="0" max-vertical-offset="547" />
+        <state vertical-scroll-proportion="0.054844607" vertical-offset="0" max-vertical-offset="547">
+          <caret line="2" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/WatershedSegmenterPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.04204753" vertical-offset="83" max-vertical-offset="1275" />
+        <state vertical-scroll-proportion="-0.04204753" vertical-offset="83" max-vertical-offset="1275">
+          <caret line="9" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/ShedPainterPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="56" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.9323583" vertical-offset="285" max-vertical-offset="915" />
+        <state vertical-scroll-proportion="0.9323583" vertical-offset="285" max-vertical-offset="915">
+          <caret line="58" column="56" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="31" selection-end="31" vertical-scroll-proportion="-9.213894" vertical-offset="5070" max-vertical-offset="5895" />
+        <state vertical-scroll-proportion="-9.213894" vertical-offset="5070" max-vertical-offset="5895">
+          <caret line="2" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="25" selection-start="3217" selection-end="3365" vertical-scroll-proportion="-0.4473684" vertical-offset="1440" max-vertical-offset="2010" />
+        <state vertical-scroll-proportion="-0.4473684" vertical-offset="1440" max-vertical-offset="2010">
+          <caret line="91" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/opencv/opencv-246.jar!/org/opencv/core/Mat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="467" column="11" selection-start="14949" selection-end="14949" vertical-scroll-proportion="0.0" vertical-offset="7393" max-vertical-offset="51246" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7393" max-vertical-offset="51246">
+          <caret line="467" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="470" selection-end="474" vertical-scroll-proportion="0.28877005" vertical-offset="0" max-vertical-offset="1602" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935" />
+        <state vertical-scroll-proportion="0.28877005" vertical-offset="0" max-vertical-offset="1602">
+          <caret line="21" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/ShedCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="58" selection-end="58" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935" />
+        <state vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <caret line="4" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Shed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="105" selection-end="105" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935" />
+        <state vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/PointMentor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935" />
+        <state vertical-scroll-proportion="0.07700535" vertical-offset="0" max-vertical-offset="935">
+          <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/test_0/druzh.png">
@@ -946,171 +1437,261 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/AutoWatershed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="37" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.7469717" vertical-offset="0" max-vertical-offset="743" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="15" selection-start="757" selection-end="999" vertical-scroll-proportion="0.60565275" vertical-offset="0" max-vertical-offset="743" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="640" selection-end="640" vertical-scroll-proportion="-0.2920592" vertical-offset="622" max-vertical-offset="1365" />
+        <state vertical-scroll-proportion="0.7469717" vertical-offset="0" max-vertical-offset="743">
+          <caret line="42" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="36" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1674" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1674">
+          <caret line="84" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxFileMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="189" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1764" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1764">
+          <caret line="44" column="189" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/MorphologyTransformationsPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="67" selection-start="395" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1998" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1998">
+          <caret line="13" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="124" selection-start="2112" selection-end="2212" vertical-scroll-proportion="-0.19251336" vertical-offset="990" max-vertical-offset="2844" />
+        <state vertical-scroll-proportion="-0.19251336" vertical-offset="990" max-vertical-offset="2844">
+          <caret line="55" column="124" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/IPluginRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="137" selection-end="137" vertical-scroll-proportion="0.13333334" vertical-offset="0" max-vertical-offset="675" />
+        <state vertical-scroll-proportion="0.13333334" vertical-offset="0" max-vertical-offset="675">
+          <caret line="6" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/dialog/ParameterJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="11" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1890" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1890">
+          <caret line="22" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/T1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="74" selection-start="2041" selection-end="2041" vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="2502" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="22" selection-start="5107" selection-end="5107" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="6495">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="2502">
+          <caret line="62" column="74" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="28" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="4770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="50" selection-start="2423" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="2490">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="4770">
+          <caret line="49" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1125">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1125">
+          <caret line="22" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="80" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="3945">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="3945">
+          <caret line="35" column="80" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/MassiveWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="67" selection-start="2099" selection-end="2384" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="2010">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4590">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="2010">
+          <caret line="82" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="59" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1725">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1725">
+          <caret line="30" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="55" selection-start="8174" selection-end="8180" vertical-scroll-proportion="0.0" vertical-offset="3031" max-vertical-offset="4020">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3031" max-vertical-offset="4020">
+          <caret line="220" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="60" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.3125" vertical-offset="465" max-vertical-offset="1260">
-          <folding />
+        <state vertical-scroll-proportion="0.3125" vertical-offset="465" max-vertical-offset="1260">
+          <caret line="52" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2100">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="5760">
+          <caret line="119" column="35" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="15" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="2145">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2310">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1661" max-vertical-offset="14070">
+          <caret line="166" column="153" selection-start-line="166" selection-start-column="7" selection-end-line="166" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2460">
+          <caret line="75" column="50" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="2385">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1755" max-vertical-offset="6900">
+          <caret line="140" column="66" selection-start-line="137" selection-start-column="2" selection-end-line="140" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80924857" vertical-offset="0" max-vertical-offset="630">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/HomotopyPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="3180">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LaplasianPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="630">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/WatershedPartition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.168317" vertical-offset="0" max-vertical-offset="5310">
+          <caret line="281" column="51" selection-start-line="281" selection-start-column="51" selection-end-line="281" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1186" max-vertical-offset="4440">
+          <caret line="113" column="56" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="11" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2865">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2715">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="35" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0" vertical-offset="940" max-vertical-offset="4920">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="975">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/TestPlugin.java">
+    <entry file="file://$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="34" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="413" selection-end="413" vertical-scroll-proportion="-0.5135135" vertical-offset="345" max-vertical-offset="1065">
+        <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="930">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="52" selection-start="5797" selection-end="5797" vertical-scroll-proportion="-5.730769" vertical-offset="2296" max-vertical-offset="4020">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="2897" max-vertical-offset="3525">
+          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
+    <entry file="file://$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="44" selection-start="741" selection-end="741" vertical-scroll-proportion="0.25405404" vertical-offset="114" max-vertical-offset="2430">
+        <state vertical-scroll-proportion="0.09677419" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="3" column="101" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2984293" vertical-offset="267" max-vertical-offset="1065">
+          <caret line="42" column="61" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1199,7 +1780,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jmathplot</last-edited>
+          <last-edited>finmath-lib-1.2.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -76,9 +76,12 @@ public class Mask {
                 x_1[i] = mask.cols() - 1 - x_0[i];
                 y_0[i] = 0;
                 y_1[i] = mask.rows() - 1;
-                drawBresenhamLine(x_0[i], y_0[i], x_1[i], y_1[i]);
+                // drawBresenhamLine(x_0[i], y_0[i], x_1[i], y_1[i]);
+                line_s4(x_0[i], y_0[i], x_1[i], y_1[i]);
             }
-
+            // System.out.println();
+            // System.out.println(x);
+            //checkRoad(0);
             if (checkRoad(0)) return true;
         }
 
@@ -91,9 +94,13 @@ public class Mask {
                 x_1[i] = mask.cols() - 1;
                 y_0[i] = y + i;
                 y_1[i] = mask.rows() - 1 - y_0[i];
-                drawBresenhamLine(x_0[i], y_0[i], x_1[i], y_1[i]);
+                // drawBresenhamLine(x_0[i], y_0[i], x_1[i], y_1[i]);
+                line_s4(x_0[i], y_0[i], x_1[i], y_1[i]);
             }
+            //  System.out.println();
+            //  System.out.println(y);
 
+            checkRoad(1);
             if (checkRoad(1)) return true;
         }
         return false;
@@ -124,11 +131,15 @@ public class Mask {
         removeDuplicates(bg1);
         removeDuplicates(fg);
         removeDuplicates(bg2);
-/*
-        System.out.println();
-        System.out.println("BG1: " + bg1.points.toString());
-        System.out.println("FG:"+ fg.points.toString());
-        System.out.println("BG2: " + bg2.points.toString());*/
+
+        // System.out.println(fg.points);
+        // System.out.println(bg1.points);
+        // System.out.println(bg2.points);
+//        System.out.println();
+//        System.out.println("BG1: " + bg1.points.toString());
+//        System.out.println("FG:"+ fg.points.toString());
+//        System.out.println("BG2: " + bg2.points.toString());
+
 
         fg.countAvrL();
         bg1.countAvrL();
@@ -136,8 +147,11 @@ public class Mask {
 
         if (Math.abs(fg.avrL - bg1.avrL) > threshold && Math.abs(fg.avrL - bg2.avrL) > threshold
                 && Math.signum(fg.avrL - bg1.avrL) == Math.signum(fg.avrL - bg2.avrL)) {
+//            System.out.println();
+//            System.out.println("true: " + Math.abs(fg.avrL - bg1.avrL) + " " + Math.abs(fg.avrL - bg2.avrL));
             return true;
         }
+        // System.out.println("false: " + Math.abs(fg.avrL - bg1.avrL) + " " + Math.abs(fg.avrL - bg2.avrL));
         return false;
     }
 
@@ -204,24 +218,44 @@ public class Mask {
             result = 1;
         }
 
-        /*for (int i = 0; i < x_0.length; i++) {
-            if (x_1[i] - x_0[i] == 0 ) {
-                return xx == x_1[i] ? 0 : xx < x_1[i] ? -1 : 1;
-            } else if (y_1[i] - y_0[i] == 0) {
-                return yy == y_1[i] ? 0 : yy < y_1[i] ? -1 : 1;
-            }
-            double v = (((double) xx - x_0[i]) / (x_1[i] - x_0[i]) * (y_1[i] - y_0[i]) + y_0[i]);
-            System.out.println("v: " + v + " y: "+yy);
-            y = (int) (((double) xx - x_0[i]) / (x_1[i] - x_0[i]) * (y_1[i] - y_0[i]) + y_0[i]);
-            if (y == yy) {
-                return 0;
-            }
-            if (y < yy) {
-                result = -1;
-            }
-        }*/
         return result;
     }
+
+    private void line_s4(int x1, int y1, int x2, int y2) {
+        int x = x1, y = y1;
+        int dx = Math.abs(x2 - x1), dy = Math.abs(y2 - y1);
+        int sx = (x2 - x1) > 0 ? 1 : ((x2 - x1) == 0 ? 0 : -1);
+        int sy = (y2 - y1) > 0 ? 1 : ((y2 - y1) == 0 ? 0 : -1);
+        int e = 2 * dy - dx;
+        boolean change = false;
+        if (dy > dx) {
+            int z = dx;
+            dx = dy;
+            dy = z;
+            change = true;
+        }
+
+        // g.drawLine(x, y, x, y);
+        if (x >= 0 && x < mask.cols() && y >= 0 && y < mask.rows()) {
+            fg.add(new Point(x, y));
+        }
+        for (int k = 1; k <= (dx + dy); k++) {
+            if (e < dx) {
+                if (change) y += sy;
+                else x += sx;
+                e += 2 * dy;
+            } else {
+                if (change) x += sx;
+                else y = y + sy;
+                e -= 2 * dx;
+            }
+            //g.drawLine(x, y, x, y);
+            if (x >= 0 && x < mask.cols() && y >= 0 && y < mask.rows()) {
+                fg.add(new Point(x, y));
+            }
+        }
+    }
+
 
     // Этот код "рисует" все 9 видов отрезков. Наклонные (из начала в конец и из конца в начало каждый), вертикальный и горизонтальный - тоже из начала в конец и из конца в начало, и точку.
     private int sign(int x) {
@@ -244,7 +278,7 @@ public class Mask {
 
         incx = sign(dx);
     /*
-	 * Определяем, в какую сторону нужно будет сдвигаться. Если dx < 0, т.е. отрезок идёт
+     * Определяем, в какую сторону нужно будет сдвигаться. Если dx < 0, т.е. отрезок идёт
 	 * справа налево по иксу, то incx будет равен -1.
 	 * Это будет использоваться в цикле постороения.
 	 */
@@ -422,6 +456,7 @@ public class Mask {
         private void countAvrL() {
             for (Point p : points) {
                 avrL += mask.get(p.y, p.x)[0];
+                // System.out.println(mask.get(p.y, p.x)[0]);
             }
             avrL /= points.size();
         }
