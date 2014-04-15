@@ -1,25 +1,43 @@
 package gui;
 
+import net.miginfocom.swing.MigLayout;
+
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.PrintStream;
 
 
 public class StatusBar extends JPanel implements MouseListener {
+    private final JTextArea debugArea;
     private final JLabel statusText;
     private final JProgressBar progressBar;
+    private PrintStream standardOut;
+
 
     public StatusBar() {
 
         statusText = new JLabel( getInfoString( false ) );
         statusText.setBorder( new BevelBorder( BevelBorder.LOWERED ) );
         progressBar = new JProgressBar();
-        progressBar.setVisible( false );
-        setLayout( new BorderLayout() );
-        add( statusText, BorderLayout.CENTER );
-        add( progressBar, BorderLayout.EAST );
+        progressBar.setVisible( true );
+        debugArea = new JTextArea(5, 50);
+        debugArea.setEditable(false);
+        PrintStream printStream = new PrintStream(new CustomOutputStream(debugArea));
+        // keeps reference of standard output stream
+        standardOut = System.out;
+
+        // re-assigns standard output stream and error output stream
+        System.setOut(printStream);
+        System.setErr(printStream);
+
+        setLayout(new MigLayout());
+        //add( statusText, BorderLayout.PAGE_START );
+        //add( progressBar, BorderLayout.PAGE_END );
+        add( statusText, "growx, h 20!, wrap" );
+        add( new JScrollPane(debugArea), "wrap" );
+        add( progressBar, "" );
         statusText.addMouseListener( this );
     }
 
@@ -89,5 +107,25 @@ public class StatusBar extends JPanel implements MouseListener {
 
     public void mouseExited( MouseEvent mouseEvent ) {
         //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    /**
+     * Prints log statements for testing in a thread
+     */
+    private void printLog() {
+        /*Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    System.out.println("Time now is " + (new Date()));
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread.start();*/
     }
 }

@@ -26,9 +26,12 @@ public class GrayscalePlugin extends AbstractPlugin {
     }
 
     public static Mat run( Mat image, boolean addToCollector ) {
+
+
         Mat result = new Mat();
 
         if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
+            AbstractPlugin.printMessage("Convert image to Gray");
             Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2GRAY );        //COLOR_BGR2Lab
         } else {
             result = image;

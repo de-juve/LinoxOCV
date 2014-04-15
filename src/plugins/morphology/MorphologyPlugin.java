@@ -14,6 +14,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
 public class MorphologyPlugin extends AbstractPlugin {
     String morphologyOperation;
@@ -77,11 +78,14 @@ public class MorphologyPlugin extends AbstractPlugin {
     }
 
     private void morphologyOperations() {
+        long start = System.nanoTime();
+        print(this.title + " " + morphologyOperation + " begin with size " + morph_size );
+
         init();
         gray = GrayscalePlugin.run(image, false);
         MassiveWorker.INSTANCE.sort(gray);
 
-        if (morphologyOperation == "Closing") {
+        if (morphologyOperation.equals("Closing")) {
             for (int h = MassiveWorker.INSTANCE.getMax(); h >= MassiveWorker.INSTANCE.getMin(); h--) {
                 preflood(h);
             }
@@ -149,6 +153,10 @@ public class MorphologyPlugin extends AbstractPlugin {
             }
         }
         result.put(0, 0, buff);
+
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
     }
 
     private void init() {

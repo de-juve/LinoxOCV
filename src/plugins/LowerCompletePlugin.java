@@ -22,6 +22,8 @@ public class LowerCompletePlugin extends AbstractPlugin {
 
     @Override
     public void run() {
+        long start = System.nanoTime();
+        print(this.title + " begin");
         Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
 
         gray = GrayscalePlugin.run( image, false );
@@ -59,6 +61,10 @@ public class LowerCompletePlugin extends AbstractPlugin {
 
         DataCollector.INSTANCE.setLowerCompletion( level );
         Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
+
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " finish: " + traceTime);
 
         if ( pluginListener != null ) {
             pluginListener.addImageTab();

@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Линия есть последовательность точек Point,
+ * Линия имеет:
+ *  начало и конец - borderPoints
+ *  соседей - connection
+ *  множество точек - points
+ */
 public class Line {
     public LinkedList<Point> points;
     public int avgWidth = 0;
@@ -14,10 +21,17 @@ public class Line {
     public Line() {
         points = new LinkedList<>();
         connection = new ArrayList<>();
+        borderPoints = new ArrayList<>();
     }
 
     public void add(Point point) {
         points.add(point);
+    }
+
+    public Point direction() {
+        Point p1 = points.get(0);
+        Point p2 = points.get(points.size() - 1);
+        return new Point(p1.x - p2.x, p1.y - p2.y);
     }
 
     public void addConnection(Line line) {

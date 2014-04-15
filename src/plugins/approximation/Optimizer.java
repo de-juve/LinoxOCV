@@ -32,12 +32,13 @@ public class Optimizer {
 
         double[] bestCoefficients = fitter.fit(sif, initialguess);
 
-        int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)));
+        double step = 0.1;
+        int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)) / step);
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
         double xi = StatUtils.min(xArr);
         for (int i = 0; i < xc.length; i++) {
-            xc[i] = xi + i;
+            xc[i] = xi + step * i;
             yc[i] = sif.value(xc[i], bestCoefficients);
             line.add(new Point((int) xc[i], (int) yc[i]));
         }

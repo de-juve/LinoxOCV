@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
 public class WatershedPlugin extends AbstractPlugin {
     Mat gray;
@@ -23,7 +24,9 @@ public class WatershedPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
+        long start = System.nanoTime();
+        print(this.title + " begin");
+        Linox.getInstance().getStatusBar().setProgress(title, 0, 100);
 
         GrayscalePlugin.run( image, true );
 
@@ -63,6 +66,9 @@ public class WatershedPlugin extends AbstractPlugin {
         //wp.partitionNetwork( result );
 
         Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
 
         if ( pluginListener != null ) {
             pluginListener.addImageTab();

@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="jgrapht-ext-0.9.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-ext-0.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraph-5.13.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-core-0.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-ext-0.9.0-uber.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraphx-2.0.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/jgraph-5.13.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -2,7 +2,6 @@ package plugins;
 
 import entities.DataCollector;
 import entities.Line;
-import entities.Mask;
 import entities.Point;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
@@ -10,6 +9,7 @@ import gui.dialog.ParameterSlider;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 import plugins.approximation.Interpolacion;
 import plugins.approximation.Optimizer;
@@ -18,6 +18,7 @@ import plugins.morphology.MorphologyPlugin;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class GlobalAnalysis extends AbstractPlugin {
     private int area_size = 0, road_w, mask_w, mask_h, threshold = 250, minPoints = 20;
@@ -93,6 +94,7 @@ public class GlobalAnalysis extends AbstractPlugin {
             MorphologyPlugin morphology = new MorphologyPlugin();
             WatershedPlugin watershed = new WatershedPlugin();
 
+
             morphology.initImage(grey);
             morphology.run("Closing", area_size);
             mresult = morphology.getResult(true);
@@ -118,7 +120,8 @@ public class GlobalAnalysis extends AbstractPlugin {
             RegressionPointsAnalysis analysis = new RegressionPointsAnalysis(interpolateImage, interpolateLines);
         }
 
-
+       /* long start = System.nanoTime();
+        print(this.title + " mask analyze begin");
         Mask mask = new Mask(mask_w, mask_h, road_w, wresult.type(), threshold);
         L:
         for (int y = 0; y < wresult.rows(); y++) {
@@ -148,8 +151,13 @@ public class GlobalAnalysis extends AbstractPlugin {
                 // break L;
             }
         }
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " mask analyze finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
+*/
         result = image.clone();
         drawWatershed(result);
+        print(this.title + " finish");
     }
 
     private void addWPoints(int x, int y, HashMap<Integer, Point> watershedPoints, int cols) {
@@ -168,12 +176,15 @@ public class GlobalAnalysis extends AbstractPlugin {
     }
 
     private void interpolate(ArrayList<Line> lines, ArrayList<Point> epoints) {
+        long start = System.nanoTime();
+        print(this.title + " interpolation begin");
+
         double b, g, r;
         b = g = r = 0;
         Random rand = new Random();
 
         Interpolacion interpolacion = new Interpolacion();
-        interpolateImage = Mat.zeros(image.size(), image.type());
+        interpolateImage = new Mat(image.size(), image.type(), new Scalar(255, 255, 255));//Mat.zeros(image.size(), image.type());
         interpolateLines = new ArrayList<>();
         interpolatePoints = new ArrayList<>();
 
@@ -191,10 +202,11 @@ public class GlobalAnalysis extends AbstractPlugin {
                 i++;
             }
 
+            double step = 1;
             interpolacion.extractPointsFormLine(x);
-            Line lix = interpolacion.interpolate();
+            Line lix = interpolacion.interpolate(step);
             interpolacion.extractPointsFormLine(y);
-            Line liy = interpolacion.interpolate();
+            Line liy = interpolacion.interpolate(step);
 
             double[] mcolor = new double[]{b, g, r};
             r = rand.nextInt(220);
@@ -241,9 +253,16 @@ public class GlobalAnalysis extends AbstractPlugin {
         //  DataCollector.INSTANCE.addtoHistory("before interpolate", img);
         DataCollector.INSTANCE.addtoHistory("after interpolate", interpolateImage);
         pluginListener.addImageTab("interpolate", interpolateImage);
+
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " interpolation finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
     }
 
     private void regression(ArrayList<Line> lines, ArrayList<Point> epoints) {
+        long start = System.nanoTime();
+        print(this.title + " regression begin");
+
         double b, g, r;
         b = g = r = 0;
         Random rand = new Random();
@@ -282,7 +301,20 @@ public class GlobalAnalysis extends AbstractPlugin {
 
             Line rLine = new Line();
 
-            for (Point p : line.points) {
+            for (i = 0; i < lrx.points.size(); i++) {
+                Point rPoint = new Point(lrx.points.get(i).y, lry.points.get(i).y);
+
+                if (!regressPoints.contains(rPoint)) {
+
+                    regressPoints.add(rPoint);
+                    rLine.add(rPoint);
+
+                    regressImage.put(rPoint.y, rPoint.x, mcolor);
+                }
+            }
+
+
+           /* for (Point p : line.points) {
                 int id = line.points.indexOf(p);
                 p.x = lrx.points.get(id).y;
                 p.y = lry.points.get(id).y;
@@ -292,9 +324,12 @@ public class GlobalAnalysis extends AbstractPlugin {
                 rLine.add(rPoint);
 
                 regressImage.put(p.y, p.x, mcolor);
-            }
+            }*/
             regressLines.add(rLine);
         }
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " regression finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
 /*
         for (Point p : epoints) {
             if (p.isCrossroad) {
@@ -303,6 +338,8 @@ public class GlobalAnalysis extends AbstractPlugin {
         }*/
         DataCollector.INSTANCE.addtoHistory("after regression", regressImage);
         pluginListener.addImageTab("regression", regressImage);
+
+
     }
 
 }

@@ -36,6 +36,20 @@ public class AbstractPlugin implements IPluginFilter {
         errMessage = message;
     }
 
+    /**
+     * Выводим сообщение в консоль или в другой out, если его переопределили
+     * @param message
+     */
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+
+    protected void print(String message) {
+        printMessage(message);
+    }
+
+
+
     @Override
     public void run() {
     }

@@ -39,18 +39,19 @@ public class Interpolacion {
         frame.setVisible(true);
     }
 
-    public Line interpolate() {
+    public Line interpolate(double step) {
         Line line = new Line();
 
         PolynomialSplineFunction polynomial = interpolator.interpolate(xArr, yArr);
         PolynomialSplineFunction firstDerivative = polynomial.polynomialSplineDerivative();
         PolynomialSplineFunction secondDerivative = firstDerivative.polynomialSplineDerivative();
-        int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)) / 0.1);
+
+        int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)) / step);
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
         double xi = StatUtils.min(xArr);
         for (int i = 0; i < xc.length; i++) {
-            xc[i] = xi + 0.1 * i;
+            xc[i] = xi + step * i;
             yc[i] = polynomial.value(xc[i]);
             double k = Math.abs(secondDerivative.value(xc[i])) / Math.sqrt(Math.pow(1 + Math.pow(firstDerivative.value(xc[i]), 2), 3));
             line.add(new Point((int) xc[i], (int) yc[i], k));

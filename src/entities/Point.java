@@ -55,6 +55,13 @@ public class Point extends org.opencv.core.Point {
         connections = new ArrayList<>();
     }
 
+    public double minus( Point p ) {
+        return Math.pow(Math.abs(this.x) - Math.abs(p.x), 2) + Math.pow(Math.abs(this.y) - Math.abs(p.y), 2);
+    }
+
+    public double len(Point p) {
+        return  Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2);
+    }
 
     public void addConnection(Connection _conn) {
         if (_conn.p2.equals(this)) {

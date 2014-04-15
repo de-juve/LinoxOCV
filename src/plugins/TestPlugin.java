@@ -81,9 +81,9 @@ public class TestPlugin extends AbstractPlugin {
             Line lry = optimizer.optimize();
 
             interpolacion.extractPointsFormLine(x);
-            Line lix = interpolacion.interpolate();
+            Line lix = interpolacion.interpolate(1);
             interpolacion.extractPointsFormLine(y);
-            Line liy = interpolacion.interpolate();
+            Line liy = interpolacion.interpolate(1);
 
             double[] mcolor = new double[]{b, g, r};
             r = rand.nextInt(220);
