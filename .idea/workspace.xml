@@ -6,368 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="global analysis, interpolate, regression">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KSPExample.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/Picture1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraph-5.13.0.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-core-0.9.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-demo-0.9.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-ext-0.9.0-uber.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgrapht-ext-0.9.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraphx-2.0.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AbstractBaseGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/AbstractExhaustiveIsomorphismInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AbstractGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/AbstractGraphIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/AbstractGraphIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/AbstractPathElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/AbstractPathElementList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/AdaptiveIsomorphismInspectorFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/AllAlgTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/util/AllAlgUtilTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/generate/AllGenerateTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/AllGraphTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/AllTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/AllTraverseTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/util/AllUtilTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/alg/ApproximationAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/ArrayPermutationsIter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/ArrayUnenforcedSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AsUndirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/AsUndirectedGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AsUnweightedDirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AsUnweightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/AsUnweightedGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AsWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/AsWeightedGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BellmanFordIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BellmanFordPathElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BellmanFordShortestPath.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/BellmanFordShortestPathTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/BiconnectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BiconnectivityInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/BiconnectivityInspectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BlockCutpointGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/BlockCutpointGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/BreadthFirstIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/BreadthFirstIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/BronKerboschCliqueFinder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/BronKerboschCliqueFinderTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/alg/color/BrownBacktrackColoring.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/CONTRIBUTORS.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/ChromaticNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/ChromaticNumberTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ClassBasedEdgeFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ClassBasedVertexFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/CloneTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/ClosestFirstIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/ClosestFirstIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/CollectionPermutationIter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/alg/ColoringTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/CompleteBipartiteGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/CompleteGraphDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/CompleteGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/ComponentAttributeProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/CompoundPermutationIter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/permutation/CompoundPermutationIterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/ConnectedComponentTraversalEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/ConnectivityInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/ConnectivityInspectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/CrossComponentIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/CustomOutputStream.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/CycleDetector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/CycleDetectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/DOTExporter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java/org/jgrapht/ext/DOTExporterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultDirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/DefaultDirectedGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultDirectedWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultEdge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultGraphMapping.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultListenableGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultWeightedEdge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/DepthFirstIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/DepthFirstIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/DijkstraShortestPath.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/DijkstraShortestPathTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/dag/DirectedAcyclicGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/dag/DirectedAcyclicGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/comparators/DirectedEdgeWeightOddEvenComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/DirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedGraphUnion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedMaskSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedMultigraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/DirectedNeighborIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedPseudograph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/DirectedSimpleCycles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/cycle/DirectedSimpleCyclesTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedWeightedMultigraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedWeightedPseudograph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DirectedWeightedSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/EdgeFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/EdgeNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/EdgeReversedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/EdgeSetFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/EdgeTopologyCompare.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/EdgeTraversalEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/EdmondsBlossomShrinking.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/EdmondsBlossomShrinkingTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/EdmondsKarpMaximumFlow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/EdmondsKarpMaximumFlowTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/EmptyGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/EnhancedTestCase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/EqualsAndHashCodeTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/EquivalenceComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/EquivalenceComparatorChain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/EquivalenceComparatorChainBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/equivalence/EquivalenceGroupCreatorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/EquivalenceIsomorphismInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/EquivalenceSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/EquivalenceSetCreator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/EulerianCircuit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/EulerianCircuitTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/alg/ExactAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/FibonacciHeap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/FibonacciHeapNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/util/FibonacciHeapTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/FloydWarshallShortestPaths.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/FloydWarshallShortestPathsTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/GenericGraphsTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/GmlExporter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java/org/jgrapht/ext/GmlExporterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/Graph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/GraphChangeEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/GraphDelegator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/GraphEdgeChangeEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/GraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/generate/GraphGeneratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/GraphHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/GraphIsomorphismInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/GraphIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/GraphListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/GraphMLExporter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java/org/jgrapht/ext/GraphMLExporterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/GraphMapping.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/GraphOrdering.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/GraphPath.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/GraphPathImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/GraphReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/GraphReaderTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/GraphSquare.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/GraphTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/GraphUnion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/GraphVertexChangeEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/Graphs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/alg/color/GreedyColoring.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/GridGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/HISTORY.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/HamiltonianCycle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/HamiltonianCycleTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/HelloJGraphT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/HopcroftKarpBipartiteMatching.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/HopcroftKarpBipartiteMatchingTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/HyperCubeGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/IgnoreDirectionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/alg/IntArrayGraphAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/IntegerEdgeNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/IntegerNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/IntegerPermutationIter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/IntegerVertexFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/IntrusiveEdge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/IsomorphismInspectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/IsomorphismRelation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/JGraphAdapterDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/JGraphApplet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/JGraphModelAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/JGraphXAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/JGraphXAdapterDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java/org/jgrapht/ext/JGraphXAdapterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/JohnsonSimpleCycles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KSPDiscardsValidPathsTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KSPExampleGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KSPExampleTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KShortestPathCompleteGraph4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KShortestPathCompleteGraph5.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KShortestPathCompleteGraph6.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KShortestPathCostTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KShortestPathKValuesTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/KShortestPaths.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/KShortestPathsIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/KruskalMinimumSpanningTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/KuhnMunkresMinimalWeightBipartitePerfectMatching.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/KuhnMunkresMinimalWeightBipartitePerfectMatchingTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/LinearGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/LinoxForm.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/LinoxForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ListenableDirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ListenableDirectedWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/ListenableGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/ListenableGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ListenableUndirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ListenableUndirectedWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/resources/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/MaskEdgeSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/MaskFunctor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/MaskSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/MaskVertexSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/interfaces/MatchingAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/MathUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/MatrixExporter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/test/java/org/jgrapht/ext/MatrixExporterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/MinSourceSinkCut.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/MinSourceSinkCutTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/interfaces/MinimumSpanningTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/MinimumSpanningTreeTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/comparators/Mod3GroupComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/ModifiableInteger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/Multigraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/NeighborIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/NeighborIndexTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/NotBiconnectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/experimental/isomorphism/comparators/OddEvenGroupComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ParanoidGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/PartiteRandomGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/PatonCycleBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/PerformanceDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/PermutationFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/PermutationIsomorphismInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/Picture1Graph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/PrefetchIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/util/PrefetchIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/PrimMinimumSpanningTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/Pseudograph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/RandomGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/generate/RandomGraphGeneratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/RandomGraphHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/RankingPathElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/RankingPathElementList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/RingGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/ScaleFreeGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/SerializationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/ShortestPathTestCase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/SimpleDirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/SimpleDirectedGraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/SimpleDirectedWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/SimpleGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java/org/jgrapht/experimental/touchgraph/SimpleTouchgraphApplet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/SimpleWeightedBipartiteGraphMatrixGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/SimpleWeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/SimpleWeightedGraphMatrixGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/StarGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/StoerWagnerMinimumCut.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/StoerWagnerMinimumCutTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/util/StopWatch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/StringEdgeNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/StringNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/StrongConnectivityInspector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/Subgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/graph/SubgraphTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/SzwarcfiterLauerSimpleCycles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/TG-APACHE-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/UNKNOWN/TGGraphLayout-UNKNOWN.jar.md5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/UNKNOWN/TGGraphLayout-UNKNOWN.jar.sha1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/UNKNOWN/TGGraphLayout-UNKNOWN.pom.md5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/UNKNOWN/TGGraphLayout-UNKNOWN.pom.sha1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/UNKNOWN/TGGraphLayout-UNKNOWN.pom" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/TarjanLowestCommonAncestor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/TarjanLowestCommonAncestorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/TarjanSimpleCycles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/TiernanSimpleCycles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/TopologicalOrderIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/traverse/TopologicalOrderIteratorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java/org/jgrapht/experimental/touchgraph/TouchgraphConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java/org/jgrapht/experimental/touchgraph/TouchgraphPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/TransitiveClosure.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/TransitiveClosureTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/TraversalListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/TraversalListenerAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/TypeUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/UndirectedCycleBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/cycle/UndirectedCycleBaseTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/UndirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UndirectedGraphUnion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UndirectedMaskSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UndirectedSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UndirectedWeightedSubgraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/UniformEquivalenceComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/UniformRandomGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/util/UnionFind.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/util/UnionFindTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UnmodifiableDirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UnmodifiableGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/UnmodifiableUndirectedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/VertexCovers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/java/org/jgrapht/alg/VertexCoversTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/util/VertexDegreeComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/VertexDegreeEquivalenceComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/VertexFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/VertexNameProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/VertexPair.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/VertexSetListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/VertexTraversalEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/VisioExporter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/WeightCombiner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/WeightedGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/WeightedGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/WeightedGraphGeneratorAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/interfaces/WeightedMatchingAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/WeightedMultigraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/WeightedPseudograph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/WheelGraphGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-dist/src/assembly/assembly.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/etc/eclipse-formatter-settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/test/resources/edges.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/etc/graph-links.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jgrapht_ext_0_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/license-EPL.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/license-LGPL.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/maven-metadata.xml.md5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/maven-metadata.xml.sha1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/3rdparty/com/touchgraph/TGGraphLayout/maven-metadata.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/overview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/util/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/equivalence/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/isomorphism/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/experimental/permutation/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/generate/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/util/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/src/main/java/org/jgrapht/demo/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/src/main/java/org/jgrapht/ext/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/src/main/java/org/jgrapht/experimental/touchgraph/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-demo/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-dist/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-ext/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-touchgraph/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/etc/release-process.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/etc/triemax-jalopy-settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/gui/Linox.form" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" />
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="jgraph">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plugins/InvertPlugin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/RoadWeightedEdge.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" afterPath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/GrayscalePlugin.java" afterPath="$PROJECT_DIR$/src/plugins/GrayscalePlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" afterPath="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Line.java" afterPath="$PROJECT_DIR$/src/entities/Line.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Linox.java" afterPath="$PROJECT_DIR$/src/gui/Linox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LinoxOCV.iml" afterPath="$PROJECT_DIR$/LinoxOCV.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/LinoxOCV_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/LinoxOCV_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" afterPath="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" afterPath="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Point.java" afterPath="$PROJECT_DIR$/src/entities/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java" afterPath="$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/StatusBar.java" afterPath="$PROJECT_DIR$/src/gui/StatusBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/TestPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
@@ -396,6 +47,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -432,8 +84,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
     <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
   </component>
@@ -443,91 +93,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GlobalAnalysis.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GlobalAnalysis.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5100" max-vertical-offset="5280">
-              <caret line="340" column="17" selection-start-line="340" selection-start-column="17" selection-end-line="340" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.25531915" vertical-offset="1203" max-vertical-offset="5190">
+              <caret line="113" column="94" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegressionPointsAnalysis.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java">
+      <file leaf-file-name="WatershedPlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3924222" vertical-offset="100" max-vertical-offset="3300">
-              <caret line="46" column="6" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4260" max-vertical-offset="4980">
+              <caret line="284" column="92" selection-start-line="284" selection-start-column="42" selection-end-line="284" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Graph.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/Graph.java">
+      <file leaf-file-name="LineCreator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2655" max-vertical-offset="6570">
-              <caret line="177" column="93" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1965" max-vertical-offset="2985">
+              <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PluginRunner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
+      <file leaf-file-name="PixelsMentor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/PixelsMentor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1245">
-              <caret line="61" column="78" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="2550">
+              <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JGraphApplet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/JGraphApplet.java">
+      <file leaf-file-name="DataCollector.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="1665">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="5760">
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interpolacion.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+      <file leaf-file-name="GrayscalePlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1215">
-              <caret line="32" column="55" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="855">
+              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Linox.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
+      <file leaf-file-name="MorphologyTransformationsPlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/MorphologyTransformationsPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2190">
-              <caret line="74" column="58" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="2520">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Line.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1215">
-              <caret line="32" column="122" selection-start-line="31" selection-start-column="33" selection-end-line="32" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1800">
+              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -559,13 +189,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/plugins/CannyPlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java" />
-        <option value="$PROJECT_DIR$/src/plugins/LineCreator.java" />
         <option value="$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/LevenbergMarquardtPlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/QuadraticProblem.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/AbstractApproximation.java" />
         <option value="$PROJECT_DIR$/src/plugins/CompressPlugin.java" />
-        <option value="$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxImageFactory.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/TestImageJPanel.java" />
         <option value="$PROJECT_DIR$/src/gui/menu/LinoxMenuStore.java" />
@@ -575,25 +203,31 @@
         <option value="$PROJECT_DIR$/src/test/test" />
         <option value="$PROJECT_DIR$/src/test/T1.java" />
         <option value="$PROJECT_DIR$/src/plugins/LocalAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
         <option value="$PROJECT_DIR$/src/entities/Mask.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/Optimizer.java" />
         <option value="$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java" />
         <option value="$PROJECT_DIR$/src/plugins/TestPlugin.java" />
-        <option value="$PROJECT_DIR$/src/entities/Point.java" />
         <option value="$PROJECT_DIR$/src/gui/CustomOutputStream.java" />
-        <option value="$PROJECT_DIR$/src/gui/Linox.java" />
         <option value="$PROJECT_DIR$/src/gui/StatusBar.java" />
-        <option value="$PROJECT_DIR$/src/plugins/GrayscalePlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/AbstractPlugin.java" />
-        <option value="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/morphology/MorphologyPlugin.java" />
-        <option value="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/entities/Graph.java" />
-        <option value="$PROJECT_DIR$/src/entities/Line.java" />
         <option value="$PROJECT_DIR$/src/plugins/JGraphApplet.java" />
+        <option value="$PROJECT_DIR$/src/entities/RoadWeightedEdge.java" />
+        <option value="$PROJECT_DIR$/src/entities/Point.java" />
+        <option value="$PROJECT_DIR$/src/entities/Line.java" />
+        <option value="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" />
         <option value="$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/plugins/InvertsPlugin.java" />
+        <option value="$PROJECT_DIR$/src/plugins/InvertPlugin.java" />
+        <option value="$PROJECT_DIR$/src/gui/menu/PluginRunner.java" />
+        <option value="$PROJECT_DIR$/src/gui/Linox.java" />
+        <option value="$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java" />
+        <option value="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
+        <option value="$PROJECT_DIR$/src/plugins/GrayscalePlugin.java" />
+        <option value="$PROJECT_DIR$/src/plugins/LineCreator.java" />
+        <option value="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
       </list>
     </option>
   </component>
@@ -601,8 +235,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="92" />
-    <option name="width" value="1105" />
+    <option name="x" value="166" />
+    <option name="y" value="51" />
+    <option name="width" value="1348" />
     <option name="height" value="895" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -686,7 +321,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -823,24 +457,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="miglayout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="jgrapht-0.9.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -863,7 +479,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinoxOCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jgrapht-0.9.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jgrapht-core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -886,287 +528,16 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cycle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-core-0.9.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgraph-5.13.0.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgraph-5.13.0.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgraph" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinoxOCV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgrapht-0.9.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgraph-5.13.0.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgraph" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algebra" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
@@ -1174,7 +545,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraphx-2.0.0.1.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -1191,6 +562,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="plugins" />
       <recent name="gui.menu" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1411,7 +783,13 @@
       <workItem from="1397390830075" duration="20000" />
       <workItem from="1397391261798" duration="3830000" />
       <workItem from="1397566795530" duration="7726000" />
-      <workItem from="1397582843596" duration="27000" />
+      <workItem from="1397582843596" duration="299000" />
+      <workItem from="1397654326297" duration="2245000" />
+      <workItem from="1397968125150" duration="8351000" />
+      <workItem from="1398177903299" duration="2426000" />
+      <workItem from="1398267484623" duration="2727000" />
+      <workItem from="1398575729699" duration="4647000" />
+      <workItem from="1398614292748" duration="183000" />
     </task>
     <task id="LOCAL-00001" summary="Inig">
       <created>1372939127124</created>
@@ -1545,15 +923,19 @@
       <created>1396801166023</created>
       <updated>1396801166023</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="jgraph">
+      <created>1397582984931</created>
+      <updated>1397582984931</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107426000" />
+    <option name="totallyTimeSpent" value="128277000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="92" width="1105" height="895" extended-state="0" />
-    <editor active="true" />
+    <frame x="166" y="51" width="1348" height="895" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26617745" sideWeight="0.6725146" order="6" side_tool="false" content_ui="tabs" />
@@ -1569,7 +951,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28033867" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22817764" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27272728" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27259886" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1604,7 +986,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="correct morphology compilation, add median, homotopy, histogramCounter" />
     <MESSAGE value="+histogram" />
     <MESSAGE value="snake, regression, approximation" />
     <MESSAGE value="reformat code, watershed, +resize" />
@@ -1629,13 +1010,13 @@
     <MESSAGE value="local analysis" />
     <MESSAGE value="new analysis" />
     <MESSAGE value="global analysis, interpolate, regression" />
-    <option name="LAST_COMMIT_MESSAGE" value="global analysis, interpolate, regression" />
+    <MESSAGE value="jgraph" />
+    <option name="LAST_COMMIT_MESSAGE" value="jgraph" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1643,157 +1024,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxToolsMenuFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1674">
-          <caret line="84" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxFileMenuFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1764">
-          <caret line="44" column="189" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.19251336" vertical-offset="990" max-vertical-offset="2844">
-          <caret line="55" column="124" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/IPluginRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13333334" vertical-offset="0" max-vertical-offset="675">
-          <caret line="6" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/dialog/ParameterJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1890">
-          <caret line="22" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/T1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="2502">
-          <caret line="62" column="74" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/MassiveWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="2010">
-          <caret line="82" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/HoughTransformPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1725">
-          <caret line="30" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3031" max-vertical-offset="4020">
-          <caret line="220" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-math3-3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1661" max-vertical-offset="14070">
-          <caret line="166" column="153" selection-start-line="166" selection-start-column="7" selection-end-line="166" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2460">
-          <caret line="75" column="50" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/HomotopyPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="3180">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LaplasianPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="630">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/WatershedPartition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.168317" vertical-offset="0" max-vertical-offset="5310">
-          <caret line="281" column="51" selection-start-line="281" selection-start-column="51" selection-end-line="281" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/roadNetwork/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1186" max-vertical-offset="4440">
-          <caret line="113" column="56" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2715">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/finmath-lib-1.2.11/apidocs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09677419" vertical-offset="0" max-vertical-offset="1215">
-          <caret line="3" column="101" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Mask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2100" max-vertical-offset="7080">
-          <caret line="140" column="62" selection-start-line="137" selection-start-column="2" selection-end-line="140" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Optimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2400">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/OLSPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0" vertical-offset="68" max-vertical-offset="1230">
-          <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/MedianPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11278196" vertical-offset="0" max-vertical-offset="870">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/MorphologyTransformationsPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01734104" vertical-offset="51" max-vertical-offset="1635">
-          <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1839,45 +1073,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4376658" vertical-offset="585" max-vertical-offset="1665">
-          <caret line="62" column="68" selection-start-line="62" selection-start-column="68" selection-end-line="62" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="4920">
-          <caret line="34" column="70" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/LinoxForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5347092" vertical-offset="120" max-vertical-offset="675">
-          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="4815">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="39" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/StatusBar.java">
@@ -1908,46 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1125">
-          <caret line="32" column="122" selection-start-line="31" selection-start-column="33" selection-end-line="32" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4379" max-vertical-offset="4965">
-          <caret line="340" column="17" selection-start-line="340" selection-start-column="17" selection-end-line="340" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1095">
-          <caret line="61" column="78" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jgrapht-0.9.0/lib/jgraph-5.13.0.0.jar!/org/jgraph/JGraph.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6667" max-vertical-offset="7545">
@@ -1959,15 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="41163" max-vertical-offset="46365">
           <caret line="3023" column="24" selection-start-line="3023" selection-start-column="11" selection-end-line="3023" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="2040">
-          <caret line="74" column="58" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1978,19 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/JGraphApplet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1665">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/ListenableDirectedWeightedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3736952" vertical-offset="211" max-vertical-offset="690">
           <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1998,14 +1138,257 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1941" max-vertical-offset="5970">
           <caret line="177" column="93" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/IntrusiveEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2674897" vertical-offset="0" max-vertical-offset="750">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/RoadWeightedEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15957446" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/opencv/opencv-246.jar!/org/opencv/core/CvType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1860">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/WeightedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7185741" vertical-offset="22" max-vertical-offset="555">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/GraphDelegator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77115387" vertical-offset="2374" max-vertical-offset="2940">
+          <caret line="290" column="45" selection-start-line="290" selection-start-column="45" selection-end-line="290" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/JGraphApplet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3653846" vertical-offset="800" max-vertical-offset="1470">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="1725">
+          <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
+          <folding>
+            <element signature="e#1987#1988#0" expanded="true" />
+            <element signature="e#2064#2065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/approximation/Interpolacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1080">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1335">
+          <caret line="66" column="68" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="8745">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4828326" vertical-offset="615" max-vertical-offset="1410">
+          <caret line="67" column="104" selection-start-line="67" selection-start-column="104" selection-end-line="67" selection-end-column="104" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/RegressionPointsAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3924222" vertical-offset="100" max-vertical-offset="3300">
-          <caret line="46" column="6" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1869" max-vertical-offset="5085">
+          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultWeightedEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="630">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/DefaultEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="705">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/alg/DijkstraShortestPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="2655">
+          <caret line="150" column="43" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/ClosestFirstIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1038" max-vertical-offset="4440">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/CrossComponentIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1738" max-vertical-offset="7410">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/event/ConnectedComponentTraversalEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="549" max-vertical-offset="1005">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/traverse/AbstractGraphIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2535">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jgrapht-0.9.0/source/jgrapht-core/src/main/java/org/jgrapht/graph/AbstractBaseGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4345" max-vertical-offset="16425">
+          <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/IPluginRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/InvertPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxImageStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31730768" vertical-offset="0" max-vertical-offset="3330">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/AbstractPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31538463" vertical-offset="616" max-vertical-offset="2115">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Linox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.320144" vertical-offset="345" max-vertical-offset="1935">
+          <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/PluginRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8158379" vertical-offset="322" max-vertical-offset="1095">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/MorphologyTransformationsPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="1635">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44751382" vertical-offset="1017" max-vertical-offset="4170">
+          <caret line="94" column="85" selection-start-line="94" selection-start-column="85" selection-end-line="94" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/GrayscalePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/DataCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="586" max-vertical-offset="4920">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LineCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1965" max-vertical-offset="2985">
+          <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/PixelsMentor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="185" max-vertical-offset="2520">
+          <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4066" max-vertical-offset="4815">
+          <caret line="284" column="92" selection-start-line="284" selection-start-column="42" selection-end-line="284" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25531915" vertical-offset="1203" max-vertical-offset="5190">
+          <caret line="113" column="94" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
           <folding />
         </state>
       </provider>

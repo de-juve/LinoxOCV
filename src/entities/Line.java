@@ -15,6 +15,7 @@ public class Line {
     public LinkedList<Point> points;
     public int avgWidth = 0;
     public int label;
+    public double curvature;
     ArrayList<Line> connection;
     ArrayList<Point> borderPoints;
 
@@ -22,6 +23,7 @@ public class Line {
         points = new LinkedList<>();
         connection = new ArrayList<>();
         borderPoints = new ArrayList<>();
+        curvature = -1;
     }
 
     public void add(Point point) {
@@ -59,6 +61,20 @@ public class Line {
                 borderPoints.add(current);
             }
         }
+    }
+
+    /**
+     * Определим кривизну кривой, как средня кривизна в каждой точке
+     * @return
+     */
+    public double getCurvature() {
+         if(curvature < 0) {
+            for(Point p : points) {
+                curvature += p.getCurvature();
+            }
+             curvature /= points.size();
+         }
+        return curvature;
     }
 
     @Override

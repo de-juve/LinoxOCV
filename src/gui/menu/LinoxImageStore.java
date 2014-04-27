@@ -19,6 +19,7 @@ public class LinoxImageStore extends JTabbedPane {
     private LinoxImageFactory imageFactory;
 
     public LinoxImageStore() {
+        this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         imageFactory = new LinoxImageFactory();
         titles = new ArrayList<>();
     }

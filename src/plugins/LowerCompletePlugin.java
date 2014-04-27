@@ -9,6 +9,7 @@ import org.opencv.core.Mat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.TimeUnit;
 
 public class LowerCompletePlugin extends AbstractPlugin {
     Mat gray;
@@ -64,7 +65,7 @@ public class LowerCompletePlugin extends AbstractPlugin {
 
         long end = System.nanoTime();
         long traceTime = end-start;
-        print(this.title + " finish: " + traceTime);
+        print(this.title + " finish: " +  TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
 
         if ( pluginListener != null ) {
             pluginListener.addImageTab();

@@ -47,6 +47,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action invert = new AbstractAction("Invert") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new InvertPlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
         final Action gradient = new AbstractAction("Gradient") {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,7 +92,7 @@ public class LinoxEditMenuFactory {
             }
         };
 
-        final Action morphologyTransformation = new AbstractAction("Morphology Transformation") {
+        final Action morphologyTransformation = new AbstractAction("Morphology OpenCV") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MorphologyTransformationsPlugin());
@@ -101,7 +110,7 @@ public class LinoxEditMenuFactory {
             }
         };
 
-        final Action morphologyCompilation = new AbstractAction("Morphology compilation") {
+        final Action morphologyCompilation = new AbstractAction("Morphology compilations") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pluginRunner.setPlugin(new MorphologyCompilationPlugin());
@@ -230,6 +239,7 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(resize));
         items.add(new JMenuItem(compress));
         items.add(new JMenuItem(grayscale));
+        items.add(new JMenuItem(invert));
         items.add(new JMenuItem(gradient));
         items.add(new JMenuItem(laplasian));
         items.add(new JMenuItem(homotopy));

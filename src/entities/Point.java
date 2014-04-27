@@ -77,6 +77,10 @@ public class Point extends org.opencv.core.Point {
         }
     }
 
+    public double getCurvature() {
+        return Math.sqrt(Math.pow(curv[0], 2) + Math.pow(curv[1], 2));
+    }
+
     @Override
     public boolean equals(Object obj) {
 

@@ -126,11 +126,13 @@ public class Linox extends JFrame {
     public void addParameterJPanel( ParameterJPanel panel ) {
         parameterPanel = panel;
         mainPanel.add(parameterPanel);
+        mainPanel.repaint();
        // mainPanel.add( panel, BorderLayout.EAST, 3 );
     }
 
     public void removeParameterJPanel() {
         mainPanel.remove(parameterPanel);
+        mainPanel.repaint();
         /*if ( mainPanel.getComponents().length > 3 ) {
             mainPanel.remove( 3 );
         }*/

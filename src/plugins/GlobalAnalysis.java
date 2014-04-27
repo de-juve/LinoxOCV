@@ -7,10 +7,8 @@ import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
 import org.opencv.core.Core;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
-import org.opencv.imgproc.Imgproc;
 import plugins.approximation.Interpolacion;
 import plugins.approximation.Optimizer;
 import plugins.morphology.MorphologyPlugin;
@@ -23,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class GlobalAnalysis extends AbstractPlugin {
     private int area_size = 0, road_w, mask_w, mask_h, threshold = 250, minPoints = 20;
     boolean doWatershed;
-    Mat grey, mresult, wresult, regressImage, interpolateImage;
+    Mat grey, invert, mresult, wresult, regressImage, interpolateImage;
     private HashMap<Integer, Point> wpoints;
     ArrayList<Point> regressPoints, interpolatePoints;
     ArrayList<Line> regressLines, interpolateLines;
@@ -41,15 +39,18 @@ public class GlobalAnalysis extends AbstractPlugin {
         Linox.getInstance().getStatusBar().setProgress(title, 0, 100);
         grey = new Mat();
         //grey = image.clone();
+        grey = GrayscalePlugin.run(image, true);
+        invert = InvertPlugin.run(grey, true);
 
-        if ((image.channels() == 3 || image.channels() == 4) && image.type() != CvType.CV_8UC1) {
+        /*if ((image.channels() == 3 || image.channels() == 4) && image.type() != CvType.CV_8UC1) {
             Imgproc.cvtColor(image, grey, Imgproc.COLOR_BGR2Lab);
         }
-
         ArrayList<Mat> channels = new ArrayList<Mat>();
         Core.split(grey, channels);
-        grey = channels.get(0);
+        grey = channels.get(0);*/
+
         pluginListener.addImageTab("grey", grey);
+        pluginListener.addImageTab("invert", invert);
 
         showParamsPanel("Choose params");
         if (exit) {
@@ -89,22 +90,19 @@ public class GlobalAnalysis extends AbstractPlugin {
     private void analyse() {
         wpoints = new HashMap<>();
         if (doWatershed) {
-            mresult = new Mat();
-            wresult = new Mat();
-            MorphologyPlugin morphology = new MorphologyPlugin();
-            WatershedPlugin watershed = new WatershedPlugin();
-
-
-            morphology.initImage(grey);
-            morphology.run("Closing", area_size);
-            mresult = morphology.getResult(true);
-
-            watershed.initImage(mresult);
-            watershed.run();
-            wresult = watershed.getResult(true);
-
+            wresult = doWatershed(grey);
+            pluginListener.addImageTab("watershed grey", wresult);
             HashMap<Integer, Point> watershedPoints = DataCollector.INSTANCE.getWatershedPoints();
-            LineCreator lineCreator = new LineCreator(DataCollector.INSTANCE.getWatershedImg(), new ArrayList<>(watershedPoints.values()));
+
+            Mat wresult2 = doWatershed(invert);
+            pluginListener.addImageTab("watershed invert", wresult2);
+            HashMap<Integer, Point> watershedPoints2 = DataCollector.INSTANCE.getWatershedPoints();
+            watershedPoints.putAll(watershedPoints2);
+
+            Core.add(wresult, wresult2, wresult);
+            pluginListener.addImageTab("watershed combine", wresult);
+
+            LineCreator lineCreator = new LineCreator(wresult, new ArrayList<>(watershedPoints.values()));
             lineCreator.extractEdgePoints();
             lineCreator.createLines();
 
@@ -113,10 +111,9 @@ public class GlobalAnalysis extends AbstractPlugin {
 
             // lines = (ArrayList<Line>) lineCreator.lines.clone();
             // epoints = (ArrayList<Point>) lineCreator.edgePoints.clone();
+
             regression(lines, epoints);
-
             interpolate(regressLines, regressPoints);
-
             RegressionPointsAnalysis analysis = new RegressionPointsAnalysis(interpolateImage, interpolateLines);
         }
 
@@ -158,6 +155,22 @@ public class GlobalAnalysis extends AbstractPlugin {
         result = image.clone();
         drawWatershed(result);
         print(this.title + " finish");
+    }
+
+    private Mat doWatershed(Mat image) {
+        Mat mresult = new Mat();
+        Mat wresult = new Mat();
+        MorphologyPlugin morphology = new MorphologyPlugin();
+        WatershedPlugin watershed = new WatershedPlugin();
+
+
+        morphology.initImage(image);
+        morphology.run("Closing", area_size);
+        mresult = morphology.getResult(true);
+
+        watershed.initImage(mresult);
+        watershed.run();
+        return watershed.getResult(true);
     }
 
     private void addWPoints(int x, int y, HashMap<Integer, Point> watershedPoints, int cols) {

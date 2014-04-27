@@ -2,9 +2,12 @@ package plugins;
 
 import entities.DataCollector;
 import gui.Linox;
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
+
+import java.util.ArrayList;
 
 public class GrayscalePlugin extends AbstractPlugin {
     public GrayscalePlugin() {
@@ -32,7 +35,10 @@ public class GrayscalePlugin extends AbstractPlugin {
 
         if ( ( image.channels() == 3 || image.channels() == 4 ) && image.type() != CvType.CV_8UC1 ) {
             AbstractPlugin.printMessage("Convert image to Gray");
-            Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2GRAY );        //COLOR_BGR2Lab
+            Imgproc.cvtColor( image, result, Imgproc.COLOR_BGR2Lab );        //COLOR_BGR2GRAY
+            ArrayList<Mat> channels = new ArrayList<Mat>();
+            Core.split(result, channels);
+            result = channels.get(0);
         } else {
             result = image;
         }
