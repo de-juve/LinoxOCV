@@ -75,10 +75,10 @@ public class TestPlugin extends AbstractPlugin {
             }
 
             optimizer.extractPointsFormLine(x);
-            Line lrx = optimizer.optimize();
+            Line lrx = optimizer.optimize(1);
 
             optimizer.extractPointsFormLine(y);
-            Line lry = optimizer.optimize();
+            Line lry = optimizer.optimize(1);
 
             interpolacion.extractPointsFormLine(x);
             Line lix = interpolacion.interpolate(1);

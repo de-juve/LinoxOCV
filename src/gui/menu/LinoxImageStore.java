@@ -19,7 +19,6 @@ public class LinoxImageStore extends JTabbedPane {
     private LinoxImageFactory imageFactory;
 
     public LinoxImageStore() {
-        this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         imageFactory = new LinoxImageFactory();
         titles = new ArrayList<>();
     }
@@ -28,12 +27,19 @@ public class LinoxImageStore extends JTabbedPane {
         this.insertTab( title + "   ", null, imageFactory.addImage( title, image ), null, this.getTabCount() );
         this.setSelectedIndex( this.getTabCount() - 1 );
         titles.add( title );
+        if(this.getTabCount() > 7) {
+            this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        }
+        this.repaint();
     }
 
     public void addTestImageTab( String title, Mat image1, Mat image2 ) {
         this.insertTab( title + "   ", null, imageFactory.addTestImages( title, image1, image2 ), null, this.getTabCount() );
         this.setSelectedIndex( this.getTabCount() - 1 );
         titles.add( title );
+        if(this.getTabCount() > 7) {
+            this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        }
     }
 
     public void replaceImageTab( String title, Mat image ) {
@@ -47,8 +53,14 @@ public class LinoxImageStore extends JTabbedPane {
     }
 
     public void removeSelectedImageTab() {
-        titles.remove( this.getTitleAt( this.getSelectedIndex() ).trim() );
-        closeUI.removeSelectedTab();
+        try {
+            titles.remove(this.getTitleAt(this.getSelectedIndex()).trim());
+            closeUI.removeSelectedTab();
+            this.repaint();
+            if (this.getTabCount() > 7) {
+                this.setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
+            }
+        } catch (Exception ex) {}
     }
 
     public boolean tabAboutToClose( int tabIndex ) {
@@ -120,6 +132,9 @@ public class LinoxImageStore extends JTabbedPane {
         @Override
         public void mouseClicked( MouseEvent e ) {
             try {
+                if(tabbedPane.getTabCount() < 1) {
+                    return;
+                }
                 ImageJPanel imageJPanel = ( ImageJPanel ) tabbedPane.getSelectedComponent();
                 DataCollector.INSTANCE.setImageOriginal( imageJPanel.getTitle(), imageJPanel.getImage() );
 
@@ -148,7 +163,11 @@ public class LinoxImageStore extends JTabbedPane {
         public void mouseReleased( MouseEvent me ) {
             if ( closeUnderMouse( me.getX(), me.getY() ) ) {
                 removeSelectedTab();
-                selectedTab = tabbedPane.getSelectedIndex();
+                if(tabbedPane.getTabCount() > 0) {
+                    selectedTab = tabbedPane.getSelectedIndex();
+                } else {
+                    selectedTab = -1;
+                }
             }
         }
 
@@ -216,9 +235,7 @@ public class LinoxImageStore extends JTabbedPane {
         }
 
         private boolean isUnderMouse( int x, int y ) {
-            if ( Math.abs( x - meX ) < width && Math.abs( y - meY ) < height )
-                return true;
-            return false;
+            return Math.abs(x - meX) < width && Math.abs(y - meY) < height;
         }
 
         private boolean mouseOverTab( int x, int y ) {

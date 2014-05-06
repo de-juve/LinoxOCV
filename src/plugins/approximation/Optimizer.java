@@ -13,26 +13,13 @@ public class Optimizer {
     Plot2DPanel plot;
     LevenbergMarquardtOptimizer optimizer;
     CurveFitter fitter;
+    double[] initialguess = new double[]{1d, 2.5, 3d, -7d};
+    double[] bestCoefficients;
+    Poly3Function sif;
 
-    public Line optimize() {
+    public Line optimize(double step) {
         Line line = new Line();
 
-        for (int i = 0; i < xArr.length; i++) {
-            fitter.addObservedPoint(xArr[i], yArr[i]);
-        }
-
-        double[] initialguess = new double[]{1d, 2.5, 3d, -7d};
-//        initialguess[0] = 1.0d;
-//        initialguess[1] = 2.5d;
-//        initialguess[2] = 1.0d;
-//        initialguess[3] = 1.0d;
-
-        //ParabolaFunction sif = new ParabolaFunction();
-        Poly3Function sif = new Poly3Function();
-
-        double[] bestCoefficients = fitter.fit(sif, initialguess);
-
-        double step = 0.1;
         int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)) / step);
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
@@ -58,6 +45,12 @@ public class Optimizer {
             i++;
 
         }
+        for (i = 0; i < xArr.length; i++) {
+            fitter.addObservedPoint(xArr[i], yArr[i]);
+        }
+        //ParabolaFunction sif = new ParabolaFunction();
+        sif = new Poly3Function();
+        bestCoefficients = fitter.fit(sif, initialguess);
     }
 
     /**

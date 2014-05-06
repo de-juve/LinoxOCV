@@ -60,7 +60,7 @@ public class Point extends org.opencv.core.Point {
     }
 
     public double len(Point p) {
-        return  Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2);
+        return  Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
     }
 
     public void addConnection(Connection _conn) {

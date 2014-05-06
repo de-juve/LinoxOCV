@@ -14,6 +14,7 @@ import java.awt.*;
 public class Interpolacion {
     double[] xArr, yArr;
     SplineInterpolator interpolator;
+    PolynomialSplineFunction polynomial, firstDerivative, secondDerivative;
     Plot2DPanel plot;
 
     public void run() {
@@ -42,10 +43,6 @@ public class Interpolacion {
     public Line interpolate(double step) {
         Line line = new Line();
 
-        PolynomialSplineFunction polynomial = interpolator.interpolate(xArr, yArr);
-        PolynomialSplineFunction firstDerivative = polynomial.polynomialSplineDerivative();
-        PolynomialSplineFunction secondDerivative = firstDerivative.polynomialSplineDerivative();
-
         int n = (int) (Math.abs(StatUtils.max(xArr) - StatUtils.min(xArr)) / step);
         double[] xc = new double[n + 1];
         double[] yc = new double[n + 1];
@@ -69,7 +66,9 @@ public class Interpolacion {
             xArr[i] = point.x;
             yArr[i] = point.y;
             i++;
-
         }
+        polynomial = interpolator.interpolate(xArr, yArr);
+        firstDerivative = polynomial.polynomialSplineDerivative();
+        secondDerivative = firstDerivative.polynomialSplineDerivative();
     }
 }

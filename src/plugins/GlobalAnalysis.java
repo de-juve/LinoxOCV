@@ -21,14 +21,14 @@ import java.util.concurrent.TimeUnit;
 public class GlobalAnalysis extends AbstractPlugin {
     private int area_size = 0, road_w, mask_w, mask_h, threshold = 250, minPoints = 20;
     boolean doWatershed;
-    Mat grey, invert, mresult, wresult, regressImage, interpolateImage;
+    Mat  grey, invert, mresult, wresult, regressImage, interpolateImage;
     private HashMap<Integer, Point> wpoints;
     ArrayList<Point> regressPoints, interpolatePoints;
     ArrayList<Line> regressLines, interpolateLines;
     ParameterSlider roadWidth = new ParameterSlider("Road width:", 1, 15, 1);
     ParameterSlider maskWidth = new ParameterSlider("Mask width:", 3, 10, 3);
     ParameterSlider maskHeight = new ParameterSlider("Mask height:", 3, 10, 3);
-    ParameterSlider kernelSize = new ParameterSlider("Size of area closing:", 1, 7000, 1000);
+    ParameterSlider kernelSize = new ParameterSlider("Size of area closing:", 1, 5000, 1000);
 
     public GlobalAnalysis() {
         title = "Global Analysis";
@@ -98,6 +98,7 @@ public class GlobalAnalysis extends AbstractPlugin {
             pluginListener.addImageTab("watershed invert", wresult2);
             HashMap<Integer, Point> watershedPoints2 = DataCollector.INSTANCE.getWatershedPoints();
             watershedPoints.putAll(watershedPoints2);
+            wpoints.putAll(watershedPoints);
 
             Core.add(wresult, wresult2, wresult);
             pluginListener.addImageTab("watershed combine", wresult);
@@ -109,12 +110,12 @@ public class GlobalAnalysis extends AbstractPlugin {
             ArrayList<Line> lines = new ArrayList<>(lineCreator.lines);
             ArrayList<Point> epoints = new ArrayList<>(lineCreator.edgePoints);
 
-            // lines = (ArrayList<Line>) lineCreator.lines.clone();
-            // epoints = (ArrayList<Point>) lineCreator.edgePoints.clone();
+            interpolate(lines);
+            analyzeLines(interpolateLines);
 
-            regression(lines, epoints);
-            interpolate(regressLines, regressPoints);
-            RegressionPointsAnalysis analysis = new RegressionPointsAnalysis(interpolateImage, interpolateLines);
+          //  regression(lines);
+          //  interpolate(regressLines);
+          //  RegressionPointsAnalysis analysis = new RegressionPointsAnalysis(interpolateImage, interpolateLines, image);
         }
 
        /* long start = System.nanoTime();
@@ -157,22 +158,47 @@ public class GlobalAnalysis extends AbstractPlugin {
         print(this.title + " finish");
     }
 
+    private ArrayList<Line> analyzeLines(ArrayList<Line> lines) {
+        for(Line line : lines){
+            for(Point p : line.points) {
+                print("line "+line.label+" curv" + p.getCurvature())  ;
+            }
+        }
+       /* int th = 20;
+        for (int i = 0; i < lines.size(); i++) {
+            Line line1 = lines.get(i);
+            for (int j = i + 1; j < lines.size(); j++) {
+                Line line2 = lines.get(j);
+                Point[] points = RegressionPointsAnalysis.getClosesBorderPoints(line1.getBorderPoints(), line2.getBorderPoints());
+                if(points[0].len(points[1]) < th) {
+
+                }
+            }
+        }*/
+        return null;
+    }
+
     private Mat doWatershed(Mat image) {
-        Mat mresult = new Mat();
-        Mat wresult = new Mat();
         MorphologyPlugin morphology = new MorphologyPlugin();
         WatershedPlugin watershed = new WatershedPlugin();
 
 
         morphology.initImage(image);
         morphology.run("Closing", area_size);
-        mresult = morphology.getResult(true);
+        mresult = morphology.getResult(false);
 
         watershed.initImage(mresult);
         watershed.run();
-        return watershed.getResult(true);
+        return watershed.getResult(false);
     }
 
+    /**
+     * Добавить точку, скорректировав ее кординаты относительно x, y
+     * @param x
+     * @param y
+     * @param watershedPoints
+     * @param cols
+     */
     private void addWPoints(int x, int y, HashMap<Integer, Point> watershedPoints, int cols) {
         for (Point point : watershedPoints.values()) {
             int col = x + point.x;
@@ -188,7 +214,7 @@ public class GlobalAnalysis extends AbstractPlugin {
         }
     }
 
-    private void interpolate(ArrayList<Line> lines, ArrayList<Point> epoints) {
+    private void interpolate(ArrayList<Line> lines) {
         long start = System.nanoTime();
         print(this.title + " interpolation begin");
 
@@ -196,16 +222,16 @@ public class GlobalAnalysis extends AbstractPlugin {
         b = g = r = 0;
         Random rand = new Random();
 
-        Interpolacion interpolacion = new Interpolacion();
+        Interpolacion interpolacionX = new Interpolacion();
+        Interpolacion interpolacionY = new Interpolacion();
         interpolateImage = new Mat(image.size(), image.type(), new Scalar(255, 255, 255));//Mat.zeros(image.size(), image.type());
         interpolateLines = new ArrayList<>();
         interpolatePoints = new ArrayList<>();
 
         int lineLabel = 0;
         for (Line line : lines) {
-            if (line.points.size() < minPoints)
+            if (line.points.size() < 3)
                 continue;
-
             Line x = new Line();
             Line y = new Line();
             int i = 0;
@@ -215,11 +241,26 @@ public class GlobalAnalysis extends AbstractPlugin {
                 i++;
             }
 
+
+            interpolacionX.extractPointsFormLine(x);
+            interpolacionY.extractPointsFormLine(y);
+
             double step = 1;
-            interpolacion.extractPointsFormLine(x);
-            Line lix = interpolacion.interpolate(step);
-            interpolacion.extractPointsFormLine(y);
-            Line liy = interpolacion.interpolate(step);
+            Line lix = interpolacionX.interpolate(step);
+            Line liy = interpolacionY.interpolate(step);
+            boolean bad = true;
+            while(bad) {
+                bad = false;
+                for (i = 1; i < lix.points.size(); i++) {
+                    if (Math.abs(lix.points.get(i).y - lix.points.get(i - 1).y) > 1 || Math.abs(liy.points.get(i).y - liy.points.get(i - 1).y) > 1) {
+                        step /= 2;
+                        lix = interpolacionX.interpolate(step);
+                        liy = interpolacionY.interpolate(step);
+                        bad = true;
+                        break;
+                    }
+                }
+            }
 
             double[] mcolor = new double[]{b, g, r};
             r = rand.nextInt(220);
@@ -240,10 +281,12 @@ public class GlobalAnalysis extends AbstractPlugin {
 
                 im_inter.put(p.y, p.x, mcolor);
             }*/
+
+
             for (i = 0; i < lix.points.size(); i++) {
                 Point iPoint = new Point(lix.points.get(i).y, liy.points.get(i).y);
 
-                if (!interpolatePoints.contains(iPoint)) {
+                //if (!interpolatePoints.contains(iPoint)) {
                     iPoint.curv[0] = lix.points.get(i).curvature;
                     iPoint.curv[1] = liy.points.get(i).curvature;
                     iPoint.lineLabel = lineLabel;
@@ -252,10 +295,12 @@ public class GlobalAnalysis extends AbstractPlugin {
                     iLine.add(iPoint);
 
                     interpolateImage.put(iPoint.y, iPoint.x, mcolor);
-                }
+               // }
             }
-            interpolateLines.add(lineLabel, iLine);
-            lineLabel++;
+          //  if(iLine.points.size() >= minPoints) {
+                interpolateLines.add(lineLabel, iLine);
+                lineLabel++;
+          //  }
         }
 
         /*for (Point p : epoints) {
@@ -264,7 +309,6 @@ public class GlobalAnalysis extends AbstractPlugin {
             }
         }*/
         //  DataCollector.INSTANCE.addtoHistory("before interpolate", img);
-        DataCollector.INSTANCE.addtoHistory("after interpolate", interpolateImage);
         pluginListener.addImageTab("interpolate", interpolateImage);
 
         long end = System.nanoTime();
@@ -272,7 +316,7 @@ public class GlobalAnalysis extends AbstractPlugin {
         print(this.title + " interpolation finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
     }
 
-    private void regression(ArrayList<Line> lines, ArrayList<Point> epoints) {
+    private void regression(ArrayList<Line> lines) {
         long start = System.nanoTime();
         print(this.title + " regression begin");
 
@@ -282,7 +326,8 @@ public class GlobalAnalysis extends AbstractPlugin {
 
         //OLSSimpleRegression regression = new OLSSimpleRegression();
 
-        Optimizer optimizer = new Optimizer();
+        Optimizer optimizerX = new Optimizer();
+        Optimizer optimizerY = new Optimizer();
 
         regressLines = new ArrayList<>();
         regressPoints = new ArrayList<>();
@@ -290,7 +335,7 @@ public class GlobalAnalysis extends AbstractPlugin {
 
 
         for (Line line : lines) {
-            if (line.points.size() < minPoints)
+            if (line.points.size() < 3)
                 continue;
 
             Line x = new Line();
@@ -302,10 +347,27 @@ public class GlobalAnalysis extends AbstractPlugin {
                 i++;
             }
 
-            optimizer.extractPointsFormLine(x);
-            Line lrx = optimizer.optimize();
-            optimizer.extractPointsFormLine(y);
-            Line lry = optimizer.optimize();
+            optimizerX.extractPointsFormLine(x);
+            optimizerY.extractPointsFormLine(y);
+
+            double step = 1;
+            Line lrx = optimizerX.optimize(step);
+            Line lry = optimizerY.optimize(step);
+            boolean bad = true;
+            while(bad) {
+                bad = false;
+                for (i = 1; i < lrx.points.size(); i++) {
+                    if (Math.abs(lrx.points.get(i).y - lrx.points.get(i - 1).y) > 1 || Math.abs(lry.points.get(i).y - lry.points.get(i - 1).y) > 1) {
+                        step /= 2;
+                        lrx = optimizerX.optimize(step);
+                        lry = optimizerY.optimize(step);
+                        bad = true;
+                        break;
+                    }
+                }
+            }
+
+
 
             double[] mcolor = new double[]{b, g, r};
             r = rand.nextInt(220);
@@ -338,7 +400,9 @@ public class GlobalAnalysis extends AbstractPlugin {
 
                 regressImage.put(p.y, p.x, mcolor);
             }*/
-            regressLines.add(rLine);
+            if(rLine.points.size() >= minPoints) {
+                regressLines.add(rLine);
+            }
         }
         long end = System.nanoTime();
         long traceTime = end-start;
@@ -349,7 +413,6 @@ public class GlobalAnalysis extends AbstractPlugin {
                 im_regr.put(p.y, p.x, new double[]{255, 255, 255});
             }
         }*/
-        DataCollector.INSTANCE.addtoHistory("after regression", regressImage);
         pluginListener.addImageTab("regression", regressImage);
 
 

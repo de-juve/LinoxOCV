@@ -16,34 +16,33 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class RegressionPointsAnalysis {
-    private final int THRESHOLD = 20;
+    private final int THRESHOLD = 30;
 
-    Mat image;
+    Mat image, originalImage;
 
-    public RegressionPointsAnalysis(Mat _image, ArrayList<Line> lines) {
+    public RegressionPointsAnalysis(Mat _image, ArrayList<Line> lines, Mat _originalImage) {
         long start = System.nanoTime();
         this.image = _image;
+        this.originalImage = _originalImage;
         SimpleDirectedWeightedGraph graph = new SimpleDirectedWeightedGraph( DefaultWeightedEdge.class );
+
         for (int i = 0; i < lines.size(); i++) {
             Line line1 = lines.get(i);
             graph.addVertex(line1);
-            L : for (int j = i + 1; j < lines.size(); j++) {
+            for (int j = i + 1; j < lines.size(); j++) {
                 Line line2 = lines.get(j);
                 graph.addVertex(line2);
 
-                for (Point point1 : line1.getBorderPoints()) {
-                    for (Point point2 : line2.getBorderPoints()) {
-                        if(Math.sqrt(point1.len(point2)) < THRESHOLD) {
-                            DefaultWeightedEdge e = (DefaultWeightedEdge) graph.addEdge(line1, line2);
+                double len = getLengthClosesBorderPoints(line1.getBorderPoints(), line2.getBorderPoints());
+                if(len < THRESHOLD) {
 
-                            double weight = Math.abs(line1.getCurvature() - line2.getCurvature());
-                            graph.setEdgeWeight(e, weight);
+                    DefaultWeightedEdge e = (DefaultWeightedEdge) graph.addEdge(line1, line2);
 
-                            line1.addConnection(line2);
-                            // line2.addConnection(line1);
-                            continue L;
-                        }
-                    }
+                    double weight = 1;//Math.abs(line1.getCurvature() - line2.getCurvature());
+                    graph.setEdgeWeight(e, weight);
+
+                    line1.addConnection(line2);
+                    line2.addConnection(line1);
                 }
             }
         }
@@ -57,7 +56,7 @@ public class RegressionPointsAnalysis {
                 Line line2 = lines.get(j);
                 dejkstra = new DijkstraShortestPath(graph, line1, line2);
                 double len = dejkstra.getPathLength();
-                if(len != Double.POSITIVE_INFINITY) {
+                if(len != Double.POSITIVE_INFINITY && len > 3) {
                     ArrayList<DefaultWeightedEdge> pathList = (ArrayList<DefaultWeightedEdge>) dejkstra.getPathEdgeList();
 
                     ListIterator<DefaultWeightedEdge> iterator = pathList.listIterator();
@@ -65,17 +64,23 @@ public class RegressionPointsAnalysis {
 
                     Line source = (Line) graph.getEdgeSource(edge);
                     Line target = (Line) graph.getEdgeTarget(edge);
-                    String label = " parh: " + source.label + " + " + target.label;
-                    source =  this.mergeLines(source, target);
+                    String label = " path: " + source.label + " + " + target.label;
+                    if(source.points.size() > 1 && target.points.size() > 1) {
+                        source = this.mergeLines(source, target);
+                    }
 
                     while(iterator.hasNext()) {
                         edge = iterator.next();
                         target = (Line) graph.getEdgeTarget(edge);
                         label += " + " + target.label;
-                        source =  this.mergeLines(source, target);
+                        if(source.points.size() > 1 && target.points.size() > 1) {
+                            source = this.mergeLines(source, target);
+                        }
 
                     }
-                    interpolate(source, label);
+                    if(source.points.size() > 1) {
+                        interpolate(source, label);
+                    }
                     /*Mat im_ = Mat.zeros(image.size(), image.type());
                     Random rand = new Random();
                     double b, g, r;
@@ -171,6 +176,32 @@ public class RegressionPointsAnalysis {
         long traceTime = end-start;
         AbstractPlugin.printMessage("regr point analysis finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
 
+    }
+
+    private double getLengthClosesBorderPoints(ArrayList<Point> points1, ArrayList<Point> points2) {
+        Point[] points = getClosesBorderPoints(points1, points2);
+        return points[0].len(points[1]);
+    }
+
+    public static Point[] getClosesBorderPoints(ArrayList<Point> points1, ArrayList<Point> points2) {
+        Point bp11 = points1.get(0);
+        Point bp12 = points1.get(1);
+        Point bp21 = points2.get(0);
+        Point bp22 = points2.get(1);
+        double d11_21 = bp11.len(bp21);
+        double d11_22 = bp11.len(bp22);
+        double d12_21 = bp12.len(bp21);
+        double d12_22  = bp12.len(bp22);
+
+        if (d11_21 < d11_22 && d11_21 < d12_21 && d11_21 < d12_22) {
+            return new Point[]{ bp11, bp21 };
+        } else if (d11_22 < d11_21 && d11_22 < d12_21 && d11_22 < d12_22) {
+            return  new Point[]{ bp11, bp22 };
+        } else if (d12_21 < d12_22 && d12_21 < d11_21 && d12_21 < d11_22) {
+            return  new Point[]{ bp12, bp21 };
+        } else {
+            return  new Point[]{ bp12, bp22 };
+        }
     }
 
     private void interpolate(Line mergeLine, String label) {

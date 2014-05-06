@@ -35,6 +35,9 @@ public class ImageJPanel extends JPanel {
         mouseMotionAdapter = new MouseMotionAdapter() {
             @Override
             public void mouseMoved( MouseEvent e ) {
+                if(image == null) {
+                    return;
+                }
                 if ( e.getX() < image.width() && e.getX() > -1 && e.getY() < image.height() && e.getY() > -1 ) {
                     double[] px;
                     px = image.get( e.getY(), e.getX() );

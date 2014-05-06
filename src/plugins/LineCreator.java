@@ -12,7 +12,16 @@ import java.util.Queue;
 
 public class LineCreator {
     private Mat image;
+    /**
+     * points - точки водораздела
+     * epoints - точки контура, границы области..в случае линий водораздела - это будут все точки линий водораздела
+     */
     public ArrayList<Point> points, edgePoints;
+    /**
+     * points_b - точки водораздела
+     * epoints_b - точки вдоль границ линий водораздела
+     * extreme_b - точки разделения линий, перекрестки
+     */
     public boolean[] points_b, epoints_b, crossroad_b, extreme_b;
     public ArrayList<Line> lines;
     int lastId;
@@ -57,12 +66,40 @@ public class LineCreator {
                 }
             }
         }
+
+     /*
+        /**
+         * Корректируем правильность определения перекрестков.
+         * Считаем не только связи, но и анализируем их - можем ли по ним пройти больше чем на len пикселов
+         * /
+        int len = 10;
+        for ( Point p : edgePoints ) {
+            if ( !p.isCrossroad ) {
+                continue;
+            }
+            boolean[] visited = new boolean[points_b.length];
+            int[] paths = new int[p.connections.size()];
+            visited[id( p )] = true;
+            for(int i = 0; i < p.connections.size(); i++) {
+                Point n = p.connections.get(i).p2;
+                if(visited[id(n)]) {
+                    continue;
+                }
+
+                visited[id(n)] = true;
+                paths[i] = 1;
+
+
+            }
+        }*/
         for ( Point p : edgePoints ) {
             if ( p.isCrossroad ) {
                 crossroad_b[id( p )] = true;
                 for ( Connection connection : p.connections ) {
-                    connection.p2.isExtreme = true;
-                    extreme_b[id( p )] = true;
+                    if(!connection.p2.isCrossroad) {
+                        connection.p2.isExtreme = true;
+                        extreme_b[id(p)] = true;
+                    }
                 }
             }
             if ( p.isExtreme ) {
@@ -106,28 +143,23 @@ public class LineCreator {
                 return p;
             }
         }
-       /* for ( int i = lastId; i < ( int ) image.total(); i++ ) {
-            if ( extreme_b[i] && !used[i]  && !crossroad_b[i]) {
-                lastId = i + 1;
-                for ( Point p : edgePoints ) {
-                    if ( id( p ) == i ) {
-                        return p;
-                    }
-                }
-            }
-        }*/
-        /*for (Point p : edgePoints) {
-            if (!used[id(p)]) {
-                return p;
-            }
-        }*/
         return null;
     }
 
+    /**
+     * Является ли точка одной из множества заданных точек (точек водораздела)
+     * @param p
+     * @return
+     */
     public boolean isOneOfThePoints( Point p ) {
         return points_b[id( p.x, p.y )];
     }
 
+    /**
+     * Является ли точка крайней (например, точка границы области - контура)
+     * @param p
+     * @return
+     */
     public boolean isEdgePoint( Point p ) {
         ArrayList<Point> neighs = PixelsMentor.getNeighborhoodOfPixel( p.x, p.y, image, 1 );
         for ( Point n : neighs ) {

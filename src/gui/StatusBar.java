@@ -29,8 +29,8 @@ public class StatusBar extends JPanel implements MouseListener {
         standardOut = System.out;
 
         // re-assigns standard output stream and error output stream
-        System.setOut(printStream);
-        System.setErr(printStream);
+      //  System.setOut(printStream);
+      //  System.setErr(printStream);
 
         setLayout(new MigLayout());
         //add( statusText, BorderLayout.PAGE_START );

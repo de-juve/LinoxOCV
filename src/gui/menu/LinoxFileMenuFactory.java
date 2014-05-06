@@ -28,6 +28,7 @@ public class LinoxFileMenuFactory {
                     final Mat img = ( ( LinoxMenuStore ) Linox.getInstance().getMenuStore() ).openImage();
                     if ( img != null ) {
                         Linox.getInstance().getStatusBar().setStatus( "image : width = " + img.width() + " height = " + img.height() );
+                        Linox.getInstance().getImageStore().repaint();//RootComponent().repaint();
                     }
                 } finally {
                     Linox.getInstance().setCursor( Cursor.getDefaultCursor() );
