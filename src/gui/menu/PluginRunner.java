@@ -73,5 +73,9 @@ public class PluginRunner implements IPluginRunner {
         ( Linox.getInstance().getImageStore() ).replaceImageTab( title, image );
     }
 
+    @Override
+    public void done() {
+    }
+
 
 }

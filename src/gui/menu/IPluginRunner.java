@@ -17,4 +17,6 @@ public interface IPluginRunner extends Runnable {
     void stopPlugin();
 
     void finishPlugin();
+
+    void done();
 }

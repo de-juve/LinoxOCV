@@ -2,6 +2,7 @@ package plugins;
 
 import entities.*;
 import gui.Linox;
+import gui.menu.IPluginRunner;
 import org.opencv.core.Mat;
 import plugins.morphology.MorphologyPlugin;
 
@@ -11,12 +12,13 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
-public class WatershedPlugin extends AbstractPlugin {
-    Mat gray;
+public class WatershedPlugin extends AbstractPlugin implements IPluginRunner {
+    Mat gray, closing;
     int[] lowerCompletion, shedLabels;
     TreeMap<Integer, ArrayList<Integer>> steepestNeighbours;
     boolean[] maximum;
     final Point N = new Point( -1, -1 );
+    MorphologyPlugin morphologyPlugin;
 
     public WatershedPlugin() {
         title = "Watershed";
@@ -24,27 +26,43 @@ public class WatershedPlugin extends AbstractPlugin {
 
     @Override
     public void run() {
-        long start = System.nanoTime();
-        print(this.title + " begin");
+
         Linox.getInstance().getStatusBar().setProgress(title, 0, 100);
 
-        GrayscalePlugin.run( image, true );
+        morphologyPlugin = new MorphologyPlugin();
+        morphologyPlugin.addRunListener( this );
+        morphologyPlugin.initImage( image );
+        morphologyPlugin.run();
+    }
+
+    private void watershed() {
+        closing = morphologyPlugin.getResult(false);
+        shedLabels = DataCollector.INSTANCE.getShedLabels();
+        TreeMap<Integer, Shed> sheds = ShedCollector.INSTANCE.getSheds();
+        int size = morphologyPlugin.getMorph_size();
+        DataCollector.INSTANCE.setShedLabels(shedLabels);
+        ShedCollector.INSTANCE.setSheds(sheds);
+
 
         MorphologyPlugin mp = new MorphologyPlugin();
-        mp.initImage( DataCollector.INSTANCE.getGrayImg() );
-        mp.run( "Closing", 1 );
-        result = mp.result;
+        mp.initImage( image );
+        mp.run( "Opening", size );
 
         LowerCompletePlugin lcp = new LowerCompletePlugin();
-        lcp.initImage( result );
+        lcp.initImage( mp.result );
         lcp.run();
+
+
+
+        long start = System.nanoTime();
+        print(this.title + " begin");
+
 
         constructDAG();
         flood();
 
         removeOnePixelHoles();
 
-        DataCollector.INSTANCE.addtoHistory( "wsh", result );
         DataCollector.INSTANCE.setWatershedImg( result );
 
         //Imgproc.dilate( result, result, new Mat(), new org.opencv.core.Point( -1, -1 ), 1 );
@@ -74,6 +92,122 @@ public class WatershedPlugin extends AbstractPlugin {
             pluginListener.addImageTab();
             pluginListener.finishPlugin();
         }
+    }
+
+    private void constructDAG() {
+        maximum = new boolean[( int ) image.total()];
+        steepestNeighbours = new TreeMap<>();
+        //gray = GrayscalePlugin.run(image, true);// DataCollector.INSTANCE.getGrayImg();
+        lowerCompletion = DataCollector.INSTANCE.getLowerCompletion();
+        MassiveWorker.INSTANCE.sort( closing, lowerCompletion );
+        shedLabels = DataCollector.INSTANCE.getShedLabels();
+
+        //start from pixels with min lower completion
+        ArrayList<Integer> ids = MassiveWorker.INSTANCE.getIds();
+
+        for ( int i = ids.size() - 1; i > -1; i-- ) {
+            int id = ids.get( i );
+
+            ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithLowerValue( id, closing );
+            if ( neighbours.isEmpty() ) {
+                ArrayList<Integer> eqNeighbours = PixelsMentor.defineNeighboursIdsWithSameValue( id, closing );
+                for ( Integer eq : eqNeighbours ) {
+                    if ( lowerCompletion[eq] < lowerCompletion[id] ) {
+                        neighbours.add( eq );
+                    }
+                }
+            }
+            if ( !neighbours.isEmpty() ) {
+                maximum[id] = true;
+                steepestNeighbours.remove( id );
+                steepestNeighbours.put( id, neighbours );
+                neighbouresNotMax( id );
+            } else {
+                //define canonical element of min region if it need and if we can
+                maximum[id] = false;
+                Shed shed = ShedCollector.INSTANCE.getShed( shedLabels[id] );
+                Point canonical = shed.getCanonical();
+
+                if ( canonical.equals( N ) ) {
+                    canonical.x = x( id );
+                    canonical.y = y( id );
+                    shed.setCanonical( canonical );
+                }
+                ArrayList<Integer> ar = new ArrayList<>( 1 );
+                ar.add( 0, id( canonical.x, canonical.y ) );
+                steepestNeighbours.remove( id );
+                steepestNeighbours.put( id, ar );
+            }
+        }
+    }
+
+    private void neighbouresNotMax( int id ) {
+        int x = x( id );
+        int y = y( id );
+        ArrayList<Integer> neighboures = PixelsMentor.defineNeighboursOfPixel( x, y, closing, 1 );//defineNeighboursIds(id, width, height);
+        for ( Integer n : neighboures ) {
+            int nx = x( n );
+            int ny = y( n );
+            if ( maximum[n] && ( closing.get( ny, nx )[0] < closing.get( y, x )[0] ||
+                    ( closing.get( ny, nx )[0] == closing.get( y, x )[0] &&
+                            lowerCompletion[n] < lowerCompletion[id] ) ) ) {
+                maximum[n] = false;
+                neighbouresNotMax( n );
+            }
+        }
+    }
+
+    //Recursive function for resolving the downstream paths of the lower complete graph
+    //Returns representative element of pixel p, or W if p is a watershed pixel
+    private int resolve( int p ) {
+        int i = 0;
+        int rep = -2;
+        ArrayList<Integer> stN = steepestNeighbours.get( p );
+        if ( stN == null )
+            return rep;
+        int con = stN.size();
+        while ( i < con && rep != -1 ) {
+            int sln = stN.get( i );
+            if ( sln != p && sln != -1 ) {
+                sln = resolve( sln );
+                if ( sln > -1 ) {
+                    stN.set( i, sln );
+                }
+            }
+            if ( i == 0 ) {
+                rep = stN.get( i );
+            } else if ( sln != rep && sln > -1 && rep > -1 ) {
+                rep = -1;
+                stN.clear();
+                stN.add( -1 );
+            }
+            i++;
+        }
+        return rep;
+    }
+
+    private void flood() {
+        result = new Mat( image.rows(), image.cols(), image.type() );
+        int[] watershed = new int[( int ) image.total()];
+        HashMap<Integer, Point> watershedPoints = new HashMap<>();
+
+        ArrayList<Integer> ids = MassiveWorker.INSTANCE.getIds();
+        //start from pixels with min property
+        for ( int i = 0; i < ids.size(); i++ ) {
+            //for (int i = ids.size() - 1; i >= 0; i--) {
+            int p = ids.get( i );
+            int rep = resolve( p );
+
+            if ( rep == -1 ) {
+                watershed[p] = 255;
+                watershedPoints.put( p, new Point( x( p ), y( p ) ) );
+            } else {
+                watershed[p] = 0;
+            }
+        }
+        DataCollector.INSTANCE.setWatershedPoints( watershedPoints );
+
+        result = setPointsToImage( watershed );
     }
 
     private void removeOnePixelHoles() {
@@ -207,120 +341,50 @@ public class WatershedPlugin extends AbstractPlugin {
         result = watershedImage;
     }
 
-    private void constructDAG() {
-        maximum = new boolean[( int ) image.total()];
-        steepestNeighbours = new TreeMap<>();
-        gray = DataCollector.INSTANCE.getGrayImg();
-        lowerCompletion = DataCollector.INSTANCE.getLowerCompletion();
-        MassiveWorker.INSTANCE.sort( gray, lowerCompletion );
-        shedLabels = DataCollector.INSTANCE.getShedLabels();
 
-        //start from pixels with min lower completion
-        ArrayList<Integer> ids = MassiveWorker.INSTANCE.getIds();
+    @Override
+    public void addImageTab() {
+        pluginListener.addImageTab( morphologyPlugin.getTitle(), morphologyPlugin.getResult( false ) );
+    }
 
-        for ( int i = ids.size() - 1; i > -1; i-- ) {
-            int id = ids.get( i );
+    @Override
+    public void addImageTab( String title, Mat image ) {
+        pluginListener.addImageTab( title, image );
+    }
 
-            ArrayList<Integer> neighbours = PixelsMentor.defineNeighboursIdsWithLowerValue( id, gray );
-            if ( neighbours.isEmpty() ) {
-                ArrayList<Integer> eqNeighbours = PixelsMentor.defineNeighboursIdsWithSameValue( id, gray );
-                neighbours.clear();
-                for ( Integer eq : eqNeighbours ) {
-                    if ( lowerCompletion[eq] < lowerCompletion[id] ) {
-                        neighbours.add( eq );
-                    }
-                }
-            }
-            if ( !neighbours.isEmpty() ) {
-                maximum[id] = true;
-                steepestNeighbours.remove( id );
-                steepestNeighbours.put( id, neighbours );
-                neighbouresNotMax( id );
-            } else {
-                //define canonical element of min region if it need and if we can
-                maximum[id] = false;
-                Shed shed = ShedCollector.INSTANCE.getShed( shedLabels[id] );
-                Point canonical = shed.getCanonical();
+    @Override
+    public void replaceImageTab() {
+        pluginListener.replaceImageTab( morphologyPlugin.getTitle(), morphologyPlugin.getResult( false ) );
+    }
 
-                if ( canonical.equals( N ) ) {
-                    canonical.x = x( id );
-                    canonical.y = y( id );
-                    shed.setCanonical( canonical );
-                }
-                ArrayList<Integer> ar = new ArrayList<>( 1 );
-                ar.add( 0, id( canonical.x, canonical.y ) );
-                steepestNeighbours.remove( id );
-                steepestNeighbours.put( id, ar );
-            }
+    @Override
+    public void replaceImageTab( String title, Mat image ) {
+        pluginListener.replaceImageTab( title, image );
+    }
+
+    @Override
+    public void setPlugin( IPluginFilter plugin ) {
+        pluginListener.setPlugin( plugin );
+    }
+
+    @Override
+    public void stopPlugin() {
+        pluginListener.stopPlugin();
+    }
+
+    @Override
+    public void finishPlugin() {
+        Linox.getInstance().getStatusBar().setProgress(title, 100, 100);
+        print(this.title + " finish");
+
+        if ( pluginListener != null ) {
+            pluginListener.addImageTab();
+            pluginListener.finishPlugin();
         }
     }
 
-    private void neighbouresNotMax( int id ) {
-        int x = x( id );
-        int y = y( id );
-        ArrayList<Integer> neighboures = PixelsMentor.defineNeighboursOfPixel( x, y, image, 1 );//defineNeighboursIds(id, width, height);
-        for ( Integer n : neighboures ) {
-            int nx = x( n );
-            int ny = y( n );
-            if ( maximum[n] && ( gray.get( ny, nx )[0] < gray.get( y, x )[0] ||
-                    ( gray.get( ny, nx )[0] == gray.get( y, x )[0] &&
-                            lowerCompletion[n] < lowerCompletion[id] ) ) ) {
-                maximum[n] = false;
-                neighbouresNotMax( n );
-            }
-        }
-    }
-
-    //Recursive function for resolving the downstream paths of the lower complete graph
-    //Returns representative element of pixel p, or W if p is a watershed pixel
-    private int resolve( int p ) {
-        int i = 0;
-        int rep = -2;
-        ArrayList<Integer> stN = steepestNeighbours.get( p );
-        if ( stN == null )
-            return rep;
-        int con = stN.size();
-        while ( i < con && rep != -1 ) {
-            int sln = stN.get( i );
-            if ( sln != p && sln != -1 ) {
-                sln = resolve( sln );
-                if ( sln > -1 ) {
-                    stN.set( i, sln );
-                }
-            }
-            if ( i == 0 ) {
-                rep = stN.get( i );
-            } else if ( sln != rep && sln > -1 && rep > -1 ) {
-                rep = -1;
-                stN.clear();
-                stN.add( -1 );
-            }
-            i++;
-        }
-        return rep;
-    }
-
-    private void flood() {
-        result = new Mat( image.rows(), image.cols(), image.type() );
-        int[] watershed = new int[( int ) image.total()];
-        HashMap<Integer, Point> watershedPoints = new HashMap<>();
-
-        ArrayList<Integer> ids = MassiveWorker.INSTANCE.getIds();
-        //start from pixels with min property
-        for ( int i = 0; i < ids.size(); i++ ) {
-            //for (int i = ids.size() - 1; i >= 0; i--) {
-            int p = ids.get( i );
-            int rep = resolve( p );
-
-            if ( rep == -1 ) {
-                watershed[p] = 255;
-                watershedPoints.put( p, new Point( x( p ), y( p ) ) );
-            } else {
-                watershed[p] = 0;
-            }
-        }
-        DataCollector.INSTANCE.setWatershedPoints( watershedPoints );
-
-        result = setPointsToImage( watershed );
+    @Override
+    public void done() {
+        watershed();
     }
 }

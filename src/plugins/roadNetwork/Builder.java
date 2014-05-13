@@ -38,8 +38,11 @@ public class Builder extends AbstractPlugin implements IPluginRunner {
     public void run() {
         Linox.getInstance().getStatusBar().setProgress( title, 0, 100 );
         ArrayList<Line> lines = DataCollector.INSTANCE.getLines();
-        if ( lines.isEmpty() ) {
+        if ( lines == null || lines.isEmpty() ) {
             errMessage = "Empty lines!";
+            if ( pluginListener != null ) {
+                pluginListener.stopPlugin();
+            }
             return;
         }
         HashMap<Integer, Point> wpotins = DataCollector.INSTANCE.getWatershedPoints();
@@ -47,7 +50,6 @@ public class Builder extends AbstractPlugin implements IPluginRunner {
             setErrMessage( "empty watershed points" );
             exit = true;
             if ( pluginListener != null ) {
-                pluginListener.addImageTab();
                 pluginListener.stopPlugin();
             }
             return;
@@ -303,6 +305,14 @@ public class Builder extends AbstractPlugin implements IPluginRunner {
     @Override
     public void stopPlugin() {
         pluginListener.stopPlugin();
+    }
+
+    @Override
+    public void done() {
+        showParamsPanel( "Choose params" );
+        if ( exit ) {
+            return;
+        }
     }
 
     @Override

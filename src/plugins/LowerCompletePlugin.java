@@ -8,12 +8,11 @@ import org.opencv.core.Mat;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 public class LowerCompletePlugin extends AbstractPlugin {
     Mat gray;
-    Queue<Point> queue = new LinkedList<>();
+    LinkedList<Point> queue;
     int[] level;
     int distination;
 
@@ -60,6 +59,13 @@ public class LowerCompletePlugin extends AbstractPlugin {
             }
         }
 
+        result = new Mat(gray.size(), gray.type());
+        for (int i = 0; i < level.length; i++) {
+            int x = i % image.width();
+            int y = i / image.width();
+            result.put(y, x, 255*level[i]/distination);
+        }
+
         DataCollector.INSTANCE.setLowerCompletion( level );
         Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
 
@@ -74,23 +80,19 @@ public class LowerCompletePlugin extends AbstractPlugin {
     }
 
     private void InitQueue() {
+        queue = new LinkedList<>();
         level = new int[( int ) image.total()];
         for ( int row = 0; row < image.height(); row++ ) {
             for ( int col = 0; col < image.width(); col++ ) {
                 int lum = ( int ) gray.get( row, col )[0];
                 level[id( col, row )] = 0;
-                N:
-                {
-                    ArrayList<Point> neighbors = PixelsMentor.getNeighborhoodOfPixel( col, row, image, 1 );
-                    for ( Point n : neighbors ) {
-                        int nlum = ( int ) gray.get( n.y, n.x )[0];
-                        if ( lum > nlum ) {
-                            level[id( col, row )] = -1;
-                            queue.add( new Point( col, row ) );
-                            break N;
-
-                        }
-
+                ArrayList<Point> neighbors = PixelsMentor.getNeighborhoodOfPixel( col, row, image, 1 );
+                for ( Point n : neighbors ) {
+                    int nlum = ( int ) gray.get( n.y, n.x )[0];
+                    if ( lum > nlum ) {
+                        level[id( col, row )] = -1;
+                        queue.add( new Point( col, row ) );
+                        break;
                     }
                 }
             }
