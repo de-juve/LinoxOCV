@@ -92,6 +92,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action lower = new AbstractAction("Lower completion") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new LowerCompletePlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
         final Action morphologyTransformation = new AbstractAction("Morphology OpenCV") {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -242,6 +251,7 @@ public class LinoxEditMenuFactory {
         items.add(new JMenuItem(invert));
         items.add(new JMenuItem(gradient));
         items.add(new JMenuItem(laplasian));
+        items.add(new JMenuItem(lower));
         items.add(new JMenuItem(homotopy));
         items.add(new JMenuItem(median));
         items.add(new JMenuItem(morphologyTransformation));

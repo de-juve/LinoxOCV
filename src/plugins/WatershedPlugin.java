@@ -39,10 +39,12 @@ public class WatershedPlugin extends AbstractPlugin {
         lcp.initImage( result );
         lcp.run();
 
+        pluginListener.addImageTab("lower compl ", DataCollector.INSTANCE.getLowerImg());
+
         constructDAG();
         flood();
 
-        removeOnePixelHoles();
+       // removeOnePixelHoles();
 
         DataCollector.INSTANCE.addtoHistory( "wsh", result );
         DataCollector.INSTANCE.setWatershedImg( result );

@@ -13,7 +13,7 @@ public enum DataCollector {
     // private LinkedList<Integer> line;
     private TreeMap<String, Mat> stack;
     private Mat imageOriginal, imageResult;
-    private Mat grayImg, gradientImg, laplasianImg, watershedImg;
+    private Mat grayImg, gradientImg, laplasianImg, watershedImg, lowerImg;
     private int[] lowerCompletion, status, shedLabels, prevShedLabels;
     private ArrayList<Line> lines;
     private HashMap<Integer, Point> watershedPoints;
@@ -46,6 +46,10 @@ public enum DataCollector {
 
     public void setLaplasianImg( Mat img ) {
         laplasianImg = img;
+    }
+
+    public void setLowerImg( Mat img ) {
+        lowerImg = img;
     }
 
     public void setWatershedImg( Mat img ) {
@@ -95,6 +99,10 @@ public enum DataCollector {
 
     public Mat getLaplasianImg() {
         return laplasianImg;
+    }
+
+    public Mat getLowerImg() {
+        return lowerImg;
     }
 
     public Mat getWatershedImg() {
