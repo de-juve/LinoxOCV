@@ -132,7 +132,7 @@ public class PixelsMentor {
     }
 
     public static boolean isNeighbours( Point p, Point n ) {
-        return Math.abs( p.x - n.x ) < 2 && Math.abs( p.y - n.y ) < 2;
+        return !p.equals(n) && Math.abs( p.x - n.x ) < 2 && Math.abs( p.y - n.y ) < 2;
     }
 
     public static boolean is4Neighbours( Point p, Point n ) {

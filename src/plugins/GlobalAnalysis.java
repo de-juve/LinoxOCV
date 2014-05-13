@@ -1,11 +1,12 @@
 package plugins;
 
-import entities.DataCollector;
-import entities.Line;
-import entities.Point;
+import entities.*;
 import gui.Linox;
 import gui.dialog.ParameterJPanel;
 import gui.dialog.ParameterSlider;
+import org.jgrapht.alg.DijkstraShortestPath;
+import org.jgrapht.graph.DefaultWeightedEdge;
+import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
@@ -15,6 +16,7 @@ import plugins.morphology.MorphologyPlugin;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.ListIterator;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -111,9 +113,40 @@ public class GlobalAnalysis extends AbstractPlugin {
             ArrayList<Point> epoints = new ArrayList<>(lineCreator.edgePoints);
 
             interpolate(lines);
-            analyzeLines(interpolateLines);
+            ArrayList<Line> newLines = analyzeLines(interpolateLines);
 
-          //  regression(lines);
+            regression(newLines);
+
+            int max = 0;
+            int j = 0;
+            for (Line rline : regressLines) {
+                Line nline = newLines.get(j);
+                while (nline.points.size() != rline.points.size()) {
+                    j++;
+                    nline = newLines.get(j);
+                }
+                int dist = 0;
+                for (int k = 0; k < nline.points.size(); k++) {
+                    Point rpoint = rline.points.get(k);
+                    Point npoint = nline.points.get(k);
+                    dist += rpoint.len(npoint);
+                }
+                if(dist > max) {
+                    max = dist;
+                }
+                rline.avgWidth = dist;
+                j++;
+            }
+            Mat _image = new Mat(grey.size(), grey.type());
+            for (Line rline : regressLines) {
+                for(Point point : rline.points) {
+                    _image.put(point.y, point.x, 255-rline.avgWidth/255);
+                }
+            }
+            pluginListener.addImageTab("regr lines dist ", _image);
+
+
+
           //  interpolate(regressLines);
           //  RegressionPointsAnalysis analysis = new RegressionPointsAnalysis(interpolateImage, interpolateLines, image);
         }
@@ -159,11 +192,75 @@ public class GlobalAnalysis extends AbstractPlugin {
     }
 
     private ArrayList<Line> analyzeLines(ArrayList<Line> lines) {
-        for(Line line : lines){
-            for(Point p : line.points) {
-                print("line "+line.label+" curv" + p.getCurvature())  ;
+        ArrayList<Line> newLines = new ArrayList<>();
+        for(Line line : lines) {
+            Line newLine = new Line();
+
+            SimpleDirectedWeightedGraph graph = new SimpleDirectedWeightedGraph(DefaultWeightedEdge.class);
+            for (Point p : line.points) {
+                graph.addVertex(p);
+                for (Point n : line.points) {
+                    graph.addVertex(n);
+                    if(PixelsMentor.isNeighbours(p, n)) {
+                        DefaultWeightedEdge e = (DefaultWeightedEdge) graph.addEdge(p, n);
+                        double weight = 1;
+                        if(PixelsMentor.isDiagonalNeighbours(p, n)) {
+                            weight = 0;
+                        }
+                        graph.setEdgeWeight(e, weight);
+                    }
+                }
             }
+            ArrayList<Point> borderPoints = line.getBorderPoints();
+            DijkstraShortestPath dijkstra = new DijkstraShortestPath(graph, borderPoints.get(0), borderPoints.get(1));
+            ArrayList<DefaultWeightedEdge> pathList = (ArrayList<DefaultWeightedEdge>) dijkstra.getPathEdgeList();
+
+            ListIterator<DefaultWeightedEdge> iterator = pathList.listIterator();
+            if(!iterator.hasNext()) {
+                continue;
+            }
+            DefaultWeightedEdge edge = iterator.next();
+            Point source = (Point) graph.getEdgeSource(edge);
+            Point target = (Point) graph.getEdgeTarget(edge);
+            double weight = 1;
+            if(PixelsMentor.isDiagonalNeighbours(source, target)) {
+                weight = 0;
+            }
+            source.addConnection(new Connection(source, target, weight));
+            newLine.add(source);
+            newLine.add(target);
+            while(iterator.hasNext()) {
+                source = target;
+                edge = iterator.next();
+                target = (Point) graph.getEdgeTarget(edge);
+                weight = 1;
+                if(PixelsMentor.isDiagonalNeighbours(source, target)) {
+                    weight = 0;
+                }
+                source.addConnection(new Connection(source, target, weight));
+                newLine.add(target);
+            }
+            newLines.add(newLine);
         }
+
+        double b, g, r;
+        b = g = r = 0;
+        Random rand = new Random();
+        Mat _image = new Mat(image.size(), image.type(), new Scalar(255, 255, 255));
+        for (Line line : newLines) {
+            double[] mcolor = new double[]{b, g, r};
+            r = rand.nextInt(220);
+            g = rand.nextInt(220);
+            b = rand.nextInt(220);
+            for(Point point : line.points) {
+                _image.put(point.y, point.x, mcolor);
+            }
+
+        }
+        pluginListener.addImageTab("new lines ", _image);
+
+
+        return newLines;
        /* int th = 20;
         for (int i = 0; i < lines.size(); i++) {
             Line line1 = lines.get(i);
@@ -175,7 +272,6 @@ public class GlobalAnalysis extends AbstractPlugin {
                 }
             }
         }*/
-        return null;
     }
 
     private Mat doWatershed(Mat image) {
