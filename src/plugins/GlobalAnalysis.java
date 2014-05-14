@@ -148,12 +148,14 @@ public class GlobalAnalysis extends AbstractPlugin {
                     max = dist;
                 }
                 rline.avgWidth = dist;
+                print("avg " + dist);
                 j++;
             }
             Mat _image = new Mat(grey.size(), grey.type(), new Scalar( 0 ));
             for (Line rline : regressLines) {
                 for(Point point : rline.points) {
-                    _image.put(point.y, point.x, 255-rline.avgWidth/255);
+                    print("avgW " + rline.avgWidth + " " + (255-255*rline.avgWidth/max));
+                    _image.put(point.y, point.x, 255-255*rline.avgWidth/max);
                 }
             }
             pluginListener.addImageTab( "regr lines dist ", _image );

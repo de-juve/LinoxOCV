@@ -6,11 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="some things">
+    <list default="true" id="7833f1e5-127b-462e-a32a-c66f6dcf19d1" name="Default" comment="int, regr">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" afterPath="$PROJECT_DIR$/src/plugins/GlobalAnalysis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" afterPath="$PROJECT_DIR$/src/gui/menu/LinoxEditMenuFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" afterPath="$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" afterPath="$PROJECT_DIR$/src/plugins/WatershedPlugin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LinoxOCV.iws" />
@@ -89,7 +86,7 @@
       <file leaf-file-name="GlobalAnalysis.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="77" selection-start="5557" selection-end="5557" vertical-scroll-proportion="0.49621785" vertical-offset="2084" max-vertical-offset="9180">
+            <state line="157" column="75" selection-start="5934" selection-end="5934" vertical-scroll-proportion="0.90468985" vertical-offset="1922" max-vertical-offset="9216">
               <folding>
                 <element signature="method#addWPoints#0;class#GlobalAnalysis#0" expanded="false" />
                 <element signature="method#drawWatershed#0;class#GlobalAnalysis#0" expanded="false" />
@@ -98,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WatershedPlugin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
+      <file leaf-file-name="LowerCompletePlugin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="15" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0" vertical-offset="455" max-vertical-offset="7776">
+            <state line="65" column="33" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1782">
               <folding />
             </state>
           </provider>
@@ -918,7 +915,11 @@
       <created>1399946546978</created>
       <updated>1399946546978</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="int, regr">
+      <created>1400069217654</created>
+      <updated>1400069217654</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -966,7 +967,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.67017543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.234375" sideWeight="0.6717892" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25675675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25675675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27259886" sideWeight="0.6725146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67017543" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24929379" sideWeight="0.67017543" order="5" side_tool="false" content_ui="tabs" />
@@ -994,7 +995,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="reformat code, watershed, +resize" />
     <MESSAGE value="tabs-&gt;AbstractPlugin&#10;+HoughTransform" />
     <MESSAGE value="OLS, Line, PointMentor" />
     <MESSAGE value="+Builder" />
@@ -1019,7 +1019,8 @@
     <MESSAGE value="jgraph" />
     <MESSAGE value="invert" />
     <MESSAGE value="some things" />
-    <option name="LAST_COMMIT_MESSAGE" value="some things" />
+    <MESSAGE value="int, regr" />
+    <option name="LAST_COMMIT_MESSAGE" value="int, regr" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1211,13 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/ImageMattingPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1310,13 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="33" selection-start="2359" selection-end="2359" vertical-scroll-proportion="-0.09883721" vertical-offset="1094" max-vertical-offset="1782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/GradientPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="972">
@@ -1338,6 +1325,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LowerCompletePlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="33" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/WatershedPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="15" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0" vertical-offset="455" max-vertical-offset="7776">
@@ -1345,9 +1339,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/LocalAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/GlobalAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="77" selection-start="5557" selection-end="5557" vertical-scroll-proportion="0.49621785" vertical-offset="2084" max-vertical-offset="9180">
+        <state line="157" column="75" selection-start="5934" selection-end="5934" vertical-scroll-proportion="0.90468985" vertical-offset="1922" max-vertical-offset="9216">
           <folding>
             <element signature="method#addWPoints#0;class#GlobalAnalysis#0" expanded="false" />
             <element signature="method#drawWatershed#0;class#GlobalAnalysis#0" expanded="false" />
