@@ -35,6 +35,52 @@ public class WatershedPlugin extends AbstractPlugin implements IPluginRunner {
         morphologyPlugin.run();
     }
 
+    public Mat run( Mat _image) {
+        long start = System.nanoTime();
+        print(this.title + " begin");
+
+        MorphologyPlugin mp = new MorphologyPlugin();
+        mp.initImage( image );
+        mp.run( "Closing", 1 );
+        closing = mp.result;
+
+        LowerCompletePlugin lcp = new LowerCompletePlugin();
+        lcp.initImage( mp.result );
+        lcp.run();
+
+        constructDAG();
+        flood();
+
+        removeOnePixelHoles();
+
+        DataCollector.INSTANCE.setWatershedImg( result );
+
+        //Imgproc.dilate( result, result, new Mat(), new org.opencv.core.Point( -1, -1 ), 1 );
+
+        mp.initImage( result );
+        mp.run( "Closing", 1 );
+        result = mp.result;
+
+
+        /*removeSeparateLines();
+        removeOnePixelHoles();
+        removeSeparatePoints();
+        mp.initImage( result );
+        mp.run( "Closing", 100 );
+        result = mp.result;*/
+
+
+        //WatershedPartition wp  = new WatershedPartition();
+        //wp.partitionNetwork( result );
+
+        Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
+        long end = System.nanoTime();
+        long traceTime = end-start;
+        print(this.title + " finish: " + TimeUnit.MILLISECONDS.convert(traceTime, TimeUnit.NANOSECONDS));
+
+        return result;
+    }
+
     private void watershed() {
         closing = morphologyPlugin.getResult(false);
         shedLabels = DataCollector.INSTANCE.getShedLabels();

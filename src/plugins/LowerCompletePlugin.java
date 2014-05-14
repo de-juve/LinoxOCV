@@ -39,7 +39,7 @@ public class LowerCompletePlugin extends AbstractPlugin {
                 distination++;
             } else if ( point.x > -1 ) {
                 level[id( point.x, point.y )] = distination;
-                int lum = ( int ) gray.get( point.y, point.x )[0];
+                //int lum = ( int ) gray.get( point.y, point.x )[0];
                 ArrayList<Integer> neighbors = PixelsMentor.defineNeighboursIdsWithSameValue( id( point.x, point.y ), gray );
                 for ( Integer nid : neighbors ) {
                     if ( level[nid] == 0 ) {
@@ -63,7 +63,7 @@ public class LowerCompletePlugin extends AbstractPlugin {
         for (int i = 0; i < level.length; i++) {
             int x = i % image.width();
             int y = i / image.width();
-            result.put(y, x, 255*level[i]/distination);
+            result.put(y, x, (255*level[i])/distination);
         }
 
         DataCollector.INSTANCE.setLowerCompletion( level );

@@ -101,15 +101,6 @@ public class LinoxEditMenuFactory {
             }
         };
 
-        final Action lower = new AbstractAction("Lower completion") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pluginRunner.setPlugin(new LowerCompletePlugin());
-                Thread myThready = new Thread(pluginRunner);
-                myThready.start();
-            }
-        };
-
         final Action morphologyTransformation = new AbstractAction("Morphology OpenCV") {
             @Override
             public void actionPerformed(ActionEvent e) {

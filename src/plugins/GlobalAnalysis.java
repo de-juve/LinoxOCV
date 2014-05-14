@@ -7,7 +7,6 @@ import gui.dialog.ParameterSlider;
 import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 import plugins.approximation.Interpolacion;
@@ -42,7 +41,7 @@ public class GlobalAnalysis extends AbstractPlugin {
         grey = new Mat();
         //grey = image.clone();
         grey = GrayscalePlugin.run(image, true);
-        invert = InvertPlugin.run(grey, true);
+        //invert = InvertPlugin.run(grey, true);
 
         /*if ((image.channels() == 3 || image.channels() == 4) && image.type() != CvType.CV_8UC1) {
             Imgproc.cvtColor(image, grey, Imgproc.COLOR_BGR2Lab);
@@ -52,7 +51,7 @@ public class GlobalAnalysis extends AbstractPlugin {
         grey = channels.get(0);*/
 
         pluginListener.addImageTab("grey", grey);
-        pluginListener.addImageTab("invert", invert);
+       // pluginListener.addImageTab("invert", invert);
 
         showParamsPanel("Choose params");
         if (exit) {
@@ -96,14 +95,14 @@ public class GlobalAnalysis extends AbstractPlugin {
             pluginListener.addImageTab("watershed grey", wresult);
             HashMap<Integer, Point> watershedPoints = DataCollector.INSTANCE.getWatershedPoints();
 
-            Mat wresult2 = doWatershed(invert);
-            pluginListener.addImageTab("watershed invert", wresult2);
-            HashMap<Integer, Point> watershedPoints2 = DataCollector.INSTANCE.getWatershedPoints();
-            watershedPoints.putAll(watershedPoints2);
+//            Mat wresult2 = doWatershed(invert);
+//            pluginListener.addImageTab("watershed invert", wresult2);
+//            HashMap<Integer, Point> watershedPoints2 = DataCollector.INSTANCE.getWatershedPoints();
+//            watershedPoints.putAll(watershedPoints2);
             wpoints.putAll(watershedPoints);
 
-            Core.add(wresult, wresult2, wresult);
-            pluginListener.addImageTab("watershed combine", wresult);
+        //    Core.add(wresult, wresult2, wresult);
+        //    pluginListener.addImageTab("watershed combine", wresult);
 
             LineCreator lineCreator = new LineCreator(wresult, new ArrayList<>(watershedPoints.values()));
             lineCreator.extractEdgePoints();
@@ -111,25 +110,39 @@ public class GlobalAnalysis extends AbstractPlugin {
 
             ArrayList<Line> lines = new ArrayList<>(lineCreator.lines);
             ArrayList<Point> epoints = new ArrayList<>(lineCreator.edgePoints);
+            print("Lines wsh "+ lines.size());
 
-            interpolate(lines);
-            ArrayList<Line> newLines = analyzeLines(interpolateLines);
+//            interpolate(lines);
+//            print("Inter lines "+ interpolateLines.size());
 
-            regression(newLines);
+            ArrayList<Line> newLines = analyzeLines(lines);
+            print("New lines "+ newLines.size());
+
+            interpolate(newLines);
+            print("Inter lines "+ interpolateLines.size());
+
+            regression(interpolateLines);
+            print("Regr lines "+ regressLines.size());
 
             int max = 0;
             int j = 0;
             for (Line rline : regressLines) {
-                Line nline = newLines.get(j);
-                while (nline.points.size() != rline.points.size()) {
-                    j++;
-                    nline = newLines.get(j);
-                }
+                Line iline = interpolateLines.get(j);
+
                 int dist = 0;
-                for (int k = 0; k < nline.points.size(); k++) {
-                    Point rpoint = rline.points.get(k);
-                    Point npoint = nline.points.get(k);
-                    dist += rpoint.len(npoint);
+                for (int k = 0; k < iline.points.size(); k++) {
+                    Point rpoint, ipoint;
+                    if(iline.points.size() <= k) {
+                        ipoint = iline.points.getLast();
+                    }  else {
+                        ipoint = iline.points.get(k);
+                    }
+                    if(rline.points.size() <= k) {
+                        rpoint = rline.points.getLast();
+                    }  else {
+                        rpoint = rline.points.get(k);
+                    }
+                    dist += rpoint.len(ipoint);
                 }
                 if(dist > max) {
                     max = dist;
@@ -137,13 +150,13 @@ public class GlobalAnalysis extends AbstractPlugin {
                 rline.avgWidth = dist;
                 j++;
             }
-            Mat _image = new Mat(grey.size(), grey.type());
+            Mat _image = new Mat(grey.size(), grey.type(), new Scalar( 0 ));
             for (Line rline : regressLines) {
                 for(Point point : rline.points) {
                     _image.put(point.y, point.x, 255-rline.avgWidth/255);
                 }
             }
-            pluginListener.addImageTab("regr lines dist ", _image);
+            pluginListener.addImageTab( "regr lines dist ", _image );
 
 
 
@@ -284,8 +297,7 @@ public class GlobalAnalysis extends AbstractPlugin {
         mresult = morphology.getResult(false);
 
         watershed.initImage(mresult);
-        watershed.run();
-        return watershed.getResult(false);
+        return watershed.run( mresult );
     }
 
     /**
@@ -480,7 +492,7 @@ public class GlobalAnalysis extends AbstractPlugin {
                     regressPoints.add(rPoint);
                     rLine.add(rPoint);
 
-                    regressImage.put(rPoint.y, rPoint.x, mcolor);
+
                 }
             }
 
@@ -496,9 +508,12 @@ public class GlobalAnalysis extends AbstractPlugin {
 
                 regressImage.put(p.y, p.x, mcolor);
             }*/
-            if(rLine.points.size() >= minPoints) {
+           // if(rLine.points.size() >= minPoints) {
                 regressLines.add(rLine);
-            }
+                for(Point rPoint : rLine.points) {
+                    regressImage.put(rPoint.y, rPoint.x, mcolor);
+                }
+            //}
         }
         long end = System.nanoTime();
         long traceTime = end-start;
