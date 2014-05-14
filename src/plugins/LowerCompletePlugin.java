@@ -30,34 +30,21 @@ public class LowerCompletePlugin extends AbstractPlugin {
 
         InitQueue();
 
-        Mat _img = new Mat(gray.size(), gray.type());
-        for(int i = 0; i < level.length; i++) {
-            int x = i % gray.width();
-            int y = i / gray.width();
-            if(level[i] < 0) {
-                _img.put(y, x, 255);
-            } else {
-                _img.put(y, x, 0);
-            }
-        }
-        pluginListener.addImageTab("init", _img);
-
-
         distination = 1;
         queue.add( new Point( -1, -1 ) );
         while ( !queue.isEmpty() ) {
-            Point point = queue.removeFirst();
+            Point point = queue.remove();
             if ( point.x == -1 && queue.size() > 0 ) {
-                queue.addLast( new Point( -1, -1 ) );
+                queue.add( new Point( -1, -1 ) );
                 distination++;
-            } else if ( point.x > -1 && level[id( point.x, point.y )] == -1 ) {
+            } else if ( point.x > -1 ) {
                 level[id( point.x, point.y )] = distination;
                 int lum = ( int ) gray.get( point.y, point.x )[0];
                 ArrayList<Integer> neighbors = PixelsMentor.defineNeighboursIdsWithSameValue( id( point.x, point.y ), gray );
                 for ( Integer nid : neighbors ) {
                     if ( level[nid] == 0 ) {
                         level[nid] = -1;
-                        queue.addLast( new Point( x( nid ), y( nid ) ) );
+                        queue.add( new Point( x( nid ), y( nid ) ) );
                     }
                 }
                 /*for (int j = Math.max(0, point.y - 1); j <= Math.min(image.height() - 1, point.y + 1); j++) {
@@ -71,14 +58,13 @@ public class LowerCompletePlugin extends AbstractPlugin {
                 }*/
             }
         }
+
         result = new Mat(gray.size(), gray.type());
-        for(int i = 0; i < level.length; i++) {
-            int x = i % gray.width();
-            int y = i / gray.width();
+        for (int i = 0; i < level.length; i++) {
+            int x = i % image.width();
+            int y = i / image.width();
             result.put(y, x, 255*level[i]/distination);
         }
-        DataCollector.INSTANCE.setLowerImg( result );
-
 
         DataCollector.INSTANCE.setLowerCompletion( level );
         Linox.getInstance().getStatusBar().setProgress( title, 100, 100 );
@@ -105,7 +91,7 @@ public class LowerCompletePlugin extends AbstractPlugin {
                     int nlum = ( int ) gray.get( n.y, n.x )[0];
                     if ( lum > nlum ) {
                         level[id( col, row )] = -1;
-                        queue.addLast( new Point( col, row ) );
+                        queue.add( new Point( col, row ) );
                         break;
                     }
                 }

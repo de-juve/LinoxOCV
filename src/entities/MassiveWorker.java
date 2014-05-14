@@ -13,6 +13,9 @@ public enum MassiveWorker {
     private int min;
 
     public void sort( Mat image ) {
+        ids = new ArrayList<>();
+        map = new TreeMap<>();
+
         Integer[] id = new Integer[( int ) image.total()];
         Integer[] array = new Integer[id.length];
         int row, col;
@@ -31,6 +34,9 @@ public enum MassiveWorker {
     }
 
     public void sort( Mat gray, int[] _lowercompletion ) {
+        ids = new ArrayList<>();
+        map = new TreeMap<>();
+
         Integer[] id = new Integer[( int ) gray.total()];
         Integer[] luminance = new Integer[id.length];
         int row, col;

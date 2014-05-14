@@ -73,7 +73,7 @@ public class Linox extends JFrame {
 
     private void createUIComponents() {
         mainPanel.add(menuStore, "dock north, growx, h 20!");
-        mainPanel.add(imageStore, "");
+        mainPanel.add(imageStore, "growx");
         mainPanel.add(statusBar, "dock south, growx");
 
 /*

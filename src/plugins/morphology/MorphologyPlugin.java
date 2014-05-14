@@ -67,6 +67,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         } else {
             pluginListener.replaceImageTab();
         }
+        pluginListener.done();
     }
 
     protected void showParamsPanel(String name) {
@@ -160,6 +161,7 @@ public class MorphologyPlugin extends AbstractPlugin {
     }
 
     private void init() {
+        ShedCollector.INSTANCE.clear();
         status = new int[image.width() * image.height()];
         shedLabels = new int[status.length];
         area = new int[256];
@@ -274,5 +276,7 @@ public class MorphologyPlugin extends AbstractPlugin {
         representative[h] = NONE;
         return m;
     }
+
+    public int getMorph_size() { return morph_size; }
 
 }

@@ -74,6 +74,15 @@ public class LinoxEditMenuFactory {
             }
         };
 
+        final Action lower = new AbstractAction("Lower complete") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pluginRunner.setPlugin(new LowerCompletePlugin());
+                Thread myThready = new Thread(pluginRunner);
+                myThready.start();
+            }
+        };
+
         final Action homotopy = new AbstractAction("Homotopy") {
             @Override
             public void actionPerformed(ActionEvent e) {
